@@ -199,7 +199,10 @@ body {
     /* left: -50%; */
     left: 0;
     width: 100%;
-    background: seagreen;
+    background: #0f1c24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: .8s ease-in-out;
     transition-delay: .25s;
     z-index: 100;
