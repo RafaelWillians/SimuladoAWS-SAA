@@ -40,7 +40,11 @@ body {
     transition: .3s;
 }
 
-.navbar a:hove,
+.navbar a:hover,
 .navbar a.active {
     color: #1ba6c0;
+}
+
+.main{
+    background: url('background.jpg') no-repeat;
 }
