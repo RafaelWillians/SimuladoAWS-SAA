@@ -1,10 +1,8 @@
-# AWS Repo Template
+# Simulado AWS SAA
 
-Repo template for use with AWS CLI, compatible with Codespaces, GitPod and DevContainer extension (for VSCode).
+Repo para desenvolver simulado web para certificação AWS SAA.
 
-Template de repositório para usar com AWS CLI, compatível com Codespaces, GitPod e extensão DevContainer (para VSCode).
-
-## Extensions
+## Extensoes
 * AWS CLI
 * Git Graph
 * Git-log
