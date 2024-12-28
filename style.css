@@ -40,6 +40,7 @@ body {
     transition: .3s;
 }
 
-.navbar a:hover {
+.navbar a:hove,
+.navbar a.active {
     color: #1ba6c0;
 }
