@@ -9,6 +9,7 @@
 
 body {
     color: #fff;
+    background: #0f1c24;
 }
 
 .header {
@@ -51,6 +52,11 @@ body {
     background: url('background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
+    transition: .3s ease;
+}
+
+.main.active {
+    filter: blur(15px);
 }
 
 .home {
