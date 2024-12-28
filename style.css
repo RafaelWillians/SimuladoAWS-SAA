@@ -73,3 +73,20 @@ body {
     font-weight: 700;
     text-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
+
+.home-content p {
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    margin-bottom: 30px;
+}
+
+.home-content .start-btn {
+    width: 190px;
+    height: 55px;
+    background: #1ba6c0;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #1ba6c0;
+}
