@@ -196,16 +196,16 @@ body {
 
 .quiz-section {
     position: relative;
-    /* left: -50%; */
-    left: 0;
+    left: -50%;
+    /*left: 0;*/
     width: 100%;
     background: #0f1c24;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
     transition: .8s ease-in-out;
     transition-delay: .25s;
-    z-index: 100;
 }
 
 .quiz-section.active {
@@ -221,6 +221,17 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+}
+
+.quiz-section .quiz-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
 }
 
 .quiz-box h1 {
