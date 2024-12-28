@@ -211,3 +211,34 @@ body {
 .quiz-section.active {
     left: 0;
 }
+
+.quiz-section .quiz-box {
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid #1ba6c0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+.quiz-box h1 {
+    font-size: 32px;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, #1ba6c0, transparent);
+    border-radius: 6px;    
+}
+
+.quiz-box .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #1ba6c0;
+}
+
+.quiz-header span {
+    font-size: 18px;
+    font-weight: 500;
+}
