@@ -89,4 +89,9 @@ body {
     outline: none;
     border-radius: 6px;
     box-shadow: 0 0 10px #1ba6c0;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    
 }
