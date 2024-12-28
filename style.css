@@ -17,7 +17,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: #034d66;
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,6 +29,7 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
+    filter: drop-shadow(0 0 5px #09001d);
 }
 
 .navbar a {
@@ -46,5 +47,9 @@ body {
 }
 
 .main{
+    min-height: 100vh;
     background: url('background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
