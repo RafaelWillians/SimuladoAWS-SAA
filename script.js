@@ -22,3 +22,10 @@ continueBtn.onclick = () => {
     main.classList.remove('active');
     quizBox.classList.add('active');
 }
+
+let questionCount = 0;
+
+// carregar as questoes do array
+function showQuestions(index) {
+    const questionText = document.querySelector('.');
+}
