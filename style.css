@@ -242,3 +242,64 @@ body {
     font-size: 18px;
     font-weight: 500;
 }
+
+.quiz-header .header-score {
+    background: #1ba6c0;
+    border-radius: 3px;
+    padding: 7px;    
+}
+
+.quiz-box .question-text {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.option-list .option {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 4px;
+    font-size: 17px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.option-list .option:hover {
+    background: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+}
+
+.quiz-box .quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #1ba6c0;
+    padding-top: 20px;
+}
+
+.quiz-footer .question-total {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.quiz-footer .next-btn {
+    width: 100px;
+    height: 45px;
+    background: rgba(255, 255, 255, .1);
+    border: 2px solid rgba(255, 255, 255, .1);
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, .3);
+    font-weight: 600;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.quiz-footer .next-btn:hover {
+    background: #1ba6c0;
+    border-color: #1ba6c0;
+}
