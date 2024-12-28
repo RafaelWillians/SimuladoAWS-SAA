@@ -29,7 +29,7 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
-    filter: drop-shadow(0 0 5px #09001d);
+    filter: drop-shadow(0 0 5px #0f1c24);
 }
 
 .navbar a {
@@ -93,5 +93,11 @@ body {
     color: #fff;
     letter-spacing: 1px;
     font-weight: 600;
-    
+    cursor: pointer;
+    transition: .5s;
+}
+
+.home-content .start-btn:hover {
+    background: #0f1c24;
+    box-shadow: none;    
 }
