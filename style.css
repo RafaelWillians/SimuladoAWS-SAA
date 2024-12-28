@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wgth@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
     margin: 0;
@@ -51,7 +51,6 @@ body {
     background: url('background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-
 }
 
 .home {
@@ -64,4 +63,13 @@ body {
 
 .home-content {
     max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+}
+
+.home-content h1 {
+    font-size: 78px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
 }
