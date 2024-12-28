@@ -17,7 +17,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: seagreen;
+    background: #034d66;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,4 +29,17 @@ body {
     color: #fff;
     text-decoration: none;
     font-weight: 700;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+}
+
+.navbar a:hover {
+    color: #1ba6c0;
 }
