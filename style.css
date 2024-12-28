@@ -196,7 +196,15 @@ body {
 
 .quiz-section {
     position: relative;
-    left: -50%;
+    /* left: -50%; */
+    left: 0;
     width: 100%;
     background: seagreen;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;
+    z-index: 100;
+}
+
+.quiz-section.active {
+    left: 0;
 }
