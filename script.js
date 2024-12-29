@@ -29,6 +29,28 @@ continueBtn.onclick = () => {
 let questionCount = 0;
 let questionNumb = 1;
 
+/*
+Implementar em breve o botao confirmar
+
+const confirmBtn = document.querySelector('.confirm-btn');
+
+confirmBtn.onclick = () => {
+    let userAnswer = answer.textContent;
+    let correctAnswer = questions[questionCount].answer;
+    console.log(correctAnswer);
+    // mudar mecanismo depois
+    if(userAnswer == correctAnswer) {
+        console.log('Resposta correta');
+        answer.classList.add('correct');
+    }
+    else {
+        console.log('Resposta incorreta');
+        answer.classList.add('wrong');
+    }
+}
+
+*/
+
 const nextBtn = document.querySelector('.next-btn');
 
 nextBtn.onclick = () => {
