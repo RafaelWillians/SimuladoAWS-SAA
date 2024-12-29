@@ -65,7 +65,7 @@ nextBtn.onclick = () => {
         nextBtn.classList.remove('active');
     }
     else {
-        console.log('Quiz finalizado');
+        showResultBox();
     }
 }
 
@@ -132,5 +132,5 @@ function headerScore() {
 }
 
 function showResultBox() {
-    
+    quizBox.classList.remove('active');
 }
