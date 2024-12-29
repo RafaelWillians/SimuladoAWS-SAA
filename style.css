@@ -50,7 +50,7 @@ body {
 
 .main {
     min-height: 100vh;
-    background: url('background.jpg') no-repeat;
+    background: url('/img/background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -66,6 +66,89 @@ body {
     display: flex;
     height: 100vh;
     width: 200%;    
+}
+
+.donate-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 500px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.donate-info.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.donate-info h2 {
+    font-size: 50px;
+    color: #1ba6c0;
+}
+
+.donate-info .info {
+    display: inline-block;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.donate-info .btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+
+.donate-info .btn-group .info-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: #1ba6c0;
+    border: 2px solid #1ba6c0;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    transition: .5s;    
+}
+
+.donate-info .btn-group .info-btn:nth-child(1) {
+    background: transparent;
+    color: #1ba6c0;
+}
+
+.donate-info .btn-group .info-btn:nth-child(1):hover {
+    background: #1ba6c0;
+    color: #fff;
+}
+
+.donate-info .btn-group .info-btn:nth-child(2):hover {
+    background: #0f1c24;
+    border-color: #0f1c24;
+}
+
+.donate-info .chavepix-img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
 }
 
 .home {
