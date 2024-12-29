@@ -10,6 +10,9 @@ const tryAgainBtn = document.querySelector('.tryAgain-btn');
 const goHomeBtn = document.querySelector('.goHome-btn');
 const nextBtn = document.querySelector('.next-btn');
 const optionList = document.querySelector('.option-list');
+const donateNav = document.querySelector('.donate-nav');
+const donateInfo = document.querySelector('.donate-info');
+const exitDonateBtn = document.querySelector('.exit-donate-btn');
 
 let questionCount = 0;
 let questionNumb = 1;
@@ -37,7 +40,7 @@ continueBtn.onclick = () => {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
     quizBox.classList.add('active');
-
+    
     showQuestions(0);
     questionCounter(1);
     headerScore();
@@ -47,13 +50,13 @@ tryAgainBtn.onclick = () => {
     quizBox.classList.add('active');
     resultBox.classList.remove('active');
     nextBtn.classList.remove('active');
-
+    
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
-
+    
     randomQuestions = getRandomQuestions(questions, 65);
-
+    
     showQuestions(questionCount);
     questionCounter(questionNumb);    
     headerScore();
@@ -63,7 +66,7 @@ goHomeBtn.onclick = () => {
     quizSection.classList.remove('active');
     resultBox.classList.remove('active');
     nextBtn.classList.remove('active');
-
+    
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
@@ -71,6 +74,15 @@ goHomeBtn.onclick = () => {
     questionCounter(questionNumb);
 }
 
+donateNav.onclick = () => {
+    donateInfo.classList.add('active');
+    main.classList.add('active');
+}
+
+exitDonateBtn.onclick = () => {    
+    donateInfo.classList.remove('active');
+    main.classList.remove('active');
+}
 
 /*
 Implementar em breve o botao confirmar
