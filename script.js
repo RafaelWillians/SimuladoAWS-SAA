@@ -141,14 +141,16 @@ function showResultBox() {
     const circularProgress = document.querySelector('.circular-progress');
     const progressValue = document.querySelector('.progress-value');
 
-    let progressStartValue = 0;
+    let progressStartValue = -1;
     let progressEndValue = (userScore / questions.length) * 100;
     let speed = 20;
 
     let progress = setInterval(() => {
         progressStartValue++;
-        // console.log(progressStartValue);
-        progressValue.textContent = `${progressStartValue}%`
+
+        progressValue.textContent = `${progressStartValue}%`;
+        circularProgress.style.background = ` conic-gradient(#1ba6c0 ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1) 0deg)`;
+
         if(progressStartValue == progressEndValue) {
             clearInterval(progress);
         }
