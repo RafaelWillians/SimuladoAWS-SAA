@@ -64,6 +64,12 @@ function showQuestions(index) {
     }
 }
 
+function optionSelected(answer) {
+    let userAnswer = answer.textContent;
+    let correctAnswer = questions[questionCount].answer;
+    console.log(correctAnswer);
+}
+
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
     questionTotal.textContent = `${index} de ${questions.length} Perguntas`;
