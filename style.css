@@ -196,8 +196,8 @@ body {
 
 .quiz-section {
     position: relative;
-    left: -50%;
-    /*left: 0;*/
+    /* left: -50%; */
+    left: 0;
     width: 100%;
     background: #0f1c24;
     display: flex;
@@ -329,14 +329,107 @@ body {
     transition: .5s;
 }
 
+.quiz-footer .next-btn.active {
+    pointer-events: auto;
+    background: #1ba6c0;
+    border-color: #1ba6c0;
+    color: #fff;
+}
+
 .quiz-footer .next-btn.active:hover {
     background: #045c6e;
     border-color: #045c6e;
 }
 
-.quiz-footer .next-btn.active {
-    pointer-events: auto;
+.quiz-section .result-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background: transparent;
+    border: 2px solid #1ba6c0;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.result-box h2 {
+    font-size: 52px;    
+}
+
+.result-box .percentage-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.percentage-container .circular-progress {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(#1ba6c0 3.6deg, rgba(255, 255, 255, .1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage-container .circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: #0f1c24;
+    border-radius: 50%;
+}
+
+.circular-progress .progress-value {
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.percentage-container .score-text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;    
+}
+
+.result-box .buttons {
+    display: flex;
+}
+
+.buttons button {
+    width: 130px;
+    height: 47px;
     background: #1ba6c0;
-    border-color: #1ba6c0;
+    border: 2px solid #1ba6c0;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 20px 20px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.buttons button:nth-child(1):hover {
+    background: #045c6e;
+    border-color: #045c6e;
+}
+
+.buttons button:nth-child(2) {
+    background: transparent;
+    color: #1ba6c0;
+}
+
+.buttons button:nth-child(2):hover {
+    background: #1ba6c0;
     color: #fff;
 }
