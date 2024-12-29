@@ -10,6 +10,8 @@ const tryAgainBtn = document.querySelector('.tryAgain-btn');
 const goHomeBtn = document.querySelector('.goHome-btn');
 const nextBtn = document.querySelector('.next-btn');
 const optionList = document.querySelector('.option-list');
+const donateNav = document.querySelector('.donate-nav');
+const donateInfo = document.querySelector('.donate-info');
 
 let questionCount = 0;
 let questionNumb = 1;
@@ -191,4 +193,9 @@ function showResultBox() {
             clearInterval(progress);
         }
     }, speed);
+}
+
+donateNav.onclick = () => {
+    donateInfo.classList.add('active');
+    main.classList.add('active');
 }
