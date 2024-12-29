@@ -329,9 +329,9 @@ body {
     transition: .5s;
 }
 
-.quiz-footer .next-btn:hover {
-    background: #1ba6c0;
-    border-color: #1ba6c0;
+.quiz-footer .next-btn.active:hover {
+    background: #045c6e;
+    border-color: #045c6e;
 }
 
 .quiz-footer .next-btn.active {
