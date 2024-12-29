@@ -8,6 +8,19 @@ const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
 const tryAgainBtn = document.querySelector('.tryAgain-btn');
 const goHomeBtn = document.querySelector('.goHome-btn');
+const nextBtn = document.querySelector('.next-btn');
+const optionList = document.querySelector('.option-list');
+
+let questionCount = 0;
+let questionNumb = 1;
+let userScore = 0;
+let randomQuestions = getRandomQuestions(questions, 65);
+
+// Função para embaralhar e selecionar 65 perguntas aleatórias
+function getRandomQuestions(questionsArray, count) {
+    const shuffled = questionsArray.sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+}
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -38,9 +51,11 @@ tryAgainBtn.onclick = () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
+
+    randomQuestions = getRandomQuestions(questions, 65);
+
     showQuestions(questionCount);
-    questionCounter(questionNumb);   
-    
+    questionCounter(questionNumb);    
     headerScore();
 }
 
@@ -56,9 +71,6 @@ goHomeBtn.onclick = () => {
     questionCounter(questionNumb);
 }
 
-let questionCount = 0;
-let questionNumb = 1;
-let userScore = 0;
 
 /*
 Implementar em breve o botao confirmar
@@ -81,14 +93,12 @@ confirmBtn.onclick = () => {
 }
 */
 
-const nextBtn = document.querySelector('.next-btn');
-
 nextBtn.onclick = () => {
-    if(questionCount < questions.length - 1) {
+    if(questionCount < randomQuestions.length - 1) {
         questionCount++;
-        showQuestions(questionCount);
-        
         questionNumb++;
+
+        showQuestions(questionCount);        
         questionCounter(questionNumb);
         nextBtn.classList.remove('active');
     }
@@ -97,17 +107,15 @@ nextBtn.onclick = () => {
     }
 }
 
-const optionList = document.querySelector('.option-list');
-
 // carregar as questoes do array
 function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
-    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
+    questionText.textContent = `${questionNumb}. ${randomQuestions[index].question}`;
 
-    let optionTag = `<div class="option"><span>${questions[index].options[0]}</span></div>
-        <div class="option"><span>${questions[index].options[1]}</span></div>
-        <div class="option"><span>${questions[index].options[2]}</span></div>
-        <div class="option"><span>${questions[index].options[3]}</span></div>`;
+    let optionTag = `<div class="option"><span>${randomQuestions[index].options[0]}</span></div>
+        <div class="option"><span>${randomQuestions[index].options[1]}</span></div>
+        <div class="option"><span>${randomQuestions[index].options[2]}</span></div>
+        <div class="option"><span>${randomQuestions[index].options[3]}</span></div>`;
     
     optionList.innerHTML = optionTag;
 
@@ -119,7 +127,7 @@ function showQuestions(index) {
 
 function optionSelected(answer) {
     let userAnswer = answer.textContent;
-    let correctAnswer = questions[questionCount].answer;
+    let correctAnswer = randomQuestions[questionCount].answer;
     let allOptions = optionList.children.length;
 
     console.log(correctAnswer);
@@ -151,12 +159,12 @@ function optionSelected(answer) {
 
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
-    questionTotal.textContent = `${index} de ${questions.length} Perguntas`;
+    questionTotal.textContent = `${index} de ${randomQuestions.length} Perguntas`;
 }
 
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
-    headerScoreText.textContent = `Pontuação: ${userScore} / ${questions.length}`;    
+    headerScoreText.textContent = `Pontuação: ${userScore} / ${randomQuestions.length}`;    
 }
 
 function showResultBox() {
@@ -164,14 +172,14 @@ function showResultBox() {
     resultBox.classList.add('active');
 
     const scoreText = document.querySelector('.score-text');
-    scoreText.textContent = `Você acertou ${userScore} de ${questions.length}`;
+    scoreText.textContent = `Você acertou ${userScore} de ${randomQuestions.length}`;
 
     const circularProgress = document.querySelector('.circular-progress');
     const progressValue = document.querySelector('.progress-value');
 
     let progressStartValue = -1;
-    let progressEndValue = (userScore / questions.length) * 100;
-    let speed = 12;
+    let progressEndValue = Math.round((userScore / randomQuestions.length) * 100);
+    let speed = 30;    
 
     let progress = setInterval(() => {
         progressStartValue++;
@@ -179,7 +187,7 @@ function showResultBox() {
         progressValue.textContent = `${progressStartValue}%`;
         circularProgress.style.background = ` conic-gradient(#1ba6c0 ${progressStartValue * 3.6}deg, rgba(255, 255, 255, .1) 0deg)`;
 
-        if(progressStartValue == progressEndValue) {
+        if(progressStartValue >= progressEndValue) {
             clearInterval(progress);
         }
     }, speed);

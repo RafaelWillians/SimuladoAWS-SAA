@@ -206,6 +206,7 @@ body {
     z-index: 100;
     transition: .8s ease-in-out;
     transition-delay: .25s;
+    height: 100vh;
 }
 
 .quiz-section.active {
@@ -214,13 +215,15 @@ body {
 
 .quiz-section .quiz-box {
     position: relative;
-    width: 500px;
+    width: 80%;
+    max-height: 90vh;
     background: transparent;
     border: 2px solid #1ba6c0;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
     padding: 20px 30px;
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
     transform: scale(.9);
