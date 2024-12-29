@@ -98,6 +98,14 @@ function optionSelected(answer) {
     }
     else {
         answer.classList.add('wrong');
+
+        // se alternativa incorreta, auto seleciona a resposta correta
+        for (let i = 0; i < allOptions; i++) {
+            if (optionList.children[i].textContent == correctAnswer) {
+                optionList.children[i].setAttribute('class', 'option correct');
+            }
+        }
+
     }
 
     // Se o usuario selecionar resposta, desabilita as outras alternativas
