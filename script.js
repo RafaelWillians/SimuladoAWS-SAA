@@ -5,6 +5,7 @@ const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
 const quizSection = document.querySelector('.quiz-section');
 const quizBox = document.querySelector('.quiz-box');
+const resultBox = document.querySelector('.result-box');
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -128,4 +129,8 @@ function questionCounter(index) {
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
     headerScoreText.textContent = `Pontuação: ${userScore} / ${questions.length}`;    
+}
+
+function showResultBox() {
+    
 }
