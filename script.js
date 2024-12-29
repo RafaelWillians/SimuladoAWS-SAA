@@ -96,9 +96,9 @@ confirmBtn.onclick = () => {
 nextBtn.onclick = () => {
     if(questionCount < randomQuestions.length - 1) {
         questionCount++;
-        showQuestions(questionCount);
-        
         questionNumb++;
+
+        showQuestions(questionCount);        
         questionCounter(questionNumb);
         nextBtn.classList.remove('active');
     }
@@ -110,7 +110,7 @@ nextBtn.onclick = () => {
 // carregar as questoes do array
 function showQuestions(index) {
     const questionText = document.querySelector('.question-text');
-    questionText.textContent = `${randomQuestions[index].numb}. ${randomQuestions[index].question}`;
+    questionText.textContent = `${questionNumb}. ${randomQuestions[index].question}`;
 
     let optionTag = `<div class="option"><span>${randomQuestions[index].options[0]}</span></div>
         <div class="option"><span>${randomQuestions[index].options[1]}</span></div>
