@@ -24,10 +24,12 @@ continueBtn.onclick = () => {
 
     showQuestions(0);
     questionCounter(1);
+    headerScore();
 }
 
 let questionCount = 0;
 let questionNumb = 1;
+let userScore = 0;
 
 /*
 Implementar em breve o botao confirmar
@@ -48,7 +50,6 @@ confirmBtn.onclick = () => {
         answer.classList.add('wrong');
     }
 }
-
 */
 
 const nextBtn = document.querySelector('.next-btn');
@@ -95,6 +96,8 @@ function optionSelected(answer) {
     // mudar mecanismo depois
     if(userAnswer == correctAnswer) {
         answer.classList.add('correct');
+        userScore += 1;
+        headerScore();
     }
     else {
         answer.classList.add('wrong');
@@ -117,4 +120,9 @@ function optionSelected(answer) {
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
     questionTotal.textContent = `${index} de ${questions.length} Perguntas`;
+}
+
+function headerScore() {
+    const headerScoreText = document.querySelector('.header-score');
+    headerScoreText.textContent = `Pontuação: ${userScore} / ${questions.length}`;    
 }
