@@ -21,11 +21,16 @@ continueBtn.onclick = () => {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
     quizBox.classList.add('active');
+
+    showQuestions(0);
 }
 
 let questionCount = 0;
 
+const nextBtn = 
+
 // carregar as questoes do array
 function showQuestions(index) {
-    const questionText = document.querySelector('.');
+    const questionText = document.querySelector('.question-text');
+    questionText.textContent = `${questions[index].numb}. ${questions[index].question}`;
 }
