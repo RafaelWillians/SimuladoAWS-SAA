@@ -8,6 +8,19 @@ const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
 const tryAgainBtn = document.querySelector('.tryAgain-btn');
 const goHomeBtn = document.querySelector('.goHome-btn');
+const nextBtn = document.querySelector('.next-btn');
+const optionList = document.querySelector('.option-list');
+
+let questionCount = 0;
+let questionNumb = 1;
+let userScore = 0;
+let randomQuestions = getRandomQuestions(questions, 65);
+
+// Função para embaralhar e selecionar 65 perguntas aleatórias
+function getRandomQuestions(questionsArray, count) {
+    const shuffled = questionsArray.sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+}
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -18,15 +31,6 @@ exitBtn.onclick = () => {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
 }
-
-// Função para embaralhar e selecionar 65 perguntas aleatórias
-function getRandomQuestions(questionsArray, count) {
-    const shuffled = questionsArray.sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, count);
-}
-
-// Obtenha 65 perguntas aleatórias ao iniciar o quiz
-let randomQuestions = getRandomQuestions(questions, 65);
 
 continueBtn.onclick = () => {
     quizSection.classList.add('active');
@@ -67,9 +71,6 @@ goHomeBtn.onclick = () => {
     questionCounter(questionNumb);
 }
 
-let questionCount = 0;
-let questionNumb = 1;
-let userScore = 0;
 
 /*
 Implementar em breve o botao confirmar
@@ -92,8 +93,6 @@ confirmBtn.onclick = () => {
 }
 */
 
-const nextBtn = document.querySelector('.next-btn');
-
 nextBtn.onclick = () => {
     if(questionCount < randomQuestions.length - 1) {
         questionCount++;
@@ -107,8 +106,6 @@ nextBtn.onclick = () => {
         showResultBox();
     }
 }
-
-const optionList = document.querySelector('.option-list');
 
 // carregar as questoes do array
 function showQuestions(index) {
