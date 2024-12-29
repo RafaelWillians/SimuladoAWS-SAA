@@ -89,6 +89,8 @@ function showQuestions(index) {
 function optionSelected(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
+    let allOptions = optionList.children.length;
+
     console.log(correctAnswer);
     // mudar mecanismo depois
     if(userAnswer == correctAnswer) {
@@ -96,6 +98,11 @@ function optionSelected(answer) {
     }
     else {
         answer.classList.add('wrong');
+    }
+
+    // Se o usuario selecionar resposta, desabilita as outras alternativas
+    for (let i = 0; i < allOptions; i++) {
+        optionList.children[i].classList.add('disabled');
     }
 }
 

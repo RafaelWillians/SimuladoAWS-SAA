@@ -290,6 +290,16 @@ body {
     border-color: #00a63d;
 }
 
+.option-list .option.wrong {
+    background: #0f1c24;
+    color: #a60045;
+    border-color: #a60045;
+}
+
+.option-list .option.disabled {
+    pointer-events: none;
+}
+
 .quiz-box .quiz-footer {
     display: flex;
     justify-content: space-between;
