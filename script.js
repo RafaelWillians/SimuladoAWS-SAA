@@ -133,4 +133,24 @@ function headerScore() {
 
 function showResultBox() {
     quizBox.classList.remove('active');
+    resultBox.classList.add('active');
+
+    const scoreText = document.querySelector('.score-text');
+    scoreText.textContent = `Você acertou ${userScore} de ${questions.length}`;
+
+    const circularProgress = document.querySelector('.circular-progress');
+    const progressValue = document.querySelector('.progress-value');
+
+    let progressStartValue = 0;
+    let progressEndValue = (userScore / questions.length) * 100;
+    let speed = 20;
+
+    let progress = setInterval(() => {
+        progressStartValue++;
+        // console.log(progressStartValue);
+        progressValue.textContent = `${progressStartValue}%`
+        if(progressStartValue == progressEndValue) {
+            clearInterval(progress);
+        }
+    }, speed);
 }
