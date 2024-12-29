@@ -283,6 +283,13 @@ body {
     border-color: rgba(255, 255, 255, .1);
 }
 
+/* Refazer depois, para nao dar resposta no click da alternativa */
+.option-list .option.correct {
+    background: #0f1c24;
+    color: #00a63d;
+    border-color: #00a63d;
+}
+
 .quiz-box .quiz-footer {
     display: flex;
     justify-content: space-between;

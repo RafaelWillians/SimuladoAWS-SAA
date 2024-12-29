@@ -92,11 +92,9 @@ function optionSelected(answer) {
     console.log(correctAnswer);
     // mudar mecanismo depois
     if(userAnswer == correctAnswer) {
-        console.log('Resposta correta');
         answer.classList.add('correct');
     }
     else {
-        console.log('Resposta incorreta');
         answer.classList.add('wrong');
     }
 }
