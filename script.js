@@ -68,6 +68,15 @@ function optionSelected(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[questionCount].answer;
     console.log(correctAnswer);
+    // mudar mecanismo depois
+    if(userAnswer == correctAnswer) {
+        console.log('Resposta correta');
+        answer.classList.add('correct');
+    }
+    else {
+        console.log('Resposta incorreta');
+        answer.classList.add('wrong');
+    }
 }
 
 function questionCounter(index) {
