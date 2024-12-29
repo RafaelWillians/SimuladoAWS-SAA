@@ -13,7 +13,7 @@ let questions = [
     {
         numb: 2,
         question: "Pergunta teste 2?",
-        answer: "B. Resposta 1",
+        answer: "B. Resposta 2",
         options: [
             "A. Resposta 1",
             "B. Resposta 2",
