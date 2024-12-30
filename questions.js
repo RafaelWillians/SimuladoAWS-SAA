@@ -57,11 +57,11 @@ let questions = [
     {
         "numb": 6,
         "question": "Uma empresa usa NFS para armazenar grandes arquivos de vídeo em armazenamento conectado à rede no local. Cada arquivo de vídeo varia em tamanho de 1 MB a 500 GB. O armazenamento total é de 70 TB e não está mais crescendo. A empresa decide migrar os arquivos de vídeo para o Amazon S3. A empresa deve migrar o arquivos de vídeo o mais rápido possível, usando a menor largura de banda de rede possível. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Implante um S3 File Gateway no local. Crie um ponto de extremidade de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway.",
+        "answer": "C. Implante um S3 File Gateway no local. Crie um endpoint de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway.",
         "options": [
             "A. Crie um bucket S3. Crie uma função IAM que tenha permissões para gravar no bucket S3. Use a AWS CLI para copiar todos os arquivos localmente para o bucket S3.",
             "B. Crie uma tarefa do AWS Snowball Edge. Receba um dispositivo Snowball Edge no local. Use o cliente Snowball Edge para transferir dados para o dispositivo. Retorne o dispositivo para que a AWS possa importar os dados para o Amazon S3.",
-            "C. Implante um S3 File Gateway no local. Crie um ponto de extremidade de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway.",
+            "C. Implante um S3 File Gateway no local. Crie um endpoint de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway.",
             "D. Configure uma conexão do AWS Direct Connect entre a rede local e a AWS. Implante um S3 File Gateway localmente. Crie uma interface virtual pública (VIF) para conectar-se ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway."
         ]
     },
@@ -122,24 +122,24 @@ let questions = [
     },
     {
         "numb": 12,
-        "question": "Uma empresa global hospeda seu aplicativo da web em instâncias do Amazon EC2 por trás de um Application Load Balancer (ALB). O aplicativo da web tem estática dados e dados dinâmicos. A empresa armazena seus dados estáticos em um bucket do Amazon S3. A empresa quer melhorar o desempenho e reduzir latência para os dados estáticos e dinâmicos. A empresa está usando seu próprio nome de domínio registrado com Amazon Route 53. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "C. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 como origem. Crie um acelerador padrão do AWS Global Accelerator que tem o ALB e a distribuição do CloudFront como endpoints. Crie um nome de domínio personalizado que aponte para o nome DNS do acelerador. Use o nome de domínio personalizado como um ponto de extremidade para o aplicativo web.",
+        "question": "Uma empresa global hospeda seu aplicativo web em instâncias do Amazon EC2 por trás de um Application Load Balancer (ALB). O aplicativo web tem dados estáticos e  dinâmicos. A empresa armazena seus dados estáticos em um bucket do Amazon S3. A empresa quer melhorar o desempenho e reduzir latência para os dados estáticos e dinâmicos. A empresa está usando seu próprio nome de domínio registrado com Amazon Route 53. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "C. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 como origem. Crie um acelerador padrão do AWS Global Accelerator que tem o ALB e a distribuição do CloudFront como endpoints. Crie um nome de domínio personalizado que aponte para o nome DNS do acelerador. Use o nome de domínio personalizado como um endpoint para o aplicativo web.",
         "options": [
-            "A. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 e o ALB como origens. Configure o Route 53 para rotear o tráfego para o Distribuição do CloudFront.",
-            "B. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um ponto de extremidade Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
-            "C. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 como origem. Crie um acelerador padrão do AWS Global Accelerator que tem o ALB e a distribuição do CloudFront como endpoints. Crie um nome de domínio personalizado que aponte para o nome DNS do acelerador. Use o nome de domínio personalizado como um ponto de extremidade para o aplicativo web.",
-            "D. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um ponto de extremidade. Crie dois nomes de domínio. Aponte um nome de domínio para o nome DNS do CloudFront para conteúdo dinâmico. Aponte o outro nome de domínio para o nome DNS do acelerador para conteúdo estático. Use os nomes de domínio como endpoints para o aplicativo da web."
+            "A. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 e o ALB como origens. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
+            "B. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um endpoint. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
+            "C. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 como origem. Crie um acelerador padrão do AWS Global Accelerator que tem o ALB e a distribuição do CloudFront como endpoints. Crie um nome de domínio personalizado que aponte para o nome DNS do acelerador. Use o nome de domínio personalizado como um endpoint para o aplicativo web.",
+            "D. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um endpoint. Crie dois nomes de domínio. Aponte um nome de domínio para o nome DNS do CloudFront para conteúdo dinâmico. Aponte o outro nome de domínio para o nome DNS do acelerador para conteúdo estático. Use os nomes de domínio como endpoints para o aplicativo da web."
         ]
     },
     {
         "numb": 13,
         "question": "Uma empresa realiza manutenção mensal em sua infraestrutura AWS. Durante essas atividades de manutenção, a empresa precisa rotacionar a credenciais para seus bancos de dados Amazon RDS para MySQL em várias regiões da AWS. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configurar segredos Gerente para rotacionar os segredos em um cronograma.",
+        "answer": "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configure o Secrets Manager para rotacionar os segredos em um cronograma.",
         "options": [
-            "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configurar segredos Gerente para rotacionar os segredos em um cronograma.",
-            "B. Armazene as credenciais como segredos no AWS Systems Manager criando um parâmetro de string seguro. Use a replicação secreta multirregional para o Regiões necessárias. Configure o Systems Manager para rotacionar os segredos em uma programação.",
+            "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configure o Secrets Manager para rotacionar os segredos em um cronograma.",
+            "B. Armazene as credenciais como segredos no AWS Systems Manager criando um parâmetro seguro de string. Use a replicação multirregional de segredos para as Regiões necessárias. Configure o Systems Manager para rotacionar os segredos em um cronograma.",
             "C. Armazene as credenciais em um bucket do Amazon S3 que tenha criptografia do lado do servidor (SSE) habilitada. Use o Amazon EventBridge (Amazon CloudWatch Events) para invocar uma função do AWS Lambda para rotacionar as credenciais.",
-            "D. Criptografe as credenciais como segredos usando chaves gerenciadas pelo cliente multirregional do AWS Key Management Service (AWS KMS). Armazene o segredos em uma tabela global do Amazon DynamoDB. Use uma função do AWS Lambda para recuperar os segredos do DynamoDB. Use a API do RDS para gire os segredos."
+            "D. Criptografe as credenciais como segredos usando chaves multirregionais gerenciadas pelo cliente do AWS Key Management Service (AWS KMS). Armazene o segredos em uma tabela global do Amazon DynamoDB. Use uma função do AWS Lambda para recuperar os segredos do DynamoDB. Use a API do RDS para rotacionar os segredos."
         ]
     },
     {
@@ -455,7 +455,7 @@ let questions = [
         "question": "Uma empresa tem um aplicativo local que gera uma grande quantidade de dados sensíveis ao tempo que são armazenados em backup no Amazon S3. O aplicativo cresceu e há reclamações de usuários sobre limitações de largura de banda da Internet. Um arquiteto de soluções precisa projetar uma solução de longo prazo que permite backups oportunos no Amazon S3 e com impacto mínimo na conectividade de internet para usuários internos. Qual solução atende a esses requisitos?",
         "answer": "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
         "options": [
-            "A. Estabeleça conexões VPN da AWS e faça proxy de todo o tráfego por meio de um ponto de extremidade do gateway VPC.",
+            "A. Estabeleça conexões VPN da AWS e faça proxy de todo o tráfego por meio de um endpoint do gateway VPC.",
             "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
             "C. Peça dispositivos AWS Snowball diariamente. Carregue os dados nos dispositivos Snowball e retorne os dispositivos para a AWS todos os dias.",
             "D. Envie um ticket de suporte por meio do AWS Management Console. Solicite a remoção dos limites de serviço do S3 da conta."
@@ -566,8 +566,8 @@ let questions = [
         "answer": "D. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1. Anexe o certificado a APIs do API Gateway. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte um registro A para o nome de domínio da empresa.",
         "options": [
             "A. Crie variáveis ​​de estágio no API Gateway com Name=\"Endpoint-URL\" e Value=\"Company Domain Name\" para substituir o URL padrão. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM).",
-            "B. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte o registro de alias para o ponto de extremidade do estágio Regional API Gateway. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1.",
-            "C. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao Ponto de extremidade do API Gateway. Configure o Route 53 para rotear o tráfego para o ponto de extremidade do API Gateway.",
+            "B. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte o registro de alias para o endpoint do estágio Regional API Gateway. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1.",
+            "C. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
             "D. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1. Anexe o certificado a APIs do API Gateway. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte um registro A para o nome de domínio da empresa."
         ]
     },
@@ -629,12 +629,12 @@ let questions = [
     {
         "numb": 58,
         "question": "Uma empresa está implantando um novo aplicativo web público na AWS. O aplicativo será executado por trás de um Application Load Balancer (ALB). O aplicativo precisa ser criptografado na borda com um certificado SSL/TLS emitido por uma autoridade de certificação externa (CA). O certificado deve ser rotacionado a cada ano antes do certificado expirar. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Gire o certificado manualmente.",
+        "answer": "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Rotacione o certificado manualmente.",
         "options": [
-            "A. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para girar automaticamente o certificado.",
-            "B. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Importe o material da chave do certificado. Aplique o certificado a o ALUse o recurso de renovação gerenciada para girar o certificado automaticamente.",
-            "C. Use a Autoridade de Certificação Privada do AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS da CA raiz. Aplique o certificado a o ALB. Use o recurso de renovação gerenciada para girar o certificado automaticamente.",
-            "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Gire o certificado manualmente."
+            "A. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para rotacionar automaticamente o certificado.",
+            "B. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Importe o material da chave do certificado. Aplique o certificado a o ALUse o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
+            "C. Use a Autoridade de Certificação Privada do AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS da CA raiz. Aplique o certificado a o ALB. Use o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
+            "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Rotacione o certificado manualmente."
         ]
     },
     {
@@ -739,12 +739,12 @@ let questions = [
     {
         "numb": 68,
         "question": "Uma empresa executa um aplicativo de processamento de fotos que precisa carregar e baixar fotos com frequência de buckets do Amazon S3 localizados na mesma região da AWS. Um arquiteto de soluções notou um aumento no custo das taxas de transferência de dados e precisa implementar uma solução para reduzir esses custos. Como o arquiteto de soluções pode atender a esse requisito?",
-        "answer": "D. Implante um ponto de extremidade do gateway S3 VPC na VPC e anexe uma política de ponto de extremidade que permita acesso aos buckets S3.",
+        "answer": "D. Implante um endpoint do gateway S3 VPC na VPC e anexe uma política de endpoint que permita acesso aos buckets S3.",
         "options": [
             "A. Implante o Amazon API Gateway em uma sub-rede pública e ajuste a tabela de rotas para rotear chamadas S3 por meio dela.",
             "B. Implante um gateway NAT em uma sub-rede pública e anexe uma política de endpoint que permita acesso aos buckets S3.",
             "C. Implante o aplicativo em uma sub-rede pública e permita que ele seja roteado por meio de um gateway de internet para acessar os buckets do S3.",
-            "D. Implante um ponto de extremidade do gateway S3 VPC na VPC e anexe uma política de ponto de extremidade que permita acesso aos buckets S3."
+            "D. Implante um endpoint do gateway S3 VPC na VPC e anexe uma política de endpoint que permita acesso aos buckets S3."
         ]
     },
     {
@@ -926,9 +926,9 @@ let questions = [
     {
         "numb": 85,
         "question": "Uma empresa tem aplicativos que rodam em instâncias do Amazon EC2 em uma VPC. Um dos aplicativos precisa chamar a API do Amazon S3 para armazenar e ler objetos. De acordo com os regulamentos de segurança da empresa, nenhum tráfego dos aplicativos tem permissão para viajar pela internet. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Configure um ponto de extremidade do gateway S3.",
+        "answer": "A. Configure um endpoint do gateway S3.",
         "options": [
-            "A. Configure um ponto de extremidade do gateway S3.",
+            "A. Configure um endpoint do gateway S3.",
             "B. Crie um bucket S3 em uma sub-rede privada.",
             "C. Crie um bucket S3 na mesma região da AWS que as instâncias do EC2.",
             "D. Configure um gateway NAT na mesma sub-rede das instâncias do EC2."
