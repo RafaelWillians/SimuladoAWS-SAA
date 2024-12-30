@@ -11,8 +11,13 @@
 			"phil294.git-log--graph",
 			"github.vscode-github-actions",
 			"bierner.github-markdown-preview",
-			"ritwickdey.LiveServer"
-		]
+			"ritwickdey.LiveServer",
+			"GitHub.copilot"
+		],
+		"settings": {
+            "editor.wordWrap": "wordWrapColumn",
+            "editor.wordWrapColumn": 100
+        }
 	  }
 	},	
 	"postCreateCommand": "chmod +x aws-cli-login.sh"
