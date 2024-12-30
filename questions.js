@@ -59,7 +59,7 @@ let questions = [
         "question": "Uma empresa usa NFS para armazenar grandes arquivos de vídeo em armazenamento conectado à rede no local. Cada arquivo de vídeo varia em tamanho de 1 MB a 500 GB. O armazenamento total é de 70 TB e não está mais crescendo. A empresa decide migrar os arquivos de vídeo para o Amazon S3. A empresa deve migrar o arquivos de vídeo o mais rápido possível, usando a menor largura de banda de rede possível. Qual solução atenderá a esses requisitos?",
         "answer": "C. Implante um S3 File Gateway no local. Crie um endpoint de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway.",
         "options": [
-            "A. Crie um bucket S3. Crie uma função IAM que tenha permissões para gravar no bucket S3. Use a AWS CLI para copiar todos os arquivos localmente para o bucket S3.",
+            "A. Crie um bucket S3. Crie uma função do IAM que tenha permissões para gravar no bucket S3. Use a AWS CLI para copiar todos os arquivos localmente para o bucket S3.",
             "B. Crie uma tarefa do AWS Snowball Edge. Receba um dispositivo Snowball Edge no local. Use o cliente Snowball Edge para transferir dados para o dispositivo. Retorne o dispositivo para que a AWS possa importar os dados para o Amazon S3.",
             "C. Implante um S3 File Gateway no local. Crie um endpoint de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway.",
             "D. Configure uma conexão do AWS Direct Connect entre a rede local e a AWS. Implante um S3 File Gateway localmente. Crie uma interface virtual pública (VIF) para conectar-se ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway."
@@ -128,7 +128,7 @@ let questions = [
             "A. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 e o ALB como origens. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
             "B. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um endpoint. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
             "C. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 como origem. Crie um acelerador padrão do AWS Global Accelerator que tem o ALB e a distribuição do CloudFront como endpoints. Crie um nome de domínio personalizado que aponte para o nome DNS do acelerador. Use o nome de domínio personalizado como um endpoint para o aplicativo web.",
-            "D. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um endpoint. Crie dois nomes de domínio. Aponte um nome de domínio para o nome DNS do CloudFront para conteúdo dinâmico. Aponte o outro nome de domínio para o nome DNS do acelerador para conteúdo estático. Use os nomes de domínio como endpoints para o aplicativo da web."
+            "D. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um endpoint. Crie dois nomes de domínio. Aponte um nome de domínio para o nome DNS do CloudFront para conteúdo dinâmico. Aponte o outro nome de domínio para o nome DNS do acelerador para conteúdo estático. Use os nomes de domínio como endpoints para o aplicativo web."
         ]
     },
     {
@@ -177,23 +177,23 @@ let questions = [
     },
     {
         "numb": 17,
-        "question": "Uma empresa está implementando um novo aplicativo de negócios. O aplicativo é executado em duas instâncias do Amazon EC2 e usa um bucket do Amazon S3 para armazenamento de documentos. Um arquiteto de soluções precisa garantir que as instâncias do EC2 possam acessar o bucket do S3. O que o arquiteto de soluções deve fazer para atender a esse requisito?",
-        "answer": "A. Crie uma função IAM que conceda acesso ao bucket S3. Anexe a função às instâncias EC2.",
+        "question": "Uma empresa está implementando uma nova aplicação de negócios. A aplicação é executada em duas instâncias do Amazon EC2 e usa um bucket do Amazon S3 para armazenamento de documentos. Um arquiteto de soluções precisa garantir que as instâncias do EC2 possam acessar o bucket do S3. O que o arquiteto de soluções deve fazer para atender a esse requisito?",
+        "answer": "A. Crie uma função do IAM que conceda acesso ao bucket S3. Anexe a função às instâncias EC2.",
         "options": [
-            "A. Crie uma função IAM que conceda acesso ao bucket S3. Anexe a função às instâncias EC2.",
+            "A. Crie uma função do IAM que conceda acesso ao bucket S3. Anexe a função às instâncias EC2.",
             "B. Crie uma política do IAM que conceda acesso ao bucket do S3. Anexe a política às instâncias do EC2.",
-            "C. Crie um grupo IAM que conceda acesso ao bucket S3. Anexe o grupo às instâncias EC2.",
-            "D. Crie um usuário IAM que conceda acesso ao bucket S3. Anexe a conta de usuário às instâncias EC2."
+            "C. Crie um grupo do IAM que conceda acesso ao bucket S3. Anexe o grupo às instâncias EC2.",
+            "D. Crie um usuário do IAM que conceda acesso ao bucket S3. Anexe a conta de usuário às instâncias EC2."
         ]
     },
     {
         "numb": 18,
-        "question": "Uma empresa tem um aplicativo da web de três camadas que é implantado na AWS. Os servidores da web são implantados em uma sub-rede pública em uma VPC. O aplicativo servidores e servidores de banco de dados são implantados em sub-redes privadas no mesmo VPC. A empresa implantou um dispositivo de firewall virtual de terceiros do AWS Marketplace em uma VPC de inspeção. O appliance é configurado com uma interface IP que pode aceitar pacotes IP. Um arquiteto de soluções precisa integrar o aplicativo da web com o dispositivo para inspecionar todo o tráfego para o aplicativo antes que ele chegue ao servidor web. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "B. Crie um Application Load Balancer na sub-rede pública da VPC do aplicativo para rotear o tráfego para o dispositivo para inspeção de pacotes.",
+        "question": "Uma empresa tem um aplicativo web de três camadas que é implantado na AWS. Os servidores web são implantados em uma sub-rede pública em uma VPC. Os servidores de aplicativo e servidores de banco de dados estão implantados em sub-redes privadas na mesma VPC. A empresa implantou um dispositivo de firewall virtual de terceiros do AWS Marketplace em uma VPC de inspeção. O dispositivo é configurado com uma interface IP que pode aceitar pacotes IP. Um arquiteto de soluções precisa integrar o aplicativo web com o dispositivo para inspecionar todo o tráfego para o aplicativo antes que ele chegue ao servidor web. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "answer": "D. Implante um Gateway Load Balancer na VPC de inspeção. Crie um endpoint do Gateway Load Balancer para receber os pacotes de entrada e encaminhar os pacotes para o dispositivo.",
         "options": [
-            "A. Crie um balanceador de carga de rede na sub-rede pública da VPC do aplicativo para rotear o tráfego para o dispositivo para inspeção de pacotes.",
+            "A. Crie um Network Load Balancer na sub-rede pública da VPC do aplicativo para rotear o tráfego para o dispositivo para inspeção de pacotes.",
             "B. Crie um Application Load Balancer na sub-rede pública da VPC do aplicativo para rotear o tráfego para o dispositivo para inspeção de pacotes.",
-            "C. Implante um gateway de trânsito nas tabelas de rotas do VPConfigure de inspeção para rotear os pacotes de entrada pelo gateway de trânsito.",
+            "C. Implante um Transit Gateway na VPC de inspeção. Configure tabelas de rotas para rotear os pacotes de entrada pelo Transit Gateway.",
             "D. Implante um Gateway Load Balancer na VPC de inspeção. Crie um endpoint do Gateway Load Balancer para receber os pacotes de entrada e encaminhar os pacotes para o dispositivo."
         ]
     },
@@ -277,10 +277,10 @@ let questions = [
     {
         "numb": 26,
         "question": "Uma empresa está lançando um novo aplicativo e exibirá métricas de aplicativo em um painel do Amazon CloudWatch. O produto da empresa o gerente precisa acessar este painel periodicamente. O gerente de produto não tem uma conta AWS. Um arquiteto de soluções deve fornecer acesso ao gerente de produto seguindo o princípio do menor privilégio. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Crie um usuário IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
+        "answer": "B. Crie um usuário do IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
         "options": [
             "A. Compartilhe o painel do console do CloudWatch. Insira o endereço de e-mail do gerente de produto e conclua as etapas de compartilhamento. Forneça um link compartilhável do painel para o gerente de produto.",
-            "B. Crie um usuário IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
+            "B. Crie um usuário do IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
             "C. Crie um usuário do IAM para os funcionários da empresa. Anexe a política gerenciada da AWS ViewOnlyAccess ao usuário do IAM. Compartilhe o novo login credenciais com o gerente de produto. Peça ao gerente de produto para navegar até o console do CloudWatch e localizar o painel pelo nome em a seção Painéis.",
             "D. Implante um servidor bastion em uma sub-rede pública. Quando o gerente de produto exigir acesso ao painel, inicie o servidor e compartilhe o RDP credenciais. No servidor bastion, certifique-se de que o navegador esteja configurado para abrir a URL do painel com credenciais AWS armazenadas em cache que tenham permissões apropriadas para visualizar o painel."
         ]
@@ -320,7 +320,7 @@ let questions = [
     },
     {
         "numb": 30,
-        "question": "Uma empresa que hospeda seu aplicativo da web na AWS quer garantir todas as instâncias do Amazon EC2. Instâncias do Amazon RDS DB. e Amazon Redshift clusters são configurados com tags. A empresa quer minimizar o esforço de configurar e operar essa verificação. O que um arquiteto de soluções deve fazer para conseguir isso?",
+        "question": "Uma empresa que hospeda seu aplicativo web na AWS quer garantir todas as instâncias do Amazon EC2. Instâncias do Amazon RDS DB. e Amazon Redshift clusters são configurados com tags. A empresa quer minimizar o esforço de configurar e operar essa verificação. O que um arquiteto de soluções deve fazer para conseguir isso?",
         "answer": "A. Use as regras do AWS Config para definir e detectar recursos que não estão marcados corretamente.",
         "options": [
             "A. Use as regras do AWS Config para definir e detectar recursos que não estão marcados corretamente.",
@@ -364,7 +364,7 @@ let questions = [
     },
     {
         "numb": 34,
-        "question": "Uma empresa está se preparando para lançar um aplicativo da web voltado ao público na Nuvem AWS. A arquitetura consiste em instâncias do Amazon EC2 dentro de um VPC por trás de um Elastic Load Balancer (ELB). Um serviço de terceiros é usado para o DNS. O arquiteto de soluções da empresa deve recomendar um solução para detectar e proteger contra ataques DDoS em larga escala. Qual solução atende a esses requisitos?",
+        "question": "Uma empresa está se preparando para lançar um aplicativo web voltado ao público na Nuvem AWS. A arquitetura consiste em instâncias do Amazon EC2 dentro de um VPC por trás de um Elastic Load Balancer (ELB). Um serviço de terceiros é usado para o DNS. O arquiteto de soluções da empresa deve recomendar um solução para detectar e proteger contra ataques DDoS em larga escala. Qual solução atende a esses requisitos?",
         "answer": "D. Habilite o AWS Shield Advanced e atribua o ELB a ele.",
         "options": [
             "A. Habilite o Amazon GuardDuty na conta.",
@@ -387,10 +387,10 @@ let questions = [
     {
         "numb": 36,
         "question": "Uma empresa lançou recentemente uma variedade de novas cargas de trabalho em instâncias do Amazon EC2 em sua conta AWS. A empresa precisa criar uma estratégia para acessar e administrar as instâncias remotamente e com segurança. A empresa precisa implementar um processo repetível que funcione com AWS nativo serviços e segue o AWS Well-Architected Framework. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "B. Anexe a função IAM apropriada a cada instância existente e nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
+        "answer": "B. Anexe a função do IAM apropriada a cada instância existente e nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
         "options": [
             "A. Use o console serial do EC2 para acessar diretamente a interface do terminal de cada instância para administração.",
-            "B. Anexe a função IAM apropriada a cada instância existente e nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
+            "B. Anexe a função do IAM apropriada a cada instância existente e nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
             "C. Crie um par de chaves SSH administrativas. Carregue a chave pública em cada instância EC2. Implante um bastion host em uma sub-rede pública para fornecer um túnel para administração de cada instância.",
             "D. Estabeleça uma conexão VPN AWS ​​Site-to-Site. Instrua os administradores a usar suas máquinas locais no local para se conectar diretamente ao instâncias usando chaves SSH através do túnel VPN."
         ]
@@ -612,7 +612,7 @@ let questions = [
             "A. Atualize a ACL de rede do ALB para aceitar somente tráfego HTTPS.",
             "B. Crie uma regra que substitua o HTTP na URL por HTTPS.",
             "C. Crie uma regra de ouvinte no ALB para redirecionar o tráfego HTTP para HTTPS.",
-            "D. Substitua o ALB por um balanceador de carga de rede configurado para usar a indicação de nome do servidor (SNI)."
+            "D. Substitua o ALB por um Network Load Balancer configurado para usar a indicação de nome do servidor (SNI)."
         ]
     },
     {
@@ -705,7 +705,7 @@ let questions = [
     },
     {
         "numb": 65,
-        "question": "Uma empresa está executando um aplicativo da web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 são em um grupo de Auto Scaling. O aplicativo usa um banco de dados Amazon Aurora PostgreSQL que é implantado em uma única Zona de Disponibilidade. O a empresa quer que o aplicativo tenha alta disponibilidade com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
+        "question": "Uma empresa está executando um aplicativo web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 são em um grupo de Auto Scaling. O aplicativo usa um banco de dados Amazon Aurora PostgreSQL que é implantado em uma única Zona de Disponibilidade. O a empresa quer que o aplicativo tenha alta disponibilidade com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
         "answer": "B. Configure o grupo Auto Scaling para usar várias Availability Zones. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
         "options": [
             "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL CrossRegion Replication.",
@@ -871,11 +871,11 @@ let questions = [
     {
         "numb": 80,
         "question": "Uma empresa tem vários servidores web que precisam acessar com frequência uma instância comum do Amazon RDS MySQL Multi-AZ DB. A empresa quer um método seguro para os servidores web se conectarem ao banco de dados, ao mesmo tempo em que atendem a um requisito de segurança para alternar as credenciais do usuário com frequência. Qual solução atende a esses requisitos?",
-        "answer": "A. Armazene as credenciais do usuário do banco de dados no AWS Secrets Manager. Conceda as permissões de IAM necessárias para permitir que os servidores da Web acessem o AWS Gerente de Segredos.",
+        "answer": "A. Armazene as credenciais do usuário do banco de dados no AWS Secrets Manager. Conceda as permissões de IAM necessárias para permitir que os servidor web acessem o AWS Gerente de Segredos.",
         "options": [
-            "A. Armazene as credenciais do usuário do banco de dados no AWS Secrets Manager. Conceda as permissões de IAM necessárias para permitir que os servidores da Web acessem o AWS Gerente de Segredos.",
-            "B. Armazene as credenciais do usuário do banco de dados no AWS Systems Manager OpsCenter. Conceda as permissões de IAM necessárias para permitir que os servidores da web acessar o OpsCenter.",
-            "C. Armazene as credenciais do usuário do banco de dados em um bucket seguro do Amazon S3. Conceda as permissões de IAM necessárias para permitir que os servidores da web recuperar credenciais e acessar o banco de dados.",
+            "A. Armazene as credenciais do usuário do banco de dados no AWS Secrets Manager. Conceda as permissões de IAM necessárias para permitir que os servidor web acessem o AWS Gerente de Segredos.",
+            "B. Armazene as credenciais do usuário do banco de dados no AWS Systems Manager OpsCenter. Conceda as permissões de IAM necessárias para permitir que os servidor web acessar o OpsCenter.",
+            "C. Armazene as credenciais do usuário do banco de dados em um bucket seguro do Amazon S3. Conceda as permissões de IAM necessárias para permitir que os servidor web recuperar credenciais e acessar o banco de dados.",
             "D. Armazene as credenciais do usuário do banco de dados em arquivos criptografados com o AWS Key Management Service (AWS KMS) no sistema de arquivos do servidor web. O servidor web deve ser capaz de descriptografar os arquivos e acessar o banco de dados."
         ]
     },
@@ -991,7 +991,7 @@ let questions = [
     },
     {
         "numb": 91,
-        "question": "Uma empresa de processamento de imagens tem um aplicativo da web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um Amazon S3 bucket. A empresa configurou notificações de eventos S3 para publicar os eventos de criação de objetos em um Amazon Simple Queue Service (Amazon SQS) fila padrão. A fila SQS serve como fonte de eventos para uma função AWS Lambda que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS são invocar a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa de processamento de imagens tem um aplicativo web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um Amazon S3 bucket. A empresa configurou notificações de eventos S3 para publicar os eventos de criação de objetos em um Amazon Simple Queue Service (Amazon SQS) fila padrão. A fila SQS serve como fonte de eventos para uma função AWS Lambda que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS são invocar a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
         "answer": "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
         "options": [
             "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
