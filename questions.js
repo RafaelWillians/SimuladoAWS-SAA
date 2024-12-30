@@ -12,7 +12,7 @@ let questions = [
     },
     {
         "numb": 2,
-        "question": "Uma empresa precisa da capacidade de analisar os arquivos de log de seu aplicativo proprietário. Os logs são armazenados no formato JSON em um bucket do Amazon S3. As consultas serão simples e serão executadas sob demanda. Um arquiteto de soluções precisa executar a análise com alterações mínimas no existente arquitetura. O que o arquiteto de soluções deve fazer para atender a esses requisitos com a MENOR quantidade de sobrecarga operacional?",
+        "question": "Uma empresa precisa da capacidade de analisar os arquivos de log de seu aplicativo proprietário. Os logs são armazenados no formato JSON em um bucket do Amazon S3. As consultas serão simples e serão executadas sob demanda. Um arquiteto de soluções precisa executar a análise com alterações mínimas na arquitetura existente. O que o arquiteto de soluções deve fazer para atender a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "C. Use o Amazon Athena diretamente com o Amazon S3 para executar as consultas conforme necessário.",
         "options": [
             "A. Use o Amazon Redshift para carregar todo o conteúdo em um só lugar e executar as consultas SQL conforme necessário.",
@@ -23,24 +23,24 @@ let questions = [
     },
     {
         "numb": 3,
-        "question": "Uma empresa usa o AWS Organizations para gerenciar várias contas AWS para diferentes departamentos. A conta de gerenciamento tem um Amazon S3 bucket que contém relatórios de projeto. A empresa quer limitar o acesso a este bucket S3 somente para usuários de contas dentro da organização em Organizações da AWS. Qual solução atende a esses requisitos com a MENOR quantidade de sobrecarga operacional?",
+        "question": "Uma empresa usa o AWS Organizations para gerenciar várias contas AWS para diferentes departamentos. A conta de gerenciamento tem um bucket do Amazon S3 que contém relatórios de projeto. A empresa quer limitar o acesso a este bucket do S3 somente para usuários de contas dentro da organização no AWS Organizations. Qual solução atende a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "A. Adicione a chave de condição global aws PrincipalOrgID com uma referência ao ID da organização à política de bucket do S3.",
         "options": [
-            "A. Adicione a chave de condição global aws PrincipalOrgID com uma referência ao ID da organização à política de bucket do S3.",
-            "B. Crie uma unidade organizacional (OU) para cada departamento. Adicione a chave de condição global aws:PrincipalOrgPaths à política de bucket do S3.",
-            "C. Use o AWS CloudTrail para monitorar CreateAccount, InviteAccountToOrganization, LeaveOrganization e RemoveAccountFromOrganization eventos. Atualize a política do bucket S3 adequadamente.",
-            "D. Marque cada usuário que precisa de acesso ao bucket do S3. Adicione a chave de condição global aws:PrincipalTag à política do bucket do S3."
+            "A. Adicione a chave de condição global aws:PrincipalOrgID com uma referência ao ID da organização à política de bucket do S3.",
+            "B. Crie uma unidade organizacional (UO) para cada departamento. Adicione a chave de condição global aws:PrincipalOrgPaths à política de bucket do S3.",
+            "C. Use o AWS CloudTrail para monitorar os eventos CreateAccount, InviteAccountToOrganization, LeaveOrganization e RemoveAccountFromOrganization. Atualize a política do bucket do S3 adequadamente.",
+            "D. Aplique tags em cada usuário que precisa de acesso ao bucket do S3. Adicione a chave de condição global aws:PrincipalTag à política do bucket do S3."
         ]
     },
     {
         "numb": 4,
-        "question": "Um aplicativo é executado em uma instância do Amazon EC2 em uma VPC. O aplicativo processa logs que são armazenados em um bucket do Amazon S3. O EC2 a instância precisa acessar o bucket S3 sem conectividade com a internet. Qual solução fornecerá conectividade de rede privada ao Amazon S3?",
-        "answer": "A. Crie um ponto de extremidade VPC de gateway para o bucket S3.",
+        "question": "Um aplicativo é executado em uma instância do Amazon EC2 em uma VPC. O aplicativo processa logs que são armazenados em um bucket do Amazon S3. A instância EC2 precisa acessar o bucket S3 sem conectividade com a internet. Qual solução fornecerá conectividade de rede privada ao Amazon S3?",
+        "answer": "A. Crie um endpoint de gateway da VPC para o bucket S3.",
         "options": [
-            "A. Crie um ponto de extremidade VPC de gateway para o bucket S3.",
+            "A. Crie um endpoint de gateway da VPC para o bucket S3.",
             "B. Transmita os logs para o Amazon CloudWatch Logs. Exporte os logs para o bucket S3.",
             "C. Crie um perfil de instância no Amazon EC2 para permitir acesso ao S3.",
-            "D. Crie uma API do Amazon API Gateway com um link privado para acessar o endpoint S3."
+            "D. Crie uma API do Amazon API Gateway com um link privado para acessar o endpoint do S3."
         ]
     },
     {
