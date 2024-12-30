@@ -2,12 +2,12 @@ let questions = [
     {
         "numb": 1,
         "question": "Uma empresa coleta dados de temperatura, umidade e pressão atmosférica em cidades de vários continentes. O volume médio de dados que a empresa coleta de cada site diariamente é de 500 GB. Cada site tem uma conexão de Internet de alta velocidade. A empresa quer agregar os dados de todos esses sites globais o mais rápido possível em um único bucket do Amazon S3. A solução deve minimizar a complexidade operacional. Qual solução atende a esses requisitos?",
-        "answer": "A. Ative o S3 Transfer Acceleration no bucket S3 de destino. Use multipart uploads para carregar dados do site diretamente para o S3 de destino balde.",
+        "answer": "A. Ative o S3 Transfer Acceleration no bucket S3 de destino. Use uploads multipart para carregar dados do site diretamente para o bucket S3 de destino.",
         "options": [
-            "A. Ative o S3 Transfer Acceleration no bucket S3 de destino. Use multipart uploads para carregar dados do site diretamente para o S3 de destino balde.",
-            "B. Carregue os dados de cada site para um bucket S3 na região mais próxima. Use a replicação entre regiões S3 para copiar objetos para o S3 de destino bucket. Em seguida, remova os dados do bucket S3 de origem.",
-            "C. Agende tarefas de dispositivo AWS Snowball Edge Storage Optimized diariamente para transferir dados de cada site para a região mais próxima. Use o S3 CrossRegion Replication para copiar objetos para o bucket S3 de destino.",
-            "D. Carregue os dados de cada site para uma instância do Amazon EC2 na região mais próxima. Armazene os dados em um Amazon Elastic Block Store (Amazon EBS). Em intervalos regulares, faça um snapshot do EBS e copie-o para a região que contém o bucket S3 de destino. Restaure o EBS volume naquela Região."
+            "A. Ative o S3 Transfer Acceleration no bucket S3 de destino. Use uploads multipart para carregar dados do site diretamente para o bucket S3 de destino.",
+            "B. Carregue os dados de cada site para um bucket S3 na região mais próxima. Use o S3 Cross-Region Replication (replicação entre regiões) para copiar objetos para o bucket S3 de destino . Em seguida, remova os dados do bucket S3 de origem.",
+            "C. Agende tarefas de dispositivo AWS Snowball Edge Storage Optimized diariamente para transferir dados de cada site para a região mais próxima. Use o S3 Cross-Region Replication (replicação entre regiões) para copiar objetos para o bucket S3 de destino.",
+            "D. Carregue os dados de cada site para uma instância do Amazon EC2 na região mais próxima. Armazene os dados em um Amazon Elastic Block Store (Amazon EBS). Em intervalos regulares, faça um snapshot do EBS e copie-o para a região que contém o bucket S3 de destino. Restaure o volume EBS naquela Região."
         ]
     },
     {
