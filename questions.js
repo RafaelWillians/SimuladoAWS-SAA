@@ -57,7 +57,7 @@ let questions = [
     {
         "numb": 6,
         "question": "Uma empresa usa NFS para armazenar grandes arquivos de vídeo em armazenamento conectado à rede no local. Cada arquivo de vídeo varia em tamanho de 1 MB a 500 GB. O armazenamento total é de 70 TB e não está mais crescendo. A empresa decide migrar os arquivos de vídeo para o Amazon S3. A empresa deve migrar o arquivos de vídeo o mais rápido possível, usando a menor largura de banda de rede possível. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Implante um S3 File Gateway no local. Crie um endpoint de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o S3 File Gateway.",
+        "answer": "B. Crie uma tarefa do AWS Snowball Edge. Receba um dispositivo Snowball Edge no local. Use o cliente Snowball Edge para transferir dados para o dispositivo. Retorne o dispositivo para que a AWS possa importar os dados para o Amazon S3.",
         "options": [
             "A. Crie um bucket S3. Crie uma função do IAM que tenha permissões para gravar no bucket S3. Use a AWS CLI para copiar todos os arquivos localmente para o bucket S3.",
             "B. Crie uma tarefa do AWS Snowball Edge. Receba um dispositivo Snowball Edge no local. Use o cliente Snowball Edge para transferir dados para o dispositivo. Retorne o dispositivo para que a AWS possa importar os dados para o Amazon S3.",
@@ -68,7 +68,7 @@ let questions = [
     {
         "numb": 7,
         "question": "Uma empresa tem um aplicativo que ingere mensagens recebidas. Em seguida, dezenas de outros aplicativos e microsserviços consomem rapidamente essas mensagens. O número de mensagens varia drasticamente e às vezes aumenta repentinamente para 100.000 a cada segundo. A empresa quer desacoplar a solução e aumentar a escalabilidade. Qual solução atende a esses requisitos?",
-        "answer": "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure as aplicações consumidoras para ler e processar as mensagens.",
+        "answer": "D. Publique as mensagens em um tópico do Amazon Simple Notification Service (Amazon SNS), com várias assinaturas do Amazon Simple Queue Service (Amazon Assinaturas SQS). Configure as aplicações consumidoras para processar as mensagens das filas.",
         "options": [
             "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure as aplicações consumidoras para ler e processar as mensagens.",
             "B. Implante a aplicação de ingestão em instâncias do Amazon EC2 em um grupo de Auto Scaling, para dimensionar o número de instâncias do EC2 com base nas métricas de CPU.",
@@ -79,7 +79,7 @@ let questions = [
     {
         "numb": 8,
         "question": "Uma empresa está migrando um aplicativo distribuído para a AWS. O aplicativo atende cargas de trabalho variáveis. A plataforma legada consiste em um primário servidor que coordena tarefas em vários nós de computação. A empresa quer modernizar o aplicativo com uma solução que maximize resiliência e escalabilidade. Como um arquiteto de soluções deve projetar a arquitetura para atender a esses requisitos?",
-        "answer": "C. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configurar AWS CloudTrail como destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no servidor primário.",
+        "answer": "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com o Amazon Instâncias do EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
         "options": [
             "A. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com Instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling para usar o dimensionamento programado.",
             "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com o Amazon Instâncias do EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
