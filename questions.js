@@ -89,24 +89,24 @@ let questions = [
     },
     {
         "numb": 9,
-        "question": "Uma empresa está executando um servidor de arquivos SMB em seu data center. O servidor de arquivos armazena arquivos grandes que são acessados ​​com frequência nos primeiros dias após os arquivos são criados. Após 7 dias os arquivos raramente são acessados. O tamanho total dos dados está aumentando e está próximo da capacidade total de armazenamento da empresa. Um arquiteto de soluções deve aumentar a capacidade disponível da empresa espaço de armazenamento sem perder o acesso de baixa latência aos arquivos acessados ​​mais recentemente. O arquiteto de soluções também deve fornecer ciclo de vida do arquivo gerenciamento para evitar problemas futuros de armazenamento. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Instale um utilitário no computador de cada usuário para acessar o Amazon S3. Crie uma política de ciclo de vida do S3 para fazer a transição dos dados para o S3 Glacier Flexible Recuperação após 7 dias.",
+        "question": "Uma empresa está executando um servidor de arquivos SMB em seu data center. O servidor de arquivos armazena arquivos grandes que são acessados ​​com frequência nos primeiros dias após os arquivos são criados. Após 7 dias, os arquivos raramente são acessados. O tamanho total dos dados está aumentando e está próximo da capacidade total de armazenamento da empresa. Um arquiteto de soluções deve aumentar a capacidade disponível da empresa espaço de armazenamento sem perder o acesso de baixa latência aos arquivos acessados ​​mais recentemente. O arquiteto de soluções também deve fornecer ciclo de vida do arquivo gerenciamento para evitar problemas futuros de armazenamento. Qual solução atenderá a esses requisitos?",
+        "answer": "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política de ciclo de vida S3 para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
         "options": [
             "A. Use o AWS DataSync para copiar dados com mais de 7 dias do servidor de arquivos SMB para a AWS.",
-            "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política de ciclo de vida S3 para fazer a transição dos dados para o S3 Glacier Arquivo profundo após 7 dias.",
-            "C. Crie um sistema de arquivos Amazon FSx for Windows File Server para ampliar o espaço de armazenamento da empresa.",
-            "D. Instale um utilitário no computador de cada usuário para acessar o Amazon S3. Crie uma política de ciclo de vida do S3 para fazer a transição dos dados para o S3 Glacier Flexible Recuperação após 7 dias."
+            "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política de ciclo de vida S3 para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
+            "C. Crie um sistema de arquivos do Amazon FSx for Windows File Server para ampliar o espaço de armazenamento da empresa.",
+            "D. Instale um utilitário no computador de cada usuário para acessar o Amazon S3. Crie uma política de ciclo de vida do S3 para fazer a transição dos dados para o S3 Glacier Flexible Retrieval após 7 dias."
         ]
     },
     {
         "numb": 10,
-        "question": "Uma empresa está construindo um aplicativo da web de comércio eletrônico na AWS. O aplicativo envia informações sobre novos pedidos para um Amazon API Gateway REST API para processar. A empresa quer garantir que os pedidos sejam processados ​​na ordem em que são recebidos. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Use uma integração de API Gateway para publicar uma mensagem em um tópico do Amazon Simple Notification Service (Amazon SNS) quando o aplicativo recebe um pedido. Assine uma função AWS Lambda ao tópico para executar o processamento.",
+        "question": "Uma empresa está construindo um aplicativo web de e-commerce na AWS. A aplicação envia informações sobre novos pedidos para uma API REST no Amazon API Gateway para processamento. A empresa quer garantir que os pedidos sejam processados ​​na ordem em que são recebidos. Qual solução atenderá a esses requisitos?",
+        "answer": "B. Use uma integração de API Gateway para enviar uma mensagem para uma fila FIFO do Amazon Simple Queue Service (Amazon SQS) quando a aplicação receber um pedido. Configure a fila FIFO do SQS para invocar uma função do AWS Lambda para processamento.",
         "options": [
-            "A. Use uma integração de API Gateway para publicar uma mensagem em um tópico do Amazon Simple Notification Service (Amazon SNS) quando o aplicativo recebe um pedido. Assine uma função AWS Lambda ao tópico para executar o processamento.",
-            "B. Use uma integração de API Gateway para enviar uma mensagem para uma fila FIFO do Amazon Simple Queue Service (Amazon SQS) quando o aplicativo recebe um pedido. Configure a fila FIFO do SQS para invocar uma função do AWS Lambda para processamento.",
-            "C. Use um autorizador do API Gateway para bloquear quaisquer solicitações enquanto o aplicativo processa um pedido.",
-            "D. Use uma integração de API Gateway para enviar uma mensagem para uma fila padrão do Amazon Simple Queue Service (Amazon SQS) quando o o aplicativo recebe um pedido. Configure a fila padrão do SQS para invocar uma função do AWS Lambda para processamento."
+            "A. Use uma integração de API Gateway para publicar uma mensagem em um tópico do Amazon Simple Notification Service (Amazon SNS) quando a aplicação receber um pedido. Inscreva uma função AWS Lambda ao tópico para executar o processamento.",
+            "B. Use uma integração de API Gateway para enviar uma mensagem para uma fila FIFO do Amazon Simple Queue Service (Amazon SQS) quando a aplicação receber um pedido. Configure a fila FIFO do SQS para invocar uma função do AWS Lambda para processamento.",
+            "C. Use um autorizador do API Gateway para bloquear quaisquer solicitações enquanto a aplicação processa um pedido.",
+            "D. Use uma integração do API Gateway para enviar uma mensagem para uma fila padrão do Amazon Simple Queue Service (Amazon SQS), quando a aplicação receber um pedido. Configure a fila padrão do SQS para invocar uma função do AWS Lambda para processamento."
         ]
     },
     {
@@ -1080,12 +1080,12 @@ let questions = [
     {
         "numb": 99,
         "question": "Uma empresa tem um site de vendas de automóveis que armazena suas listagens em um banco de dados no Amazon RDS. Quando um automóvel é vendido, a listagem precisa para serem removidos do site e os dados devem ser enviados para vários sistemas de destino. Qual design um arquiteto de soluções deve recomendar?",
-        "answer": "C. Assine uma notificação de evento RDS e envie uma fila do Amazon Simple Queue Service (Amazon SQS) distribuída para vários Amazon Tópicos do Simple Notification Service (Amazon SNS). Use funções do AWS Lambda para atualizar os alvos.",
+        "answer": "C. Inscreva uma notificação de evento RDS e envie uma fila do Amazon Simple Queue Service (Amazon SQS) distribuída para vários Amazon Tópicos do Simple Notification Service (Amazon SNS). Use funções do AWS Lambda para atualizar os alvos.",
         "options": [
             "A. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
             "B. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila FIFO do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
-            "C. Assine uma notificação de evento RDS e envie uma fila do Amazon Simple Queue Service (Amazon SQS) distribuída para vários Amazon Tópicos do Simple Notification Service (Amazon SNS). Use funções do AWS Lambda para atualizar os alvos.",
-            "D. Assine uma notificação de evento RDS e envie um tópico do Amazon Simple Notification Service (Amazon SNS) distribuído para vários Amazon Filas do Simple Queue Service (Amazon SQS). Use funções do AWS Lambda para atualizar os alvos."
+            "C. Inscreva uma notificação de evento RDS e envie uma fila do Amazon Simple Queue Service (Amazon SQS) distribuída para vários Amazon Tópicos do Simple Notification Service (Amazon SNS). Use funções do AWS Lambda para atualizar os alvos.",
+            "D. Inscreva uma notificação de evento RDS e envie um tópico do Amazon Simple Notification Service (Amazon SNS) distribuído para vários Amazon Filas do Simple Queue Service (Amazon SQS). Use funções do AWS Lambda para atualizar os alvos."
         ]
     },
     {
