@@ -71,7 +71,7 @@ let questions = [
         "answer": "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure as aplicações consumidoras para ler e processar as mensagens.",
         "options": [
             "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure as aplicações consumidoras para ler e processar as mensagens.",
-            "B. Implante a aplicação de ingestão em instâncias do Amazon EC2 em um grupo de dimensionamento automático, para dimensionar o número de instâncias do EC2 com base nas métricas de CPU.",
+            "B. Implante a aplicação de ingestão em instâncias do Amazon EC2 em um grupo de Auto Scaling, para dimensionar o número de instâncias do EC2 com base nas métricas de CPU.",
             "C. Escreva as mensagens no Amazon Kinesis Data Streams com um único fragmento. Use uma função AWS Lambda para pré-processar mensagens e armazená-las no Amazon DynamoDB. Configure as aplicações consumidoras para ler do DynamoDB para processar as mensagens.",
             "D. Publique as mensagens em um tópico do Amazon Simple Notification Service (Amazon SNS), com várias assinaturas do Amazon Simple Queue Service (Amazon Assinaturas SQS). Configure as aplicações consumidoras para processar as mensagens das filas."
         ]
@@ -144,18 +144,18 @@ let questions = [
     },
     {
         "numb": 14,
-        "question": "Uma empresa executa um aplicativo de comércio eletrônico em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias são executadas em um Amazon EC2 Grupo de dimensionamento automático em várias zonas de disponibilidade. O grupo de dimensionamento automático é dimensionado com base nas métricas de utilização da CPU. O e-commerce O aplicativo armazena os dados da transação em um banco de dados MySQL 8.0 hospedado em uma grande instância do EC2. O desempenho do banco de dados degrada rapidamente conforme a carga do aplicativo aumenta. O aplicativo manipula mais solicitações de leitura do que transações de gravação. A empresa quer uma solução que dimensione automaticamente o banco de dados para atender à demanda de cargas de trabalho de leitura imprevisíveis, mantendo alta disponibilidade. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa executa um aplicativo de e-commerce em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias são executadas em um grupo do Amazon EC2 Auto Scaling em várias zonas de disponibilidade. O grupo de Auto Scaling é dimensionado com base nas métricas de utilização da CPU. O aplicativo de e-commerce armazena os dados da transação em um banco de dados MySQL 8.0 hospedado em uma grande instância do EC2. O desempenho do banco de dados degrada rapidamente conforme a carga do aplicativo aumenta. O aplicativo manipula mais solicitações de leitura do que transações de gravação. A empresa quer uma solução que dimensione automaticamente o banco de dados para atender à demanda de cargas de trabalho de leitura imprevisíveis, mantendo alta disponibilidade. Qual solução atenderá a esses requisitos?",
         "answer": "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com Aurora Replicas.",
         "options": [
             "A. Use o Amazon Redshift com um único nó para funcionalidade de liderança e computação.",
-            "B. Use o Amazon RDS com uma implantação Single-AZ Configure o Amazon RDS para adicionar instâncias de leitor em uma Zona de Disponibilidade diferente.",
+            "B. Use o Amazon RDS com uma implantação Single-AZ. Configure o Amazon RDS para adicionar instâncias de leitor em uma Zona de Disponibilidade diferente.",
             "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com Aurora Replicas.",
             "D. Use o Amazon ElastiCache para Memcached com instâncias Spot do EC2."
         ]
     },
     {
         "numb": 15,
-        "question": "Uma empresa migrou recentemente para a AWS e quer implementar uma solução para proteger o tráfego que flui para dentro e para fora da VPC de produção. a empresa tinha um servidor de inspeção em seu data center local. O servidor de inspeção executava operações específicas, como fluxo de tráfego inspeção e filtragem de tráfego. A empresa quer ter as mesmas funcionalidades na Nuvem AWS. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa migrou recentemente para a AWS e quer implementar uma solução para proteger o tráfego que flui para dentro e para fora da VPC de produção. A empresa tinha um servidor de inspeção em seu data center local. O servidor de inspeção executava operações específicas, como fluxo de tráfego inspeção e filtragem de tráfego. A empresa quer ter as mesmas funcionalidades na nuvem AWS. Qual solução atenderá a esses requisitos?",
         "answer": "C. Use o AWS Network Firewall para criar as regras necessárias para inspeção e filtragem de tráfego para a VPC de produção.",
         "options": [
             "A. Use o Amazon GuardDuty para inspeção e filtragem de tráfego na VPC de produção.",
@@ -166,13 +166,13 @@ let questions = [
     },
     {
         "numb": 16,
-        "question": "Uma empresa hospeda um data lake na AWS. O data lake consiste em dados no Amazon S3 e Amazon RDS para PostgreSQL. A empresa precisa de um solução de relatórios que fornece visualização de dados e inclui todas as fontes de dados dentro do data lake. Somente a equipe de gestão da empresa deve ter acesso total a todas as visualizações. O resto da empresa deve ter apenas acesso limitado. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Crie uma tabela e um crawler do AWS Glue para os dados no Amazon S3. Use o Amazon Athena Federated Query para acessar dados no Amazon RDS para PostgreSQL. Gere relatórios usando o Amazon Athena. Publique os relatórios no Amazon S3. Use as políticas de bucket do S3 para limitar o acesso ao relatórios.",
+        "question": "Uma empresa hospeda um data lake na AWS. O data lake consiste em dados no Amazon S3 e Amazon RDS para PostgreSQL. A empresa precisa de um solução de relatórios que forneça visualização de dados e inclua todas as fontes de dados dentro do data lake. Somente a equipe de gestão da empresa deverá ter acesso total a todas as visualizações. O restante da empresa deve ter apenas acesso limitado. Qual solução atenderá a esses requisitos?",
+        "answer": "D. Crie uma tabela e um crawler do AWS Glue para os dados no Amazon S3. Use o Amazon Athena Federated Query para acessar dados no Amazon RDS para PostgreSQL. Gere relatórios usando o Amazon Athena. Publique os relatórios no Amazon S3. Use as políticas de bucket do S3 para limitar o acesso aos relatórios.",
         "options": [
             "A. Crie uma análise no Amazon QuickSight. Conecte todas as fontes de dados e crie novos conjuntos de dados. Publique painéis para visualizar os dados. Compartilhe os painéis com as funções de IAM apropriadas.",
             "B. Crie uma análise no Amazon QuickSight. Conecte todas as fontes de dados e crie novos conjuntos de dados. Publique painéis para visualizar os dados. Compartilhe os painéis com os usuários e grupos apropriados.",
-            "C. Crie uma tabela e um rastreador do AWS Glue para os dados no Amazon S3. Crie um trabalho de extração, transformação e carregamento (ETL) do AWS Glue para produzir relatórios. Publique os relatórios no Amazon S3. Use as políticas de bucket do S3 para limitar o acesso aos relatórios.",
-            "D. Crie uma tabela e um crawler do AWS Glue para os dados no Amazon S3. Use o Amazon Athena Federated Query para acessar dados no Amazon RDS para PostgreSQL. Gere relatórios usando o Amazon Athena. Publique os relatórios no Amazon S3. Use as políticas de bucket do S3 para limitar o acesso ao relatórios."
+            "C. Crie uma tabela e um crawler do AWS Glue para os dados no Amazon S3. Crie um trabalho de extração, transformação e carregamento (ETL) do AWS Glue para produzir relatórios. Publique os relatórios no Amazon S3. Use as políticas de bucket do S3 para limitar o acesso aos relatórios.",
+            "D. Crie uma tabela e um crawler do AWS Glue para os dados no Amazon S3. Use o Amazon Athena Federated Query para acessar dados no Amazon RDS para PostgreSQL. Gere relatórios usando o Amazon Athena. Publique os relatórios no Amazon S3. Use as políticas de bucket do S3 para limitar o acesso aos relatórios."
         ]
     },
     {
@@ -210,7 +210,7 @@ let questions = [
     },
     {
         "numb": 20,
-        "question": "Uma empresa de comércio eletrônico quer lançar um site de uma oferta por dia na AWS. Cada dia apresentará exatamente um produto em promoção por um período de 24 horas. A empresa quer ser capaz de lidar com milhões de solicitações a cada hora com latência de milissegundos durante os horários de pico. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa de e-commerce quer lançar um site de uma oferta por dia na AWS. Cada dia apresentará exatamente um produto em promoção por um período de 24 horas. A empresa quer ser capaz de lidar com milhões de solicitações a cada hora com latência de milissegundos durante os horários de pico. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "D. Use um bucket do Amazon S3 para hospedar o conteúdo estático do site. Implante uma distribuição do Amazon CloudFront. Defina o bucket do S3 como a origem. Use as funções Amazon API Gateway e AWS Lambda para as APIs de backend. Armazene os dados no Amazon DynamoDB.",
         "options": [
             "A. Use o Amazon S3 para hospedar o site completo em diferentes buckets do S3. Adicione distribuições do Amazon CloudFront. Defina os buckets do S3 como origens para o distribuições. Armazene os dados do pedido no Amazon S3.",
@@ -599,7 +599,7 @@ let questions = [
         "answer": "D. Colete os dados do Amazon Kinesis Data Streams. Use o Amazon Kinesis Data Firehose para transmitir os dados para um data lake do Amazon S3. Carregue os dados no Amazon Redshift para análise.",
         "options": [
             "A. Projete um AWS Data Pipeline para arquivar os dados em um bucket do Amazon S3 e executar um cluster do Amazon EMR com os dados para gerar analítica.",
-            "B. Crie um grupo de dimensionamento automático de instâncias do Amazon EC2 para processar os dados e enviá-los para um data lake do Amazon S3 para o Amazon Redshift usar para análise.",
+            "B. Crie um grupo de Auto Scaling de instâncias do Amazon EC2 para processar os dados e enviá-los para um data lake do Amazon S3 para o Amazon Redshift usar para análise.",
             "C. Armazene os dados em cache no Amazon CloudFront. Armazene os dados em um bucket do Amazon S3. Quando um objeto é adicionado ao bucket do S3, execute um AWS Função lambda para processar os dados para análise.",
             "D. Colete os dados do Amazon Kinesis Data Streams. Use o Amazon Kinesis Data Firehose para transmitir os dados para um data lake do Amazon S3. Carregue os dados no Amazon Redshift para análise."
         ]
@@ -816,12 +816,12 @@ let questions = [
     {
         "numb": 75,
         "question": "Um arquiteto de soluções está projetando a arquitetura de nuvem para um novo aplicativo que está sendo implantado na AWS. O processo deve ser executado em paralelo enquanto adicionando e removendo nós de aplicativo conforme necessário com base no número de trabalhos a serem processados. O aplicativo do processador é sem estado. O O arquiteto de soluções deve garantir que o aplicativo esteja fracamente acoplado e que os itens de trabalho sejam armazenados de forma durável. Qual design o arquiteto de soluções deve usar?",
-        "answer": "C. Crie uma fila do Amazon SQS para armazenar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie um modelo de inicialização que use a AMI. Crie um grupo de dimensionamento automático usando o modelo de inicialização. Defina o dimensionamento política para o grupo de dimensionamento automático para adicionar e remover nós com base no número de itens na fila do SQS.",
+        "answer": "C. Crie uma fila do Amazon SQS para armazenar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie um modelo de inicialização que use a AMI. Crie um grupo de Auto Scaling usando o modelo de inicialização. Defina o dimensionamento política para o grupo de Auto Scaling para adicionar e remover nós com base no número de itens na fila do SQS.",
         "options": [
-            "A. Crie um tópico do Amazon SNS para enviar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie uma configuração de inicialização que use a AMI. Crie um grupo de dimensionamento automático usando a configuração de inicialização. Defina o política de dimensionamento para o grupo de dimensionamento automático para adicionar e remover nós com base no uso da CPU.",
-            "B. Crie uma fila do Amazon SQS para armazenar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie uma configuração de inicialização que use a AMI. Crie um grupo de dimensionamento automático usando a configuração de inicialização. Defina o política de dimensionamento para o grupo de dimensionamento automático para adicionar e remover nós com base no uso da rede.",
-            "C. Crie uma fila do Amazon SQS para armazenar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie um modelo de inicialização que use a AMI. Crie um grupo de dimensionamento automático usando o modelo de inicialização. Defina o dimensionamento política para o grupo de dimensionamento automático para adicionar e remover nós com base no número de itens na fila do SQS.",
-            "D. Crie um tópico do Amazon SNS para enviar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste no aplicativo do processador. Crie um modelo de inicialização que use a AMI. Crie um grupo de dimensionamento automático usando o modelo de inicialização. Defina o dimensionamento política para o grupo de dimensionamento automático para adicionar e remover nós com base no número de mensagens publicadas no tópico do SNS."
+            "A. Crie um tópico do Amazon SNS para enviar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie uma configuração de inicialização que use a AMI. Crie um grupo de Auto Scaling usando a configuração de inicialização. Defina o política de dimensionamento para o grupo de Auto Scaling para adicionar e remover nós com base no uso da CPU.",
+            "B. Crie uma fila do Amazon SQS para armazenar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie uma configuração de inicialização que use a AMI. Crie um grupo de Auto Scaling usando a configuração de inicialização. Defina o política de dimensionamento para o grupo de Auto Scaling para adicionar e remover nós com base no uso da rede.",
+            "C. Crie uma fila do Amazon SQS para armazenar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste em aplicativo do processador. Crie um modelo de inicialização que use a AMI. Crie um grupo de Auto Scaling usando o modelo de inicialização. Defina o dimensionamento política para o grupo de Auto Scaling para adicionar e remover nós com base no número de itens na fila do SQS.",
+            "D. Crie um tópico do Amazon SNS para enviar os trabalhos que precisam ser processados. Crie uma Amazon Machine Image (AMI) que consiste no aplicativo do processador. Crie um modelo de inicialização que use a AMI. Crie um grupo de Auto Scaling usando o modelo de inicialização. Defina o dimensionamento política para o grupo de Auto Scaling para adicionar e remover nós com base no número de mensagens publicadas no tópico do SNS."
         ]
     },
     {
@@ -903,7 +903,7 @@ let questions = [
     },
     {
         "numb": 83,
-        "question": "Uma empresa usa o Amazon S3 para armazenar seus documentos confidenciais de auditoria. O bucket do S3 usa políticas de bucket para restringir o acesso ao IAM da equipe de auditoria credenciais do usuário de acordo com o princípio do menor privilégio. Os gerentes da empresa estão preocupados com a exclusão acidental de documentos no S3 balde e deseja uma solução mais segura. O que um arquiteto de soluções deve fazer para proteger os documentos de auditoria?",
+        "question": "Uma empresa usa o Amazon S3 para armazenar seus documentos confidenciais de auditoria. O bucket do S3 usa políticas de bucket para restringir o acesso ao IAM da equipe de auditoria credenciais do usuário de acordo com o princípio do menor privilégio. Os gerentes da empresa estão preocupados com a exclusão acidental de documentos no bucket do S3 e deseja uma solução mais segura. O que um arquiteto de soluções deve fazer para proteger os documentos de auditoria?",
         "answer": "A. Habilite os recursos de controle de versão e exclusão de MFA no bucket do S3.",
         "options": [
             "A. Habilite os recursos de controle de versão e exclusão de MFA no bucket do S3.",
