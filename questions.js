@@ -200,12 +200,12 @@ let questions = [
     {
         "numb": 19,
         "question": "Uma empresa quer melhorar sua capacidade de clonar grandes quantidades de dados de produção em um ambiente de teste na mesma região da AWS. Os dados são armazenados em instâncias do Amazon EC2 em volumes do Amazon Elastic Block Store (Amazon EBS). As modificações nos dados clonados não devem afetar os ambiente de produção. O software que acessa esses dados requer desempenho de E/S consistentemente alto. Um arquiteto de soluções precisa minimizar o tempo necessário para clonar os dados de produção no ambiente de teste. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Tire instantâneos do EBS dos volumes de produção do EBS. Ative o recurso de restauração rápida de instantâneos do EBS nos instantâneos do EBS. Restaure o snapshots em novos volumes EBS. Anexe os novos volumes EBS a instâncias EC2 no ambiente de teste.",
+        "answer": "D. Tire snapshots do EBS dos volumes de produção do EBS. Ative o recurso de restauração rápida de snapshots do EBS nos snapshots do EBS. Restaure o snapshots em novos volumes EBS. Anexe os novos volumes EBS a instâncias EC2 no ambiente de teste.",
         "options": [
             "A. Tire snapshots do EBS dos volumes de produção do EBS. Restaure os snapshots nos volumes de armazenamento de instância do EC2 no ambiente de teste.",
-            "B. Configure os volumes EBS de produção para usar o recurso EBS Multi-Attach. Tire instantâneos do EBS dos volumes EBS de produção. Anexe o volumes de produção do EBS para as instâncias do EC2 no ambiente de teste.",
+            "B. Configure os volumes EBS de produção para usar o recurso EBS Multi-Attach. Tire snapshots do EBS dos volumes EBS de produção. Anexe o volumes de produção do EBS para as instâncias do EC2 no ambiente de teste.",
             "C. Tire snapshots do EBS dos volumes de produção do EBS. Crie e inicialize novos volumes do EBS. Anexe os novos volumes do EBS às instâncias do EC2 no ambiente de teste antes de restaurar os volumes dos snapshots do EBS de produção.",
-            "D. Tire instantâneos do EBS dos volumes de produção do EBS. Ative o recurso de restauração rápida de instantâneos do EBS nos instantâneos do EBS. Restaure o snapshots em novos volumes EBS. Anexe os novos volumes EBS a instâncias EC2 no ambiente de teste."
+            "D. Tire snapshots do EBS dos volumes de produção do EBS. Ative o recurso de restauração rápida de snapshots do EBS nos snapshots do EBS. Restaure o snapshots em novos volumes EBS. Anexe os novos volumes EBS a instâncias EC2 no ambiente de teste."
         ]
     },
     {
@@ -222,12 +222,12 @@ let questions = [
     {
         "numb": 21,
         "question": "Um arquiteto de soluções está usando o Amazon S3 para projetar a arquitetura de armazenamento de um novo aplicativo de mídia digital. Os arquivos de mídia devem ser resilientes a a perda de uma Zona de Disponibilidade. Alguns arquivos são acessados ​​com frequência, enquanto outros raramente são acessados ​​em um padrão imprevisível. As soluções o arquiteto deve minimizar os custos de armazenamento e recuperação dos arquivos de mídia. Qual opção de armazenamento atende a esses requisitos?",
-        "answer": "B. S3 Camadas inteligentes",
+        "answer": "B. S3 Intelligent Tiering",
         "options": [
-            "A. Padrão S3",
-            "B. S3 Camadas inteligentes",
-            "C. S3 Padrão-Acesso Infrequente (S3 Padrão-IA)",
-            "D. S3 Uma Zona-Acesso Infrequente (S3 Uma Zona-IA)"
+            "A. S3 Standard",
+            "B. S3 Intelligent Tiering",
+            "C. S3 Standard-Infrequent Access (S3 Padrão-IA)",
+            "D. S3 One Zone-Infrequent Access (S3 One Zone-IA)"
         ]
     },
     {
@@ -243,8 +243,8 @@ let questions = [
     },
     {
         "numb": 23,
-        "question": "Uma empresa observa um aumento nos custos do Amazon EC2 em sua fatura mais recente. A equipe de cobrança percebe um dimensionamento vertical indesejado de tipos de instância para algumas instâncias do EC2. Um arquiteto de soluções precisa criar um gráfico comparando os últimos 2 meses de custos do EC2 e executar uma análise aprofundada análise para identificar a causa raiz da escala vertical. Como o arquiteto de soluções deve gerar as informações com MENOR sobrecarga operacional?",
-        "answer": "C. Use gráficos do painel de gerenciamento de custos e faturamento da AWS para comparar os custos do EC2 com base nos tipos de instância dos últimos 2 meses.",
+        "question": "Uma empresa observa um aumento nos custos do Amazon EC2 em sua fatura mais recente. A equipe de cobrança percebe um dimensionamento vertical indesejado de tipos de instância para algumas instâncias do EC2. Um arquiteto de soluções precisa criar um gráfico comparando os últimos 2 meses de custos do EC2 e executar uma análise aprofundada para identificar a causa raiz da escala vertical. Como o arquiteto de soluções deve gerar as informações com MENOR sobrecarga operacional?",
+        "answer": "B. Use o recurso de filtragem granular do Cost Explorer para executar uma análise aprofundada dos custos do EC2 com base nos tipos de instância.",
         "options": [
             "A. Use o AWS Budgets para criar um relatório de orçamento e comparar os custos do EC2 com base nos tipos de instância.",
             "B. Use o recurso de filtragem granular do Cost Explorer para executar uma análise aprofundada dos custos do EC2 com base nos tipos de instância.",
@@ -288,7 +288,7 @@ let questions = [
     {
         "numb": 27,
         "question": "Uma empresa está migrando aplicativos para a AWS. Os aplicativos são implantados em contas diferentes. A empresa gerencia as contas centralmente usando AWS Organizations. A equipe de segurança da empresa precisa de uma solução de logon único (SSO) em todas as contas da empresa. A empresa deve continuar gerenciando os usuários e grupos em seu Microsoft Active Directory autogerenciado local. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança de floresta unidirecional ou uma confiança de domínio unidirecional para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
+        "answer": "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie um trust de floresta bidirecional para conectar o self-managed da empresa Microsoft Active Directory com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
         "options": [
             "A. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança de floresta unidirecional ou uma confiança de domínio unidirecional para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
             "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie um trust de floresta bidirecional para conectar o self-managed da empresa Microsoft Active Directory com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
@@ -299,7 +299,7 @@ let questions = [
     {
         "numb": 28,
         "question": "Uma empresa fornece um serviço de Voice over Internet Protocol (VoIP) que usa conexões UDP. O serviço consiste em instâncias do Amazon EC2 que executado em um grupo de Auto Scaling. A empresa tem implantações em várias regiões da AWS. A empresa precisa rotear usuários para a Região com a menor latência. A empresa também precisa de failover automatizado entre Regiões. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Crie um Registro de latência do Amazon Route 53 que aponta para aliases para cada NLB. Crie uma distribuição do Amazon CloudFront que use o registro de latência como uma origem.",
+        "answer": "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o NLB como um ponto final do AWS Global Accelerator em cada região.",
         "options": [
             "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o NLB como um ponto final do AWS Global Accelerator em cada região.",
             "B. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o ALB como um ponto final do AWS Global Accelerator em cada região.",
@@ -342,7 +342,7 @@ let questions = [
     },
     {
         "numb": 32,
-        "question": "Uma empresa executa um aplicativo web de mercado on-line na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. a empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
+        "question": "Uma empresa executa um aplicativo web de marketplace online na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. a empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
         "answer": "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações do Kinesis fluxo de dados.",
         "options": [
             "A. Armazene os dados das transações no Amazon DynamoDB. Configure uma regra no DynamoDB para remover dados confidenciais de cada transação escrever. Use o DynamoDB Streams para compartilhar os dados de transações com outros aplicativos.",
@@ -376,7 +376,7 @@ let questions = [
     {
         "numb": 35,
         "question": "Uma empresa está construindo um aplicativo na Nuvem AWS. O aplicativo armazenará dados em buckets do Amazon S3 em duas regiões da AWS. A empresa deve usar uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS) para criptografar todos os dados armazenados nos buckets do S3. Os dados em ambos os buckets S3 devem ser criptografados e descriptografados com a mesma chave KMS. Os dados e a chave devem ser armazenados em cada uma das duas Regiões. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "C. Crie uma chave KMS gerenciada pelo cliente e um bucket S3 em cada região. Configure os buckets S3 para usar criptografia do lado do servidor com Chaves de criptografia gerenciadas pelo Amazon S3 (SSE-S3). Configure a replicação entre os buckets do S3.",
+        "answer": "B. Crie uma chave KMS multirregional gerenciada pelo cliente. Crie um bucket S3 em cada região. Configure a replicação entre os buckets S3. Configure o aplicativo para usar a chave KMS com criptografia do lado do cliente.",
         "options": [
             "A. Crie um bucket S3 em cada região. Configure os buckets S3 para usar criptografia do lado do servidor com chaves de criptografia gerenciadas pelo Amazon S3 (SSE-S3). Configure a replicação entre os buckets S3.",
             "B. Crie uma chave KMS multirregional gerenciada pelo cliente. Crie um bucket S3 em cada região. Configure a replicação entre os buckets S3. Configure o aplicativo para usar a chave KMS com criptografia do lado do cliente.",
@@ -409,7 +409,7 @@ let questions = [
     {
         "numb": 38,
         "question": "Uma empresa mantém um repositório pesquisável de itens em seu site. Os dados são armazenados em uma tabela de banco de dados Amazon RDS for MySQL que contém mais de 10 milhões de linhas. O banco de dados tem 2 TB de armazenamento SSD de uso geral. Há milhões de atualizações desses dados a cada dia através do site da empresa. A empresa notou que algumas operações de inserção estão demorando 10 segundos ou mais. A empresa determinou que o armazenamento do banco de dados o desempenho é o problema. Qual solução aborda esse problema de desempenho?",
-        "answer": "B. Altere a instância do banco de dados para uma classe de instância com memória otimizada.",
+        "answer": "A. Altere o tipo de armazenamento para SSD IOPS provisionado.",
         "options": [
             "A. Altere o tipo de armazenamento para SSD IOPS provisionado.",
             "B. Altere a instância do banco de dados para uma classe de instância com memória otimizada.",
@@ -419,12 +419,12 @@ let questions = [
     },
     {
         "numb": 39,
-        "question": "Uma empresa tem milhares de dispositivos de ponta que coletivamente geram 1 TB de alertas de status por dia. Cada alerta tem aproximadamente 2 KB de tamanho. O arquiteto de soluções precisa implementar uma solução para ingerir e armazenar os alertas para análise futura. A empresa quer uma solução altamente disponível. No entanto, a empresa precisa minimizar custos e não quer gerenciar custos adicionais infraestrutura. Além disso, a empresa quer manter 14 dias de dados disponíveis para análise imediata e arquivar quaisquer dados com mais de 14 dias. Qual é a solução operacional MAIS eficiente que atende a esses requisitos?",
+        "question": "Uma empresa tem milhares de dispositivos de borda que coletivamente geram 1 TB de alertas de status por dia. Cada alerta tem aproximadamente 2 KB de tamanho. O arquiteto de soluções precisa implementar uma solução para ingerir e armazenar os alertas para análise futura. A empresa quer uma solução altamente disponível. No entanto, a empresa precisa minimizar custos e não quer gerenciar custos adicionais infraestrutura. Além disso, a empresa quer manter 14 dias de dados disponíveis para análise imediata e arquivar quaisquer dados com mais de 14 dias. Qual é a solução operacional MAIS eficiente que atende a esses requisitos?",
         "answer": "A. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
         "options": [
             "A. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
             "B. Inicie instâncias do Amazon EC2 em duas Availability Zones e coloque-as atrás de um Elastic Load Balancer para ingerir os alertas. Crie um script nas instâncias do EC2 que armazenarão os alertas em um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para Amazon S3 Glacier após 14 dias.",
-            "C. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas. alertas para um cluster do Amazon OpenSearch Service (Amazon Elasticsearch Service). Configure o Amazon OpenSearch Service (Amazon Cluster do Elasticsearch Service) para tirar instantâneos manuais todos os dias e excluir dados do cluster com mais de 14 dias.",
+            "C. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas. alertas para um cluster do Amazon OpenSearch Service (Amazon Elasticsearch Service). Configure o Amazon OpenSearch Service (Amazon Cluster do Elasticsearch Service) para tirar snapshots manuais todos os dias e excluir dados do cluster com mais de 14 dias.",
             "D. Crie uma fila padrão do Amazon Simple Queue Service (Amazon SQS) para ingerir os alertas e defina o período de retenção de mensagens para 14 dias. Configure os consumidores para pesquisar a fila SQS, verificar a idade da mensagem e analisar os dados da mensagem conforme necessário. Se a mensagem for Com 14 dias, o consumidor deve copiar a mensagem para um bucket do Amazon S3 e excluir a mensagem da fila do SQS."
         ]
     },
@@ -485,8 +485,8 @@ let questions = [
     },
     {
         "numb": 45,
-        "question": "O site de uma empresa usa uma loja de instâncias do Amazon EC2 para seu catálogo de itens. A empresa quer ter certeza de que o catálogo é altamente disponível e que o catálogo esteja armazenado em um local durável. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "A. Mova o catálogo para o Amazon ElastiCache para Redis.",
+        "question": "O site de uma empresa usa um armazenamento de instância do Amazon EC2 para seu catálogo de itens. A empresa quer ter certeza de que o catálogo é altamente disponível e que o catálogo esteja armazenado em um local durável. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "D. Mova o catálogo para um sistema de arquivos Amazon Elastic File System (Amazon EFS).",
         "options": [
             "A. Mova o catálogo para o Amazon ElastiCache para Redis.",
             "B. Implante uma instância EC2 maior com um armazenamento de instâncias maior.",
@@ -497,7 +497,7 @@ let questions = [
     {
         "numb": 46,
         "question": "Uma empresa armazena arquivos de transcrição de chamadas mensalmente. Os usuários acessam os arquivos aleatoriamente dentro de 1 ano da chamada, mas os usuários acessam os arquivos raramente após 1 ano. A empresa quer otimizar sua solução dando aos usuários a capacidade de consultar e recuperar arquivos com menos de 1 ano o mais rápido possível. Um atraso na recuperação de arquivos mais antigos é aceitável. Qual solução atenderá a esses requisitos com MAIS eficiência de custos?",
-        "answer": "C. Armazene arquivos individuais com tags no armazenamento Amazon S3 Standard. Armazene metadados de pesquisa para cada arquivo no armazenamento Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Instant Retrieval após 1 ano. Consulte e recupere os arquivos pesquisando metadados do Amazon S3.",
+        "answer": "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Seleção de geleiras.",
         "options": [
             "A. Armazene arquivos individuais com tags no Amazon S3 Glacier Instant Retrieval. Consulte as tags para recuperar os arquivos do S3 Glacier Instant Retrieval.",
             "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Seleção de geleiras.",
@@ -563,7 +563,7 @@ let questions = [
     {
         "numb": 52,
         "question": "Uma empresa registrou seu nome de domínio no Amazon Route 53. A empresa usa o Amazon API Gateway na região ca-central-1 como um domínio público interface para suas APIs de microsserviços de backend. Serviços de terceiros consomem as APIs com segurança. A empresa quer projetar sua URL de API Gateway com o nome de domínio da empresa e o certificado correspondente para que os serviços de terceiros possam usar HTTPS. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1. Anexe o certificado a APIs do API Gateway. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte um registro A para o nome de domínio da empresa.",
+        "answer": "C. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
         "options": [
             "A. Crie variáveis ​​de estágio no API Gateway com Name=\"Endpoint-URL\" e Value=\"Company Domain Name\" para substituir o URL padrão. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM).",
             "B. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte o registro de alias para o endpoint do estágio Regional API Gateway. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1.",
@@ -651,7 +651,7 @@ let questions = [
     {
         "numb": 60,
         "question": "Uma empresa tem mais de 5 TB de dados de arquivo em servidores de arquivo Windows que rodam no local. Usuários e aplicativos interagem com os dados todos os dias. A empresa está movendo suas cargas de trabalho do Windows para a AWS. À medida que a empresa continua esse processo, ela requer acesso à AWS e ao armazenamento de arquivos no local com latência mínima. A empresa precisa de uma solução que minimize a sobrecarga operacional e não exija nenhuma alterações nos padrões de acesso de arquivo existentes. A empresa usa uma conexão AWS Site-to-Site VPN para conectividade com a AWS. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "A. Implante e configure o Amazon FSx for Windows File Server na AWS. Mova os dados do arquivo local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
+        "answer": "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados do arquivo local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway.",
         "options": [
             "A. Implante e configure o Amazon FSx for Windows File Server na AWS. Mova os dados do arquivo local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
             "B. Implante e configure um Amazon S3 File Gateway no local. Mova os dados de arquivo no local para o S3 File Gateway. Reconfigure as cargas de trabalho no local e as cargas de trabalho na nuvem para usar o S3 File Gateway.",
@@ -710,7 +710,7 @@ let questions = [
         "options": [
             "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL CrossRegion Replication.",
             "B. Configure o grupo Auto Scaling para usar várias Availability Zones. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
-            "C. Configure o grupo Auto Scaling para usar uma Availability Zone. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do instantâneos em caso de falha.",
+            "C. Configure o grupo Auto Scaling para usar uma Availability Zone. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do snapshots em caso de falha.",
             "D. Configure o grupo Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use o S3 Event Notificações para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
         ]
     },
@@ -738,7 +738,7 @@ let questions = [
     },
     {
         "numb": 68,
-        "question": "Uma empresa executa um aplicativo de processamento de fotos que precisa carregar e baixar fotos com frequência de buckets do Amazon S3 localizados na mesma região da AWS. Um arquiteto de soluções notou um aumento no custo das taxas de transferência de dados e precisa implementar uma solução para reduzir esses custos. Como o arquiteto de soluções pode atender a esse requisito?",
+        "question": "Uma empresa executa um aplicativo de processamento de fotos que precisa fazer uploads e downloads de fotos com frequência de buckets do Amazon S3 localizados na mesma região da AWS. Um arquiteto de soluções notou um aumento no custo das taxas de transferência de dados e precisa implementar uma solução para reduzir esses custos. Como o arquiteto de soluções pode atender a esse requisito?",
         "answer": "D. Implante um endpoint do gateway S3 VPC na VPC e anexe uma política de endpoint que permita acesso aos buckets S3.",
         "options": [
             "A. Implante o Amazon API Gateway em uma sub-rede pública e ajuste a tabela de rotas para rotear chamadas S3 por meio dela.",
@@ -804,7 +804,7 @@ let questions = [
     },
     {
         "numb": 74,
-        "question": "Uma empresa assinou recentemente um contrato com um parceiro AWS Managed Service Provider (MSP) para obter ajuda com uma iniciativa de migração de aplicativos. O arquiteto de soluções precisa compartilhar uma Amazon Machine Image (AMI) de uma conta AWS existente com a conta AWS do parceiro MSP. A AMI é apoiado pelo Amazon Elastic Block Store (Amazon EBS) e usa uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS) para criptografar Instantâneos de volume do EBS. Qual é a maneira MAIS segura para o arquiteto de soluções compartilhar a AMI com a conta AWS do parceiro MSP?",
+        "question": "Uma empresa assinou recentemente um contrato com um parceiro AWS Managed Service Provider (MSP) para obter ajuda com uma iniciativa de migração de aplicativos. O arquiteto de soluções precisa compartilhar uma Amazon Machine Image (AMI) de uma conta AWS existente com a conta AWS do parceiro MSP. A AMI é apoiado pelo Amazon Elastic Block Store (Amazon EBS) e usa uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS) para criptografar snapshots de volume do EBS. Qual é a maneira MAIS segura para o arquiteto de soluções compartilhar a AMI com a conta AWS do parceiro MSP?",
         "answer": "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir a conta AWS do parceiro MSP para usar a chave.",
         "options": [
             "A. Torne a AMI criptografada e os snapshots publicamente disponíveis. Modifique a política de chave para permitir que a conta AWS do Parceiro MSP use a chave.",
@@ -882,7 +882,7 @@ let questions = [
     {
         "numb": 81,
         "question": "Uma empresa hospeda um aplicativo nas funções AWS Lambda que são invocadas por uma API do Amazon API Gateway. As funções Lambda salvam dados do cliente para um banco de dados Amazon Aurora MySQL. Sempre que a empresa atualiza o banco de dados, as funções Lambda falham em estabelecer conexões de banco de dados até que a atualização seja concluída. O resultado é que os dados do cliente não são registrados para alguns dos eventos. Um arquiteto de soluções precisa projetar uma solução que armazene dados do cliente criados durante atualizações de banco de dados. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Provisione um proxy Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao Proxy RDS.",
+        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazena os dados do cliente no banco de dados.",
         "options": [
             "A. Provisione um proxy Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao Proxy RDS.",
             "B. Aumente o tempo de execução das funções Lambda ao máximo. Crie um mecanismo de repetição no código que armazene os dados do cliente no banco de dados.",
@@ -893,7 +893,7 @@ let questions = [
     {
         "numb": 82,
         "question": "Uma empresa de pesquisa coletou dados por vários anos de áreas nos Estados Unidos. A empresa hospeda os dados em um bucket do Amazon S3 que tem 3 TB de tamanho e está crescendo. A empresa começou a compartilhar os dados com uma empresa de marketing europeia que tem buckets S3. A empresa quer para garantir que seus custos de transferência de dados permaneçam os mais baixos possíveis. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Configure a replicação entre regiões do S3 do bucket S3 da empresa para um dos buckets S3 da empresa de marketing.",
+        "answer": "A. Configure o recurso Pagamento do Solicitante no bucket S3 da empresa.",
         "options": [
             "A. Configure o recurso Pagamento do Solicitante no bucket S3 da empresa.",
             "B. Configure a replicação entre regiões do S3 do bucket S3 da empresa para um dos buckets S3 da empresa de marketing.",
@@ -915,7 +915,7 @@ let questions = [
     {
         "numb": 84,
         "question": "Uma empresa está usando um banco de dados SQL para armazenar dados de filmes que são publicamente acessíveis. O banco de dados é executado em uma instância do Amazon RDS Single-AZ DB. Um script executa consultas em intervalos aleatórios a cada dia para registrar o número de novos filmes que foram adicionados ao banco de dados. O script deve relatar um total final durante o horário comercial. A equipe de desenvolvimento da empresa percebe que o desempenho do banco de dados é inadequado para tarefas de desenvolvimento quando o script está em execução. A O arquiteto de soluções deve recomendar uma solução para resolver esse problema. Qual solução atenderá a esse requisito com a MENOR sobrecarga operacional?",
-        "answer": "D. Use o Amazon ElastiCache para armazenar em cache as consultas comuns que o script executa no banco de dados.",
+        "answer": "B. Crie uma réplica de leitura do banco de dados. Configure o script para consultar somente a réplica de leitura.",
         "options": [
             "A. Modifique a instância do banco de dados para ser uma implantação Multi-AZ.",
             "B. Crie uma réplica de leitura do banco de dados. Configure o script para consultar somente a réplica de leitura.",
@@ -966,18 +966,7 @@ let questions = [
             "C. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com metade dos recursos de computação e armazenamento como o banco de dados de origem.",
             "D. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com os mesmos recursos de computação e armazenamento do banco de dados de origem."
         ]
-    },
-    {
-        "numb": 89,
-        "question": "Um administrador do Amazon EC2 criou a seguinte política associada a um grupo do IAM contendo vários usuários: Qual é o efeito desta política?",
-        "answer": "C. Os usuários podem encerrar uma instância EC2 na região us-east-1 quando o IP de origem do usuário for 10.100.100.254.",
-        "options": [
-            "A. Os usuários podem encerrar uma instância do EC2 em qualquer região da AWS, exceto us-east-1.",
-            "B. Os usuários podem encerrar uma instância do EC2 com o endereço IP 10.100.100.1 na região us-east-1.",
-            "C. Os usuários podem encerrar uma instância EC2 na região us-east-1 quando o IP de origem do usuário for 10.100.100.254.",
-            "D. Os usuários não podem encerrar uma instância EC2 na região us-east-1 quando o IP de origem do usuário for 10.100.100.254."
-        ]
-    },
+    },    
     {
         "numb": 90,
         "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no local que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a Nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
@@ -992,7 +981,7 @@ let questions = [
     {
         "numb": 91,
         "question": "Uma empresa de processamento de imagens tem um aplicativo web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um Amazon S3 bucket. A empresa configurou notificações de eventos S3 para publicar os eventos de criação de objetos em um Amazon Simple Queue Service (Amazon SQS) fila padrão. A fila SQS serve como fonte de eventos para uma função AWS Lambda que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS são invocar a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
-        "answer": "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
+        "answer": "C. Aumente o tempo limite de visibilidade na fila SQS para um valor maior que o total do tempo limite da função e da janela do lote tempo esgotado.",
         "options": [
             "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
             "B. Altere a fila padrão SQS para uma fila FIFO SQS. Use o ID de deduplicação de mensagem para descartar mensagens duplicadas.",
@@ -1014,7 +1003,7 @@ let questions = [
     {
         "numb": 93,
         "question": "O aplicativo em contêiner de uma empresa é executado em uma instância do Amazon EC2. O aplicativo precisa baixar certificados de segurança antes de poder comunicar com outros aplicativos de negócios. A empresa quer uma solução altamente segura para criptografar e descriptografar os certificados em quase real tempo. A solução também precisa armazenar dados em armazenamento altamente disponível após os dados serem criptografados. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "D. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para criptografia operações. Armazene os dados criptografados em volumes do Amazon Elastic Block Store (Amazon EBS).",
+        "answer": "C. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para criptografia operações. Armazene os dados criptografados no Amazon S3.",
         "options": [
             "A. Crie segredos do AWS Secrets Manager para certificados criptografados. Atualize manualmente os certificados conforme necessário. Controle o acesso aos dados por usando acesso IAM de baixa granularidade.",
             "B. Crie uma função AWS Lambda que use a biblioteca de criptografia Python para receber e executar operações de criptografia. Armazene a função em um bucket do Amazon S3.",
@@ -1069,7 +1058,7 @@ let questions = [
     {
         "numb": 98,
         "question": "Uma empresa de compartilhamento de bicicletas está desenvolvendo uma arquitetura multicamadas para rastrear a localização de suas bicicletas durante os horários de pico de operação. A empresa quer usar esses pontos de dados em sua plataforma analítica existente. Um arquiteto de soluções deve determinar a opção multicamadas mais viável para dar suporte esta arquitetura. Os pontos de dados devem ser acessíveis a partir da API REST. Qual ação atende a esses requisitos para armazenar e recuperar dados de localização?",
-        "answer": "D. Use o Amazon API Gateway com o Amazon Kinesis Data Analytics.",
+        "answer": "B. Use o Amazon API Gateway com o AWS Lambda.",
         "options": [
             "A. Use o Amazon Athena com o Amazon S3.",
             "B. Use o Amazon API Gateway com o AWS Lambda.",
@@ -1080,7 +1069,7 @@ let questions = [
     {
         "numb": 99,
         "question": "Uma empresa tem um site de vendas de automóveis que armazena suas listagens em um banco de dados no Amazon RDS. Quando um automóvel é vendido, a listagem precisa para serem removidos do site e os dados devem ser enviados para vários sistemas de destino. Qual design um arquiteto de soluções deve recomendar?",
-        "answer": "C. Inscreva uma notificação de evento RDS e envie uma fila do Amazon Simple Queue Service (Amazon SQS) distribuída para vários Amazon Tópicos do Simple Notification Service (Amazon SNS). Use funções do AWS Lambda para atualizar os alvos.",
+        "answer": "A. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
         "options": [
             "A. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
             "B. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila FIFO do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
@@ -1091,7 +1080,7 @@ let questions = [
     {
         "numb": 100,
         "question": "Uma empresa tem um grande conjunto de dados para seu negócio de publicidade on-line armazenado em uma instância do Amazon RDS para MySQL DB em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
-        "answer": "D. Implante a instância do banco de dados em várias zonas de disponibilidade para processar as consultas de relatórios comerciais.",
+        "answer": "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
         "options": [
             "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
             "B. Escale a instância do banco de dados horizontalmente colocando-a atrás de um Elastic Load Balancer.",
