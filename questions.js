@@ -111,13 +111,13 @@ let questions = [
     },
     {
         "numb": 11,
-        "question": "Uma empresa tem um aplicativo que roda em instâncias do Amazon EC2 e usa um banco de dados Amazon Aurora. As instâncias do EC2 se conectam ao banco de dados usando nomes de usuários e senhas que são armazenados localmente em um arquivo. A empresa quer minimizar a sobrecarga operacional de gerenciamento de credenciais. O que um arquiteto de soluções deve fazer para atingir esse objetivo?",
-        "answer": "B. Use o AWS Systems Manager Parameter Store. Ative a rotação automática.",
+        "question": "Uma empresa tem uma aplicação que roda em instâncias do Amazon EC2 e usa um banco de dados do Amazon Aurora. As instâncias do EC2 se conectam ao banco de dados usando nomes de usuários e senhas que são armazenados localmente em um arquivo. A empresa quer minimizar a sobrecarga operacional de gerenciamento de credenciais. O que um arquiteto de soluções deve fazer para atingir esse objetivo?",
+        "answer": "A. Use o AWS Secrets Manager. Ative a rotação automática.",
         "options": [
             "A. Use o AWS Secrets Manager. Ative a rotação automática.",
             "B. Use o AWS Systems Manager Parameter Store. Ative a rotação automática.",
             "C. Crie um bucket do Amazon S3 para armazenar objetos que são criptografados com uma chave de criptografia do AWS Key Management Service (AWS KMS). Migrar o arquivo de credencial para o bucket S3. Aponte o aplicativo para o bucket S3.",
-            "D. Crie um volume criptografado do Amazon Elastic Block Store (Amazon EBS) para cada instância do EC2. Anexe o novo volume do EBS a cada instância do EC2. instância. Migre o arquivo de credencial para o novo volume EBS. Aponte o aplicativo para o novo volume EBS."
+            "D. Crie um volume criptografado do Amazon Elastic Block Store (Amazon EBS) para cada instância do EC2. Anexe o novo volume do EBS a cada instância do EC2. Migre o arquivo de credencial para o novo volume EBS. Aponte a aplicação para o novo volume EBS."
         ]
     },
     {
