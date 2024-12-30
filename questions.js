@@ -45,18 +45,18 @@ let questions = [
     },
     {
         "numb": 5,
-        "question": "Uma empresa está hospedando um aplicativo da web na AWS usando uma única instância do Amazon EC2 que armazena documentos enviados pelo usuário em um Amazon EBS volume. Para melhor escalabilidade e disponibilidade, a empresa duplicou a arquitetura e criou uma segunda instância EC2 e volume EBS em outra Zona de Disponibilidade, colocando ambos atrás de um Application Load Balancer. Após concluir essa alteração, os usuários relataram que, cada vez que atualizassem o site, eles poderiam ver um subconjunto de seus documentos ou outro, mas nunca todos os documentos ao mesmo tempo. O que um arquiteto de soluções deve propor para garantir que os usuários vejam todos os seus documentos de uma só vez?",
-        "answer": "C. Copie os dados de ambos os volumes do EBS para o Amazon EFS. Modifique o aplicativo para salvar novos documentos no Amazon EFS",
+        "question": "Uma empresa está hospedando um aplicativo web na AWS e usa uma única instância do Amazon EC2, que armazena documentos enviados pelo usuário em um volume do Amazon EBS. Para melhor escalabilidade e disponibilidade, a empresa duplicou a arquitetura e criou uma segunda instância EC2 e volume EBS em outra Zona de Disponibilidade, colocando ambos atrás de um Application Load Balancer. Após concluir essa alteração, os usuários relataram que, cada vez que atualizam o site, eles podiam ver um subconjunto de seus documentos ou outro, mas nunca todos os documentos ao mesmo tempo. O que um arquiteto de soluções deve propor para garantir que os usuários vejam todos os seus documentos de uma só vez?",
+        "answer": "C. Copie os dados de ambos os volumes do EBS para o Amazon EFS. Modifique o aplicativo para salvar os novos documentos no Amazon EFS.",
         "options": [
-            "A. Copie os dados para que ambos os volumes do EBS contenham todos os documentos",
-            "B. Configure o Application Load Balancer para direcionar um usuário ao servidor com os documentos",
-            "C. Copie os dados de ambos os volumes do EBS para o Amazon EFS. Modifique o aplicativo para salvar novos documentos no Amazon EFS",
-            "D. Configure o Application Load Balancer para enviar a solicitação para ambos os servidores. Retorne cada documento do servidor correto"
+            "A. Copie os dados para que ambos os volumes do EBS contenham todos os documentos.",
+            "B. Configure o Application Load Balancer para direcionar um usuário ao servidor com os documentos.",
+            "C. Copie os dados de ambos os volumes do EBS para o Amazon EFS. Modifique o aplicativo para salvar os novos documentos no Amazon EFS.",
+            "D. Configure o Application Load Balancer para enviar a solicitação para ambos os servidores. Retorne cada documento do servidor correto."
         ]
     },
     {
         "numb": 6,
-        "question": "Uma empresa usa NFS para armazenar grandes arquivos de vídeo em armazenamento conectado à rede no local. Cada arquivo de vídeo varia em tamanho de 1 MB a 500 GB. o armazenamento total é de 70 TB e não está mais crescendo. A empresa decide migrar os arquivos de vídeo para o Amazon S3. A empresa deve migrar o arquivos de vídeo o mais rápido possível, usando a menor largura de banda de rede possível. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa usa NFS para armazenar grandes arquivos de vídeo em armazenamento conectado à rede no local. Cada arquivo de vídeo varia em tamanho de 1 MB a 500 GB. O armazenamento total é de 70 TB e não está mais crescendo. A empresa decide migrar os arquivos de vídeo para o Amazon S3. A empresa deve migrar o arquivos de vídeo o mais rápido possível, usando a menor largura de banda de rede possível. Qual solução atenderá a esses requisitos?",
         "answer": "C. Implante um S3 File Gateway no local. Crie um ponto de extremidade de serviço público para se conectar ao S3 File Gateway. Crie um bucket S3. Crie um novo compartilhamento de arquivo NFS no S3 File Gateway. Aponte o novo compartilhamento de arquivo para o bucket S3. Transfira os dados do compartilhamento de arquivo NFS existente para o Gateway de arquivos S3.",
         "options": [
             "A. Crie um bucket S3. Crie uma função IAM que tenha permissões para gravar no bucket S3. Use a AWS CLI para copiar todos os arquivos localmente para o S3 balde.",
