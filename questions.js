@@ -882,7 +882,7 @@ let questions = [
     {
         "numb": 81,
         "question": "Uma empresa hospeda um aplicativo nas funções AWS Lambda que são invocadas por uma API do Amazon API Gateway. As funções Lambda salvam dados do cliente para um banco de dados Amazon Aurora MySQL. Sempre que a empresa atualiza o banco de dados, as funções Lambda falham em estabelecer conexões de banco de dados até que a atualização seja concluída. O resultado é que os dados do cliente não são registrados para alguns dos eventos. Um arquiteto de soluções precisa projetar uma solução que armazene dados do cliente criados durante atualizações de banco de dados. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Provisione um proxy Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao Proxy RDS.",
+        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazena os dados do cliente no banco de dados.",
         "options": [
             "A. Provisione um proxy Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao Proxy RDS.",
             "B. Aumente o tempo de execução das funções Lambda ao máximo. Crie um mecanismo de repetição no código que armazene os dados do cliente no banco de dados.",
@@ -893,7 +893,7 @@ let questions = [
     {
         "numb": 82,
         "question": "Uma empresa de pesquisa coletou dados por vários anos de áreas nos Estados Unidos. A empresa hospeda os dados em um bucket do Amazon S3 que tem 3 TB de tamanho e está crescendo. A empresa começou a compartilhar os dados com uma empresa de marketing europeia que tem buckets S3. A empresa quer para garantir que seus custos de transferência de dados permaneçam os mais baixos possíveis. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Configure a replicação entre regiões do S3 do bucket S3 da empresa para um dos buckets S3 da empresa de marketing.",
+        "answer": "A. Configure o recurso Pagamento do Solicitante no bucket S3 da empresa.",
         "options": [
             "A. Configure o recurso Pagamento do Solicitante no bucket S3 da empresa.",
             "B. Configure a replicação entre regiões do S3 do bucket S3 da empresa para um dos buckets S3 da empresa de marketing.",
@@ -915,7 +915,7 @@ let questions = [
     {
         "numb": 84,
         "question": "Uma empresa está usando um banco de dados SQL para armazenar dados de filmes que são publicamente acessíveis. O banco de dados é executado em uma instância do Amazon RDS Single-AZ DB. Um script executa consultas em intervalos aleatórios a cada dia para registrar o número de novos filmes que foram adicionados ao banco de dados. O script deve relatar um total final durante o horário comercial. A equipe de desenvolvimento da empresa percebe que o desempenho do banco de dados é inadequado para tarefas de desenvolvimento quando o script está em execução. A O arquiteto de soluções deve recomendar uma solução para resolver esse problema. Qual solução atenderá a esse requisito com a MENOR sobrecarga operacional?",
-        "answer": "D. Use o Amazon ElastiCache para armazenar em cache as consultas comuns que o script executa no banco de dados.",
+        "answer": "B. Crie uma réplica de leitura do banco de dados. Configure o script para consultar somente a réplica de leitura.",
         "options": [
             "A. Modifique a instância do banco de dados para ser uma implantação Multi-AZ.",
             "B. Crie uma réplica de leitura do banco de dados. Configure o script para consultar somente a réplica de leitura.",
@@ -966,18 +966,7 @@ let questions = [
             "C. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com metade dos recursos de computação e armazenamento como o banco de dados de origem.",
             "D. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com os mesmos recursos de computação e armazenamento do banco de dados de origem."
         ]
-    },
-    {
-        "numb": 89,
-        "question": "Um administrador do Amazon EC2 criou a seguinte política associada a um grupo do IAM contendo vários usuários: Qual é o efeito desta política?",
-        "answer": "C. Os usuários podem encerrar uma instância EC2 na região us-east-1 quando o IP de origem do usuário for 10.100.100.254.",
-        "options": [
-            "A. Os usuários podem encerrar uma instância do EC2 em qualquer região da AWS, exceto us-east-1.",
-            "B. Os usuários podem encerrar uma instância do EC2 com o endereço IP 10.100.100.1 na região us-east-1.",
-            "C. Os usuários podem encerrar uma instância EC2 na região us-east-1 quando o IP de origem do usuário for 10.100.100.254.",
-            "D. Os usuários não podem encerrar uma instância EC2 na região us-east-1 quando o IP de origem do usuário for 10.100.100.254."
-        ]
-    },
+    },    
     {
         "numb": 90,
         "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no local que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a Nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
@@ -992,7 +981,7 @@ let questions = [
     {
         "numb": 91,
         "question": "Uma empresa de processamento de imagens tem um aplicativo web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um Amazon S3 bucket. A empresa configurou notificações de eventos S3 para publicar os eventos de criação de objetos em um Amazon Simple Queue Service (Amazon SQS) fila padrão. A fila SQS serve como fonte de eventos para uma função AWS Lambda que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS são invocar a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
-        "answer": "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
+        "answer": "C. Aumente o tempo limite de visibilidade na fila SQS para um valor maior que o total do tempo limite da função e da janela do lote tempo esgotado.",
         "options": [
             "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
             "B. Altere a fila padrão SQS para uma fila FIFO SQS. Use o ID de deduplicação de mensagem para descartar mensagens duplicadas.",
@@ -1014,7 +1003,7 @@ let questions = [
     {
         "numb": 93,
         "question": "O aplicativo em contêiner de uma empresa é executado em uma instância do Amazon EC2. O aplicativo precisa baixar certificados de segurança antes de poder comunicar com outros aplicativos de negócios. A empresa quer uma solução altamente segura para criptografar e descriptografar os certificados em quase real tempo. A solução também precisa armazenar dados em armazenamento altamente disponível após os dados serem criptografados. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "D. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para criptografia operações. Armazene os dados criptografados em volumes do Amazon Elastic Block Store (Amazon EBS).",
+        "answer": "C. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para criptografia operações. Armazene os dados criptografados no Amazon S3.",
         "options": [
             "A. Crie segredos do AWS Secrets Manager para certificados criptografados. Atualize manualmente os certificados conforme necessário. Controle o acesso aos dados por usando acesso IAM de baixa granularidade.",
             "B. Crie uma função AWS Lambda que use a biblioteca de criptografia Python para receber e executar operações de criptografia. Armazene a função em um bucket do Amazon S3.",
@@ -1069,7 +1058,7 @@ let questions = [
     {
         "numb": 98,
         "question": "Uma empresa de compartilhamento de bicicletas está desenvolvendo uma arquitetura multicamadas para rastrear a localização de suas bicicletas durante os horários de pico de operação. A empresa quer usar esses pontos de dados em sua plataforma analítica existente. Um arquiteto de soluções deve determinar a opção multicamadas mais viável para dar suporte esta arquitetura. Os pontos de dados devem ser acessíveis a partir da API REST. Qual ação atende a esses requisitos para armazenar e recuperar dados de localização?",
-        "answer": "D. Use o Amazon API Gateway com o Amazon Kinesis Data Analytics.",
+        "answer": "B. Use o Amazon API Gateway com o AWS Lambda.",
         "options": [
             "A. Use o Amazon Athena com o Amazon S3.",
             "B. Use o Amazon API Gateway com o AWS Lambda.",
@@ -1080,7 +1069,7 @@ let questions = [
     {
         "numb": 99,
         "question": "Uma empresa tem um site de vendas de automóveis que armazena suas listagens em um banco de dados no Amazon RDS. Quando um automóvel é vendido, a listagem precisa para serem removidos do site e os dados devem ser enviados para vários sistemas de destino. Qual design um arquiteto de soluções deve recomendar?",
-        "answer": "C. Inscreva uma notificação de evento RDS e envie uma fila do Amazon Simple Queue Service (Amazon SQS) distribuída para vários Amazon Tópicos do Simple Notification Service (Amazon SNS). Use funções do AWS Lambda para atualizar os alvos.",
+        "answer": "A. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
         "options": [
             "A. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
             "B. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila FIFO do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
@@ -1091,7 +1080,7 @@ let questions = [
     {
         "numb": 100,
         "question": "Uma empresa tem um grande conjunto de dados para seu negócio de publicidade on-line armazenado em uma instância do Amazon RDS para MySQL DB em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
-        "answer": "D. Implante a instância do banco de dados em várias zonas de disponibilidade para processar as consultas de relatórios comerciais.",
+        "answer": "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
         "options": [
             "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
             "B. Escale a instância do banco de dados horizontalmente colocando-a atrás de um Elastic Load Balancer.",
