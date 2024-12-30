@@ -73,7 +73,7 @@ let questions = [
             "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure as aplicações consumidoras para ler e processar as mensagens.",
             "B. Implante a aplicação de ingestão em instâncias do Amazon EC2 em um grupo de dimensionamento automático, para dimensionar o número de instâncias do EC2 com base nas métricas de CPU.",
             "C. Escreva as mensagens no Amazon Kinesis Data Streams com um único fragmento. Use uma função AWS Lambda para pré-processar mensagens e armazená-las no Amazon DynamoDB. Configure as aplicações consumidoras para ler do DynamoDB para processar as mensagens.",
-            "D. Publique as mensagens em um tópico do Amazon Simple Notification Service (Amazon SNS) com várias assinaturas do Amazon Simple Queue Service (Amazon Assinaturas SQS). Configure as aplicações consumidoras para processar as mensagens das filas."
+            "D. Publique as mensagens em um tópico do Amazon Simple Notification Service (Amazon SNS), com várias assinaturas do Amazon Simple Queue Service (Amazon Assinaturas SQS). Configure as aplicações consumidoras para processar as mensagens das filas."
         ]
     },
     {
