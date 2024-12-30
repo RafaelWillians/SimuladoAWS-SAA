@@ -67,13 +67,13 @@ let questions = [
     },
     {
         "numb": 7,
-        "question": "Uma empresa tem um aplicativo que ingere mensagens recebidas. Dezenas de outros aplicativos e microsserviços consomem rapidamente essas mensagens. mensagens. O número de mensagens varia drasticamente e às vezes aumenta repentinamente para 100.000 a cada segundo. A empresa quer desvincular a solução e aumentar a escalabilidade. Qual solução atende a esses requisitos?",
-        "answer": "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure os aplicativos do consumidor para ler e processar as mensagens.",
+        "question": "Uma empresa tem um aplicativo que ingere mensagens recebidas. Em seguida, dezenas de outros aplicativos e microsserviços consomem rapidamente essas mensagens. O número de mensagens varia drasticamente e às vezes aumenta repentinamente para 100.000 a cada segundo. A empresa quer desacoplar a solução e aumentar a escalabilidade. Qual solução atende a esses requisitos?",
+        "answer": "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure as aplicações consumidoras para ler e processar as mensagens.",
         "options": [
-            "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure os aplicativos do consumidor para ler e processar as mensagens.",
-            "B. Implante o aplicativo de ingestão em instâncias do Amazon EC2 em um grupo de dimensionamento automático para dimensionar o número de instâncias do EC2 com base na CPU métricas.",
-            "C. Escreva as mensagens no Amazon Kinesis Data Streams com um único shard. Use uma função AWS Lambda para pré-processar mensagens e armazená-las eles no Amazon DynamoDB. Configure os aplicativos do consumidor para ler do DynamoDB para processar as mensagens.",
-            "D. Publique as mensagens em um tópico do Amazon Simple Notification Service (Amazon SNS) com vários Amazon Simple Queue Service (Amazon Assinaturas SOS). Configure os aplicativos do consumidor para processar as mensagens das filas."
+            "A. Persista as mensagens para o Amazon Kinesis Data Analytics. Configure as aplicações consumidoras para ler e processar as mensagens.",
+            "B. Implante a aplicação de ingestão em instâncias do Amazon EC2 em um grupo de dimensionamento automático, para dimensionar o número de instâncias do EC2 com base nas métricas de CPU.",
+            "C. Escreva as mensagens no Amazon Kinesis Data Streams com um único fragmento. Use uma função AWS Lambda para pré-processar mensagens e armazená-las no Amazon DynamoDB. Configure as aplicações consumidoras para ler do DynamoDB para processar as mensagens.",
+            "D. Publique as mensagens em um tópico do Amazon Simple Notification Service (Amazon SNS) com várias assinaturas do Amazon Simple Queue Service (Amazon Assinaturas SQS). Configure as aplicações consumidoras para processar as mensagens das filas."
         ]
     },
     {
