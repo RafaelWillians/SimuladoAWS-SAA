@@ -281,7 +281,7 @@ let questions = [
         "options": [
             "A. Compartilhe o painel do console do CloudWatch. Insira o endereço de e-mail do gerente de produto e conclua as etapas de compartilhamento. Forneça um link compartilhável do painel para o gerente de produto.",
             "B. Crie um usuário do IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
-            "C. Crie um usuário do IAM para os funcionários da empresa. Anexe a política gerenciada da AWS ViewOnlyAccess ao usuário do IAM. Compartilhe o novo login credenciais com o gerente de produto. Peça ao gerente de produto para navegar até o console do CloudWatch e localizar o painel pelo nome na seção Painéis.",
+            "C. Crie um usuário do IAM para os funcionários da empresa. Anexe a política gerenciada da AWS ViewOnlyAccess ao usuário do IAM. Compartilhe o novo login credenciais com o gerente de produto. Solicite ao gerente de produto para navegar até o console do CloudWatch e localizar o painel pelo nome na seção Painéis.",
             "D. Implante um servidor bastion em uma sub-rede pública. Quando o gerente de produto exigir acesso ao painel, inicie o servidor e compartilhe as credenciais RDP. No servidor bastion, certifique-se de que o navegador esteja configurado para abrir a URL do painel com as credenciais AWS armazenadas em cache que tenham permissões apropriadas para visualizar o painel."
         ]
     },
@@ -441,7 +441,7 @@ let questions = [
     },
     {
         "numb": 41,
-        "question": "Uma empresa executa um aplicativo de processamento de imagem altamente disponível em instâncias do Amazon EC2 em uma única VPC. As instâncias do EC2 são executadas dentro de várias sub-redes em várias Zonas de Disponibilidade. As instâncias EC2 não se comunicam entre si. No entanto, as instâncias EC2 baixam imagens do Amazon S3 e fazer upload de imagens para o Amazon S3 por meio de um único gateway NAT. A empresa está preocupada com as taxas de transferência de dados. Qual é a maneira MAIS econômica para a empresa evitar cobranças de transferência de dados regionais?",
+        "question": "Uma empresa executa um aplicativo de processamento de imagem altamente disponível em instâncias do Amazon EC2 em uma única VPC. As instâncias do EC2 são executadas dentro de várias sub-redes em várias Zonas de Disponibilidade. As instâncias EC2 não se comunicam entre si. No entanto, as instâncias EC2 fazem download de imagens do Amazon S3 e fazem upload de imagens para o Amazon S3 por meio de um único gateway NAT. A empresa está preocupada com as taxas de transferência de dados. Qual é a maneira MAIS econômica para a empresa evitar cobranças de transferência de dados regionais?",
         "answer": "C. Implante um endpoint de VPC de gateway para o Amazon S3.",
         "options": [
             "A. Inicie o gateway NAT em cada Zona de Disponibilidade.",
@@ -452,13 +452,13 @@ let questions = [
     },
     {
         "numb": 42,
-        "question": "Uma empresa tem um aplicativo local que gera uma grande quantidade de dados sensíveis ao tempo que são armazenados em backup no Amazon S3. O aplicativo cresceu e há reclamações de usuários sobre limitações de largura de banda da Internet. Um arquiteto de soluções precisa projetar uma solução de longo prazo que permite backups oportunos no Amazon S3 e com impacto mínimo na conectividade de internet para usuários internos. Qual solução atende a esses requisitos?",
-        "answer": "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
+        "question": "Uma empresa tem um aplicativo local que gera uma grande quantidade de dados sensíveis ao tempo que são armazenados em backup no Amazon S3. O aplicativo cresceu e há reclamações de usuários sobre limitações de largura de banda da Internet. Um arquiteto de soluções precisa projetar uma solução de longo prazo que permita backups providenciais no Amazon S3 e com impacto mínimo na conectividade de internet para usuários internos. Qual solução atende a esses requisitos?",
+        "answer": "B. Estabeleça uma nova conexão do AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
         "options": [
             "A. Estabeleça conexões VPN da AWS e faça proxy de todo o tráfego por meio de um endpoint do gateway VPC.",
             "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
-            "C. Peça dispositivos AWS Snowball diariamente. Carregue os dados nos dispositivos Snowball e retorne os dispositivos para a AWS todos os dias.",
-            "D. Envie um ticket de suporte por meio do AWS Management Console. Solicite a remoção dos limites de serviço do S3 da conta."
+            "C. Solicite dispositivos AWS Snowball diariamente. Carregue os dados nos dispositivos Snowball e retorne os dispositivos para a AWS todos os dias.",
+            "D. Envie um ticket de suporte por meio do console de gerenciamento da AWS. Solicite a remoção dos limites de serviço do S3 da conta."
         ]
     },
     {
