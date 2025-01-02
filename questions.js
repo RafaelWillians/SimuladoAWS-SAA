@@ -562,29 +562,29 @@ let questions = [
     },
     {
         "numb": 52,
-        "question": "Uma empresa registrou seu nome de domínio no Amazon Route 53. A empresa usa o Amazon API Gateway na região ca-central-1 como um domínio público interface para suas APIs de microsserviços de backend. Serviços de terceiros consomem as APIs com segurança. A empresa quer projetar sua URL de API Gateway com o nome de domínio da empresa e o certificado correspondente para que os serviços de terceiros possam usar HTTPS. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
+        "question": "Uma empresa registrou seu nome de domínio no Amazon Route 53. A empresa usa o Amazon API Gateway na região ca-central-1 como uma interface pública para suas APIs de microsserviços de backend. Serviços de terceiros consomem as APIs com segurança. A empresa quer projetar sua URL de API Gateway com o nome de domínio da empresa e o certificado correspondente para que os serviços de terceiros possam usar HTTPS. Qual solução atenderá a esses requisitos?",
+        "answer": "C. Crie um endpoint regional do API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
         "options": [
-            "A. Crie variáveis ​​de estágio no API Gateway com Name=\"Endpoint-URL\" e Value=\"Company Domain Name\" para substituir o URL padrão. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM).",
-            "B. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte o registro de alias para o endpoint do estágio Regional API Gateway. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1.",
-            "C. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
-            "D. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1. Anexe o certificado a APIs do API Gateway. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte um registro A para o nome de domínio da empresa."
+            "A. Crie variáveis ​​de estágio no API Gateway com Name=\"Endpoint-URL\" e Value=\"Company Domain Name\" para substituir a URL padrão. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM).",
+            "B. Crie registros de DNS do Route 53 com o nome de domínio da empresa. Aponte o registro de alias para o endpoint do estágio Regional API Gateway. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1.",
+            "C. Crie um endpoint regional do API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
+            "D. Crie um endpoint regional do API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1. Anexe o certificado às APIs do API Gateway. Crie registros de DNS do Route 53 com o nome de domínio da empresa. Aponte um registro A para o nome de domínio da empresa."
         ]
     },
     {
         "numb": 53,
-        "question": "Uma empresa está executando um site popular de mídia social. O site dá aos usuários a capacidade de carregar imagens para compartilhar com outros usuários. a empresa quer ter certeza de que as imagens não contenham conteúdo inapropriado. A empresa precisa de uma solução que minimize o desenvolvimento esforço. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa está executando um site popular de mídia social. O site dá aos usuários a capacidade de efetuar uploads de imagens para compartilhar com outros usuários. A empresa quer garantir que as imagens não contenham conteúdo inapropriado. A empresa precisa de uma solução que minimize esforço de desenvolvimento. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "B. Use o Amazon Rekognition para detectar conteúdo inapropriado. Use revisão humana para previsões de baixa confiança.",
         "options": [
             "A. Use o Amazon Comprehend para detectar conteúdo inapropriado. Use revisão humana para previsões de baixa confiança.",
             "B. Use o Amazon Rekognition para detectar conteúdo inapropriado. Use revisão humana para previsões de baixa confiança.",
-            "C. Use o Amazon SageMaker para detectar conteúdo inapropriado. Use a verdade básica para rotular previsões de baixa confiança.",
-            "D. Use o AWS Fargate para implantar um modelo de machine learning personalizado para detectar conteúdo inapropriado. Use a verdade básica para rotular baixa confiança previsões."
+            "C. Use o Amazon SageMaker para detectar conteúdo inapropriado. Use Ground Truth para rotular previsões de baixa confiança.",
+            "D. Use o AWS Fargate para implantar um modelo de machine learning personalizado para detectar conteúdo inapropriado. Use Ground Truth para rotular baixa confiança previsões."
         ]
     },
     {
         "numb": 54,
-        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes a infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "C. Use o Amazon Elastic Container Service (Amazon ECS) no AWS Fargate.",
         "options": [
             "A. Use instâncias do Amazon EC2 e instale o Docker nas instâncias.",
@@ -595,34 +595,34 @@ let questions = [
     },
     {
         "numb": 55,
-        "question": "Uma empresa hospeda mais de 300 sites e aplicativos globais. A empresa requer uma plataforma para analisar mais de 30 TB de fluxo de cliques dados todos os dias. O que um arquiteto de soluções deve fazer para transmitir e processar os dados do fluxo de cliques?",
+        "question": "Uma empresa hospeda mais de 300 sites e aplicativos globais. A empresa requer uma plataforma para analisar mais de 30 TB de dados de clickstream todos os dias. O que um arquiteto de soluções deve fazer para transmitir e processar os dados de clickstream?",
         "answer": "D. Colete os dados do Amazon Kinesis Data Streams. Use o Amazon Kinesis Data Firehose para transmitir os dados para um data lake do Amazon S3. Carregue os dados no Amazon Redshift para análise.",
         "options": [
-            "A. Projete um AWS Data Pipeline para arquivar os dados em um bucket do Amazon S3 e executar um cluster do Amazon EMR com os dados para gerar analítica.",
+            "A. Projete um AWS Data Pipeline para arquivar os dados em um bucket do Amazon S3 e executar um cluster do Amazon EMR com os dados para gerar análises de dados.",
             "B. Crie um grupo de Auto Scaling de instâncias do Amazon EC2 para processar os dados e enviá-los para um data lake do Amazon S3 para o Amazon Redshift usar para análise.",
-            "C. Armazene os dados em cache no Amazon CloudFront. Armazene os dados em um bucket do Amazon S3. Quando um objeto é adicionado ao bucket do S3, execute um AWS Função lambda para processar os dados para análise.",
+            "C. Armazene os dados em cache no Amazon CloudFront. Armazene os dados em um bucket do Amazon S3. Quando um objeto é adicionado ao bucket do S3, execute uma função AWS Lambda para processar os dados para análise.",
             "D. Colete os dados do Amazon Kinesis Data Streams. Use o Amazon Kinesis Data Firehose para transmitir os dados para um data lake do Amazon S3. Carregue os dados no Amazon Redshift para análise."
         ]
     },
     {
         "numb": 56,
-        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações para o site para que as solicitações usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
+        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações ao site, para que as solicitações usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
         "answer": "C. Crie uma regra de ouvinte no ALB para redirecionar o tráfego HTTP para HTTPS.",
         "options": [
             "A. Atualize a ACL de rede do ALB para aceitar somente tráfego HTTPS.",
             "B. Crie uma regra que substitua o HTTP na URL por HTTPS.",
             "C. Crie uma regra de ouvinte no ALB para redirecionar o tráfego HTTP para HTTPS.",
-            "D. Substitua o ALB por um Network Load Balancer configurado para usar a indicação de nome do servidor (SNI)."
+            "D. Substitua o ALB por um Network Load Balancer configurado para usar o Server Name Indication (SNI)."
         ]
     },
     {
         "numb": 57,
-        "question": "Uma empresa está desenvolvendo um aplicativo web de duas camadas na AWS. Os desenvolvedores da empresa implantaram o aplicativo em um Amazon EC2 instância que se conecta diretamente a um banco de dados Amazon RDS de backend. A empresa não deve codificar credenciais de banco de dados no aplicativo. O a empresa também deve implementar uma solução para rotacionar automaticamente as credenciais do banco de dados regularmente. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe o necessário permissão para a função EC2 conceder acesso ao segredo.",
+        "question": "Uma empresa está desenvolvendo um aplicativo web de duas camadas na AWS. Os desenvolvedores da empresa implantaram o aplicativo em uma instância do Amazon EC2 que se conecta diretamente a um banco de dados Amazon RDS de backend. A empresa não deve codificar credenciais de banco de dados diretamente no aplicativo. A empresa também deve implementar uma solução para rotacionar automaticamente as credenciais do banco de dados regularmente. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "answer": "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe a permissão necessária ao perfil da EC2, para conceder acesso ao segredo.",
         "options": [
-            "A. Armazene as credenciais do banco de dados nos metadados da instância. Use as regras do Amazon EventBridge (Amazon CloudWatch Events) para executar uma Função do AWS Lambda que atualiza as credenciais do RDS e os metadados da instância ao mesmo tempo.",
-            "B. Armazene as credenciais do banco de dados em um arquivo de configuração em um bucket criptografado do Amazon S3. Use o Amazon EventBridge (Amazon CloudWatch Regras de eventos) para executar uma função AWS Lambda agendada que atualiza as credenciais do RDS e as credenciais no arquivo de configuração no mesmo tempo. Use o S3 Versioning para garantir a capacidade de retornar aos valores anteriores.",
-            "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe o necessário permissão para a função EC2 conceder acesso ao segredo.",
+            "A. Armazene as credenciais do banco de dados nos metadados da instância. Use as regras do Amazon EventBridge (Amazon CloudWatch Events) para executar uma função do AWS Lambda que atualiza as credenciais do RDS e os metadados da instância ao mesmo tempo.",
+            "B. Armazene as credenciais do banco de dados em um arquivo de configuração num bucket criptografado do Amazon S3. Use regras do Amazon EventBridge (Amazon CloudWatch Events) para executar uma função AWS Lambda agendada, que atualiza as credenciais do RDS e as credenciais no arquivo de configuração ao mesmo tempo. Use o Versionamento do S3 para garantir a capacidade de retornar aos valores anteriores.",
+            "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe a permissão necessária ao perfil da EC2, para conceder acesso ao segredo.",
             "D. Armazene as credenciais do banco de dados como parâmetros criptografados no AWS Systems Manager Parameter Store. Ative a rotação automática para o parâmetros criptografados. Anexe a permissão necessária à função EC2 para conceder acesso aos parâmetros criptografados."
         ]
     },
@@ -632,31 +632,31 @@ let questions = [
         "answer": "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Rotacione o certificado manualmente.",
         "options": [
             "A. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para rotacionar automaticamente o certificado.",
-            "B. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Importe o material da chave do certificado. Aplique o certificado a o ALUse o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
-            "C. Use a Autoridade de Certificação Privada do AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS da CA raiz. Aplique o certificado a o ALB. Use o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
+            "B. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Importe o material da chave do certificado. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
+            "C. Use a Autoridade de Certificação Privada do AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS da CA raiz. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
             "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Rotacione o certificado manualmente."
         ]
     },
     {
         "numb": 59,
-        "question": "Uma empresa executa sua infraestrutura na AWS e tem uma base registrada de 700.000 usuários para seu aplicativo de gerenciamento de documentos. A empresa pretende criar um produto que converta grandes arquivos .pdf em arquivos de imagem .jpg. Os arquivos .pdf têm em média 5 MB de tamanho. A empresa precisa armazenar os arquivos originais e os arquivos convertidos. Um arquiteto de soluções deve projetar uma solução escalável para acomodar a demanda que crescerá rapidamente ao longo tempo. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
-        "answer": "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda para converter os arquivos para o formato .jpg e armazená-los eles de volta no Amazon S3.",
+        "question": "Uma empresa executa sua infraestrutura na AWS e tem uma base registrada de 700 mil usuários para seu aplicativo de gerenciamento de documentos. A empresa pretende criar um produto que converta grandes arquivos .pdf em arquivos de imagem .jpg. Os arquivos .pdf têm em média 5 MB de tamanho. A empresa precisa armazenar os arquivos originais e os arquivos convertidos. Um arquiteto de soluções deve projetar uma solução escalável para acomodar a demanda que crescerá rapidamente ao longo prazo. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
+        "answer": "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda, para converter os arquivos para o formato .jpg e armazená-los de volta no Amazon S3.",
         "options": [
-            "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda para converter os arquivos para o formato .jpg e armazená-los eles de volta no Amazon S3.",
-            "B. Salve os arquivos .pdf no Amazon DynamoD Use o recurso DynamoDB Streams para invocar uma função AWS Lambda para converter os arquivos em .jpg formatá-los e armazená-los novamente no DynamoDB.",
-            "C. Carregue os arquivos .pdf em um aplicativo AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic Block Store (Amazon EBS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter os arquivos para o formato .jpg. Salve os arquivos .pdf e .jpg arquivos no armazenamento EBS.",
-            "D. Carregue os arquivos .pdf em um aplicativo AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic File System (Amazon EFS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter o arquivo para o formato .jpg. Salve os arquivos .pdf e .jpg arquivos no armazenamento EBS."
+            "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda, para converter os arquivos para o formato .jpg e armazená-los de volta no Amazon S3.",
+            "B. Salve os arquivos .pdf no Amazon DynamoDB. Use o recurso DynamoDB Streams para invocar uma função AWS Lambda, para converter os arquivos em formato .jpg e armazená-los novamente no DynamoDB.",
+            "C. Carregue os arquivos .pdf em um aplicativo no AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic Block Store (Amazon EBS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter os arquivos para o formato .jpg. Salve os arquivos .pdf e .jpg no armazenamento do EBS.",
+            "D. Carregue os arquivos .pdf em um aplicativo do AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic File System (Amazon EFS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter o arquivo para o formato .jpg. Salve os arquivos .pdf e .jpg arquivos no armazenamento do EBS."
         ]
     },
     {
         "numb": 60,
-        "question": "Uma empresa tem mais de 5 TB de dados de arquivo em servidores de arquivo Windows que rodam no local. Usuários e aplicativos interagem com os dados todos os dias. A empresa está movendo suas cargas de trabalho do Windows para a AWS. À medida que a empresa continua esse processo, ela requer acesso à AWS e ao armazenamento de arquivos no local com latência mínima. A empresa precisa de uma solução que minimize a sobrecarga operacional e não exija nenhuma alterações nos padrões de acesso de arquivo existentes. A empresa usa uma conexão AWS Site-to-Site VPN para conectividade com a AWS. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados do arquivo local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway.",
+        "question": "Uma empresa tem mais de 5 TB de dados de arquivo em servidores de arquivo Windows que rodam no local. Usuários e aplicativos interagem com os dados todos os dias. A empresa está movendo suas cargas de trabalho do Windows para a AWS. À medida que a empresa continua esse processo, ela requer acesso à AWS e ao armazenamento de arquivos no local com latência mínima. A empresa precisa de uma solução que minimize a sobrecarga operacional e não exija nenhuma alteração nos padrões de acesso de arquivo existentes. A empresa usa uma conexão AWS Site-to-Site VPN para conectividade com a AWS. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados dos arquivos no local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway.",
         "options": [
-            "A. Implante e configure o Amazon FSx para Windows File Server na AWS. Mova os dados do arquivo local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
-            "B. Implante e configure um Amazon S3 File Gateway no local. Mova os dados de arquivo no local para o S3 File Gateway. Reconfigure as cargas de trabalho no local e as cargas de trabalho na nuvem para usar o S3 File Gateway.",
-            "C. Implante e configure um Amazon S3 File Gateway no local. Mova os dados do arquivo no local para o Amazon S3. Reconfigure as cargas de trabalho para use o Amazon S3 diretamente ou o S3 File Gateway, dependendo da localização de cada carga de trabalho.",
-            "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados do arquivo local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway."
+            "A. Implante e configure o Amazon FSx para Windows File Server na AWS. Mova os dados dos arquivos no local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
+            "B. Implante e configure um Amazon S3 File Gateway no local. Mova os dados dos arquivos no local para o S3 File Gateway. Reconfigure as cargas de trabalho no local e as cargas de trabalho na nuvem para usar o S3 File Gateway.",
+            "C. Implante e configure um Amazon S3 File Gateway no local. Mova os dados dos arquivos no local para o Amazon S3. Reconfigure as cargas de trabalho para usar o Amazon S3 diretamente ou o S3 File Gateway, dependendo da localização de cada carga de trabalho.",
+            "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados dos arquivos no local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway."
         ]
     },
     {
