@@ -94,7 +94,7 @@ let questions = [
         "options": [
             "A. Use o AWS DataSync para copiar dados com mais de 7 dias do servidor de arquivos SMB para a AWS.",
             "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política do S3 Lifecycle para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
-            "C. Crie um sistema de arquivos do Amazon FSx for Windows File Server para ampliar o espaço de armazenamento da empresa.",
+            "C. Crie um sistema de arquivos do Amazon FSx para Windows File Server para ampliar o espaço de armazenamento da empresa.",
             "D. Instale um utilitário no computador de cada usuário para acessar o Amazon S3. Crie uma política do S3 Lifecycle para fazer a transição dos dados para o S3 Glacier Flexible Retrieval após 7 dias."
         ]
     },
@@ -474,7 +474,7 @@ let questions = [
     },
     {
         "numb": 44,
-        "question": "Uma empresa precisa de capacidade garantida do Amazon EC2 em três Zonas de Disponibilidade específicas em uma região AWS específica para um evento futuro que irá última 1 semana. O que a empresa deve fazer para garantir a capacidade do EC2?",
+        "question": "Uma empresa precisa de capacidade garantida de Amazon EC2 em três Zonas de Disponibilidade específicas em uma região AWS específica, para um evento futuro que irá durar 1 semana. O que a empresa deve fazer para garantir a capacidade das EC2?",
         "answer": "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a região e três Zonas de Disponibilidade necessárias.",
         "options": [
             "A. Compre Instâncias Reservadas que especifiquem a região necessária.",
@@ -485,7 +485,7 @@ let questions = [
     },
     {
         "numb": 45,
-        "question": "O site de uma empresa usa um armazenamento de instância do Amazon EC2 para seu catálogo de itens. A empresa quer ter certeza de que o catálogo é altamente disponível e que o catálogo esteja armazenado em um local durável. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "O site de uma empresa usa um armazenamento de instância do Amazon EC2 para seu catálogo de itens. A empresa quer ter certeza de que o catálogo seja altamente disponível e que o catálogo esteja armazenado em um local durável. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "D. Mova o catálogo para um sistema de arquivos Amazon Elastic File System (Amazon EFS).",
         "options": [
             "A. Mova o catálogo para o Amazon ElastiCache para Redis.",
@@ -497,17 +497,17 @@ let questions = [
     {
         "numb": 46,
         "question": "Uma empresa armazena arquivos de transcrição de chamadas mensalmente. Os usuários acessam os arquivos aleatoriamente dentro de 1 ano da chamada, mas os usuários acessam os arquivos raramente após 1 ano. A empresa quer otimizar sua solução dando aos usuários a capacidade de consultar e recuperar arquivos com menos de 1 ano o mais rápido possível. Um atraso na recuperação de arquivos mais antigos é aceitável. Qual solução atenderá a esses requisitos com MAIS eficiência de custos?",
-        "answer": "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Seleção de geleiras.",
+        "answer": "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Glacier Select.",
         "options": [
             "A. Armazene arquivos individuais com tags no Amazon S3 Glacier Instant Retrieval. Consulte as tags para recuperar os arquivos do S3 Glacier Instant Retrieval.",
-            "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Seleção de geleiras.",
-            "C. Armazene arquivos individuais com tags no armazenamento Amazon S3 Standard. Armazene metadados de pesquisa para cada arquivo no armazenamento Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Instant Retrieval após 1 ano. Consulte e recupere os arquivos pesquisando metadados do Amazon S3.",
-            "D. Armazene arquivos individuais no armazenamento Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Deep Archive após 1 ano. Armazene metadados de pesquisa no Amazon RDS. Consulte os arquivos do Amazon RDS. Recupere os arquivos do S3 Glacier Deep Archive."
+            "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Glacier Select.",
+            "C. Armazene arquivos individuais com tags no Amazon S3 Standard. Armazene metadados de pesquisa para cada arquivo no armazenamento Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Instant Retrieval após 1 ano. Consulte e recupere os arquivos pesquisando pelos metadados do Amazon S3.",
+            "D. Armazene arquivos individuais no Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Deep Archive após 1 ano. Armazene metadados de pesquisa no Amazon RDS. Consulte os arquivos no Amazon RDS. Recupere os arquivos do S3 Glacier Deep Archive."
         ]
     },
     {
         "numb": 47,
-        "question": "Uma empresa tem uma carga de trabalho de produção que roda em 1.000 instâncias do Amazon EC2 Linux. A carga de trabalho é alimentada por software de terceiros. a empresa precisa corrigir o software de terceiros em todas as instâncias do EC2 o mais rápido possível para corrigir uma vulnerabilidade crítica de segurança. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa tem uma carga de trabalho de produção que roda em 1.000 instâncias do Amazon EC2 Linux. A carga de trabalho é alimentada por um software de terceiros. A empresa precisa corrigir o software de terceiros em todas as instâncias do EC2 o mais rápido possível para corrigir uma vulnerabilidade crítica de segurança. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "D. Use o AWS Systems Manager Run Command para executar um comando personalizado que aplica o patch a todas as instâncias do EC2.",
         "options": [
             "A. Crie uma função do AWS Lambda para aplicar o patch a todas as instâncias do EC2.",
@@ -518,7 +518,7 @@ let questions = [
     },
     {
         "numb": 48,
-        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura de sistema de arquivos padrão. A empresa quer uma solução que seja escalável automaticamente. é altamente disponível e requer sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura padrão de sistema de arquivos. A empresa quer uma solução que seja escalável automaticamente, seja altamente disponível e necessite de sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
         "answer": "C. Migre o aplicativo para instâncias do Amazon EC2 em um grupo de Auto Scaling Multi-AZ. Use o Amazon Elastic File System (Amazon EFS) para armazenar.",
         "options": [
             "A. Migre o aplicativo para ser executado como contêineres no Amazon Elastic Container Service (Amazon ECS). Use o Amazon S3 para armazenamento.",
@@ -540,23 +540,23 @@ let questions = [
     },
     {
         "numb": 50,
-        "question": "Uma empresa executa várias cargas de trabalho do Windows na AWS. Os funcionários da empresa usam compartilhamentos de arquivos do Windows hospedados em dois Amazon EC2 instâncias. Os compartilhamentos de arquivos sincronizam dados entre si e mantêm cópias duplicadas. A empresa quer um ambiente altamente disponível e solução de armazenamento durável que preserva a maneira como os usuários acessam os arquivos atualmente. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Servidor de arquivos do Windows.",
+        "question": "Uma empresa executa várias cargas de trabalho do Windows na AWS. Os funcionários da empresa usam compartilhamentos de arquivos do Windows hospedados em duas instâncias do Amazon EC2. Os compartilhamentos de arquivos sincronizam dados entre si e mantêm cópias duplicadas. A empresa quer uma solução de armazenamento altamente disponível e durável que preserve a maneira como os usuários acessam os arquivos atualmente. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Windows File Server.",
         "options": [
             "A. Migre todos os dados para o Amazon S3. Configure a autenticação do IAM para que os usuários acessem os arquivos.",
             "B. Configure um Amazon S3 File Gateway. Monte o S3 File Gateway nas instâncias EC2 existentes.",
-            "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Servidor de arquivos do Windows.",
+            "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Windows File Server.",
             "D. Estenda o ambiente de compartilhamento de arquivos para o Amazon Elastic File System (Amazon EFS) com uma configuração Multi-AZ. Migre todos os dados para Amazon EFS."
         ]
     },
     {
         "numb": 51,
-        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usam Amazon EC2 instâncias e instâncias do Amazon RDS DB. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias EC2 que são executadas nas sub-redes privadas podem ter acesso ao Bancos de dados RDS. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança para as instâncias do banco de dados.",
+        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura de VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usam instâncias do Amazon EC2 e instâncias de BD do Amazon RDS. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias de EC2 que são executadas nas sub-redes privadas podem ter acesso aos bancos de dados RDS. Qual solução atenderá a esses requisitos?",
+        "answer": "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança às instâncias de BD.",
         "options": [
             "A. Crie uma nova tabela de rotas que exclua a rota para os blocos CIDR das sub-redes públicas. Associe a tabela de rotas às sub-redes do banco de dados.",
-            "B. Crie um grupo de segurança que negue tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes públicas. Anexe o grupo de segurança para as instâncias do banco de dados.",
-            "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança para as instâncias do banco de dados.",
+            "B. Crie um grupo de segurança que negue tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes públicas. Anexe o grupo de segurança às instâncias do banco de dados.",
+            "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança às instâncias de BD.",
             "D. Crie uma nova conexão de peering entre as sub-redes públicas e as sub-redes privadas. Crie uma conexão de peering diferente entre as sub-redes privadas e sub-redes de banco de dados."
         ]
     },
@@ -653,7 +653,7 @@ let questions = [
         "question": "Uma empresa tem mais de 5 TB de dados de arquivo em servidores de arquivo Windows que rodam no local. Usuários e aplicativos interagem com os dados todos os dias. A empresa está movendo suas cargas de trabalho do Windows para a AWS. À medida que a empresa continua esse processo, ela requer acesso à AWS e ao armazenamento de arquivos no local com latência mínima. A empresa precisa de uma solução que minimize a sobrecarga operacional e não exija nenhuma alterações nos padrões de acesso de arquivo existentes. A empresa usa uma conexão AWS Site-to-Site VPN para conectividade com a AWS. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados do arquivo local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway.",
         "options": [
-            "A. Implante e configure o Amazon FSx for Windows File Server na AWS. Mova os dados do arquivo local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
+            "A. Implante e configure o Amazon FSx para Windows File Server na AWS. Mova os dados do arquivo local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
             "B. Implante e configure um Amazon S3 File Gateway no local. Mova os dados de arquivo no local para o S3 File Gateway. Reconfigure as cargas de trabalho no local e as cargas de trabalho na nuvem para usar o S3 File Gateway.",
             "C. Implante e configure um Amazon S3 File Gateway no local. Mova os dados do arquivo no local para o Amazon S3. Reconfigure as cargas de trabalho para use o Amazon S3 diretamente ou o S3 File Gateway, dependendo da localização de cada carga de trabalho.",
             "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados do arquivo local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway."
@@ -970,12 +970,12 @@ let questions = [
     {
         "numb": 90,
         "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no local que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Crie um sistema de arquivos Amazon FSx for Windows File Server na AWS e defina o domínio do Active Directory para autenticação.",
+        "answer": "D. Crie um sistema de arquivos Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação.",
         "options": [
             "A. Configure o armazenamento do Amazon EFS e defina o domínio do Active Directory para autenticação.",
             "B. Crie um compartilhamento de arquivos SMB em um gateway de arquivos do AWS Storage Gateway em duas Zonas de Disponibilidade.",
             "C. Crie um bucket do Amazon S3 e configure o Microsoft Windows Server para montá-lo como um volume.",
-            "D. Crie um sistema de arquivos Amazon FSx for Windows File Server na AWS e defina o domínio do Active Directory para autenticação."
+            "D. Crie um sistema de arquivos Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação."
         ]
     },
     {
@@ -992,12 +992,12 @@ let questions = [
     {
         "numb": 92,
         "question": "Uma empresa está implementando uma solução de armazenamento compartilhado para um aplicativo de jogo que é hospedado em um data center local. A empresa precisa a capacidade de usar clientes Lustre para acessar dados. A solução deve ser totalmente gerenciada. Qual solução atende a esses requisitos?",
-        "answer": "D. Crie um sistema de arquivos Amazon FSx for Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos.",
+        "answer": "D. Crie um sistema de arquivos Amazon FSx para Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos.",
         "options": [
             "A. Crie um gateway de arquivo do AWS Storage Gateway. Crie um compartilhamento de arquivo que use o protocolo de cliente necessário. Conecte o servidor de aplicativos a o compartilhamento de arquivos.",
             "B. Crie uma instância do Amazon EC2 Windows. Instale e configure uma função de compartilhamento de arquivos do Windows na instância. Conecte o servidor de aplicativos a o compartilhamento de arquivos.",
             "C. Crie um sistema de arquivos Amazon Elastic File System (Amazon EFS) e configure-o para suportar Lustre. Anexe o sistema de arquivos à origem servidor. Conecte o servidor de aplicativos ao sistema de arquivos.",
-            "D. Crie um sistema de arquivos Amazon FSx for Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos."
+            "D. Crie um sistema de arquivos Amazon FSx para Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos."
         ]
     },
     {
