@@ -342,29 +342,29 @@ let questions = [
     },
     {
         "numb": 32,
-        "question": "Uma empresa executa um aplicativo web de marketplace online na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. a empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
-        "answer": "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações do Kinesis fluxo de dados.",
+        "question": "Uma empresa executa um aplicativo web de marketplace na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. A empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
+        "answer": "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações da stream de dados do Kinesis.",
         "options": [
-            "A. Armazene os dados das transações no Amazon DynamoDB. Configure uma regra no DynamoDB para remover dados confidenciais de cada transação escrever. Use o DynamoDB Streams para compartilhar os dados de transações com outros aplicativos.",
-            "B. Transmita os dados de transações para o Amazon Kinesis Data Firehose para armazenar dados no Amazon DynamoDB e no Amazon S3. Use o AWS Lambda integração com o Kinesis Data Firehose para remover dados sensíveis. Outros aplicativos podem consumir os dados armazenados no Amazon S3.",
-            "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações do Kinesis fluxo de dados.",
-            "D. Armazene os dados de transações em lote no Amazon S3 como arquivos. Use o AWS Lambda para processar cada arquivo e remover dados confidenciais antes atualizando os arquivos no Amazon S3. A função Lambda então armazena os dados no Amazon DynamoDB. Outros aplicativos podem consumir arquivos de transação armazenados no Amazon S3."
+            "A. Armazene os dados das transações no Amazon DynamoDB. Configure uma regra no DynamoDB para remover dados confidenciais de cada transação mediante a escrita. Use o DynamoDB Streams para compartilhar os dados de transações com outros aplicativos.",
+            "B. Transmita os dados de transações para o Amazon Kinesis Data Firehose para armazenar dados no Amazon DynamoDB e no Amazon S3. Use a integração do AWS Lambda com o Kinesis Data Firehose para remover dados sensíveis. Outros aplicativos podem consumir os dados armazenados no Amazon S3.",
+            "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações da stream de dados do Kinesis.",
+            "D. Armazene os dados de transações em lote no Amazon S3 como arquivos. Use o AWS Lambda para processar cada arquivo e remover dados confidenciais antes de atualizar os arquivos no Amazon S3. A função Lambda após isso armazena os dados no Amazon DynamoDB. Outros aplicativos podem consumir arquivos de transação armazenados no Amazon S3."
         ]
     },
     {
         "numb": 33,
-        "question": "Uma empresa hospeda seus aplicativos multicamadas na AWS. Para conformidade, governança, auditoria e segurança, a empresa deve rastrear a configuração alterações em seus recursos da AWS e registrar um histórico de chamadas de API feitas a esses recursos. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "B. Use o AWS Config para rastrear alterações de configuração e o AWS CloudTrail para registrar chamadas de API.",
+        "question": "Uma empresa hospeda seus aplicativos multicamadas na AWS. Para conformidade, governança, auditoria e segurança, a empresa deve rastrear as alterações de configurações em seus recursos da AWS e registrar um histórico de chamadas de API feitas a esses recursos. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "B. Use o AWS Config para rastrear alterações de configurações e o AWS CloudTrail para registrar chamadas de API.",
         "options": [
-            "A. Use o AWS CloudTrail para rastrear alterações de configuração e o AWS Config para registrar chamadas de API.",
-            "B. Use o AWS Config para rastrear alterações de configuração e o AWS CloudTrail para registrar chamadas de API.",
-            "C. Use o AWS Config para rastrear alterações de configuração e o Amazon CloudWatch para registrar chamadas de API.",
-            "D. Use o AWS CloudTrail para rastrear alterações de configuração e o Amazon CloudWatch para registrar chamadas de API."
+            "A. Use o AWS CloudTrail para rastrear alterações de configurações e o AWS Config para registrar chamadas de API.",
+            "B. Use o AWS Config para rastrear alterações de configurações e o AWS CloudTrail para registrar chamadas de API.",
+            "C. Use o AWS Config para rastrear alterações de configurações e o Amazon CloudWatch para registrar chamadas de API.",
+            "D. Use o AWS CloudTrail para rastrear alterações de configurações e o Amazon CloudWatch para registrar chamadas de API."
         ]
     },
     {
         "numb": 34,
-        "question": "Uma empresa está se preparando para lançar um aplicativo web voltado ao público na nuvem AWS. A arquitetura consiste em instâncias do Amazon EC2 dentro de um VPC por trás de um Elastic Load Balancer (ELB). Um serviço de terceiros é usado para o DNS. O arquiteto de soluções da empresa deve recomendar um solução para detectar e proteger contra ataques DDoS em larga escala. Qual solução atende a esses requisitos?",
+        "question": "Uma empresa está se preparando para lançar um aplicativo web voltado ao público na nuvem AWS. A arquitetura consiste em instâncias do Amazon EC2 dentro de uma VPC por trás de um Elastic Load Balancer (ELB). Um serviço de terceiros é usado para o DNS. O arquiteto de soluções da empresa deve recomendar um solução para detectar e proteger contra ataques DDoS em larga escala. Qual solução atende a esses requisitos?",
         "answer": "D. Habilite o AWS Shield Advanced e atribua o ELB a ele.",
         "options": [
             "A. Habilite o Amazon GuardDuty na conta.",
