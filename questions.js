@@ -7,7 +7,7 @@ let questions = [
             "A. Ative o S3 Transfer Acceleration no bucket S3 de destino. Use uploads multipart para carregar dados do site diretamente para o bucket S3 de destino.",
             "B. Carregue os dados de cada site para um bucket S3 na região mais próxima. Use o S3 Cross-Region Replication (replicação entre regiões) para copiar objetos para o bucket S3 de destino . Em seguida, remova os dados do bucket S3 de origem.",
             "C. Agende tarefas de dispositivo AWS Snowball Edge Storage Optimized diariamente para transferir dados de cada site para a região mais próxima. Use o S3 Cross-Region Replication (replicação entre regiões) para copiar objetos para o bucket S3 de destino.",
-            "D. Carregue os dados de cada site para uma instância do Amazon EC2 na região mais próxima. Armazene os dados em um Amazon Elastic Block Store (Amazon EBS). Em intervalos regulares, faça um snapshot do EBS e copie-o para a região que contém o bucket S3 de destino. Restaure o volume EBS naquela Região."
+            "D. Carregue os dados de cada site para uma instância do Amazon EC2 na região mais próxima. Armazene os dados em um Amazon Elastic Block Store (Amazon EBS). Em intervalos regulares, faça um snapshot do EBS e copie-o para a região que contém o bucket S3 de destino. Restaure o volume EBS naquela região."
         ]
     },
     {
@@ -137,7 +137,7 @@ let questions = [
         "answer": "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configure o Secrets Manager para rotacionar os segredos em um cronograma.",
         "options": [
             "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configure o Secrets Manager para rotacionar os segredos em um cronograma.",
-            "B. Armazene as credenciais como segredos no AWS Systems Manager criando um parâmetro seguro de string. Use a replicação multirregional de segredos para as Regiões necessárias. Configure o Systems Manager para rotacionar os segredos em um cronograma.",
+            "B. Armazene as credenciais como segredos no AWS Systems Manager criando um parâmetro seguro de string. Use a replicação multirregional de segredos para as regiões necessárias. Configure o Systems Manager para rotacionar os segredos em um cronograma.",
             "C. Armazene as credenciais em um bucket do Amazon S3 que tenha criptografia do lado do servidor (SSE) habilitada. Use o Amazon EventBridge (Amazon CloudWatch Events) para invocar uma função do AWS Lambda para rotacionar as credenciais.",
             "D. Criptografe as credenciais como segredos usando chaves multirregionais gerenciadas pelo cliente do AWS Key Management Service (AWS KMS). Armazene o segredos em uma tabela global do Amazon DynamoDB. Use uma função do AWS Lambda para recuperar os segredos do DynamoDB. Use a API do RDS para rotacionar os segredos."
         ]
@@ -298,13 +298,13 @@ let questions = [
     },
     {
         "numb": 28,
-        "question": "Uma empresa fornece um serviço de Voice over Internet Protocol (VoIP) que usa conexões UDP. O serviço consiste em instâncias do Amazon EC2 que executado em um grupo de Auto Scaling. A empresa tem implantações em várias regiões da AWS. A empresa precisa rotear usuários para a Região com a menor latência. A empresa também precisa de failover automatizado entre Regiões. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o NLB como um ponto final do AWS Global Accelerator em cada região.",
+        "question": "Uma empresa fornece um serviço de Voice over Internet Protocol (VoIP) que usa conexões UDP. O serviço consiste em instâncias do Amazon EC2 que são executadas em um grupo de Auto Scaling. A empresa tem implantações em várias regiões da AWS. A empresa precisa rotear usuários para a região com a menor latência. A empresa também precisa de failover automatizado entre regiões. Qual solução atenderá a esses requisitos?",
+        "answer": "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Use o NLB como um endpoint do AWS Global Accelerator em cada região.",
         "options": [
-            "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o NLB como um ponto final do AWS Global Accelerator em cada região.",
-            "B. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o ALB como um ponto final do AWS Global Accelerator em cada região.",
-            "C. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Crie um Registro de latência do Amazon Route 53 que aponta para aliases para cada NLB. Crie uma distribuição do Amazon CloudFront que use o registro de latência como uma origem.",
-            "D. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Crie um registro ponderado do Amazon Route 53 que aponta para aliases para cada ALB. Implante uma distribuição do Amazon CloudFront que usa o registro ponderado registro como origem."
+            "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Use o NLB como um endpoint do AWS Global Accelerator em cada região.",
+            "B. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Use o ALB como um endpoint do AWS Global Accelerator em cada região.",
+            "C. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Crie um registro de latência do Amazon Route 53 que aponta para aliases para cada NLB. Crie uma distribuição do Amazon CloudFront que use o registro de latência como uma origem.",
+            "D. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Crie um registro ponderado do Amazon Route 53 que aponta para aliases para cada ALB. Implante uma distribuição do Amazon CloudFront que usa o registro ponderado registro como origem."
         ]
     },
     {
@@ -375,7 +375,7 @@ let questions = [
     },
     {
         "numb": 35,
-        "question": "Uma empresa está construindo um aplicativo na nuvem AWS. O aplicativo armazenará dados em buckets do Amazon S3 em duas regiões da AWS. A empresa deve usar uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS) para criptografar todos os dados armazenados nos buckets do S3. Os dados em ambos os buckets S3 devem ser criptografados e descriptografados com a mesma chave KMS. Os dados e a chave devem ser armazenados em cada uma das duas Regiões. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa está construindo um aplicativo na nuvem AWS. O aplicativo armazenará dados em buckets do Amazon S3 em duas regiões da AWS. A empresa deve usar uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS) para criptografar todos os dados armazenados nos buckets do S3. Os dados em ambos os buckets S3 devem ser criptografados e descriptografados com a mesma chave KMS. Os dados e a chave devem ser armazenados em cada uma das duas regiões. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "B. Crie uma chave KMS multirregional gerenciada pelo cliente. Crie um bucket S3 em cada região. Configure a replicação entre os buckets S3. Configure o aplicativo para usar a chave KMS com criptografia do lado do cliente.",
         "options": [
             "A. Crie um bucket S3 em cada região. Configure os buckets S3 para usar criptografia do lado do servidor com chaves de criptografia gerenciadas pelo Amazon S3 (SSE-S3). Configure a replicação entre os buckets S3.",
@@ -423,7 +423,7 @@ let questions = [
         "answer": "A. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
         "options": [
             "A. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
-            "B. Inicie instâncias do Amazon EC2 em duas Availability Zones e coloque-as atrás de um Elastic Load Balancer para ingerir os alertas. Crie um script nas instâncias do EC2 que armazenarão os alertas em um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para Amazon S3 Glacier após 14 dias.",
+            "B. Inicie instâncias do Amazon EC2 em duas zonas de disponibilidade e coloque-as atrás de um Elastic Load Balancer para ingerir os alertas. Crie um script nas instâncias do EC2 que armazenarão os alertas em um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para Amazon S3 Glacier após 14 dias.",
             "C. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas. alertas para um cluster do Amazon OpenSearch Service (Amazon Elasticsearch Service). Configure o Amazon OpenSearch Service (Amazon Cluster do Elasticsearch Service) para tirar snapshots manuais todos os dias e excluir dados do cluster com mais de 14 dias.",
             "D. Crie uma fila padrão do Amazon Simple Queue Service (Amazon SQS) para ingerir os alertas e defina o período de retenção de mensagens para 14 dias. Configure os consumidores para pesquisar a fila SQS, verificar a idade da mensagem e analisar os dados da mensagem conforme necessário. Se a mensagem for Com 14 dias, o consumidor deve copiar a mensagem para um bucket do Amazon S3 e excluir a mensagem da fila do SQS."
         ]
@@ -474,13 +474,13 @@ let questions = [
     },
     {
         "numb": 44,
-        "question": "Uma empresa precisa de capacidade garantida do Amazon EC2 em três Zonas de Disponibilidade específicas em uma Região AWS específica para um evento futuro que irá última 1 semana. O que a empresa deve fazer para garantir a capacidade do EC2?",
-        "answer": "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a Região e três Zonas de Disponibilidade necessárias.",
+        "question": "Uma empresa precisa de capacidade garantida do Amazon EC2 em três Zonas de Disponibilidade específicas em uma região AWS específica para um evento futuro que irá última 1 semana. O que a empresa deve fazer para garantir a capacidade do EC2?",
+        "answer": "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a região e três Zonas de Disponibilidade necessárias.",
         "options": [
-            "A. Compre Instâncias Reservadas que especifiquem a Região necessária.",
-            "B. Crie uma Reserva de Capacidade Sob Demanda que especifique a Região necessária.",
-            "C. Compre Instâncias Reservadas que especifiquem a Região e três Zonas de Disponibilidade necessárias.",
-            "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a Região e três Zonas de Disponibilidade necessárias."
+            "A. Compre Instâncias Reservadas que especifiquem a região necessária.",
+            "B. Crie uma Reserva de Capacidade Sob Demanda que especifique a região necessária.",
+            "C. Compre Instâncias Reservadas que especifiquem a região e três Zonas de Disponibilidade necessárias.",
+            "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a região e três Zonas de Disponibilidade necessárias."
         ]
     },
     {
@@ -706,12 +706,12 @@ let questions = [
     {
         "numb": 65,
         "question": "Uma empresa está executando um aplicativo web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 são em um grupo de Auto Scaling. O aplicativo usa um banco de dados Amazon Aurora PostgreSQL que é implantado em uma única Zona de Disponibilidade. O a empresa quer que o aplicativo tenha alta disponibilidade com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
-        "answer": "B. Configure o grupo Auto Scaling para usar várias Availability Zones. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
+        "answer": "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
         "options": [
             "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL CrossRegion Replication.",
-            "B. Configure o grupo Auto Scaling para usar várias Availability Zones. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
-            "C. Configure o grupo Auto Scaling para usar uma Availability Zone. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do snapshots em caso de falha.",
-            "D. Configure o grupo Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use o S3 Event Notificações para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
+            "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
+            "C. Configure o grupo de Auto Scaling para usar uma zona de disponibilidade. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do snapshots em caso de falha.",
+            "D. Configure o grupo de Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use o S3 Event Notificações para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
         ]
     },
     {
@@ -962,7 +962,7 @@ let questions = [
         "answer": "D. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com os mesmos recursos de computação e armazenamento do banco de dados de origem.",
         "options": [
             "A. Altere o banco de dados existente para uma implantação Multi-AZ. Atenda às solicitações de leitura da Zona de Disponibilidade primária.",
-            "B. Altere o banco de dados existente para uma implantação Multi-AZ. Atenda às solicitações de leitura da Availability Zone secundária.",
+            "B. Altere o banco de dados existente para uma implantação Multi-AZ. Atenda às solicitações de leitura da zona de disponibilidade secundária.",
             "C. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com metade dos recursos de computação e armazenamento como o banco de dados de origem.",
             "D. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com os mesmos recursos de computação e armazenamento do banco de dados de origem."
         ]
