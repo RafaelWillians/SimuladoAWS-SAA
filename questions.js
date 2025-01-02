@@ -288,10 +288,10 @@ let questions = [
     {
         "numb": 27,
         "question": "Uma empresa está migrando aplicativos para a AWS. Os aplicativos são implantados em contas diferentes. A empresa gerencia as contas centralmente usando AWS Organizations. A equipe de segurança da empresa precisa de um Single Sign-On (SSO) em todas as contas da empresa. A empresa deve continuar a gerenciar os usuários e grupos em seu Microsoft Active Directory autogerenciado localmente. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie um trust de floresta bidirecional para conectar o self-managed da empresa Microsoft Active Directory com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
+        "answer": "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança bidirecional de floresta para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO, usando o AWS Directory Service para Microsoft Active Directory.",
         "options": [
-            "A. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança de floresta unidirecional ou uma confiança de domínio unidirecional para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
-            "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie um trust de floresta bidirecional para conectar o self-managed da empresa Microsoft Active Directory com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
+            "A. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança unidirecional de floresta ou uma confiança unidirecional de domínio para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO, usando o AWS Directory Service para Microsoft Active Directory.",
+            "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança bidirecional de floresta para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO, usando o AWS Directory Service para Microsoft Active Directory.",
             "C. Use o AWS Directory Service. Crie um relacionamento de confiança bidirecional com o Microsoft Active Directory autogerenciado da empresa.",
             "D. Implante um provedor de identidade (IdP) no local. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO."
         ]
