@@ -705,13 +705,13 @@ let questions = [
     },
     {
         "numb": 65,
-        "question": "Uma empresa está executando um aplicativo web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 são em um grupo de Auto Scaling. O aplicativo usa um banco de dados Amazon Aurora PostgreSQL que é implantado em uma única Zona de Disponibilidade. O a empresa quer que o aplicativo tenha alta disponibilidade com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
-        "answer": "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
+        "question": "Uma empresa está executando um aplicativo web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 estão em um grupo de Auto Scaling. O aplicativo usa um banco de dados PostgreSQL do Amazon Aurora, que é implantado em uma única Zona de Disponibilidade. A empresa deseja que o aplicativo tenha alta disponibilidade, com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
+        "answer": "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure uma instância de Amazon RDS Proxy para o banco de dados.",
         "options": [
-            "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL CrossRegion Replication.",
-            "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
-            "C. Configure o grupo de Auto Scaling para usar uma zona de disponibilidade. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do snapshots em caso de falha.",
-            "D. Configure o grupo de Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use o S3 Event Notificações para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
+            "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL Cross-Region Replication.",
+            "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure uma instância de Amazon RDS Proxy para o banco de dados.",
+            "C. Configure o grupo de Auto Scaling para usar uma zona de disponibilidade. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados pelos snapshots, em caso de falha.",
+            "D. Configure o grupo de Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use notificações de eventos do S3, para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
         ]
     },
     {
