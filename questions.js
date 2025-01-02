@@ -716,57 +716,57 @@ let questions = [
     },
     {
         "numb": 66,
-        "question": "O aplicativo HTTP de uma empresa está por trás de um Network Load Balancer (NLB). O grupo-alvo do NLB está configurado para usar um Amazon EC2 Auto Grupo de dimensionamento com várias instâncias do EC2 que executam o serviço web. A empresa percebe que o NLB não está detectando erros HTTP para o aplicativo. Esses erros exigem uma reinicialização manual das instâncias EC2 que executam o serviço web. A empresa precisa melhorar a disponibilidade do aplicativo sem escrever scripts ou códigos personalizados. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade HTTP fornecendo a URL do aplicativo da empresa. Configure uma ação de dimensionamento automático para substituir instâncias não íntegras.",
+        "question": "O aplicativo HTTP de uma empresa está por trás de um Network Load Balancer (NLB). O grupo-alvo do NLB está configurado para usar um grupo de Auto Scaling do Amazon EC2, com várias instâncias do EC2 que executam o serviço web. A empresa percebe que o NLB não está detectando erros de HTTP para o aplicativo. Esses erros exigem uma reinicialização manual das instâncias EC2 que executam o serviço web. A empresa precisa melhorar a disponibilidade do aplicativo sem escrever scripts ou códigos personalizados. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade de HTTP, fornecendo a URL do aplicativo da empresa. Configure uma ação de Auto Scaling para substituir instâncias não-íntegras.",
         "options": [
-            "A. Habilite verificações de integridade HTTP no NLB, fornecendo a URL do aplicativo da empresa.",
-            "B. Adicione um cron job às instâncias EC2 para verificar os logs do aplicativo local uma vez a cada minuto. Se erros HTTP forem detectados, o aplicativo irá reiniciar.",
-            "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade HTTP fornecendo a URL do aplicativo da empresa. Configure uma ação de dimensionamento automático para substituir instâncias não íntegras.",
-            "D. Crie um alarme do Amazon Cloud Watch que monitore a métrica UnhealthyHostCount para o NLB. Configure uma ação de Auto Scaling para substituir instâncias não íntegras quando o alarme estiver no estado ALARME."
+            "A. Habilite verificações de integridade de HTTP no NLB, fornecendo a URL do aplicativo da empresa.",
+            "B. Adicione uma tarefa cron às instâncias EC2 para verificar os logs do aplicativo local uma vez a cada minuto. Se erros de HTTP forem detectados, o aplicativo irá reiniciar.",
+            "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade de HTTP, fornecendo a URL do aplicativo da empresa. Configure uma ação de Auto Scaling para substituir instâncias não-íntegras.",
+            "D. Crie um alarme do Amazon CloudWatch que monitore a métrica UnhealthyHostCount para o NLB. Configure uma ação de Auto Scaling para substituir instâncias não-íntegras, quando o alarme estiver no estado ALARM."
         ]
     },
     {
         "numb": 67,
-        "question": "Uma empresa executa um aplicativo de compras que usa o Amazon DynamoDB para armazenar informações do cliente. Em caso de corrupção de dados, uma solução O arquiteto precisa projetar uma solução que atenda a um objetivo de ponto de recuperação (RPO) de 15 minutos e um objetivo de tempo de recuperação (RTO) de 1 hora. O que o arquiteto de soluções deve recomendar para atender a esses requisitos?",
+        "question": "Uma empresa executa um aplicativo de compras que usa o Amazon DynamoDB para armazenar informações do cliente. Em caso de corrupção de dados, um arquiteto de soluções precisa projetar uma solução que atenda a um objetivo de ponto de recuperação (RPO) de 15 minutos e um objetivo de tempo de recuperação (RTO) de 1 hora. O que o arquiteto de soluções deve recomendar para atender a esses requisitos?",
         "answer": "B. Configure a recuperação de ponto no tempo do DynamoDB. Para recuperação de RPO, restaure para o ponto no tempo desejado.",
         "options": [
             "A. Configure as tabelas globais do DynamoDB. Para recuperação de RPO, aponte o aplicativo para uma região diferente da AWS.",
             "B. Configure a recuperação de ponto no tempo do DynamoDB. Para recuperação de RPO, restaure para o ponto no tempo desejado.",
             "C. Exporte os dados do DynamoDB para o Amazon S3 Glacier diariamente. Para recuperação de RPO, importe os dados do S3 Glacier para o DynamoDB.",
-            "D. Agende snapshots do Amazon Elastic Block Store (Amazon EBS) para a tabela DynamoDB a cada 15 minutos. Para recuperação de RPO, restaure o Tabela do DynamoDB usando o snapshot do EBS."
+            "D. Agende snapshots do Amazon Elastic Block Store (Amazon EBS) para a tabela do DynamoDB a cada 15 minutos. Para recuperação de RPO, restaure a tabela do DynamoDB usando o snapshot do EBS."
         ]
     },
     {
         "numb": 68,
-        "question": "Uma empresa executa um aplicativo de processamento de fotos que precisa fazer uploads e downloads de fotos com frequência de buckets do Amazon S3 localizados na mesma região da AWS. Um arquiteto de soluções notou um aumento no custo das taxas de transferência de dados e precisa implementar uma solução para reduzir esses custos. Como o arquiteto de soluções pode atender a esse requisito?",
-        "answer": "D. Implante um endpoint do gateway S3 VPC na VPC e anexe uma política de endpoint que permita acesso aos buckets S3.",
+        "question": "Uma empresa executa um aplicativo de processamento de fotos que precisa efetuar uploads e downloads de fotos com frequência, de buckets do Amazon S3 localizados na mesma região da AWS. Um arquiteto de soluções notou um aumento no custo das taxas de transferência de dados e precisa implementar uma solução para reduzir esses custos. Como o arquiteto de soluções pode atender a esse requisito?",
+        "answer": "D. Implante um endpoint de gateway S3 na VPC e anexe uma política de endpoint que permita acesso aos buckets do S3.",
         "options": [
-            "A. Implante o Amazon API Gateway em uma sub-rede pública e ajuste a tabela de rotas para rotear chamadas S3 por meio dela.",
+            "A. Implante o Amazon API Gateway em uma sub-rede pública e ajuste a tabela de rotas para rotear chamadas do S3 por meio dela.",
             "B. Implante um gateway NAT em uma sub-rede pública e anexe uma política de endpoint que permita acesso aos buckets S3.",
             "C. Implante o aplicativo em uma sub-rede pública e permita que ele seja roteado por meio de um gateway de internet para acessar os buckets do S3.",
-            "D. Implante um endpoint do gateway S3 VPC na VPC e anexe uma política de endpoint que permita acesso aos buckets S3."
+            "D. Implante um endpoint de gateway S3 na VPC e anexe uma política de endpoint que permita acesso aos buckets do S3."
         ]
     },
     {
         "numb": 69,
-        "question": "Uma empresa quer mover um aplicativo multicamadas de on-premises para a nuvem AWS para melhorar o desempenho do aplicativo. O aplicativo consiste em camadas de aplicativos que se comunicam entre si por meio de serviços RESTful. As transações são descartadas quando uma camada se torna sobrecarregado. Um arquiteto de soluções deve projetar uma solução que resolva esses problemas e modernize o aplicativo. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
+        "question": "Uma empresa quer mover um aplicativo multicamadas do on-premises para a nuvem AWS, para melhorar o desempenho do aplicativo. O aplicativo consiste em camadas de aplicativos que se comunicam entre si por meio de serviços RESTful. As transações são descartadas quando uma camada se torna sobrecarregada. Um arquiteto de soluções deve projetar uma solução que resolva esses problemas e modernize o aplicativo. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
         "answer": "A. Use o Amazon API Gateway e direcione as transações para as funções do AWS Lambda como a camada de aplicação. Use o Amazon Simple Queue Service (Amazon SQS) como camada de comunicação entre serviços de aplicativos.",
         "options": [
             "A. Use o Amazon API Gateway e direcione as transações para as funções do AWS Lambda como a camada de aplicação. Use o Amazon Simple Queue Service (Amazon SQS) como camada de comunicação entre serviços de aplicativos.",
-            "B. Use as métricas do Amazon CloudWatch para analisar o histórico de desempenho do aplicativo para determinar a utilização máxima dos servidores durante o falhas de desempenho. Aumente o tamanho das instâncias do Amazon EC2 do servidor de aplicativos para atender aos requisitos de pico.",
-            "C. Use o Amazon Simple Notification Service (Amazon SNS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um Grupo de Auto Scaling. Use o Amazon CloudWatch para monitorar o comprimento da fila do SNS e aumentar e diminuir conforme necessário.",
-            "D. Use o Amazon Simple Queue Service (Amazon SQS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um Auto Grupo de dimensionamento. Use o Amazon CloudWatch para monitorar o comprimento da fila do SQS e dimensionar verticalmente quando falhas de comunicação forem detectadas."
+            "B. Use as métricas do Amazon CloudWatch para analisar o histórico de desempenho do aplicativo, para determinar a utilização máxima dos servidores durante as falhas de desempenho. Aumente o tamanho das instâncias do Amazon EC2 do servidor de aplicativos, para atender aos requisitos de pico.",
+            "C. Use o Amazon Simple Notification Service (Amazon SNS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um grupo de Auto Scaling. Use o Amazon CloudWatch para monitorar o comprimento da fila do SNS e aumentar e diminuir o dimensionamento conforme necessário.",
+            "D. Use o Amazon Simple Queue Service (Amazon SQS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um grupo de Auto Scaling. Use o Amazon CloudWatch para monitorar o comprimento da fila do SQS e dimensionar verticalmente quando falhas de comunicação forem detectadas."
         ]
     },
     {
         "numb": 70,
-        "question": "Uma empresa recebe 10 TB de dados de instrumentação todos os dias de várias máquinas localizadas em uma única fábrica. Os dados consistem em arquivos JSON armazenados em uma rede de área de armazenamento (SAN) em um data center local localizado dentro da fábrica. A empresa quer enviar esses dados para a Amazon S3 onde pode ser acessado por vários sistemas adicionais que fornecem análises críticas quase em tempo real. Uma transferência segura é importante porque os dados são considerados sensíveis. Qual solução oferece a transferência de dados MAIS confiável?",
-        "answer": "B. AWS DataSync sobre AWS Direct Connect",
+        "question": "Uma empresa recebe 10 TB de dados de instrumentação todos os dias de várias máquinas localizadas em uma única fábrica. Os dados consistem em arquivos JSON armazenados em uma rede de área de armazenamento (SAN) em um data center local, localizado dentro da fábrica. A empresa quer enviar esses dados para o Amazon S3 onde podem ser acessados por vários sistemas adicionais, que fornecem análises críticas quase em tempo real. Uma transferência segura é importante porque os dados são considerados sensíveis. Qual solução oferece a transferência de dados MAIS confiável?",
+        "answer": "B. AWS DataSync pelo AWS Direct Connect",
         "options": [
             "A. AWS DataSync pela internet pública",
-            "B. AWS DataSync sobre AWS Direct Connect",
+            "B. AWS DataSync pelo AWS Direct Connect",
             "C. AWS Database Migration Service (AWS DMS) pela internet pública",
-            "D. Serviço de migração de banco de dados AWS (AWS DMS) sobre AWS Direct Connect"
+            "D. Serviço de migração de banco de dados AWS (AWS DMS) pelo AWS Direct Connect"
         ]
     },
     {
