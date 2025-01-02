@@ -7,7 +7,7 @@ let questions = [
             "A. Ative o S3 Transfer Acceleration no bucket S3 de destino. Use uploads multipart para carregar dados do site diretamente para o bucket S3 de destino.",
             "B. Carregue os dados de cada site para um bucket S3 na região mais próxima. Use o S3 Cross-Region Replication (replicação entre regiões) para copiar objetos para o bucket S3 de destino . Em seguida, remova os dados do bucket S3 de origem.",
             "C. Agende tarefas de dispositivo AWS Snowball Edge Storage Optimized diariamente para transferir dados de cada site para a região mais próxima. Use o S3 Cross-Region Replication (replicação entre regiões) para copiar objetos para o bucket S3 de destino.",
-            "D. Carregue os dados de cada site para uma instância do Amazon EC2 na região mais próxima. Armazene os dados em um Amazon Elastic Block Store (Amazon EBS). Em intervalos regulares, faça um snapshot do EBS e copie-o para a região que contém o bucket S3 de destino. Restaure o volume EBS naquela Região."
+            "D. Carregue os dados de cada site para uma instância do Amazon EC2 na região mais próxima. Armazene os dados em um Amazon Elastic Block Store (Amazon EBS). Em intervalos regulares, faça um snapshot do EBS e copie-o para a região que contém o bucket S3 de destino. Restaure o volume EBS naquela região."
         ]
     },
     {
@@ -90,12 +90,12 @@ let questions = [
     {
         "numb": 9,
         "question": "Uma empresa está executando um servidor de arquivos SMB em seu data center. O servidor de arquivos armazena arquivos grandes que são acessados ​​com frequência nos primeiros dias após os arquivos são criados. Após 7 dias, os arquivos raramente são acessados. O tamanho total dos dados está aumentando e está próximo da capacidade total de armazenamento da empresa. Um arquiteto de soluções deve aumentar a capacidade disponível da empresa espaço de armazenamento sem perder o acesso de baixa latência aos arquivos acessados ​​mais recentemente. O arquiteto de soluções também deve fornecer ciclo de vida do arquivo gerenciamento para evitar problemas futuros de armazenamento. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política de ciclo de vida S3 para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
+        "answer": "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política do S3 Lifecycle para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
         "options": [
             "A. Use o AWS DataSync para copiar dados com mais de 7 dias do servidor de arquivos SMB para a AWS.",
-            "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política de ciclo de vida S3 para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
+            "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política do S3 Lifecycle para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
             "C. Crie um sistema de arquivos do Amazon FSx for Windows File Server para ampliar o espaço de armazenamento da empresa.",
-            "D. Instale um utilitário no computador de cada usuário para acessar o Amazon S3. Crie uma política de ciclo de vida do S3 para fazer a transição dos dados para o S3 Glacier Flexible Retrieval após 7 dias."
+            "D. Instale um utilitário no computador de cada usuário para acessar o Amazon S3. Crie uma política do S3 Lifecycle para fazer a transição dos dados para o S3 Glacier Flexible Retrieval após 7 dias."
         ]
     },
     {
@@ -123,7 +123,7 @@ let questions = [
     {
         "numb": 12,
         "question": "Uma empresa global hospeda seu aplicativo web em instâncias do Amazon EC2 por trás de um Application Load Balancer (ALB). O aplicativo web tem dados estáticos e  dinâmicos. A empresa armazena seus dados estáticos em um bucket do Amazon S3. A empresa quer melhorar o desempenho e reduzir latência para os dados estáticos e dinâmicos. A empresa está usando seu próprio nome de domínio registrado com Amazon Route 53. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "C. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 como origem. Crie um acelerador padrão do AWS Global Accelerator que tem o ALB e a distribuição do CloudFront como endpoints. Crie um nome de domínio personalizado que aponte para o nome DNS do acelerador. Use o nome de domínio personalizado como um endpoint para o aplicativo web.",
+        "answer": "A. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 e o ALB como origens. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
         "options": [
             "A. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 e o ALB como origens. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
             "B. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um endpoint. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
@@ -137,7 +137,7 @@ let questions = [
         "answer": "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configure o Secrets Manager para rotacionar os segredos em um cronograma.",
         "options": [
             "A. Armazene as credenciais como segredos no AWS Secrets Manager. Use a replicação de segredos multirregionais para as regiões necessárias. Configure o Secrets Manager para rotacionar os segredos em um cronograma.",
-            "B. Armazene as credenciais como segredos no AWS Systems Manager criando um parâmetro seguro de string. Use a replicação multirregional de segredos para as Regiões necessárias. Configure o Systems Manager para rotacionar os segredos em um cronograma.",
+            "B. Armazene as credenciais como segredos no AWS Systems Manager criando um parâmetro seguro de string. Use a replicação multirregional de segredos para as regiões necessárias. Configure o Systems Manager para rotacionar os segredos em um cronograma.",
             "C. Armazene as credenciais em um bucket do Amazon S3 que tenha criptografia do lado do servidor (SSE) habilitada. Use o Amazon EventBridge (Amazon CloudWatch Events) para invocar uma função do AWS Lambda para rotacionar as credenciais.",
             "D. Criptografe as credenciais como segredos usando chaves multirregionais gerenciadas pelo cliente do AWS Key Management Service (AWS KMS). Armazene o segredos em uma tabela global do Amazon DynamoDB. Use uma função do AWS Lambda para recuperar os segredos do DynamoDB. Use a API do RDS para rotacionar os segredos."
         ]
@@ -210,35 +210,35 @@ let questions = [
     },
     {
         "numb": 20,
-        "question": "Uma empresa de e-commerce quer lançar um site de uma oferta por dia na AWS. Cada dia apresentará exatamente um produto em promoção por um período de 24 horas. A empresa quer ser capaz de lidar com milhões de solicitações a cada hora com latência de milissegundos durante os horários de pico. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa de e-commerce quer lançar um site de oferta diária na AWS. Cada dia apresentará exatamente um produto em promoção por um período de 24 horas. A empresa quer ser capaz de lidar com milhões de solicitações a cada hora com latência de milissegundos durante os horários de pico. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "D. Use um bucket do Amazon S3 para hospedar o conteúdo estático do site. Implante uma distribuição do Amazon CloudFront. Defina o bucket do S3 como a origem. Use as funções Amazon API Gateway e AWS Lambda para as APIs de backend. Armazene os dados no Amazon DynamoDB.",
         "options": [
-            "A. Use o Amazon S3 para hospedar o site completo em diferentes buckets do S3. Adicione distribuições do Amazon CloudFront. Defina os buckets do S3 como origens para o distribuições. Armazene os dados do pedido no Amazon S3.",
+            "A. Use o Amazon S3 para hospedar o site completo em diferentes buckets do S3. Adicione distribuições do Amazon CloudFront. Defina os buckets do S3 como origens para as distribuições. Armazene os dados do pedido no Amazon S3.",
             "B. Implante o site completo em instâncias do Amazon EC2 que são executadas em grupos de Auto Scaling em várias Zonas de Disponibilidade. Adicione um aplicativo Load Balancer (ALB) para distribuir o tráfego do site. Adicione outro ALB para as APIs de backend. Armazene os dados no Amazon RDS para MySQL.",
-            "C. Migre o aplicativo completo para ser executado em contêineres. Hospede os contêineres no Amazon Elastic Kubernetes Service (Amazon EKS). Use o Kubernetes Cluster Autoscaler para aumentar e diminuir o número de pods para processar rajadas no tráfego. Armazene os dados no Amazon RDS para MySQL.",
+            "C. Migre o aplicativo completo para ser executado em contêineres. Hospede os contêineres no Amazon Elastic Kubernetes Service (Amazon EKS). Use o Kubernetes Cluster Autoscaler para aumentar e diminuir o número de pods para processar picos no tráfego. Armazene os dados no Amazon RDS para MySQL.",
             "D. Use um bucket do Amazon S3 para hospedar o conteúdo estático do site. Implante uma distribuição do Amazon CloudFront. Defina o bucket do S3 como a origem. Use as funções Amazon API Gateway e AWS Lambda para as APIs de backend. Armazene os dados no Amazon DynamoDB."
         ]
     },
     {
         "numb": 21,
-        "question": "Um arquiteto de soluções está usando o Amazon S3 para projetar a arquitetura de armazenamento de um novo aplicativo de mídia digital. Os arquivos de mídia devem ser resilientes a a perda de uma Zona de Disponibilidade. Alguns arquivos são acessados ​​com frequência, enquanto outros raramente são acessados ​​em um padrão imprevisível. As soluções o arquiteto deve minimizar os custos de armazenamento e recuperação dos arquivos de mídia. Qual opção de armazenamento atende a esses requisitos?",
+        "question": "Um arquiteto de soluções está usando o Amazon S3 para projetar a arquitetura de armazenamento de um novo aplicativo de mídia digital. Os arquivos de mídia devem ser resilientes à perda de uma Zona de Disponibilidade. Alguns arquivos são acessados ​​com frequência, enquanto outros raramente são acessados ​​em um padrão imprevisível. O arquiteto de soluções deve minimizar os custos de armazenamento e recuperação dos arquivos de mídia. Qual opção de armazenamento atende a esses requisitos?",
         "answer": "B. S3 Intelligent Tiering",
         "options": [
             "A. S3 Standard",
-            "B. S3 Intelligent Tiering",
+            "B. S3 Intelligent-Tiering",
             "C. S3 Standard-Infrequent Access (S3 Padrão-IA)",
             "D. S3 One Zone-Infrequent Access (S3 One Zone-IA)"
         ]
     },
     {
         "numb": 22,
-        "question": "Uma empresa está armazenando arquivos de backup usando o armazenamento Amazon S3 Standard. Os arquivos são acessados ​​com frequência por 1 mês. No entanto, os arquivos não são acessados ​​após 1 mês. A empresa deve manter os arquivos por tempo indeterminado. Qual solução de armazenamento atenderá a esses requisitos com MAIS eficiência econômica?",
+        "question": "Uma empresa está armazenando arquivos de backup usando o armazenamento do Amazon S3 Standard. Os arquivos são acessados ​​com frequência por 1 mês. No entanto, os arquivos não são acessados ​​após 1 mês. A empresa deve manter os arquivos por tempo indeterminado. Qual solução de armazenamento atenderá a esses requisitos com MAIS eficiência econômica?",
         "answer": "B. Crie uma configuração do S3 Lifecycle para fazer a transição de objetos do S3 Standard para o S3 Glacier Deep Archive após 1 mês.",
         "options": [
             "A. Configure o S3 Intelligent-Tiering para migrar objetos automaticamente.",
             "B. Crie uma configuração do S3 Lifecycle para fazer a transição de objetos do S3 Standard para o S3 Glacier Deep Archive após 1 mês.",
-            "C. Crie uma configuração do ciclo de vida do S3 para fazer a transição de objetos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) após 1 mês.",
-            "D. Crie uma configuração do ciclo de vida do S3 para fazer a transição de objetos do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) após 1 mês."
+            "C. Crie uma configuração do S3 Lifecycle para fazer a transição de objetos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) após 1 mês.",
+            "D. Crie uma configuração do S3 Lifecycle para fazer a transição de objetos do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) após 1 mês."
         ]
     },
     {
@@ -254,18 +254,18 @@ let questions = [
     },
     {
         "numb": 24,
-        "question": "Uma empresa está projetando um aplicativo. O aplicativo usa uma função AWS Lambda para receber informações por meio do Amazon API Gateway e para armazene as informações em um banco de dados Amazon Aurora PostgreSQL. Durante a fase de prova de conceito, a empresa tem que aumentar significativamente as cotas Lambda para lidar com os altos volumes de dados que o empresa precisa carregar no banco de dados. Um arquiteto de soluções deve recomendar um novo design para melhorar a escalabilidade e minimizar o esforço de configuração. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Configure duas funções Lambda. Configure uma função para receber as informações. Configure a outra função para carregar as informações em o banco de dados. Integre as funções Lambda usando uma fila do Amazon Simple Queue Service (Amazon SQS).",
+        "question": "Uma empresa está projetando um aplicativo. O aplicativo usa uma função AWS Lambda para receber informações por meio do Amazon API Gateway e para armazenar as informações em um banco de dados Amazon Aurora PostgreSQL. Durante a fase de prova de conceito, a empresa tem que aumentar significativamente as cotas Lambda para lidar com os altos volumes de dados que o empresa precisa carregar no banco de dados. Um arquiteto de soluções deve recomendar um novo design para melhorar a escalabilidade e minimizar o esforço de configuração. Qual solução atenderá a esses requisitos?",
+        "answer": "D. Configure duas funções Lambda. Configure uma função para receber as informações. Configure a outra função para carregar as informações no banco de dados. Integre as funções Lambda usando uma fila do Amazon Simple Queue Service (Amazon SQS).",
         "options": [
-            "A. Refatore o código da função Lambda para o código Apache Tomcat que roda em instâncias Amazon EC2. Conecte o banco de dados usando nativo Drivers de conectividade de banco de dados Java (JDBC).",
-            "B. Altere a plataforma de Aurora para Amazon DynamoDProvisione um cluster DynamoDB Accelerator (DAX). Use o SDK do cliente DAX para apontar as chamadas de API existentes do DynamoDB no cluster DAX.",
-            "C. Configure duas funções Lambda. Configure uma função para receber as informações. Configure a outra função para carregar as informações em o banco de dados. Integre as funções Lambda usando o Amazon Simple Notification Service (Amazon SNS).",
-            "D. Configure duas funções Lambda. Configure uma função para receber as informações. Configure a outra função para carregar as informações em o banco de dados. Integre as funções Lambda usando uma fila do Amazon Simple Queue Service (Amazon SQS)."
+            "A. Refatore o código da função Lambda para o código Apache Tomcat que roda em instâncias Amazon EC2. Conecte o banco de dados usando drivers nativos do Java Database Conectivity (JDBC).",
+            "B. Altere a plataforma de Aurora para Amazon DynamoDB. Provisione um cluster do DynamoDB Accelerator (DAX). Use o SDK do cliente DAX para apontar as chamadas de API existentes do DynamoDB no cluster DAX.",
+            "C. Configure duas funções Lambda. Configure uma função para receber as informações. Configure a outra função para carregar as informações no banco de dados. Integre as funções Lambda usando o Amazon Simple Notification Service (Amazon SNS).",
+            "D. Configure duas funções Lambda. Configure uma função para receber as informações. Configure a outra função para carregar as informações no banco de dados. Integre as funções Lambda usando uma fila do Amazon Simple Queue Service (Amazon SQS)."
         ]
     },
     {
         "numb": 25,
-        "question": "Uma empresa precisa revisar sua implantação na Nuvem AWS para garantir que seus buckets do Amazon S3 não tenham alterações de configuração não autorizadas. O que um arquiteto de soluções deve fazer para atingir esse objetivo?",
+        "question": "Uma empresa precisa revisar sua implantação na nuvem AWS para garantir que seus buckets do Amazon S3 não tenham alterações de configuração não autorizadas. O que um arquiteto de soluções deve fazer para atingir esse objetivo?",
         "answer": "A. Ative o AWS Config com as regras apropriadas.",
         "options": [
             "A. Ative o AWS Config com as regras apropriadas.",
@@ -276,57 +276,57 @@ let questions = [
     },
     {
         "numb": 26,
-        "question": "Uma empresa está lançando um novo aplicativo e exibirá métricas de aplicativo em um painel do Amazon CloudWatch. O produto da empresa o gerente precisa acessar este painel periodicamente. O gerente de produto não tem uma conta AWS. Um arquiteto de soluções deve fornecer acesso ao gerente de produto seguindo o princípio do menor privilégio. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Crie um usuário do IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
+        "question": "Uma empresa está lançando um novo aplicativo e exibirá métricas de aplicativo em um painel do Amazon CloudWatch. O gerente de produto da empresa precisa acessar este painel periodicamente. O gerente de produto não tem uma conta AWS. Um arquiteto de soluções deve fornecer acesso ao gerente de produto seguindo o princípio do privilégio mínimo. Qual solução atenderá a esses requisitos?",
+        "answer": "A. Compartilhe o painel do console do CloudWatch. Insira o endereço de e-mail do gerente de produto e conclua as etapas de compartilhamento. Forneça um link compartilhável do painel para o gerente de produto.",
         "options": [
             "A. Compartilhe o painel do console do CloudWatch. Insira o endereço de e-mail do gerente de produto e conclua as etapas de compartilhamento. Forneça um link compartilhável do painel para o gerente de produto.",
             "B. Crie um usuário do IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
-            "C. Crie um usuário do IAM para os funcionários da empresa. Anexe a política gerenciada da AWS ViewOnlyAccess ao usuário do IAM. Compartilhe o novo login credenciais com o gerente de produto. Peça ao gerente de produto para navegar até o console do CloudWatch e localizar o painel pelo nome em a seção Painéis.",
-            "D. Implante um servidor bastion em uma sub-rede pública. Quando o gerente de produto exigir acesso ao painel, inicie o servidor e compartilhe o RDP credenciais. No servidor bastion, certifique-se de que o navegador esteja configurado para abrir a URL do painel com credenciais AWS armazenadas em cache que tenham permissões apropriadas para visualizar o painel."
+            "C. Crie um usuário do IAM para os funcionários da empresa. Anexe a política gerenciada da AWS ViewOnlyAccess ao usuário do IAM. Compartilhe o novo login credenciais com o gerente de produto. Solicite ao gerente de produto para navegar até o console do CloudWatch e localizar o painel pelo nome na seção Painéis.",
+            "D. Implante um servidor bastion em uma sub-rede pública. Quando o gerente de produto exigir acesso ao painel, inicie o servidor e compartilhe as credenciais RDP. No servidor bastion, certifique-se de que o navegador esteja configurado para abrir a URL do painel com as credenciais AWS armazenadas em cache que tenham permissões apropriadas para visualizar o painel."
         ]
     },
     {
         "numb": 27,
-        "question": "Uma empresa está migrando aplicativos para a AWS. Os aplicativos são implantados em contas diferentes. A empresa gerencia as contas centralmente usando AWS Organizations. A equipe de segurança da empresa precisa de uma solução de logon único (SSO) em todas as contas da empresa. A empresa deve continuar gerenciando os usuários e grupos em seu Microsoft Active Directory autogerenciado local. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie um trust de floresta bidirecional para conectar o self-managed da empresa Microsoft Active Directory com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
+        "question": "Uma empresa está migrando aplicativos para a AWS. Os aplicativos são implantados em contas diferentes. A empresa gerencia as contas centralmente usando AWS Organizations. A equipe de segurança da empresa precisa de um Single Sign-On (SSO) em todas as contas da empresa. A empresa deve continuar a gerenciar os usuários e grupos em seu Microsoft Active Directory autogerenciado localmente. Qual solução atenderá a esses requisitos?",
+        "answer": "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança bidirecional de floresta para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO, usando o AWS Directory Service para Microsoft Active Directory.",
         "options": [
-            "A. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança de floresta unidirecional ou uma confiança de domínio unidirecional para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
-            "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie um trust de floresta bidirecional para conectar o self-managed da empresa Microsoft Active Directory com AWS SSO usando o AWS Directory Service para Microsoft Active Directory.",
+            "A. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança unidirecional de floresta ou uma confiança unidirecional de domínio para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO, usando o AWS Directory Service para Microsoft Active Directory.",
+            "B. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO. Crie uma confiança bidirecional de floresta para conectar o Microsoft Active Directory autogerenciado da empresa com AWS SSO, usando o AWS Directory Service para Microsoft Active Directory.",
             "C. Use o AWS Directory Service. Crie um relacionamento de confiança bidirecional com o Microsoft Active Directory autogerenciado da empresa.",
             "D. Implante um provedor de identidade (IdP) no local. Habilite o AWS Single Sign-On (AWS SSO) no console do AWS SSO."
         ]
     },
     {
         "numb": 28,
-        "question": "Uma empresa fornece um serviço de Voice over Internet Protocol (VoIP) que usa conexões UDP. O serviço consiste em instâncias do Amazon EC2 que executado em um grupo de Auto Scaling. A empresa tem implantações em várias regiões da AWS. A empresa precisa rotear usuários para a Região com a menor latência. A empresa também precisa de failover automatizado entre Regiões. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o NLB como um ponto final do AWS Global Accelerator em cada região.",
+        "question": "Uma empresa fornece um serviço de Voice over Internet Protocol (VoIP) que usa conexões UDP. O serviço consiste em instâncias do Amazon EC2 que são executadas em um grupo de Auto Scaling. A empresa tem implantações em várias regiões da AWS. A empresa precisa rotear usuários para a região com a menor latência. A empresa também precisa de failover automatizado entre regiões. Qual solução atenderá a esses requisitos?",
+        "answer": "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Use o NLB como um endpoint do AWS Global Accelerator em cada região.",
         "options": [
-            "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o NLB como um ponto final do AWS Global Accelerator em cada região.",
-            "B. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Use o ALB como um ponto final do AWS Global Accelerator em cada região.",
-            "C. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Crie um Registro de latência do Amazon Route 53 que aponta para aliases para cada NLB. Crie uma distribuição do Amazon CloudFront que use o registro de latência como uma origem.",
-            "D. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo Auto Scaling. Crie um registro ponderado do Amazon Route 53 que aponta para aliases para cada ALB. Implante uma distribuição do Amazon CloudFront que usa o registro ponderado registro como origem."
+            "A. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Use o NLB como um endpoint do AWS Global Accelerator em cada região.",
+            "B. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Use o ALB como um endpoint do AWS Global Accelerator em cada região.",
+            "C. Implante um Network Load Balancer (NLB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Crie um registro de latência do Amazon Route 53 que aponta para aliases para cada NLB. Crie uma distribuição do Amazon CloudFront que use o registro de latência como uma origem.",
+            "D. Implante um Application Load Balancer (ALB) e um grupo de destino associado. Associe o grupo de destino ao grupo de Auto Scaling. Crie um registro ponderado do Amazon Route 53 que aponta para aliases para cada ALB. Implante uma distribuição do Amazon CloudFront que usa o registro ponderado registro como origem."
         ]
     },
     {
         "numb": 29,
-        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos em recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de executando os testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
-        "answer": "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do DB e restaure o snapshot quando necessário.",
+        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos em recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas, executa uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de execução dos testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
+        "answer": "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do BD e restaure o snapshot quando necessário.",
         "options": [
             "A. Pare a instância do BD quando os testes forem concluídos. Reinicie a instância do BD quando necessário.",
-            "B. Use uma política de dimensionamento automático com a instância do banco de dados para dimensionar automaticamente quando os testes forem concluídos.",
-            "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do DB e restaure o snapshot quando necessário.",
+            "B. Use uma política de Auto Scaling com a instância do banco de dados para dimensionar automaticamente quando os testes forem concluídos.",
+            "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do BD e restaure o snapshot quando necessário.",
             "D. Modifique a instância do BD para uma instância de baixa capacidade quando os testes forem concluídos. Modifique a instância do BD novamente quando necessário."
         ]
     },
     {
         "numb": 30,
-        "question": "Uma empresa que hospeda seu aplicativo web na AWS quer garantir todas as instâncias do Amazon EC2. Instâncias do Amazon RDS DB. e Amazon Redshift clusters são configurados com tags. A empresa quer minimizar o esforço de configurar e operar essa verificação. O que um arquiteto de soluções deve fazer para conseguir isso?",
-        "answer": "A. Use as regras do AWS Config para definir e detectar recursos que não estão marcados corretamente.",
+        "question": "Uma empresa que hospeda seu aplicativo web na AWS quer garantir todas as instâncias do Amazon EC2, instâncias de banco de dados do Amazon RDS e clusters do Amazon Redshift estejam configurados com tags. A empresa quer minimizar o esforço de configurar e operar essa verificação. O que um arquiteto de soluções deve fazer para atingir esse objetivo?",
+        "answer": "A. Use as regras do AWS Config para definir e detectar recursos que não estejam devidamente marcados.",
         "options": [
-            "A. Use as regras do AWS Config para definir e detectar recursos que não estão marcados corretamente.",
+            "A. Use as regras do AWS Config para definir e detectar recursos que não estejam devidamente marcados.",
             "B. Use o Cost Explorer para exibir recursos que não estão devidamente marcados. Marque esses recursos manualmente.",
             "C. Escreva chamadas de API para verificar todos os recursos para alocação de tags adequada. Periodicamente execute o código em uma instância EC2.",
-            "D. Escreva chamadas de API para verificar todos os recursos para alocação de tags adequada. Agende uma função AWS Lambda por meio do Amazon CloudWatch para execute o código periodicamente."
+            "D. Escreva chamadas de API para verificar todos os recursos para alocação de tags adequada. Agende uma função AWS Lambda por meio do Amazon CloudWatch para executar o código periodicamente."
         ]
     },
     {
@@ -337,34 +337,34 @@ let questions = [
             "A. Coloque o site em contêineres e hospede-o no AWS Fargate.",
             "B. Crie um bucket do Amazon S3 e hospede o site nele.",
             "C. Implante um servidor web em uma instância do Amazon EC2 para hospedar o site.",
-            "D. Configure um Application Load Balancer com um destino AWS Lambda que usa a estrutura Express.js."
+            "D. Configure um Application Load Balancer com um AWS Lambda como destino, que usa o framework Express.js."
         ]
     },
     {
         "numb": 32,
-        "question": "Uma empresa executa um aplicativo web de marketplace online na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. a empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
-        "answer": "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações do Kinesis fluxo de dados.",
+        "question": "Uma empresa executa um aplicativo web de marketplace na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. A empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
+        "answer": "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações da stream de dados do Kinesis.",
         "options": [
-            "A. Armazene os dados das transações no Amazon DynamoDB. Configure uma regra no DynamoDB para remover dados confidenciais de cada transação escrever. Use o DynamoDB Streams para compartilhar os dados de transações com outros aplicativos.",
-            "B. Transmita os dados de transações para o Amazon Kinesis Data Firehose para armazenar dados no Amazon DynamoDB e no Amazon S3. Use o AWS Lambda integração com o Kinesis Data Firehose para remover dados sensíveis. Outros aplicativos podem consumir os dados armazenados no Amazon S3.",
-            "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações do Kinesis fluxo de dados.",
-            "D. Armazene os dados de transações em lote no Amazon S3 como arquivos. Use o AWS Lambda para processar cada arquivo e remover dados confidenciais antes atualizando os arquivos no Amazon S3. A função Lambda então armazena os dados no Amazon DynamoDB. Outros aplicativos podem consumir arquivos de transação armazenados no Amazon S3."
+            "A. Armazene os dados das transações no Amazon DynamoDB. Configure uma regra no DynamoDB para remover dados confidenciais de cada transação mediante a escrita. Use o DynamoDB Streams para compartilhar os dados de transações com outros aplicativos.",
+            "B. Transmita os dados de transações para o Amazon Kinesis Data Firehose para armazenar dados no Amazon DynamoDB e no Amazon S3. Use a integração do AWS Lambda com o Kinesis Data Firehose para remover dados sensíveis. Outros aplicativos podem consumir os dados armazenados no Amazon S3.",
+            "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações da stream de dados do Kinesis.",
+            "D. Armazene os dados de transações em lote no Amazon S3 como arquivos. Use o AWS Lambda para processar cada arquivo e remover dados confidenciais antes de atualizar os arquivos no Amazon S3. A função Lambda após isso armazena os dados no Amazon DynamoDB. Outros aplicativos podem consumir arquivos de transação armazenados no Amazon S3."
         ]
     },
     {
         "numb": 33,
-        "question": "Uma empresa hospeda seus aplicativos multicamadas na AWS. Para conformidade, governança, auditoria e segurança, a empresa deve rastrear a configuração alterações em seus recursos da AWS e registrar um histórico de chamadas de API feitas a esses recursos. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "B. Use o AWS Config para rastrear alterações de configuração e o AWS CloudTrail para registrar chamadas de API.",
+        "question": "Uma empresa hospeda seus aplicativos multicamadas na AWS. Para conformidade, governança, auditoria e segurança, a empresa deve rastrear as alterações de configurações em seus recursos da AWS e registrar um histórico de chamadas de API feitas a esses recursos. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "B. Use o AWS Config para rastrear alterações de configurações e o AWS CloudTrail para registrar chamadas de API.",
         "options": [
-            "A. Use o AWS CloudTrail para rastrear alterações de configuração e o AWS Config para registrar chamadas de API.",
-            "B. Use o AWS Config para rastrear alterações de configuração e o AWS CloudTrail para registrar chamadas de API.",
-            "C. Use o AWS Config para rastrear alterações de configuração e o Amazon CloudWatch para registrar chamadas de API.",
-            "D. Use o AWS CloudTrail para rastrear alterações de configuração e o Amazon CloudWatch para registrar chamadas de API."
+            "A. Use o AWS CloudTrail para rastrear alterações de configurações e o AWS Config para registrar chamadas de API.",
+            "B. Use o AWS Config para rastrear alterações de configurações e o AWS CloudTrail para registrar chamadas de API.",
+            "C. Use o AWS Config para rastrear alterações de configurações e o Amazon CloudWatch para registrar chamadas de API.",
+            "D. Use o AWS CloudTrail para rastrear alterações de configurações e o Amazon CloudWatch para registrar chamadas de API."
         ]
     },
     {
         "numb": 34,
-        "question": "Uma empresa está se preparando para lançar um aplicativo web voltado ao público na Nuvem AWS. A arquitetura consiste em instâncias do Amazon EC2 dentro de um VPC por trás de um Elastic Load Balancer (ELB). Um serviço de terceiros é usado para o DNS. O arquiteto de soluções da empresa deve recomendar um solução para detectar e proteger contra ataques DDoS em larga escala. Qual solução atende a esses requisitos?",
+        "question": "Uma empresa está se preparando para lançar um aplicativo web voltado ao público na nuvem AWS. A arquitetura consiste em instâncias do Amazon EC2 dentro de uma VPC por trás de um Elastic Load Balancer (ELB). Um serviço de terceiros é usado para o DNS. O arquiteto de soluções da empresa deve recomendar um solução para detectar e proteger contra ataques DDoS em larga escala. Qual solução atende a esses requisitos?",
         "answer": "D. Habilite o AWS Shield Advanced e atribua o ELB a ele.",
         "options": [
             "A. Habilite o Amazon GuardDuty na conta.",
@@ -375,7 +375,7 @@ let questions = [
     },
     {
         "numb": 35,
-        "question": "Uma empresa está construindo um aplicativo na Nuvem AWS. O aplicativo armazenará dados em buckets do Amazon S3 em duas regiões da AWS. A empresa deve usar uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS) para criptografar todos os dados armazenados nos buckets do S3. Os dados em ambos os buckets S3 devem ser criptografados e descriptografados com a mesma chave KMS. Os dados e a chave devem ser armazenados em cada uma das duas Regiões. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa está construindo um aplicativo na nuvem AWS. O aplicativo armazenará dados em buckets do Amazon S3 em duas regiões da AWS. A empresa deve usar uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS) para criptografar todos os dados armazenados nos buckets do S3. Os dados em ambos os buckets S3 devem ser criptografados e descriptografados com a mesma chave KMS. Os dados e a chave devem ser armazenados em cada uma das duas regiões. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "B. Crie uma chave KMS multirregional gerenciada pelo cliente. Crie um bucket S3 em cada região. Configure a replicação entre os buckets S3. Configure o aplicativo para usar a chave KMS com criptografia do lado do cliente.",
         "options": [
             "A. Crie um bucket S3 em cada região. Configure os buckets S3 para usar criptografia do lado do servidor com chaves de criptografia gerenciadas pelo Amazon S3 (SSE-S3). Configure a replicação entre os buckets S3.",
@@ -386,29 +386,29 @@ let questions = [
     },
     {
         "numb": 36,
-        "question": "Uma empresa lançou recentemente uma variedade de novas cargas de trabalho em instâncias do Amazon EC2 em sua conta AWS. A empresa precisa criar uma estratégia para acessar e administrar as instâncias remotamente e com segurança. A empresa precisa implementar um processo repetível que funcione com AWS nativo serviços e segue o AWS Well-Architected Framework. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "B. Anexe a função do IAM apropriada a cada instância existente e nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
+        "question": "Uma empresa lançou recentemente uma variedade de novas cargas de trabalho em instâncias do Amazon EC2 em sua conta AWS. A empresa precisa criar uma estratégia para acessar e administrar as instâncias remotamente e com segurança. A empresa precisa implementar um processo repetível que funcione com serviços nativos na AWS e siga o AWS Well-Architected Framework. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "answer": "B. Anexe a função do IAM apropriada a cada instância existente e à nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
         "options": [
             "A. Use o console serial do EC2 para acessar diretamente a interface do terminal de cada instância para administração.",
-            "B. Anexe a função do IAM apropriada a cada instância existente e nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
+            "B. Anexe a função do IAM apropriada a cada instância existente e à nova instância. Use o AWS Systems Manager Session Manager para estabelecer uma sessão SSH remota.",
             "C. Crie um par de chaves SSH administrativas. Carregue a chave pública em cada instância EC2. Implante um bastion host em uma sub-rede pública para fornecer um túnel para administração de cada instância.",
-            "D. Estabeleça uma conexão VPN AWS ​​Site-to-Site. Instrua os administradores a usar suas máquinas locais no local para se conectar diretamente ao instâncias usando chaves SSH através do túnel VPN."
+            "D. Estabeleça uma conexão do AWS ​​Site-to-Site VPN. Instrua os administradores a usar suas máquinas locais no local para se conectarem diretamente a instâncias usando chaves SSH através do túnel VPN."
         ]
     },
     {
         "numb": 37,
-        "question": "Uma empresa está hospedando um site estático no Amazon S3 e está usando o Amazon Route 53 para DNS. O site está enfrentando uma demanda crescente de ao redor do mundo. A empresa deve diminuir a latência para os usuários que acessam o site. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
-        "answer": "C. Adicione uma distribuição do Amazon CloudFront na frente do bucket do S3. Edite as entradas do Route 53 para apontar para a distribuição do CloudFront.",
+        "question": "Uma empresa está hospedando um site estático no Amazon S3 e está usando o Amazon Route 53 para DNS. O site está enfrentando uma demanda crescente ao redor do mundo. A empresa deve diminuir a latência para os usuários que acessam o site. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
+        "answer": "C. Adicione uma distribuição do Amazon CloudFront na frente do bucket do S3. Edite as entradas do Route 53 para apontar à distribuição do CloudFront.",
         "options": [
-            "A. Replique o bucket S3 que contém o site para todas as regiões da AWS. Adicione entradas de roteamento de geolocalização do Route 53.",
+            "A. Replique o bucket do S3 que contém o site para todas as regiões da AWS. Adicione entradas de roteamento de geolocalização do Route 53.",
             "B. Provisione aceleradores no AWS Global Accelerator. Associe os endereços IP fornecidos ao bucket S3. Edite as entradas do Route 53 para apontam para os endereços IP dos aceleradores.",
-            "C. Adicione uma distribuição do Amazon CloudFront na frente do bucket do S3. Edite as entradas do Route 53 para apontar para a distribuição do CloudFront.",
+            "C. Adicione uma distribuição do Amazon CloudFront na frente do bucket do S3. Edite as entradas do Route 53 para apontar à distribuição do CloudFront.",
             "D. Habilite o S3 Transfer Acceleration no bucket. Edite as entradas do Route 53 para apontar para o novo endpoint."
         ]
     },
     {
         "numb": 38,
-        "question": "Uma empresa mantém um repositório pesquisável de itens em seu site. Os dados são armazenados em uma tabela de banco de dados Amazon RDS for MySQL que contém mais de 10 milhões de linhas. O banco de dados tem 2 TB de armazenamento SSD de uso geral. Há milhões de atualizações desses dados a cada dia através do site da empresa. A empresa notou que algumas operações de inserção estão demorando 10 segundos ou mais. A empresa determinou que o armazenamento do banco de dados o desempenho é o problema. Qual solução aborda esse problema de desempenho?",
+        "question": "Uma empresa mantém um repositório pesquisável de itens em seu site. Os dados são armazenados em uma tabela de banco de dados Amazon RDS para MySQL que contém mais de 10 milhões de linhas. O banco de dados tem 2 TB de armazenamento SSD de uso geral. Há milhões de atualizações desses dados a cada dia através do site da empresa. A empresa notou que algumas operações de inclusão estão demorando 10 segundos ou mais. A empresa determinou que o desempenho de armazenamento do banco de dados é o problema. Qual solução aborda esse problema de desempenho?",
         "answer": "A. Altere o tipo de armazenamento para SSD IOPS provisionado.",
         "options": [
             "A. Altere o tipo de armazenamento para SSD IOPS provisionado.",
@@ -419,29 +419,29 @@ let questions = [
     },
     {
         "numb": 39,
-        "question": "Uma empresa tem milhares de dispositivos de borda que coletivamente geram 1 TB de alertas de status por dia. Cada alerta tem aproximadamente 2 KB de tamanho. O arquiteto de soluções precisa implementar uma solução para ingerir e armazenar os alertas para análise futura. A empresa quer uma solução altamente disponível. No entanto, a empresa precisa minimizar custos e não quer gerenciar custos adicionais infraestrutura. Além disso, a empresa quer manter 14 dias de dados disponíveis para análise imediata e arquivar quaisquer dados com mais de 14 dias. Qual é a solução operacional MAIS eficiente que atende a esses requisitos?",
-        "answer": "A. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
+        "question": "Uma empresa tem milhares de dispositivos de borda que coletivamente geram 1 TB de alertas de status por dia. Cada alerta tem aproximadamente 2 KB de tamanho. O arquiteto de soluções precisa implementar uma solução para ingerir e armazenar os alertas para análise futura. A empresa quer uma solução altamente disponível. No entanto, a empresa precisa minimizar custos e não quer gerenciar custos adicionais de infraestrutura. Além disso, a empresa quer manter 14 dias de dados disponíveis para análise imediata e arquivar quaisquer dados com mais de 14 dias. Qual é a solução operacional MAIS eficiente que atende a esses requisitos?",
+        "answer": "A. Crie uma stream de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure a stream do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Crie uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
         "options": [
-            "A. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
-            "B. Inicie instâncias do Amazon EC2 em duas Availability Zones e coloque-as atrás de um Elastic Load Balancer para ingerir os alertas. Crie um script nas instâncias do EC2 que armazenarão os alertas em um bucket do Amazon S3. Configure uma configuração do S3 Lifecycle para fazer a transição de dados para Amazon S3 Glacier após 14 dias.",
-            "C. Crie um fluxo de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure o fluxo do Kinesis Data Firehose para entregar os alertas. alertas para um cluster do Amazon OpenSearch Service (Amazon Elasticsearch Service). Configure o Amazon OpenSearch Service (Amazon Cluster do Elasticsearch Service) para tirar snapshots manuais todos os dias e excluir dados do cluster com mais de 14 dias.",
-            "D. Crie uma fila padrão do Amazon Simple Queue Service (Amazon SQS) para ingerir os alertas e defina o período de retenção de mensagens para 14 dias. Configure os consumidores para pesquisar a fila SQS, verificar a idade da mensagem e analisar os dados da mensagem conforme necessário. Se a mensagem for Com 14 dias, o consumidor deve copiar a mensagem para um bucket do Amazon S3 e excluir a mensagem da fila do SQS."
+            "A. Crie uma stream de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure a stream do Kinesis Data Firehose para entregar os alertas para um bucket do Amazon S3. Crie uma configuração do S3 Lifecycle para fazer a transição de dados para o Amazon S3 Glacier após 14 dias.",
+            "B. Inicie instâncias do Amazon EC2 em duas zonas de disponibilidade e coloque-as atrás de um Elastic Load Balancer para ingerir os alertas. Crie um script nas instâncias do EC2 que armazenarão os alertas em um bucket do Amazon S3. Crie uma configuração do S3 Lifecycle para fazer a transição de dados para Amazon S3 Glacier após 14 dias.",
+            "C. Crie uma stream de entrega do Amazon Kinesis Data Firehose para ingerir os alertas. Configure a stream do Kinesis Data Firehose para entregar os alertas para um cluster do Amazon OpenSearch Service (Amazon Elasticsearch Service). Configure o Amazon OpenSearch Service (Amazon Cluster do Elasticsearch Service) para tirar snapshots manuais todos os dias e excluir dados do cluster com mais de 14 dias.",
+            "D. Crie uma fila padrão do Amazon Simple Queue Service (Amazon SQS) para ingerir os alertas e defina o período de retenção de mensagens para 14 dias. Configure os consumidores para pesquisar a fila SQS, verificar a idade da mensagem e analisar os dados da mensagem conforme necessário. Se a mensagem estiver ativa há 14 dias, o consumidor deve copiar a mensagem para um bucket do Amazon S3 e excluir a mensagem da fila do SQS."
         ]
     },
     {
         "numb": 40,
-        "question": "O aplicativo de uma empresa integra-se com várias fontes de software como serviço (SaaS) para coleta de dados. A empresa executa o Amazon EC2 instâncias para receber os dados e carregá-los em um bucket do Amazon S3 para análise. A mesma instância do EC2 que recebe e carrega os dados os dados também enviam uma notificação ao usuário quando um upload é concluído. A empresa notou um desempenho lento do aplicativo e quer melhorar o desempenho o máximo possível. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "B. Crie um fluxo do Amazon AppFlow para transferir dados entre cada fonte SaaS e o bucket S3. Configure uma notificação de evento S3 para enviar eventos para um tópico do Amazon Simple Notification Service (Amazon SNS) quando o upload para o bucket do S3 estiver concluído.",
+        "question": "O aplicativo de uma empresa integra-se com várias fontes de software como serviço (SaaS) para coleta de dados. A empresa executa instâncias do Amazon EC2 para receber os dados e carregá-los em um bucket do Amazon S3 para análise. A mesma instância do EC2 que recebe e carrega os dados os dados também enviam uma notificação ao usuário quando um upload é concluído. A empresa notou um desempenho lento do aplicativo e quer melhorar o desempenho o máximo possível. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "answer": "B. Crie um fluxo do Amazon AppFlow para transferir dados entre cada fonte SaaS e o bucket S3. Configure uma notificação de evento do S3 para enviar eventos para um tópico do Amazon Simple Notification Service (Amazon SNS) quando o upload para o bucket do S3 for concluído.",
         "options": [
-            "A. Crie um grupo de Auto Scaling para que as instâncias do EC2 possam ser dimensionadas horizontalmente. Configure uma notificação de evento do S3 para enviar eventos para um Amazon Simple Tópico do Serviço de Notificação (Amazon SNS) quando o upload para o bucket do S3 for concluído.",
-            "B. Crie um fluxo do Amazon AppFlow para transferir dados entre cada fonte SaaS e o bucket S3. Configure uma notificação de evento S3 para enviar eventos para um tópico do Amazon Simple Notification Service (Amazon SNS) quando o upload para o bucket do S3 estiver concluído.",
-            "C. Crie uma regra do Amazon EventBridge (Amazon CloudWatch Events) para cada fonte SaaS para enviar dados de saída. Configure o bucket S3 como o alvo da regra. Crie uma segunda regra EventBridge (Cloud Watch Events) para enviar eventos quando o upload para o bucket S3 for concluído. Configure um tópico do Amazon Simple Notification Service (Amazon SNS) como alvo da segunda regra.",
-            "D. Crie um contêiner Docker para usar em vez de uma instância EC2. Hospede o aplicativo em contêiner no Amazon Elastic Container Service (Amazon ECS). Configure o Amazon CloudWatch Container Insights para enviar eventos para um Amazon Simple Notification Service (Amazon SNS) tópico quando o upload para o bucket S3 estiver concluído."
+            "A. Crie um grupo de Auto Scaling para que as instâncias do EC2 possam ser dimensionadas horizontalmente. Configure uma notificação de evento do S3 para enviar eventos para um tópico do Amazon Simple Notification Service (Amazon SNS) quando o upload para o bucket do S3 for concluído.",
+            "B. Crie um fluxo do Amazon AppFlow para transferir dados entre cada fonte SaaS e o bucket S3. Configure uma notificação de evento do S3 para enviar eventos para um tópico do Amazon Simple Notification Service (Amazon SNS) quando o upload para o bucket do S3 for concluído.",
+            "C. Crie uma regra do Amazon EventBridge (Amazon CloudWatch Events) para cada fonte SaaS para enviar dados de saída. Configure o bucket S3 como o alvo da regra. Crie uma segunda regra do EventBridge (CloudWatch Events) para enviar eventos quando o upload para o bucket S3 for concluído. Configure um tópico do Amazon Simple Notification Service (Amazon SNS) como alvo da segunda regra.",
+            "D. Crie um contêiner Docker para usá-lo em vez de uma instância EC2. Hospede o aplicativo em contêiner no Amazon Elastic Container Service (Amazon ECS). Configure o Amazon CloudWatch Container Insights para enviar eventos para um Amazon Simple Notification Service (Amazon SNS) tópico quando o upload para o bucket S3 for concluído."
         ]
     },
     {
         "numb": 41,
-        "question": "Uma empresa executa um aplicativo de processamento de imagem altamente disponível em instâncias do Amazon EC2 em uma única VPC. As instâncias do EC2 são executadas dentro de várias sub-redes em várias Zonas de Disponibilidade. As instâncias EC2 não se comunicam entre si. No entanto, as instâncias EC2 baixam imagens do Amazon S3 e fazer upload de imagens para o Amazon S3 por meio de um único gateway NAT. A empresa está preocupada com as taxas de transferência de dados. Qual é a maneira MAIS econômica para a empresa evitar cobranças de transferência de dados regionais?",
+        "question": "Uma empresa executa um aplicativo de processamento de imagem altamente disponível em instâncias do Amazon EC2 em uma única VPC. As instâncias do EC2 são executadas dentro de várias sub-redes em várias Zonas de Disponibilidade. As instâncias EC2 não se comunicam entre si. No entanto, as instâncias EC2 fazem download de imagens do Amazon S3 e fazem upload de imagens para o Amazon S3 por meio de um único gateway NAT. A empresa está preocupada com as taxas de transferência de dados. Qual é a maneira MAIS econômica para a empresa evitar cobranças de transferência de dados regionais?",
         "answer": "C. Implante um endpoint de VPC de gateway para o Amazon S3.",
         "options": [
             "A. Inicie o gateway NAT em cada Zona de Disponibilidade.",
@@ -452,35 +452,35 @@ let questions = [
     },
     {
         "numb": 42,
-        "question": "Uma empresa tem um aplicativo local que gera uma grande quantidade de dados sensíveis ao tempo que são armazenados em backup no Amazon S3. O aplicativo cresceu e há reclamações de usuários sobre limitações de largura de banda da Internet. Um arquiteto de soluções precisa projetar uma solução de longo prazo que permite backups oportunos no Amazon S3 e com impacto mínimo na conectividade de internet para usuários internos. Qual solução atende a esses requisitos?",
-        "answer": "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
+        "question": "Uma empresa tem um aplicativo local que gera uma grande quantidade de dados sensíveis ao tempo que são armazenados em backup no Amazon S3. O aplicativo cresceu e há reclamações de usuários sobre limitações de largura de banda da Internet. Um arquiteto de soluções precisa projetar uma solução de longo prazo que permita backups providenciais no Amazon S3 e com impacto mínimo na conectividade de internet para usuários internos. Qual solução atende a esses requisitos?",
+        "answer": "B. Estabeleça uma nova conexão do AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
         "options": [
             "A. Estabeleça conexões VPN da AWS e faça proxy de todo o tráfego por meio de um endpoint do gateway VPC.",
             "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
-            "C. Peça dispositivos AWS Snowball diariamente. Carregue os dados nos dispositivos Snowball e retorne os dispositivos para a AWS todos os dias.",
-            "D. Envie um ticket de suporte por meio do AWS Management Console. Solicite a remoção dos limites de serviço do S3 da conta."
+            "C. Solicite dispositivos AWS Snowball diariamente. Carregue os dados nos dispositivos Snowball e retorne os dispositivos para a AWS todos os dias.",
+            "D. Envie um ticket de suporte por meio do console de gerenciamento da AWS. Solicite a remoção dos limites de serviço do S3 da conta."
         ]
     },
     {
         "numb": 43,
-        "question": "Uma empresa tem um aplicativo que fornece serviços de marketing para lojas. Os serviços são baseados em compras anteriores de clientes da loja. as lojas carregam dados de transações para a empresa por meio de SFTP, e os dados são processados ​​e analisados ​​para gerar novas ofertas de marketing. Alguns de os arquivos podem exceder 200 GB de tamanho. Recentemente, a empresa descobriu que algumas lojas enviaram arquivos que contêm informações de identificação pessoal (PII) que não deveriam foram incluídos. A empresa quer que os administradores sejam alertados se PII for compartilhado novamente. A empresa também quer automatizar a correção. O que um arquiteto de soluções deve fazer para atender a esses requisitos com o MENOR esforço de desenvolvimento?",
-        "answer": "B. Use um bucket do Amazon S3 como um ponto de transferência seguro. Use o Amazon Macie para escanear os objetos no bucket. Se os objetos contiverem PII, use Amazon Simple Notification Service (Amazon SNS) para acionar uma notificação aos administradores para remover os objetos que contêm PII.",
+        "question": "Uma empresa tem um aplicativo que fornece serviços de marketing para lojas. Os serviços são baseados em compras anteriores de clientes da loja. As lojas fazem uploads de dados de transações para a empresa por meio de SFTP, e os dados são processados ​​e analisados ​​para gerar novas ofertas de marketing. Alguns dos arquivos podem exceder 200 GB de tamanho. Recentemente, a empresa descobriu que algumas lojas enviaram arquivos que contêm informações de identificação pessoal (PII) que não deveriam ser incluídos. A empresa quer que os administradores sejam alertados se PII's forem compartilhados novamente. A empresa também quer automatizar a correção. O que um arquiteto de soluções deve fazer para atender a esses requisitos com o MENOR esforço de desenvolvimento?",
+        "answer": "B. Use um bucket do Amazon S3 como um ponto de transferência seguro. Use o Amazon Macie para escanear os objetos no bucket. Se os objetos contiverem PII, use Amazon Simple Notification Service (Amazon SNS) para acionar uma notificação aos administradores para remover os objetos que contenham PII.",
         "options": [
-            "A. Use um bucket do Amazon S3 como um ponto de transferência seguro. Use o Amazon Inspector para escanear os objetos no bucket. Se os objetos contiverem PII, acione uma política de ciclo de vida S3 para remover os objetos que contêm PII.",
-            "B. Use um bucket do Amazon S3 como um ponto de transferência seguro. Use o Amazon Macie para escanear os objetos no bucket. Se os objetos contiverem PII, use Amazon Simple Notification Service (Amazon SNS) para acionar uma notificação aos administradores para remover os objetos que contêm PII.",
-            "C. Implemente algoritmos de varredura personalizados em uma função AWS Lambda. Acione a função quando os objetos forem carregados no bucket. Se os objetos contêm PII, use o Amazon Simple Notification Service (Amazon SNS) para acionar uma notificação aos administradores para remover os objetos que contêm PII.",
-            "D. Implemente algoritmos de varredura personalizados em uma função AWS Lambda. Acione a função quando os objetos forem carregados no bucket. Se objetos contêm PII, use o Amazon Simple Email Service (Amazon SES) para acionar uma notificação aos administradores e acionar um S3 Lifecycle política para remover as carnes que contêm PII."
+            "A. Use um bucket do Amazon S3 como um ponto de transferência seguro. Use o Amazon Inspector para escanear os objetos no bucket. Se os objetos contiverem PII, acione uma política do S3 Lifecycle para remover os objetos que contenham PII.",
+            "B. Use um bucket do Amazon S3 como um ponto de transferência seguro. Use o Amazon Macie para escanear os objetos no bucket. Se os objetos contiverem PII, use Amazon Simple Notification Service (Amazon SNS) para acionar uma notificação aos administradores para remover os objetos que contenham PII.",
+            "C. Implemente algoritmos de varredura personalizados em uma função AWS Lambda. Acione a função quando os objetos forem carregados no bucket. Se os objetos contiverem PII, use o Amazon Simple Notification Service (Amazon SNS) para acionar uma notificação aos administradores para remover os objetos que contenham PII.",
+            "D. Implemente algoritmos de varredura personalizados em uma função AWS Lambda. Acione a função quando os objetos forem carregados no bucket. Se objetos contêm PII, use o Amazon Simple Email Service (Amazon SES) para acionar uma notificação aos administradores e acionar uma política do S3 Lifecycle para remover os arquivos maiores que contenham PII."
         ]
     },
     {
         "numb": 44,
-        "question": "Uma empresa precisa de capacidade garantida do Amazon EC2 em três Zonas de Disponibilidade específicas em uma Região AWS específica para um evento futuro que irá última 1 semana. O que a empresa deve fazer para garantir a capacidade do EC2?",
-        "answer": "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a Região e três Zonas de Disponibilidade necessárias.",
+        "question": "Uma empresa precisa de capacidade garantida do Amazon EC2 em três Zonas de Disponibilidade específicas em uma região AWS específica para um evento futuro que irá última 1 semana. O que a empresa deve fazer para garantir a capacidade do EC2?",
+        "answer": "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a região e três Zonas de Disponibilidade necessárias.",
         "options": [
-            "A. Compre Instâncias Reservadas que especifiquem a Região necessária.",
-            "B. Crie uma Reserva de Capacidade Sob Demanda que especifique a Região necessária.",
-            "C. Compre Instâncias Reservadas que especifiquem a Região e três Zonas de Disponibilidade necessárias.",
-            "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a Região e três Zonas de Disponibilidade necessárias."
+            "A. Compre Instâncias Reservadas que especifiquem a região necessária.",
+            "B. Crie uma Reserva de Capacidade Sob Demanda que especifique a região necessária.",
+            "C. Compre Instâncias Reservadas que especifiquem a região e três Zonas de Disponibilidade necessárias.",
+            "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a região e três Zonas de Disponibilidade necessárias."
         ]
     },
     {
@@ -530,12 +530,12 @@ let questions = [
     {
         "numb": 49,
         "question": "Uma empresa precisa armazenar seus registros contábeis no Amazon S3. Os registros devem estar imediatamente acessíveis por 1 ano e depois devem ser arquivado por mais 9 anos. Ninguém na empresa, incluindo usuários administrativos e usuários root, pode excluir os registros durante todo o período de 10 anos. Os registros devem ser armazenados com a máxima resiliência. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Use uma política de ciclo de vida S3 para fazer a transição dos registros do S3 Standard para o S3 Glacier Deep Archive após 1 ano. Use o S3 Object Lock em modo de conformidade por um período de 10 anos.",
+        "answer": "C. Use uma política do S3 Lifecycle para fazer a transição dos registros do S3 Standard para o S3 Glacier Deep Archive após 1 ano. Use o S3 Object Lock em modo de conformidade por um período de 10 anos.",
         "options": [
             "A. Armazene os registros no S3 Glacier por todo o período de 10 anos. Use uma política de controle de acesso para negar a exclusão dos registros por um período de 10 anos.",
             "B. Armazene os registros usando o S3 Intelligent-Tiering. Use uma política do IAM para negar a exclusão dos registros. Após 10 anos, altere a política do IAM para permitir exclusão.",
-            "C. Use uma política de ciclo de vida S3 para fazer a transição dos registros do S3 Standard para o S3 Glacier Deep Archive após 1 ano. Use o S3 Object Lock em modo de conformidade por um período de 10 anos.",
-            "D. Use uma política de ciclo de vida S3 para fazer a transição dos registros do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) após 1 ano. Use Bloqueio de objeto S3 no modo de governança por um período de 10 anos."
+            "C. Use uma política do S3 Lifecycle para fazer a transição dos registros do S3 Standard para o S3 Glacier Deep Archive após 1 ano. Use o S3 Object Lock em modo de conformidade por um período de 10 anos.",
+            "D. Use uma política do S3 Lifecycle para fazer a transição dos registros do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) após 1 ano. Use Bloqueio de objeto S3 no modo de governança por um período de 10 anos."
         ]
     },
     {
@@ -673,12 +673,12 @@ let questions = [
     {
         "numb": 62,
         "question": "Uma empresa tem um aplicativo que gera um grande número de arquivos, cada um com aproximadamente 5 MB de tamanho. Os arquivos são armazenados no Amazon S3. A política da empresa exige que os arquivos sejam armazenados por 4 anos antes de poderem ser excluídos. Acessibilidade imediata é sempre necessária, pois os arquivos contêm dados comerciais críticos que não são fáceis de reproduzir. Os arquivos são acessados ​​com frequência nos primeiros 30 dias da criação do objeto, mas são raramente acessado após os primeiros 30 dias. Qual solução de armazenamento é MAIS econômica?",
-        "answer": "C. Crie uma política de ciclo de vida do bucket S3 para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Exclua os arquivos 4 anos após a criação do objeto.",
+        "answer": "C. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Exclua os arquivos 4 anos após a criação do objeto.",
         "options": [
-            "A. Crie uma política de ciclo de vida do bucket S3 para mover arquivos do S3 Standard para o S3 Glacier 30 dias após a criação do objeto. Exclua os arquivos 4 anos depois criação de objetos.",
-            "B. Crie uma política de ciclo de vida do bucket S3 para mover arquivos do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) 30 dias a partir de criação do objeto. Exclua os arquivos 4 anos após a criação do objeto.",
-            "C. Crie uma política de ciclo de vida do bucket S3 para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Exclua os arquivos 4 anos após a criação do objeto.",
-            "D. Crie uma política de ciclo de vida do bucket S3 para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Mova os arquivos para o S3 Glacier 4 anos após a criação do objeto."
+            "A. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Glacier 30 dias após a criação do objeto. Exclua os arquivos 4 anos depois criação de objetos.",
+            "B. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) 30 dias a partir de criação do objeto. Exclua os arquivos 4 anos após a criação do objeto.",
+            "C. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Exclua os arquivos 4 anos após a criação do objeto.",
+            "D. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Mova os arquivos para o S3 Glacier 4 anos após a criação do objeto."
         ]
     },
     {
@@ -706,12 +706,12 @@ let questions = [
     {
         "numb": 65,
         "question": "Uma empresa está executando um aplicativo web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 são em um grupo de Auto Scaling. O aplicativo usa um banco de dados Amazon Aurora PostgreSQL que é implantado em uma única Zona de Disponibilidade. O a empresa quer que o aplicativo tenha alta disponibilidade com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
-        "answer": "B. Configure o grupo Auto Scaling para usar várias Availability Zones. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
+        "answer": "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
         "options": [
             "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL CrossRegion Replication.",
-            "B. Configure o grupo Auto Scaling para usar várias Availability Zones. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
-            "C. Configure o grupo Auto Scaling para usar uma Availability Zone. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do snapshots em caso de falha.",
-            "D. Configure o grupo Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use o S3 Event Notificações para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
+            "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
+            "C. Configure o grupo de Auto Scaling para usar uma zona de disponibilidade. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do snapshots em caso de falha.",
+            "D. Configure o grupo de Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use o S3 Event Notificações para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
         ]
     },
     {
@@ -749,7 +749,7 @@ let questions = [
     },
     {
         "numb": 69,
-        "question": "Uma empresa quer mover um aplicativo multicamadas de on-premises para a Nuvem AWS para melhorar o desempenho do aplicativo. O aplicativo consiste em camadas de aplicativos que se comunicam entre si por meio de serviços RESTful. As transações são descartadas quando uma camada se torna sobrecarregado. Um arquiteto de soluções deve projetar uma solução que resolva esses problemas e modernize o aplicativo. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
+        "question": "Uma empresa quer mover um aplicativo multicamadas de on-premises para a nuvem AWS para melhorar o desempenho do aplicativo. O aplicativo consiste em camadas de aplicativos que se comunicam entre si por meio de serviços RESTful. As transações são descartadas quando uma camada se torna sobrecarregado. Um arquiteto de soluções deve projetar uma solução que resolva esses problemas e modernize o aplicativo. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
         "answer": "A. Use o Amazon API Gateway e direcione as transações para as funções do AWS Lambda como a camada de aplicação. Use o Amazon Simple Queue Service (Amazon SQS) como camada de comunicação entre serviços de aplicativos.",
         "options": [
             "A. Use o Amazon API Gateway e direcione as transações para as funções do AWS Lambda como a camada de aplicação. Use o Amazon Simple Queue Service (Amazon SQS) como camada de comunicação entre serviços de aplicativos.",
@@ -787,7 +787,7 @@ let questions = [
         "options": [
             "A. Use a recuperação de ponto no tempo do DynamoDB para fazer backup da tabela continuamente.",
             "B. Use o AWS Backup para criar agendamentos de backup e políticas de retenção para a tabela.",
-            "C. Crie um backup sob demanda da tabela usando o console do DynamoDB. Armazene o backup em um bucket do Amazon S3. Defina um ciclo de vida do S3 configuração para o bucket S3.",
+            "C. Crie um backup sob demanda da tabela usando o console do DynamoDB. Armazene o backup em um bucket do Amazon S3. Defina uma configuração do S3 Lifecycle para o bucket S3.",
             "D. Crie uma regra do Amazon EventBridge (Amazon CloudWatch Events) para invocar uma função do AWS Lambda. Configure a função do Lambda para faça backup da tabela e armazene o backup em um bucket do Amazon S3. Defina uma configuração do S3 Lifecycle para o bucket do S3."
         ]
     },
@@ -826,7 +826,7 @@ let questions = [
     },
     {
         "numb": 76,
-        "question": "Uma empresa hospeda seus aplicativos da web na Nuvem AWS. A empresa configura Elastic Load Balancers para usar certificados que são importados para AWS Certificate Manager (ACM). A equipe de segurança da empresa deve ser notificada 30 dias antes da expiração de cada certificado. O que um arquiteto de soluções deve recomendar para atender a esse requisito?",
+        "question": "Uma empresa hospeda seus aplicativos da web na nuvem AWS. A empresa configura Elastic Load Balancers para usar certificados que são importados para AWS Certificate Manager (ACM). A equipe de segurança da empresa deve ser notificada 30 dias antes da expiração de cada certificado. O que um arquiteto de soluções deve recomendar para atender a esse requisito?",
         "answer": "D. Crie uma regra do Amazon EventBridge (Amazon CloudWatch Events) para detectar quaisquer certificados que irão expirar dentro de 30 dias. Configure o regra para invocar uma função AWS Lambda. Configure a função Lambda para enviar um alerta personalizado por meio do Amazon Simple Notification Service (Amazon SNS).",
         "options": [
             "A. Adicione uma regra no ACM para publicar uma mensagem personalizada em um tópico do Amazon Simple Notification Service (Amazon SNS) todos os dias, começando em 30 dias antes de qualquer certificado expirar.",
@@ -863,7 +863,7 @@ let questions = [
         "answer": "A. Armazene os documentos enviados em um bucket do Amazon S3 com o controle de versão do S3 e o bloqueio de objeto do S3 habilitados.",
         "options": [
             "A. Armazene os documentos enviados em um bucket do Amazon S3 com o controle de versão do S3 e o bloqueio de objeto do S3 habilitados.",
-            "B. Armazene os documentos enviados em um bucket do Amazon S3. Configure uma política de ciclo de vida do S3 para arquivar os documentos periodicamente.",
+            "B. Armazene os documentos enviados em um bucket do Amazon S3. Configure uma política de S3 Lifecycle para arquivar os documentos periodicamente.",
             "C. Armazene os documentos enviados em um bucket do Amazon S3 com o S3 Versioning habilitado. Configure uma ACL para restringir todo o acesso a somente leitura.",
             "D. Armazene os documentos enviados em um volume do Amazon Elastic File System (Amazon EFS). Acesse os dados montando o volume no modo somente leitura."
         ]
@@ -908,7 +908,7 @@ let questions = [
         "options": [
             "A. Habilite os recursos de controle de versão e exclusão de MFA no bucket do S3.",
             "B. Habilite a autenticação multifator (MFA) nas credenciais de usuário do IAM para cada conta de usuário do IAM da equipe de auditoria.",
-            "C. Adicione uma política de ciclo de vida do S3 às contas de usuário do IAM da equipe de auditoria para negar a ação s3:DeleteObject durante as datas de auditoria.",
+            "C. Adicione uma política de S3 Lifecycle às contas de usuário do IAM da equipe de auditoria para negar a ação s3:DeleteObject durante as datas de auditoria.",
             "D. Use o AWS Key Management Service (AWS KMS) para criptografar o bucket S3 e restringir o acesso das contas de usuário do IAM da equipe de auditoria ao KMS chave."
         ]
     },
@@ -962,14 +962,14 @@ let questions = [
         "answer": "D. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com os mesmos recursos de computação e armazenamento do banco de dados de origem.",
         "options": [
             "A. Altere o banco de dados existente para uma implantação Multi-AZ. Atenda às solicitações de leitura da Zona de Disponibilidade primária.",
-            "B. Altere o banco de dados existente para uma implantação Multi-AZ. Atenda às solicitações de leitura da Availability Zone secundária.",
+            "B. Altere o banco de dados existente para uma implantação Multi-AZ. Atenda às solicitações de leitura da zona de disponibilidade secundária.",
             "C. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com metade dos recursos de computação e armazenamento como o banco de dados de origem.",
             "D. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com os mesmos recursos de computação e armazenamento do banco de dados de origem."
         ]
     },    
     {
         "numb": 90,
-        "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no local que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a Nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no local que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
         "answer": "D. Crie um sistema de arquivos Amazon FSx for Windows File Server na AWS e defina o domínio do Active Directory para autenticação.",
         "options": [
             "A. Configure o armazenamento do Amazon EFS e defina o domínio do Active Directory para autenticação.",
@@ -980,7 +980,7 @@ let questions = [
     },
     {
         "numb": 91,
-        "question": "Uma empresa de processamento de imagens tem um aplicativo web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um Amazon S3 bucket. A empresa configurou notificações de eventos S3 para publicar os eventos de criação de objetos em um Amazon Simple Queue Service (Amazon SQS) fila padrão. A fila SQS serve como fonte de eventos para uma função AWS Lambda que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS são invocar a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa de processamento de imagens tem um aplicativo web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um bucket do Amazon S3. A empresa configurou notificações de eventos do S3 para publicar os eventos de criação de objetos em uma fila padrão do Amazon Simple Queue Service (Amazon SQS). A fila SQS serve como fonte de eventos para uma função AWS Lambda que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS são invocar a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
         "answer": "C. Aumente o tempo limite de visibilidade na fila SQS para um valor maior que o total do tempo limite da função e da janela do lote tempo esgotado.",
         "options": [
             "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
