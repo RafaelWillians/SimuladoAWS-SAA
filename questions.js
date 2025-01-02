@@ -309,24 +309,24 @@ let questions = [
     },
     {
         "numb": 29,
-        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos em recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de executando os testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
-        "answer": "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do DB e restaure o snapshot quando necessário.",
+        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos em recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas, executa uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de execução dos testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
+        "answer": "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do BD e restaure o snapshot quando necessário.",
         "options": [
             "A. Pare a instância do BD quando os testes forem concluídos. Reinicie a instância do BD quando necessário.",
-            "B. Use uma política de dimensionamento automático com a instância do banco de dados para dimensionar automaticamente quando os testes forem concluídos.",
-            "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do DB e restaure o snapshot quando necessário.",
+            "B. Use uma política de Auto Scaling com a instância do banco de dados para dimensionar automaticamente quando os testes forem concluídos.",
+            "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do BD e restaure o snapshot quando necessário.",
             "D. Modifique a instância do BD para uma instância de baixa capacidade quando os testes forem concluídos. Modifique a instância do BD novamente quando necessário."
         ]
     },
     {
         "numb": 30,
-        "question": "Uma empresa que hospeda seu aplicativo web na AWS quer garantir todas as instâncias do Amazon EC2. Instâncias do Amazon RDS DB. e Amazon Redshift clusters são configurados com tags. A empresa quer minimizar o esforço de configurar e operar essa verificação. O que um arquiteto de soluções deve fazer para conseguir isso?",
-        "answer": "A. Use as regras do AWS Config para definir e detectar recursos que não estão marcados corretamente.",
+        "question": "Uma empresa que hospeda seu aplicativo web na AWS quer garantir todas as instâncias do Amazon EC2, instâncias de banco de dados do Amazon RDS e clusters do Amazon Redshift estejam configurados com tags. A empresa quer minimizar o esforço de configurar e operar essa verificação. O que um arquiteto de soluções deve fazer para atingir esse objetivo?",
+        "answer": "A. Use as regras do AWS Config para definir e detectar recursos que não estejam devidamente marcados.",
         "options": [
-            "A. Use as regras do AWS Config para definir e detectar recursos que não estão marcados corretamente.",
+            "A. Use as regras do AWS Config para definir e detectar recursos que não estejam devidamente marcados.",
             "B. Use o Cost Explorer para exibir recursos que não estão devidamente marcados. Marque esses recursos manualmente.",
             "C. Escreva chamadas de API para verificar todos os recursos para alocação de tags adequada. Periodicamente execute o código em uma instância EC2.",
-            "D. Escreva chamadas de API para verificar todos os recursos para alocação de tags adequada. Agende uma função AWS Lambda por meio do Amazon CloudWatch para execute o código periodicamente."
+            "D. Escreva chamadas de API para verificar todos os recursos para alocação de tags adequada. Agende uma função AWS Lambda por meio do Amazon CloudWatch para executar o código periodicamente."
         ]
     },
     {
@@ -337,7 +337,7 @@ let questions = [
             "A. Coloque o site em contêineres e hospede-o no AWS Fargate.",
             "B. Crie um bucket do Amazon S3 e hospede o site nele.",
             "C. Implante um servidor web em uma instância do Amazon EC2 para hospedar o site.",
-            "D. Configure um Application Load Balancer com um destino AWS Lambda que usa a estrutura Express.js."
+            "D. Configure um Application Load Balancer com um AWS Lambda como destino, que usa o framework Express.js."
         ]
     },
     {
