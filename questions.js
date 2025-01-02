@@ -123,7 +123,7 @@ let questions = [
     {
         "numb": 12,
         "question": "Uma empresa global hospeda seu aplicativo web em instâncias do Amazon EC2 por trás de um Application Load Balancer (ALB). O aplicativo web tem dados estáticos e  dinâmicos. A empresa armazena seus dados estáticos em um bucket do Amazon S3. A empresa quer melhorar o desempenho e reduzir latência para os dados estáticos e dinâmicos. A empresa está usando seu próprio nome de domínio registrado com Amazon Route 53. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "C. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 como origem. Crie um acelerador padrão do AWS Global Accelerator que tem o ALB e a distribuição do CloudFront como endpoints. Crie um nome de domínio personalizado que aponte para o nome DNS do acelerador. Use o nome de domínio personalizado como um endpoint para o aplicativo web.",
+        "answer": "A. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 e o ALB como origens. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
         "options": [
             "A. Crie uma distribuição do Amazon CloudFront que tenha o bucket S3 e o ALB como origens. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
             "B. Crie uma distribuição do Amazon CloudFront que tenha o ALB como origem. Crie um acelerador padrão do AWS Global Accelerator que tenha o bucket S3 como um endpoint. Configure o Route 53 para rotear o tráfego para a distribuição do CloudFront.",
@@ -276,8 +276,8 @@ let questions = [
     },
     {
         "numb": 26,
-        "question": "Uma empresa está lançando um novo aplicativo e exibirá métricas de aplicativo em um painel do Amazon CloudWatch. O produto da empresa o gerente precisa acessar este painel periodicamente. O gerente de produto não tem uma conta AWS. Um arquiteto de soluções deve fornecer acesso ao gerente de produto seguindo o princípio do menor privilégio. Qual solução atenderá a esses requisitos?",
-        "answer": "B. Crie um usuário do IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
+        "question": "Uma empresa está lançando um novo aplicativo e exibirá métricas de aplicativo em um painel do Amazon CloudWatch. O gerente de produto da empresa precisa acessar este painel periodicamente. O gerente de produto não tem uma conta AWS. Um arquiteto de soluções deve fornecer acesso ao gerente de produto seguindo o princípio do privilégio mínimo. Qual solução atenderá a esses requisitos?",
+        "answer": "A. Compartilhe o painel do console do CloudWatch. Insira o endereço de e-mail do gerente de produto e conclua as etapas de compartilhamento. Forneça um link compartilhável do painel para o gerente de produto.",
         "options": [
             "A. Compartilhe o painel do console do CloudWatch. Insira o endereço de e-mail do gerente de produto e conclua as etapas de compartilhamento. Forneça um link compartilhável do painel para o gerente de produto.",
             "B. Crie um usuário do IAM especificamente para o gerente de produto. Anexe a política gerenciada AWS CloudWatchReadOnlyAccess ao usuário. Compartilhar as novas credenciais de login com o gerente de produto. Compartilhe a URL do navegador do painel correto com o gerente de produto.",
