@@ -661,7 +661,7 @@ let questions = [
     },
     {
         "numb": 61,
-        "question": "Um hospital implantou recentemente uma API RESTful com Amazon API Gateway e AWS Lambda. O hospital usa API Gateway e Lambda para fazer upload relatórios que estão em formato PDF e JPEG. O hospital precisa modificar o código Lambda para identificar informações de saúde protegidas (PHI) em os relatórios. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Um hospital implantou recentemente uma API RESTful com Amazon API Gateway e AWS Lambda. O hospital usa API Gateway e Lambda para efetuar uploads de relatórios que estão em formato PDF e JPEG. O hospital precisa modificar o código da Lambda para identificar informações de saúde protegidas (PHI) em os relatórios. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "C. Use o Amazon Textract para extrair o texto dos relatórios. Use o Amazon Comprehend Medical para identificar o PHI do texto extraído.",
         "options": [
             "A. Use bibliotecas Python existentes para extrair o texto dos relatórios e identificar o PHI do texto extraído.",
@@ -683,24 +683,24 @@ let questions = [
     },
     {
         "numb": 63,
-        "question": "Uma empresa hospeda um aplicativo em várias instâncias do Amazon EC2. O aplicativo processa mensagens de uma fila do Amazon SQS, grava em uma tabela Amazon RDS e exclui a mensagem da fila. Registros duplicados ocasionais são encontrados na tabela RDS. A fila SQS não conter quaisquer mensagens duplicadas. O que um arquiteto de soluções deve fazer para garantir que as mensagens sejam processadas apenas uma vez?",
+        "question": "Uma empresa hospeda um aplicativo em várias instâncias do Amazon EC2. O aplicativo processa mensagens de uma fila do Amazon SQS, grava em uma tabela do Amazon RDS e exclui a mensagem da fila. Registros duplicados ocasionais são encontrados na tabela do RDS. A fila SQS não contém quaisquer mensagens duplicadas. O que um arquiteto de soluções deve fazer para garantir que as mensagens sejam processadas apenas uma vez?",
         "answer": "D. Use a chamada de API ChangeMessageVisibility para aumentar o tempo limite de visibilidade.",
         "options": [
             "A. Use a chamada da API CreateQueue para criar uma nova fila.",
-            "B. Use a chamada de API AddPermission para adicionar permissões apropriadas.",
+            "B. Use a chamada de API AddPermission para adicionar as permissões apropriadas.",
             "C. Use a chamada da API ReceiveMessage para definir um tempo de espera apropriado.",
             "D. Use a chamada de API ChangeMessageVisibility para aumentar o tempo limite de visibilidade."
         ]
     },
     {
         "numb": 64,
-        "question": "Um arquiteto de soluções está projetando uma nova arquitetura híbrida para estender a infraestrutura local de uma empresa para a AWS. A empresa requer uma conexão altamente disponível com latência baixa consistente para uma região da AWS. A empresa precisa minimizar custos e está disposta a aceitar velocidades mais lentas tráfego se a conexão primária falhar. O que o arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "A. Provisione uma conexão AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão Direct Connect primária falha.",
+        "question": "Um arquiteto de soluções está projetando uma nova arquitetura híbrida para estender a infraestrutura local de uma empresa para a AWS. A empresa requer uma conexão altamente disponível com latência baixa consistente, para uma região da AWS. A empresa precisa minimizar custos e está disposta a aceitar velocidades mais lentas de tráfego, se a conexão primária falhar. O que o arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "A. Provisione uma conexão do AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão do Direct Connect primária falhar.",
         "options": [
-            "A. Provisione uma conexão AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão Direct Connect primária falha.",
-            "B. Provisione uma conexão de túnel VPN para uma região para conectividade privada. Provisione um segundo túnel VPN para conectividade privada e como um backup se a conexão VPN primária falhar.",
-            "C. Provisione uma conexão AWS Direct Connect para uma região. Provisione uma segunda conexão Direct Connect para a mesma região como um backup se a conexão primária do Direct Connect falha.",
-            "D. Provisione uma conexão AWS Direct Connect para uma região. Use o atributo de failover Direct Connect da AWS CLI para criar automaticamente uma conexão de backup se a conexão Direct Connect primária falhar."
+            "A. Provisione uma conexão do AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão do Direct Connect primária falhar.",
+            "B. Provisione uma conexão de túnel VPN para uma região, para conectividade privada. Provisione um segundo túnel VPN para conectividade privada e como um backup se a conexão VPN primária falhar.",
+            "C. Provisione uma conexão do AWS Direct Connect para uma região. Provisione uma segunda conexão do Direct Connect para a mesma região como um backup, se a conexão primária do Direct Connect falhar.",
+            "D. Provisione uma conexão AWS Direct Connect para uma região. Use o atributo de failover do Direct Connect pelo AWS CLI, para criar automaticamente uma conexão de backup se a conexão Direct Connect primária falhar."
         ]
     },
     {
