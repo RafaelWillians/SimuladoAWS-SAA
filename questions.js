@@ -309,7 +309,7 @@ let questions = [
     },
     {
         "numb": 29,
-        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos em recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas, executa uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de execução dos testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
+        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos de recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas, executa uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de execução dos testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
         "answer": "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do BD e restaure o snapshot quando necessário.",
         "options": [
             "A. Pare a instância do BD quando os testes forem concluídos. Reinicie a instância do BD quando necessário.",
