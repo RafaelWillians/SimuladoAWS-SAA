@@ -848,10 +848,10 @@ let questions = [
     },
     {
         "numb": 78,
-        "question": "Uma empresa quer reduzir o custo de sua arquitetura web existente de três camadas. Os servidores web, de aplicação e de banco de dados estão sendo executados em instâncias do Amazon EC2 para ambientes de desenvolvimento, teste e produção. As instâncias EC2 têm uma média de 30% de utilização da CPU durante os horários de pico e 10% Utilização da CPU fora dos horários de pico. As instâncias de produção do EC2 rodam 24 horas por dia. As instâncias de desenvolvimento e teste do EC2 rodam por pelo menos 8 horas por dia. A empresa planeja implementar automação, para interromper o desenvolvimento e testar instâncias do EC2 quando elas não estiverem em uso. Qual solução de compra de instância EC2 atenderá aos requisitos da empresa com MAIS economia?",
+        "question": "Uma empresa quer reduzir o custo de sua arquitetura web de três camadas existente. Os servidores web, de aplicação e de banco de dados estão sendo executados em instâncias do Amazon EC2 para ambientes de desenvolvimento, teste e produção. As instâncias EC2 têm uma média de 30% de utilização da CPU durante os horários de pico e 10% de utilização da CPU fora dos horários de pico. As instâncias de produção do EC2 rodam 24 horas por dia. As instâncias de desenvolvimento e teste do EC2 rodam por pelo menos 8 horas por dia. A empresa planeja implementar automação, para interromper as instâncias EC2 de desenvolvimento e testes quando elas não estiverem em uso. Qual solução de compra de instâncias EC2 atenderá aos requisitos da empresa com MAIS economia?",
         "answer": "B. Use Instâncias Reservadas para as instâncias EC2 de produção. Use Instâncias Sob Demanda para as instâncias EC2 de desenvolvimento e teste.",
         "options": [
-            "A. Use Instâncias Spot para as instâncias de produção do EC2. Use Instâncias Reservadas para as instâncias de desenvolvimento e teste do EC2.",
+            "A. Use Instâncias Spot para as instâncias EC2 de produção. Use Instâncias Reservadas para as instâncias EC2 de desenvolvimento e teste.",
             "B. Use Instâncias Reservadas para as instâncias EC2 de produção. Use Instâncias Sob Demanda para as instâncias EC2 de desenvolvimento e teste.",
             "C. Use blocos Spot para as instâncias EC2 de produção. Use Instâncias Reservadas para as instâncias EC2 de desenvolvimento e teste.",
             "D. Use Instâncias Sob Demanda para as instâncias EC2 de produção. Use blocos Spot para as instâncias EC2 de desenvolvimento e teste."
