@@ -1013,40 +1013,40 @@ let questions = [
     },
     {
         "numb": 94,
-        "question": "Um arquiteto de soluções está projetando uma VPC com sub-redes públicas e privadas. A VPC e as sub-redes usam blocos CIDR IPv4. Há uma sub-rede pública e uma sub-rede privada em cada uma das três Zonas de Disponibilidade (AZs) para alta disponibilidade. Um gateway de internet é usado para fornecer acesso à internet para o sub-redes públicas. As sub-redes privadas exigem acesso à internet para permitir que instâncias do Amazon EC2 baixem atualizações de software. O que o arquiteto de soluções deve fazer para habilitar o acesso à Internet para as sub-redes privadas?",
-        "answer": "A. Crie três gateways NAT, um para cada sub-rede pública em cada AZ. Crie uma tabela de rotas privada para cada AZ que encaminhe tráfego não VPC para o gateway NAT em sua AZ.",
+        "question": "Um arquiteto de soluções está projetando uma VPC com sub-redes públicas e privadas. A VPC e as sub-redes usam blocos CIDR IPv4. Há uma sub-rede pública e uma sub-rede privada em cada uma das três Zonas de Disponibilidade (AZs) para alta disponibilidade. Um gateway de internet é usado para fornecer acesso à internet para as sub-redes públicas. As sub-redes privadas exigem acesso à internet para permitir que instâncias do Amazon EC2 baixem atualizações de software. O que o arquiteto de soluções deve fazer para habilitar o acesso à Internet para as sub-redes privadas?",
+        "answer": "A. Crie três gateways NAT, um para cada sub-rede pública em cada AZ. Crie uma tabela de rotas privada para cada AZ que encaminhe tráfego que não seja para a VPC para o gateway NAT em sua AZ.",
         "options": [
-            "A. Crie três gateways NAT, um para cada sub-rede pública em cada AZ. Crie uma tabela de rotas privada para cada AZ que encaminhe tráfego não VPC para o gateway NAT em sua AZ.",
-            "B. Crie três instâncias NAT, uma para cada sub-rede privada em cada AZ. Crie uma tabela de rotas privada para cada AZ que encaminha tráfego não VPC para a instância NAT em sua AZ.",
-            "C. Crie um segundo gateway de internet em uma das sub-redes privadas. Atualize a tabela de rotas para as sub-redes privadas que encaminham tráfego não-VPC para o gateway de internet privado.",
-            "D. Crie um gateway de internet somente de saída em uma das sub-redes públicas. Atualize a tabela de rotas para as sub-redes privadas que encaminham não-VPC tráfego para o gateway de Internet somente de saída."
+            "A. Crie três gateways NAT, um para cada sub-rede pública em cada AZ. Crie uma tabela de rotas privada para cada AZ que encaminhe tráfego que não seja para a VPC para o gateway NAT em sua AZ.",
+            "B. Crie três instâncias NAT, uma para cada sub-rede privada em cada AZ. Crie uma tabela de rotas privada para cada AZ que encaminha tráfego que não seja para a VPC para a instância NAT em sua AZ.",
+            "C. Crie um segundo gateway de internet em uma das sub-redes privadas. Atualize a tabela de rotas para as sub-redes privadas que encaminham tráfego que não seja para a VPC para o gateway de internet privado.",
+            "D. Crie um gateway de internet somente de saída em uma das sub-redes públicas. Atualize a tabela de rotas para as sub-redes privadas que encaminham tráfego que não seja para a VPC para o gateway de Internet somente de saída."
         ]
     },    
     {
         "numb": 95,
-        "question": "Uma empresa tem um trabalho de extração, transformação e carregamento (ETL) do AWS Glue que é executado todos os dias no mesmo horário. O trabalho processa dados XML que estão em um Bucket do Amazon S3. Novos dados são adicionados ao bucket do S3 todos os dias. Um arquiteto de soluções percebe que o AWS Glue está processando todos os dados durante cada corrida. O que o arquiteto de soluções deve fazer para evitar que o AWS Glue reprocesse dados antigos?",
+        "question": "Uma empresa tem um trabalho de extração, transformação e carregamento (ETL) do AWS Glue que é executado todos os dias no mesmo horário. O trabalho processa dados em XML que estão em um bucket do Amazon S3. Novos dados são adicionados ao bucket do S3 todos os dias. Um arquiteto de soluções identificou que o AWS Glue está processando todos os dados durante cada execução. O que o arquiteto de soluções deve fazer para evitar que o AWS Glue reprocesse dados antigos?",
         "answer": "A. Edite o trabalho para usar marcadores de trabalho.",
         "options": [
             "A. Edite o trabalho para usar marcadores de trabalho.",
             "B. Edite o trabalho para excluir dados depois que eles forem processados.",
-            "C. Edite o trabalho definindo o campo NumberOfWorkers como 1.",
-            "D. Use uma transformação de aprendizado de máquina (ML) FindMatches."
+            "C. Edite o trabalho definindo o campo NumberOfWorkers para 1.",
+            "D. Use uma transformação FindMatches, de Machine Learning."
         ]
     },    
     {
         "numb": 96,
-        "question": "Uma empresa está se preparando para implantar uma nova carga de trabalho sem servidor. Um arquiteto de soluções deve usar o princípio do menor privilégio para configurar permissões que serão usadas para executar uma função do AWS Lambda. Uma regra do Amazon EventBridge (Amazon CloudWatch Events) invocará a função. Qual solução atende a esses requisitos?",
-        "answer": "D. Adicione uma política baseada em recursos à função com lambda:InvokeFunction como a ação e Service: events.amazonaws.com como o principal.",
+        "question": "Uma empresa está se preparando para implantar uma nova carga de trabalho sem servidor. Um arquiteto de soluções deve usar o princípio do privilégio mínimo para configurar permissões que serão usadas para executar uma função do AWS Lambda. Uma regra do Amazon EventBridge (Amazon CloudWatch Events) invocará a função. Qual solução atende a esses requisitos?",
+        "answer": "D. Adicione uma política baseada em recursos à função com lambda:InvokeFunction como o Action e Service: events.amazonaws.com como Principal.",
         "options": [
-            "A. Adicione uma função de execução à função com lambda:InvokeFunction como a ação e * como o principal.",
-            "B. Adicione uma função de execução à função com lambda:InvokeFunction como ação e Service: lambda.amazonaws.com como principal.",
-            "C. Adicione uma política baseada em recursos à função com lambda:* como ação e Service: events.amazonaws.com como principal.",
-            "D. Adicione uma política baseada em recursos à função com lambda:InvokeFunction como a ação e Service: events.amazonaws.com como o principal."
+            "A. Adicione uma função de execução à função com lambda:InvokeFunction como o Action e * como o Principal.",
+            "B. Adicione uma função de execução à função com lambda:InvokeFunction como Action e Service: lambda.amazonaws.com como Principal.",
+            "C. Adicione uma política baseada em recursos à função com lambda:* como Action e Service: events.amazonaws.com como Principal.",
+            "D. Adicione uma política baseada em recursos à função com lambda:InvokeFunction como o Action e Service: events.amazonaws.com como Principal."
         ]
     },
     {
         "numb": 97,
-        "question": "Uma empresa está se preparando para armazenar dados confidenciais no Amazon S3. Por motivos de conformidade, os dados devem ser criptografados em repouso. Chave de criptografia o uso deve ser registrado para fins de auditoria. As chaves devem ser rotacionadas todo ano. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
+        "question": "Uma empresa está se preparando para armazenar dados confidenciais no Amazon S3. Por motivos de conformidade, os dados devem ser criptografados em repouso. O uso da chave de criptografia deve ser registrado para fins de auditoria. As chaves devem ser rotacionadas todo ano. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
         "answer": "D. Criptografia do lado do servidor com chaves AWS KMS (SSE-KMS) com rotação automática",
         "options": [
             "A. Criptografia do lado do servidor com chaves fornecidas pelo cliente (SSE-C)",
@@ -1068,24 +1068,24 @@ let questions = [
     },
     {
         "numb": 99,
-        "question": "Uma empresa tem um site de vendas de automóveis que armazena suas listagens em um banco de dados no Amazon RDS. Quando um automóvel é vendido, a listagem precisa para serem removidos do site e os dados devem ser enviados para vários sistemas de destino. Qual design um arquiteto de soluções deve recomendar?",
-        "answer": "A. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
+        "question": "Uma empresa tem um site de vendas de automóveis que armazena suas listagens em um banco de dados no Amazon RDS. Quando um automóvel é vendido, o item listado precisa ser removido do site e os dados devem ser enviados para vários sistemas de destino. Qual design um arquiteto de soluções deve recomendar?",
+        "answer": "A. Crie uma função AWS Lambda que será acionada quando o banco de dados no Amazon RDS for atualizado, para enviar as informações a uma fila do Amazon Simple Queue Service (Amazon SQS), para os destinatários consumirem.",
         "options": [
-            "A. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
-            "B. Crie uma função AWS Lambda acionada quando o banco de dados no Amazon RDS for atualizado para enviar as informações para um Amazon Simple Fila FIFO do Serviço de Fila (Amazon SQS) para os destinos consumirem.",
-            "C. Inscreva uma notificação de evento RDS e envie uma fila do Amazon Simple Queue Service (Amazon SQS) distribuída para vários Amazon Tópicos do Simple Notification Service (Amazon SNS). Use funções do AWS Lambda para atualizar os alvos.",
-            "D. Inscreva uma notificação de evento RDS e envie um tópico do Amazon Simple Notification Service (Amazon SNS) distribuído para vários Amazon Filas do Simple Queue Service (Amazon SQS). Use funções do AWS Lambda para atualizar os alvos."
+            "A. Crie uma função AWS Lambda que será acionada quando o banco de dados no Amazon RDS for atualizado, para enviar as informações a uma fila do Amazon Simple Queue Service (Amazon SQS), para os destinatários consumirem.",
+            "B. Crie uma função AWS Lambda que será acionada quando o banco de dados no Amazon RDS for atualizado, para enviar as informações para uma fila FIFO do Amazon Simple Queue Service (Amazon SQS), para os destinatários consumirem.",
+            "C. Inscreva uma notificação de evento do RDS e envie uma fila em fanout do Amazon Simple Queue Service (Amazon SQS) para vários tópicos do Amazon Simple Notification Service (Amazon SNS). Use funções AWS Lambda para atualizar os destinatários.",
+            "D. Inscreva uma notificação de evento RDS e envie um tópico em fanout do Amazon Simple Notification Service (Amazon SNS) para várias filas do Amazon Simple Queue Service (Amazon SQS). Use funções AWS Lambda para atualizar os destinatários."
         ]
     },
     {
         "numb": 100,
-        "question": "Uma empresa tem um grande conjunto de dados para seu negócio de publicidade on-line armazenado em uma instância do Amazon RDS para MySQL DB em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
+        "question": "Uma empresa tem um conjunto grande de dados para seu negócio de publicidade online armazenado em uma instância de banco de dados do Amazon RDS para MySQL, em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
         "answer": "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
         "options": [
             "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
-            "B. Escale a instância do banco de dados horizontalmente colocando-a atrás de um Elastic Load Balancer.",
-            "C. Amplie a instância do banco de dados para um tipo de instância maior para lidar com operações de gravação e consultas.",
-            "D. Implante a instância do banco de dados em várias zonas de disponibilidade para processar as consultas de relatórios comerciais."
+            "B. Dimensione horizontalmente a instância do banco de dados colocando-a atrás de um Elastic Load Balancer.",
+            "C. Amplie a instância do banco de dados para um tipo de instância maior, para lidar com as operações de gravação e consultas.",
+            "D. Implante a instância do banco de dados em várias zonas de disponibilidade, para processar as consultas de relatórios comerciais."
         ]
     },
 ];
