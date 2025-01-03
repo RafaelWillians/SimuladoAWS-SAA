@@ -12,7 +12,7 @@ let questions = [
     },
     {
         "numb": 2,
-        "question": "Uma empresa precisa da capacidade de analisar os arquivos de log de seu aplicativo proprietário. Os logs são armazenados no formato JSON em um bucket do Amazon S3. As consultas serão simples e serão executadas sob demanda. Um arquiteto de soluções precisa executar a análise com alterações mínimas na arquitetura existente. O que o arquiteto de soluções deve fazer para atender a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa precisa ter a capacidade de analisar os arquivos de log de seu aplicativo proprietário. Os logs são armazenados no formato JSON em um bucket do Amazon S3. As consultas serão simples e serão executadas sob demanda. Um arquiteto de soluções precisa executar a análise com alterações mínimas na arquitetura existente. O que o arquiteto de soluções deve fazer para atender a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "C. Use o Amazon Athena diretamente com o Amazon S3 para executar as consultas conforme necessário.",
         "options": [
             "A. Use o Amazon Redshift para carregar todo o conteúdo em um só lugar e executar as consultas SQL conforme necessário.",
@@ -78,13 +78,13 @@ let questions = [
     },
     {
         "numb": 8,
-        "question": "Uma empresa está migrando um aplicativo distribuído para a AWS. O aplicativo atende cargas de trabalho variáveis. A plataforma legada consiste em um primário servidor que coordena tarefas em vários nós de computação. A empresa quer modernizar o aplicativo com uma solução que maximize resiliência e escalabilidade. Como um arquiteto de soluções deve projetar a arquitetura para atender a esses requisitos?",
-        "answer": "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com o Amazon Instâncias do EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
+        "question": "Uma empresa está migrando um aplicativo distribuído para a AWS. O aplicativo atende cargas de trabalho variáveis. A plataforma legada consiste em um servidor primário que coordena tarefas em vários nós de computação. A empresa quer modernizar o aplicativo com uma solução que maximize resiliência e escalabilidade. Como um arquiteto de soluções deve projetar a arquitetura para atender a esses requisitos?",
+        "answer": "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
         "options": [
-            "A. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com Instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling para usar o dimensionamento programado.",
-            "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com o Amazon Instâncias do EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
-            "C. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configurar AWS CloudTrail como destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no servidor primário.",
-            "D. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configurar Amazon EventBridge (Amazon CloudWatch Events) como um destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no nós de computação."
+            "A. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling para usar o dimensionamento agendado.",
+            "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
+            "C. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o AWS CloudTrail como destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no servidor primário.",
+            "D. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o Amazon EventBridge (Amazon CloudWatch Events) como um destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no nós de computação."
         ]
     },
     {
@@ -144,12 +144,12 @@ let questions = [
     },
     {
         "numb": 14,
-        "question": "Uma empresa executa um aplicativo de e-commerce em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias são executadas em um grupo do Amazon EC2 Auto Scaling em várias zonas de disponibilidade. O grupo de Auto Scaling é dimensionado com base nas métricas de utilização da CPU. O aplicativo de e-commerce armazena os dados da transação em um banco de dados MySQL 8.0 hospedado em uma grande instância do EC2. O desempenho do banco de dados degrada rapidamente conforme a carga do aplicativo aumenta. O aplicativo manipula mais solicitações de leitura do que transações de gravação. A empresa quer uma solução que dimensione automaticamente o banco de dados para atender à demanda de cargas de trabalho de leitura imprevisíveis, mantendo alta disponibilidade. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com Aurora Replicas.",
+        "question": "Uma empresa executa um aplicativo de e-commerce em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias são executadas em um grupo do Amazon EC2 Auto Scaling em várias zonas de disponibilidade. O grupo de Auto Scaling é dimensionado com base nas métricas de utilização da CPU. O aplicativo de e-commerce armazena os dados da transação em um banco de dados MySQL 8.0, hospedado em uma grande instância do EC2. O desempenho do banco de dados degrada rapidamente conforme a carga do aplicativo aumenta. O aplicativo manipula mais solicitações de leitura do que transações de gravação. A empresa quer uma solução que dimensione automaticamente o banco de dados para atender à demanda de cargas de trabalho de leitura imprevisíveis, mantendo alta disponibilidade. Qual solução atenderá a esses requisitos?",
+        "answer": "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com réplicas do Aurora.",
         "options": [
             "A. Use o Amazon Redshift com um único nó para funcionalidade de liderança e computação.",
             "B. Use o Amazon RDS com uma implantação Single-AZ. Configure o Amazon RDS para adicionar instâncias de leitor em uma Zona de Disponibilidade diferente.",
-            "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com Aurora Replicas.",
+            "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com réplicas do Aurora.",
             "D. Use o Amazon ElastiCache para Memcached com instâncias Spot do EC2."
         ]
     },
@@ -199,7 +199,7 @@ let questions = [
     },
     {
         "numb": 19,
-        "question": "Uma empresa quer melhorar sua capacidade de clonar grandes quantidades de dados de produção em um ambiente de teste na mesma região da AWS. Os dados são armazenados em instâncias do Amazon EC2 em volumes do Amazon Elastic Block Store (Amazon EBS). As modificações nos dados clonados não devem afetar os ambiente de produção. O software que acessa esses dados requer desempenho de E/S consistentemente alto. Um arquiteto de soluções precisa minimizar o tempo necessário para clonar os dados de produção no ambiente de teste. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa quer melhorar sua capacidade de clonar grandes quantidades de dados de produção, em um ambiente de teste na mesma região da AWS. Os dados são armazenados em instâncias do Amazon EC2 com volumes do Amazon Elastic Block Store (Amazon EBS). As modificações nos dados clonados não devem afetar o ambiente de produção. O software que acessa esses dados requer desempenho de E/S consistentemente alto. Um arquiteto de soluções precisa minimizar o tempo necessário para clonar os dados de produção no ambiente de teste. Qual solução atenderá a esses requisitos?",
         "answer": "D. Tire snapshots do EBS dos volumes de produção do EBS. Ative o recurso de restauração rápida de snapshots do EBS nos snapshots do EBS. Restaure o snapshots em novos volumes EBS. Anexe os novos volumes EBS a instâncias EC2 no ambiente de teste.",
         "options": [
             "A. Tire snapshots do EBS dos volumes de produção do EBS. Restaure os snapshots nos volumes de armazenamento de instância do EC2 no ambiente de teste.",
@@ -222,7 +222,7 @@ let questions = [
     {
         "numb": 21,
         "question": "Um arquiteto de soluções está usando o Amazon S3 para projetar a arquitetura de armazenamento de um novo aplicativo de mídia digital. Os arquivos de mídia devem ser resilientes à perda de uma Zona de Disponibilidade. Alguns arquivos são acessados ​​com frequência, enquanto outros raramente são acessados ​​em um padrão imprevisível. O arquiteto de soluções deve minimizar os custos de armazenamento e recuperação dos arquivos de mídia. Qual opção de armazenamento atende a esses requisitos?",
-        "answer": "B. S3 Intelligent Tiering",
+        "answer": "B. S3 Intelligent-Tiering",
         "options": [
             "A. S3 Standard",
             "B. S3 Intelligent-Tiering",
@@ -309,7 +309,7 @@ let questions = [
     },
     {
         "numb": 29,
-        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos em recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas, executa uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de execução dos testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
+        "question": "Uma equipe de desenvolvimento executa testes mensais intensivos de recursos em sua instância de banco de dados Amazon RDS para MySQL de uso geral com Performance Insights habilitado. O teste dura 48 horas, executa uma vez por mês e é o único processo que usa o banco de dados. A equipe quer reduzir o custo de execução dos testes sem reduzir os atributos de computação e memória da instância do banco de dados. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
         "answer": "C. Crie um snapshot quando os testes forem concluídos. Encerre a instância do BD e restaure o snapshot quando necessário.",
         "options": [
             "A. Pare a instância do BD quando os testes forem concluídos. Reinicie a instância do BD quando necessário.",
@@ -342,7 +342,7 @@ let questions = [
     },
     {
         "numb": 32,
-        "question": "Uma empresa executa um aplicativo web de marketplace na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. A empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
+        "question": "Uma empresa executa um aplicativo web de marketplace na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. A empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais, antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
         "answer": "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações da stream de dados do Kinesis.",
         "options": [
             "A. Armazene os dados das transações no Amazon DynamoDB. Configure uma regra no DynamoDB para remover dados confidenciais de cada transação mediante a escrita. Use o DynamoDB Streams para compartilhar os dados de transações com outros aplicativos.",
@@ -518,7 +518,7 @@ let questions = [
     },
     {
         "numb": 48,
-        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura padrão de sistema de arquivos. A empresa quer uma solução que seja escalável automaticamente, seja altamente disponível e necessite de sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída, que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura padrão de sistema de arquivos. A empresa quer uma solução que seja escalável automaticamente, seja altamente disponível e tenha sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
         "answer": "C. Migre o aplicativo para instâncias do Amazon EC2 em um grupo de Auto Scaling Multi-AZ. Use o Amazon Elastic File System (Amazon EFS) para armazenar.",
         "options": [
             "A. Migre o aplicativo para ser executado como contêineres no Amazon Elastic Container Service (Amazon ECS). Use o Amazon S3 para armazenamento.",
@@ -551,7 +551,7 @@ let questions = [
     },
     {
         "numb": 51,
-        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura de VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usam instâncias do Amazon EC2 e instâncias de BD do Amazon RDS. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias de EC2 que são executadas nas sub-redes privadas podem ter acesso aos bancos de dados RDS. Qual solução atenderá a esses requisitos?",
+        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura de VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usarão instâncias do Amazon EC2 e instâncias de BD do Amazon RDS. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias de EC2 que são executadas nas sub-redes privadas podem ter acesso aos bancos de dados RDS. Qual solução atenderá a esses requisitos?",
         "answer": "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança às instâncias de BD.",
         "options": [
             "A. Crie uma nova tabela de rotas que exclua a rota para os blocos CIDR das sub-redes públicas. Associe a tabela de rotas às sub-redes do banco de dados.",
@@ -584,7 +584,7 @@ let questions = [
     },
     {
         "numb": 54,
-        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes a infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres, para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes a infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "C. Use o Amazon Elastic Container Service (Amazon ECS) no AWS Fargate.",
         "options": [
             "A. Use instâncias do Amazon EC2 e instale o Docker nas instâncias.",
@@ -606,7 +606,7 @@ let questions = [
     },
     {
         "numb": 56,
-        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações ao site, para que as solicitações usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
+        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações ao site, para que estas usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
         "answer": "C. Crie uma regra de ouvinte no ALB para redirecionar o tráfego HTTP para HTTPS.",
         "options": [
             "A. Atualize a ACL de rede do ALB para aceitar somente tráfego HTTPS.",
@@ -805,10 +805,10 @@ let questions = [
     {
         "numb": 74,
         "question": "Uma empresa assinou recentemente um contrato com um parceiro AWS Managed Service Provider (MSP), para obter ajuda com uma iniciativa para migração de aplicativos. O arquiteto de soluções precisa compartilhar uma Amazon Machine Image (AMI) de uma conta AWS existente com a conta AWS do parceiro MSP. A AMI é baseada no Amazon Elastic Block Store (Amazon EBS) e usa uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS), para criptografar snapshots de volume do EBS. Qual é a maneira MAIS segura para o arquiteto de soluções compartilhar a AMI com a conta AWS do parceiro MSP?",
-        "answer": "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir a conta AWS do parceiro MSP para usar a chave.",
+        "answer": "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir que a conta AWS do parceiro MSP use a chave.",
         "options": [
             "A. Torne a AMI criptografada e os snapshots publicamente disponíveis. Modifique a política de chave para permitir que a conta AWS do parceiro MSP use a chave.",
-            "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir a conta AWS do parceiro MSP para usar a chave.",
+            "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir que a conta AWS do parceiro MSP use a chave.",
             "C. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para confiar em um nova chave KMS de propriedade do parceiro MSP para criptografia.",
             "D. Exporte a AMI da conta de origem para um bucket do Amazon S3 na conta AWS do parceiro MSP. Criptografe o bucket do S3 com uma nova chave KMS, que seja de propriedade do Parceiro MSP. Copie e inicie a AMI na conta AWS do parceiro MSP."
         ]
@@ -837,7 +837,7 @@ let questions = [
     },
     {
         "numb": 77,
-        "question": "O site dinâmico de uma empresa é hospedado em servidores locais nos Estados Unidos. A empresa está lançando seu produto na Europa e quer otimizar o tempo de carregamento do site para novos usuários europeus. O backend do site deve permanecer nos Estados Unidos. O produto está sendo lançado em poucos dias, e uma solução imediata é necessária. O que o arquiteto de soluções deve recomendar?",
+        "question": "O site dinâmico de uma empresa é hospedado em servidores locais nos Estados Unidos. A empresa está lançando seu produto na Europa e quer otimizar o tempo de carregamento do site para novos usuários europeus. O backend do site deve permanecer nos Estados Unidos. O produto será lançado em poucos dias, e uma solução imediata é necessária. O que o arquiteto de soluções deve recomendar?",
         "answer": "C. Use o Amazon CloudFront com uma origem personalizada, apontando para os servidores locais.",
         "options": [
             "A. Inicie uma instância do Amazon EC2 em us-east-1 e migre o site para ela.",
@@ -848,10 +848,10 @@ let questions = [
     },
     {
         "numb": 78,
-        "question": "Uma empresa quer reduzir o custo de sua arquitetura web existente de três camadas. Os servidores web, de aplicação e de banco de dados estão sendo executados em instâncias do Amazon EC2 para ambientes de desenvolvimento, teste e produção. As instâncias EC2 têm uma média de 30% de utilização da CPU durante os horários de pico e 10% Utilização da CPU fora dos horários de pico. As instâncias de produção do EC2 rodam 24 horas por dia. As instâncias de desenvolvimento e teste do EC2 rodam por pelo menos 8 horas por dia. A empresa planeja implementar automação, para interromper o desenvolvimento e testar instâncias do EC2 quando elas não estiverem em uso. Qual solução de compra de instância EC2 atenderá aos requisitos da empresa com MAIS economia?",
+        "question": "Uma empresa quer reduzir o custo de sua arquitetura web de três camadas existente. Os servidores web, de aplicação e de banco de dados estão sendo executados em instâncias do Amazon EC2 para ambientes de desenvolvimento, teste e produção. As instâncias EC2 têm uma média de 30% de utilização da CPU durante os horários de pico e 10% de utilização da CPU fora dos horários de pico. As instâncias de produção do EC2 rodam 24 horas por dia. As instâncias de desenvolvimento e teste do EC2 rodam por pelo menos 8 horas por dia. A empresa planeja implementar automação, para interromper as instâncias EC2 de desenvolvimento e testes quando elas não estiverem em uso. Qual solução de compra de instâncias EC2 atenderá aos requisitos da empresa com MAIS economia?",
         "answer": "B. Use Instâncias Reservadas para as instâncias EC2 de produção. Use Instâncias Sob Demanda para as instâncias EC2 de desenvolvimento e teste.",
         "options": [
-            "A. Use Instâncias Spot para as instâncias de produção do EC2. Use Instâncias Reservadas para as instâncias de desenvolvimento e teste do EC2.",
+            "A. Use Instâncias Spot para as instâncias EC2 de produção. Use Instâncias Reservadas para as instâncias EC2 de desenvolvimento e teste.",
             "B. Use Instâncias Reservadas para as instâncias EC2 de produção. Use Instâncias Sob Demanda para as instâncias EC2 de desenvolvimento e teste.",
             "C. Use blocos Spot para as instâncias EC2 de produção. Use Instâncias Reservadas para as instâncias EC2 de desenvolvimento e teste.",
             "D. Use Instâncias Sob Demanda para as instâncias EC2 de produção. Use blocos Spot para as instâncias EC2 de desenvolvimento e teste."
@@ -882,12 +882,12 @@ let questions = [
     {
         "numb": 81,
         "question": "Uma empresa hospeda um aplicativo nas funções AWS Lambda que são invocadas por uma API do Amazon API Gateway. As funções Lambda salvam os dados do cliente em um banco de dados Amazon Aurora MySQL. Sempre que a empresa atualiza o banco de dados, as funções Lambda falham em estabelecer conexões de banco de dados até que a atualização seja concluída. Isso resulta nos dados do cliente não serem registrados para alguns dos eventos. Um arquiteto de soluções precisa projetar uma solução que armazene dados do cliente criados durante atualizações de banco de dados. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazene os dados do cliente no banco de dados.",
+        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise a fila e armazene os dados do cliente no banco de dados.",
         "options": [
             "A. Provisione um proxy do Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao proxy do RDS.",
             "B. Aumente o tempo de execução das funções Lambda ao máximo. Crie um mecanismo de repetição no código que armazene os dados do cliente no banco de dados.",
             "C. Persista os dados do cliente no armazenamento local do Lambda. Configure novas funções do Lambda para escanear o armazenamento local, para salvar os dados do cliente o banco de dados.",
-            "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazene os dados do cliente no banco de dados."
+            "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise a fila e armazene os dados do cliente no banco de dados."
         ]
     },
     {
@@ -1079,7 +1079,7 @@ let questions = [
     },
     {
         "numb": 100,
-        "question": "Uma empresa tem um conjunto grande de dados para seu negócio de publicidade online armazenado em uma instância de banco de dados do Amazon RDS para MySQL, em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
+        "question": "Uma empresa tem um conjunto grande de dados para seu negócio de publicidade online, armazenado em uma instância de banco de dados do Amazon RDS para MySQL, em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
         "answer": "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
         "options": [
             "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
