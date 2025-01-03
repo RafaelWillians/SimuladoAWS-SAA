@@ -881,40 +881,40 @@ let questions = [
     },
     {
         "numb": 81,
-        "question": "Uma empresa hospeda um aplicativo nas funções AWS Lambda que são invocadas por uma API do Amazon API Gateway. As funções Lambda salvam os dados do cliente em um banco de dados Amazon Aurora MySQL. Sempre que a empresa atualiza o banco de dados, as funções Lambda falham em estabelecer conexões de banco de dados até que a atualização seja concluída. O resultado é que os dados do cliente não são registrados para alguns dos eventos. Um arquiteto de soluções precisa projetar uma solução que armazene dados do cliente criados durante atualizações de banco de dados. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazena os dados do cliente no banco de dados.",
+        "question": "Uma empresa hospeda um aplicativo nas funções AWS Lambda que são invocadas por uma API do Amazon API Gateway. As funções Lambda salvam os dados do cliente em um banco de dados Amazon Aurora MySQL. Sempre que a empresa atualiza o banco de dados, as funções Lambda falham em estabelecer conexões de banco de dados até que a atualização seja concluída. Isso resulta nos dados do cliente não serem registrados para alguns dos eventos. Um arquiteto de soluções precisa projetar uma solução que armazene dados do cliente criados durante atualizações de banco de dados. Qual solução atenderá a esses requisitos?",
+        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazene os dados do cliente no banco de dados.",
         "options": [
-            "A. Provisione um proxy Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao Proxy RDS.",
+            "A. Provisione um proxy do Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao proxy do RDS.",
             "B. Aumente o tempo de execução das funções Lambda ao máximo. Crie um mecanismo de repetição no código que armazene os dados do cliente no banco de dados.",
-            "C. Persista os dados do cliente no armazenamento local do Lambda. Configure novas funções do Lambda para escanear o armazenamento local para salvar os dados do cliente o banco de dados.",
-            "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazena os dados do cliente no banco de dados."
+            "C. Persista os dados do cliente no armazenamento local do Lambda. Configure novas funções do Lambda para escanear o armazenamento local, para salvar os dados do cliente o banco de dados.",
+            "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazene os dados do cliente no banco de dados."
         ]
     },
     {
         "numb": 82,
-        "question": "Uma empresa de pesquisa coletou dados por vários anos de áreas nos Estados Unidos. A empresa hospeda os dados em um bucket do Amazon S3 que tem 3 TB de tamanho e está crescendo. A empresa começou a compartilhar os dados com uma empresa de marketing europeia que tem buckets S3. A empresa quer para garantir que seus custos de transferência de dados permaneçam os mais baixos possíveis. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa de pesquisa coletou dados por vários anos de áreas nos Estados Unidos. A empresa hospeda os dados em um bucket do Amazon S3 que tem 3 TB de tamanho e está aumentando. A empresa começou a compartilhar os dados com uma empresa de marketing europeia que tem buckets S3. A empresa quer garantir que seus custos de transferência de dados permaneçam os mais baixos possíveis. Qual solução atenderá a esses requisitos?",
         "answer": "A. Configure o recurso Pagamento do Solicitante no bucket do S3 da empresa.",
         "options": [
             "A. Configure o recurso Pagamento do Solicitante no bucket do S3 da empresa.",
             "B. Configure a replicação entre regiões do S3 do bucket do S3 da empresa para um dos buckets S3 da empresa de marketing.",
-            "C. Configure o acesso entre contas para a empresa de marketing para que ela tenha acesso ao bucket do S3 da empresa.",
+            "C. Configure o acesso entre contas para a empresa de marketing, para que ela tenha acesso ao bucket do S3 da empresa.",
             "D. Configure o bucket do S3 da empresa para usar o S3 Intelligent-Tiering. Sincronize o bucket do S3 com um dos buckets S3 da empresa de marketing."
         ]
     },
     {
         "numb": 83,
-        "question": "Uma empresa usa o Amazon S3 para armazenar seus documentos confidenciais de auditoria. O bucket do S3 usa políticas de bucket para restringir o acesso ao IAM da equipe de auditoria credenciais do usuário de acordo com o princípio do menor privilégio. Os gerentes da empresa estão preocupados com a exclusão acidental de documentos no bucket do S3 e deseja uma solução mais segura. O que um arquiteto de soluções deve fazer para proteger os documentos de auditoria?",
+        "question": "Uma empresa usa o Amazon S3 para armazenar seus documentos confidenciais de auditoria. O bucket do S3 usa políticas de bucket para restringir o acesso das credenciais de usuário IAM da equipe de auditoria, de acordo com o princípio do menor privilégio. Os gerentes da empresa estão preocupados com a exclusão acidental de documentos no bucket do S3 e deseja uma solução mais segura. O que um arquiteto de soluções deve fazer para proteger os documentos de auditoria?",
         "answer": "A. Habilite os recursos de controle de versão e exclusão de MFA no bucket do S3.",
         "options": [
             "A. Habilite os recursos de controle de versão e exclusão de MFA no bucket do S3.",
             "B. Habilite a autenticação multifator (MFA) nas credenciais de usuário do IAM para cada conta de usuário do IAM da equipe de auditoria.",
-            "C. Adicione uma política de S3 Lifecycle às contas de usuário do IAM da equipe de auditoria para negar a ação s3:DeleteObject durante as datas de auditoria.",
-            "D. Use o AWS Key Management Service (AWS KMS) para criptografar o bucket do S3 e restringir o acesso das contas de usuário do IAM da equipe de auditoria ao KMS chave."
+            "C. Adicione uma política de S3 Lifecycle às contas de usuário do IAM da equipe de auditoria, para negar a ação s3:DeleteObject durante as datas de auditoria.",
+            "D. Use o AWS Key Management Service (AWS KMS) para criptografar o bucket do S3 e restringir o acesso das contas de usuário do IAM da equipe de auditoria à chave KMS."
         ]
     },
     {
         "numb": 84,
-        "question": "Uma empresa está usando um banco de dados SQL para armazenar dados de filmes que são publicamente acessíveis. O banco de dados é executado em uma instância do Amazon RDS Single-AZ DB. Um script executa consultas em intervalos aleatórios a cada dia para registrar o número de novos filmes que foram adicionados ao banco de dados. O script deve relatar um total final durante o horário comercial. A equipe de desenvolvimento da empresa percebe que o desempenho do banco de dados é inadequado para tarefas de desenvolvimento quando o script está em execução. A O arquiteto de soluções deve recomendar uma solução para resolver esse problema. Qual solução atenderá a esse requisito com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa está usando um banco de dados SQL para armazenar dados de filmes que são publicamente acessíveis. O banco de dados é executado em uma instância de banco de dados do Amazon RDS Single-AZ. Um script executa consultas em intervalos aleatórios a cada dia para registrar o número de novos filmes que foram adicionados ao banco de dados. O script deve relatar um total final durante o horário comercial. A equipe de desenvolvimento da empresa percebe que o desempenho do banco de dados é inadequado para tarefas de desenvolvimento quando o script está em execução. O arquiteto de soluções deve recomendar uma solução para resolver esse problema. Qual solução atenderá a esse requisito com a MENOR sobrecarga operacional?",
         "answer": "B. Crie uma réplica de leitura do banco de dados. Configure o script para consultar somente a réplica de leitura.",
         "options": [
             "A. Modifique a instância do banco de dados para ser uma implantação Multi-AZ.",
@@ -925,10 +925,10 @@ let questions = [
     },
     {
         "numb": 85,
-        "question": "Uma empresa tem aplicativos que rodam em instâncias do Amazon EC2 em uma VPC. Um dos aplicativos precisa chamar a API do Amazon S3 para armazenar e ler objetos. De acordo com os regulamentos de segurança da empresa, nenhum tráfego dos aplicativos tem permissão para viajar pela internet. Qual solução atenderá a esses requisitos?",
-        "answer": "A. Configure um endpoint do gateway S3.",
+        "question": "Uma empresa possui aplicativos que rodam em instâncias do Amazon EC2 em uma VPC. Um dos aplicativos precisa chamar a API do Amazon S3 para armazenar e ler objetos. De acordo com os regulamentos de segurança da empresa, nenhum tráfego dos aplicativos tem permissão para viajar pela internet. Qual solução atenderá a esses requisitos?",
+        "answer": "A. Configure um endpoint do gateway do S3.",
         "options": [
-            "A. Configure um endpoint do gateway S3.",
+            "A. Configure um endpoint do gateway do S3.",
             "B. Crie um bucket do S3 em uma sub-rede privada.",
             "C. Crie um bucket do S3 na mesma região da AWS que as instâncias do EC2.",
             "D. Configure um gateway NAT na mesma sub-rede das instâncias do EC2."
@@ -936,13 +936,13 @@ let questions = [
     },
     {
         "numb": 86,
-        "question": "Uma empresa executa um aplicativo local que é alimentado por um banco de dados MySQL. A empresa está migrando o aplicativo para a AWS para aumentar a elasticidade e a disponibilidade da aplicação. A arquitetura atual mostra atividade de leitura pesada no banco de dados durante os períodos de operação normal. A cada 4 horas, o desenvolvimento da empresa a equipe extrai uma exportação completa do banco de dados de produção para preencher um banco de dados no ambiente de preparação. Durante esse período, os usuários experimentam latência de aplicação inaceitável. A equipe de desenvolvimento não consegue usar o ambiente de preparação até que o procedimento seja concluído. Um arquiteto de soluções deve recomendar uma arquitetura de substituição que alivie o problema de latência do aplicativo. A arquitetura de substituição também deve dar à equipe de desenvolvimento a capacidade de continuar usando o ambiente de preparação sem demora. Qual solução atende a esses requisitos?",
-        "answer": "B. Use o Amazon Aurora MySQL com Multi-AZ Aurora Replicas para produção. Use clonagem de banco de dados para criar o banco de dados de preparação sob demanda.",
+        "question": "Uma empresa executa um aplicativo local que é alimentado por um banco de dados MySQL. A empresa está migrando o aplicativo para a AWS para aumentar a elasticidade e a disponibilidade do aplicativo. A arquitetura atual apresenta uma intensa atividade de leitura no banco de dados durante os períodos normais de operação. A cada 4 horas, a equipe de desenvolvimento da empresa realiza uma exportação completa do banco de dados de produção para preencher um banco de dados no ambiente de staging. Durante esse período, os usuários enfrentam uma latência inaceitável no aplicativo. Além disso, a equipe de desenvolvimento não consegue usar o ambiente de staging até que o procedimento seja concluído. Um arquiteto de soluções deve recomendar uma arquitetura substituta que resolva o problema de latência do aplicativo. A nova arquitetura também deve permitir que a equipe de desenvolvimento continue usando o ambiente de staging sem atrasos. Qual solução atende a esses requisitos?",
+        "answer": "B. Use o Amazon Aurora MySQL com Multi-AZ e réplicas do Aurora para produção. Use a clonagem de banco de dados para criar o banco de dados de staging sob demanda.",
         "options": [
-            "A. Use o Amazon Aurora MySQL com réplicas Aurora Multi-AZ para produção. Preencha o banco de dados de preparação implementando um backup e processo de restauração que usa o utilitário mysqldump.",
-            "B. Use o Amazon Aurora MySQL com Multi-AZ Aurora Replicas para produção. Use clonagem de banco de dados para criar o banco de dados de preparação sob demanda.",
-            "C. Use o Amazon RDS para MySQL com uma implantação Multi-AZ e leia réplicas para produção. Use a instância standby para o staging banco de dados.",
-            "D. Use o Amazon RDS para MySQL com uma implantação Multi-AZ e leia réplicas para produção. Preencha o banco de dados de preparação implementando um processo de backup e restauração que usa o utilitário mysqldump."
+            "A. Use o Amazon Aurora MySQL com Multi-AZ e réplicas do Aurora para produção. Preencha o banco de dados de staging implementando um backup e um processo de restauração que use o utilitário mysqldump.",
+            "B. Use o Amazon Aurora MySQL com Multi-AZ e réplicas do Aurora para produção. Use a clonagem de banco de dados para criar o banco de dados de staging sob demanda.",
+            "C. Use o Amazon RDS para MySQL com uma implantação Multi-AZ e réplicas de leitura para produção. Use a instância em espera para o banco de dados de staging.",
+            "D. Use o Amazon RDS para MySQL com uma implantação Multi-AZ e réplicas de leitura para produção. Preencha o banco de dados de staging implementando um processo de backup e restauração que use o utilitário mysqldump."
         ]
     },
     {
