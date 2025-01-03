@@ -199,7 +199,7 @@ let questions = [
     },
     {
         "numb": 19,
-        "question": "Uma empresa quer melhorar sua capacidade de clonar grandes quantidades de dados de produção em um ambiente de teste na mesma região da AWS. Os dados são armazenados em instâncias do Amazon EC2 em volumes do Amazon Elastic Block Store (Amazon EBS). As modificações nos dados clonados não devem afetar os ambiente de produção. O software que acessa esses dados requer desempenho de E/S consistentemente alto. Um arquiteto de soluções precisa minimizar o tempo necessário para clonar os dados de produção no ambiente de teste. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa quer melhorar sua capacidade de clonar grandes quantidades de dados de produção, em um ambiente de teste na mesma região da AWS. Os dados são armazenados em instâncias do Amazon EC2 com volumes do Amazon Elastic Block Store (Amazon EBS). As modificações nos dados clonados não devem afetar o ambiente de produção. O software que acessa esses dados requer desempenho de E/S consistentemente alto. Um arquiteto de soluções precisa minimizar o tempo necessário para clonar os dados de produção no ambiente de teste. Qual solução atenderá a esses requisitos?",
         "answer": "D. Tire snapshots do EBS dos volumes de produção do EBS. Ative o recurso de restauração rápida de snapshots do EBS nos snapshots do EBS. Restaure o snapshots em novos volumes EBS. Anexe os novos volumes EBS a instâncias EC2 no ambiente de teste.",
         "options": [
             "A. Tire snapshots do EBS dos volumes de produção do EBS. Restaure os snapshots nos volumes de armazenamento de instância do EC2 no ambiente de teste.",
