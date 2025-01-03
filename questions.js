@@ -222,7 +222,7 @@ let questions = [
     {
         "numb": 21,
         "question": "Um arquiteto de soluções está usando o Amazon S3 para projetar a arquitetura de armazenamento de um novo aplicativo de mídia digital. Os arquivos de mídia devem ser resilientes à perda de uma Zona de Disponibilidade. Alguns arquivos são acessados ​​com frequência, enquanto outros raramente são acessados ​​em um padrão imprevisível. O arquiteto de soluções deve minimizar os custos de armazenamento e recuperação dos arquivos de mídia. Qual opção de armazenamento atende a esses requisitos?",
-        "answer": "B. S3 Intelligent Tiering",
+        "answer": "B. S3 Intelligent-Tiering",
         "options": [
             "A. S3 Standard",
             "B. S3 Intelligent-Tiering",
@@ -342,7 +342,7 @@ let questions = [
     },
     {
         "numb": 32,
-        "question": "Uma empresa executa um aplicativo web de marketplace na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. A empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
+        "question": "Uma empresa executa um aplicativo web de marketplace na AWS. O aplicativo atende centenas de milhares de usuários durante os horários de pico. A empresa precisa de uma solução escalável e quase em tempo real para compartilhar os detalhes de milhões de transações financeiras com vários outros aplicativos internos. As transações também precisam ser processadas para remover dados confidenciais, antes de serem armazenadas em um banco de dados de documentos para recuperação de baixa latência. O que um arquiteto de soluções deve recomendar para atender a esses requisitos?",
         "answer": "C. Transmita os dados das transações para o Amazon Kinesis Data Streams. Use a integração do AWS Lambda para remover dados confidenciais de cada transação e, em seguida, armazenar os dados de transações no Amazon DynamoDB. Outros aplicativos podem consumir os dados de transações da stream de dados do Kinesis.",
         "options": [
             "A. Armazene os dados das transações no Amazon DynamoDB. Configure uma regra no DynamoDB para remover dados confidenciais de cada transação mediante a escrita. Use o DynamoDB Streams para compartilhar os dados de transações com outros aplicativos.",
