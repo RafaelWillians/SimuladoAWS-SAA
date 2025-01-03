@@ -144,12 +144,12 @@ let questions = [
     },
     {
         "numb": 14,
-        "question": "Uma empresa executa um aplicativo de e-commerce em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias são executadas em um grupo do Amazon EC2 Auto Scaling em várias zonas de disponibilidade. O grupo de Auto Scaling é dimensionado com base nas métricas de utilização da CPU. O aplicativo de e-commerce armazena os dados da transação em um banco de dados MySQL 8.0 hospedado em uma grande instância do EC2. O desempenho do banco de dados degrada rapidamente conforme a carga do aplicativo aumenta. O aplicativo manipula mais solicitações de leitura do que transações de gravação. A empresa quer uma solução que dimensione automaticamente o banco de dados para atender à demanda de cargas de trabalho de leitura imprevisíveis, mantendo alta disponibilidade. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com Aurora Replicas.",
+        "question": "Uma empresa executa um aplicativo de e-commerce em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias são executadas em um grupo do Amazon EC2 Auto Scaling em várias zonas de disponibilidade. O grupo de Auto Scaling é dimensionado com base nas métricas de utilização da CPU. O aplicativo de e-commerce armazena os dados da transação em um banco de dados MySQL 8.0, hospedado em uma grande instância do EC2. O desempenho do banco de dados degrada rapidamente conforme a carga do aplicativo aumenta. O aplicativo manipula mais solicitações de leitura do que transações de gravação. A empresa quer uma solução que dimensione automaticamente o banco de dados para atender à demanda de cargas de trabalho de leitura imprevisíveis, mantendo alta disponibilidade. Qual solução atenderá a esses requisitos?",
+        "answer": "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com réplicas do Aurora.",
         "options": [
             "A. Use o Amazon Redshift com um único nó para funcionalidade de liderança e computação.",
             "B. Use o Amazon RDS com uma implantação Single-AZ. Configure o Amazon RDS para adicionar instâncias de leitor em uma Zona de Disponibilidade diferente.",
-            "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com Aurora Replicas.",
+            "C. Use o Amazon Aurora com uma implantação Multi-AZ. Configure o Aurora Auto Scaling com réplicas do Aurora.",
             "D. Use o Amazon ElastiCache para Memcached com instâncias Spot do EC2."
         ]
     },
