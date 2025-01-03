@@ -672,13 +672,13 @@ let questions = [
     },
     {
         "numb": 62,
-        "question": "Uma empresa tem um aplicativo que gera um grande número de arquivos, cada um com aproximadamente 5 MB de tamanho. Os arquivos são armazenados no Amazon S3. A política da empresa exige que os arquivos sejam armazenados por 4 anos antes de poderem ser excluídos. Acessibilidade imediata é sempre necessária, pois os arquivos contêm dados comerciais críticos que não são fáceis de reproduzir. Os arquivos são acessados ​​com frequência nos primeiros 30 dias da criação do objeto, mas são raramente acessado após os primeiros 30 dias. Qual solução de armazenamento é MAIS econômica?",
-        "answer": "C. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Exclua os arquivos 4 anos após a criação do objeto.",
+        "question": "Uma empresa tem um aplicativo que gera um grande número de arquivos, cada um com aproximadamente 5 MB de tamanho. Os arquivos são armazenados no Amazon S3. A política da empresa exige que os arquivos sejam armazenados por 4 anos antes de poderem ser excluídos. Acessibilidade imediata é sempre necessária, pois os arquivos contêm dados comerciais críticos que não são fáceis de reproduzir. Os arquivos são acessados ​​com frequência nos primeiros 30 dias da criação, mas são raramente acessados após os primeiros 30 dias. Qual solução de armazenamento é MAIS econômica?",
+        "answer": "C. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após a criação dos objetos. Exclua os arquivos 4 anos após a criação dos objetos.",
         "options": [
-            "A. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Glacier 30 dias após a criação do objeto. Exclua os arquivos 4 anos depois criação de objetos.",
-            "B. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) 30 dias a partir de criação do objeto. Exclua os arquivos 4 anos após a criação do objeto.",
-            "C. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Exclua os arquivos 4 anos após a criação do objeto.",
-            "D. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após o objeto criação. Mova os arquivos para o S3 Glacier 4 anos após a criação do objeto."
+            "A. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Glacier 30 dias após a criação dos objetos. Exclua os arquivos 4 anos após a criação dos objetos.",
+            "B. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 One Zone-Infrequent Access (S3 One Zone-IA) 30 dias a partir da criação dos objetos. Exclua os arquivos 4 anos após a criação dos objetos.",
+            "C. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após a criação dos objetos. Exclua os arquivos 4 anos após a criação dos objetos.",
+            "D. Crie uma política do S3 Lifecycle para mover arquivos do S3 Standard para o S3 Standard-Infrequent Access (S3 Standard-IA) 30 dias após a criação dos objetos. Mova os arquivos para o S3 Glacier 4 anos após a criação dos objetos."
         ]
     },
     {
