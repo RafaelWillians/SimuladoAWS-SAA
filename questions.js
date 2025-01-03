@@ -456,7 +456,7 @@ let questions = [
         "answer": "B. Estabeleça uma nova conexão do AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
         "options": [
             "A. Estabeleça conexões VPN da AWS e faça proxy de todo o tráfego por meio de um endpoint do gateway VPC.",
-            "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
+            "B. Estabeleça uma nova conexão do AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
             "C. Solicite dispositivos AWS Snowball diariamente. Carregue os dados nos dispositivos Snowball e retorne os dispositivos para a AWS todos os dias.",
             "D. Envie um ticket de suporte por meio do console de gerenciamento da AWS. Solicite a remoção dos limites de serviço do S3 da conta."
         ]
