@@ -882,12 +882,12 @@ let questions = [
     {
         "numb": 81,
         "question": "Uma empresa hospeda um aplicativo nas funções AWS Lambda que são invocadas por uma API do Amazon API Gateway. As funções Lambda salvam os dados do cliente em um banco de dados Amazon Aurora MySQL. Sempre que a empresa atualiza o banco de dados, as funções Lambda falham em estabelecer conexões de banco de dados até que a atualização seja concluída. Isso resulta nos dados do cliente não serem registrados para alguns dos eventos. Um arquiteto de soluções precisa projetar uma solução que armazene dados do cliente criados durante atualizações de banco de dados. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazene os dados do cliente no banco de dados.",
+        "answer": "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise a fila e armazene os dados do cliente no banco de dados.",
         "options": [
             "A. Provisione um proxy do Amazon RDS para ficar entre as funções Lambda e o banco de dados. Configure as funções Lambda para se conectar ao proxy do RDS.",
             "B. Aumente o tempo de execução das funções Lambda ao máximo. Crie um mecanismo de repetição no código que armazene os dados do cliente no banco de dados.",
             "C. Persista os dados do cliente no armazenamento local do Lambda. Configure novas funções do Lambda para escanear o armazenamento local, para salvar os dados do cliente o banco de dados.",
-            "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise os fila e armazene os dados do cliente no banco de dados."
+            "D. Armazene os dados do cliente em uma fila FIFO do Amazon Simple Queue Service (Amazon SQS). Crie uma nova função Lambda que pesquise a fila e armazene os dados do cliente no banco de dados."
         ]
     },
     {
