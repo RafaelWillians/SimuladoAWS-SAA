@@ -12,7 +12,7 @@ let questions = [
     },
     {
         "numb": 2,
-        "question": "Uma empresa precisa da capacidade de analisar os arquivos de log de seu aplicativo proprietário. Os logs são armazenados no formato JSON em um bucket do Amazon S3. As consultas serão simples e serão executadas sob demanda. Um arquiteto de soluções precisa executar a análise com alterações mínimas na arquitetura existente. O que o arquiteto de soluções deve fazer para atender a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Uma empresa precisa ter a capacidade de analisar os arquivos de log de seu aplicativo proprietário. Os logs são armazenados no formato JSON em um bucket do Amazon S3. As consultas serão simples e serão executadas sob demanda. Um arquiteto de soluções precisa executar a análise com alterações mínimas na arquitetura existente. O que o arquiteto de soluções deve fazer para atender a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "C. Use o Amazon Athena diretamente com o Amazon S3 para executar as consultas conforme necessário.",
         "options": [
             "A. Use o Amazon Redshift para carregar todo o conteúdo em um só lugar e executar as consultas SQL conforme necessário.",
@@ -551,7 +551,7 @@ let questions = [
     },
     {
         "numb": 51,
-        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura de VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usam instâncias do Amazon EC2 e instâncias de BD do Amazon RDS. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias de EC2 que são executadas nas sub-redes privadas podem ter acesso aos bancos de dados RDS. Qual solução atenderá a esses requisitos?",
+        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura de VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usarão instâncias do Amazon EC2 e instâncias de BD do Amazon RDS. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias de EC2 que são executadas nas sub-redes privadas podem ter acesso aos bancos de dados RDS. Qual solução atenderá a esses requisitos?",
         "answer": "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança às instâncias de BD.",
         "options": [
             "A. Crie uma nova tabela de rotas que exclua a rota para os blocos CIDR das sub-redes públicas. Associe a tabela de rotas às sub-redes do banco de dados.",
@@ -805,10 +805,10 @@ let questions = [
     {
         "numb": 74,
         "question": "Uma empresa assinou recentemente um contrato com um parceiro AWS Managed Service Provider (MSP), para obter ajuda com uma iniciativa para migração de aplicativos. O arquiteto de soluções precisa compartilhar uma Amazon Machine Image (AMI) de uma conta AWS existente com a conta AWS do parceiro MSP. A AMI é baseada no Amazon Elastic Block Store (Amazon EBS) e usa uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS), para criptografar snapshots de volume do EBS. Qual é a maneira MAIS segura para o arquiteto de soluções compartilhar a AMI com a conta AWS do parceiro MSP?",
-        "answer": "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir a conta AWS do parceiro MSP para usar a chave.",
+        "answer": "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir que a conta AWS do parceiro MSP use a chave.",
         "options": [
             "A. Torne a AMI criptografada e os snapshots publicamente disponíveis. Modifique a política de chave para permitir que a conta AWS do parceiro MSP use a chave.",
-            "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir a conta AWS do parceiro MSP para usar a chave.",
+            "B. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para permitir que a conta AWS do parceiro MSP use a chave.",
             "C. Modifique a propriedade launchPermission da AMI. Compartilhe a AMI somente com a conta AWS do parceiro MSP. Modifique a política de chave para confiar em um nova chave KMS de propriedade do parceiro MSP para criptografia.",
             "D. Exporte a AMI da conta de origem para um bucket do Amazon S3 na conta AWS do parceiro MSP. Criptografe o bucket do S3 com uma nova chave KMS, que seja de propriedade do Parceiro MSP. Copie e inicie a AMI na conta AWS do parceiro MSP."
         ]
