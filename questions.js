@@ -1079,7 +1079,7 @@ let questions = [
     },
     {
         "numb": 100,
-        "question": "Uma empresa tem um conjunto grande de dados para seu negócio de publicidade online armazenado em uma instância de banco de dados do Amazon RDS para MySQL, em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
+        "question": "Uma empresa tem um conjunto grande de dados para seu negócio de publicidade online, armazenado em uma instância de banco de dados do Amazon RDS para MySQL, em uma única Zona de Disponibilidade. A empresa quer que as consultas de relatórios comerciais sejam executadas sem afetar as operações de gravação na instância do banco de dados de produção. Qual solução atende a esses requisitos?",
         "answer": "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
         "options": [
             "A. Implante réplicas de leitura do RDS para processar as consultas de relatórios comerciais.",
