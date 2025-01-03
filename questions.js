@@ -518,7 +518,7 @@ let questions = [
     },
     {
         "numb": 48,
-        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura padrão de sistema de arquivos. A empresa quer uma solução que seja escalável automaticamente, seja altamente disponível e necessite de sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída, que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura padrão de sistema de arquivos. A empresa quer uma solução que seja escalável automaticamente, seja altamente disponível e tenha sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
         "answer": "C. Migre o aplicativo para instâncias do Amazon EC2 em um grupo de Auto Scaling Multi-AZ. Use o Amazon Elastic File System (Amazon EFS) para armazenar.",
         "options": [
             "A. Migre o aplicativo para ser executado como contêineres no Amazon Elastic Container Service (Amazon ECS). Use o Amazon S3 para armazenamento.",
