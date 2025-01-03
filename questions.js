@@ -584,7 +584,7 @@ let questions = [
     },
     {
         "numb": 54,
-        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes a infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres, para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes a infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "C. Use o Amazon Elastic Container Service (Amazon ECS) no AWS Fargate.",
         "options": [
             "A. Use instâncias do Amazon EC2 e instale o Docker nas instâncias.",
@@ -606,7 +606,7 @@ let questions = [
     },
     {
         "numb": 56,
-        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações ao site, para que as solicitações usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
+        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações ao site, para que estas usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
         "answer": "C. Crie uma regra de ouvinte no ALB para redirecionar o tráfego HTTP para HTTPS.",
         "options": [
             "A. Atualize a ACL de rede do ALB para aceitar somente tráfego HTTPS.",
