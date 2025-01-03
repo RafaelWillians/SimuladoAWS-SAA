@@ -78,13 +78,13 @@ let questions = [
     },
     {
         "numb": 8,
-        "question": "Uma empresa está migrando um aplicativo distribuído para a AWS. O aplicativo atende cargas de trabalho variáveis. A plataforma legada consiste em um primário servidor que coordena tarefas em vários nós de computação. A empresa quer modernizar o aplicativo com uma solução que maximize resiliência e escalabilidade. Como um arquiteto de soluções deve projetar a arquitetura para atender a esses requisitos?",
-        "answer": "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com o Amazon Instâncias do EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
+        "question": "Uma empresa está migrando um aplicativo distribuído para a AWS. O aplicativo atende cargas de trabalho variáveis. A plataforma legada consiste em um servidor primário que coordena tarefas em vários nós de computação. A empresa quer modernizar o aplicativo com uma solução que maximize resiliência e escalabilidade. Como um arquiteto de soluções deve projetar a arquitetura para atender a esses requisitos?",
+        "answer": "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
         "options": [
-            "A. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com Instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling para usar o dimensionamento programado.",
-            "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com o Amazon Instâncias do EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
-            "C. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configurar AWS CloudTrail como destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no servidor primário.",
-            "D. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configurar Amazon EventBridge (Amazon CloudWatch Events) como um destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no nós de computação."
+            "A. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling para usar o dimensionamento agendado.",
+            "B. Configure uma fila do Amazon Simple Queue Service (Amazon SQS) como um destino para as tarefas. Implemente os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o EC2 Auto Scaling com base no tamanho da fila.",
+            "C. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o AWS CloudTrail como destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no servidor primário.",
+            "D. Implemente o servidor primário e os nós de computação com instâncias do Amazon EC2 que são gerenciadas em um grupo de Auto Scaling. Configure o Amazon EventBridge (Amazon CloudWatch Events) como um destino para as tarefas. Configure o EC2 Auto Scaling com base na carga no nós de computação."
         ]
     },
     {
