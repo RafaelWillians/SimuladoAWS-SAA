@@ -947,18 +947,18 @@ let questions = [
     },
     {
         "numb": 87,
-        "question": "Uma empresa está projetando um aplicativo onde os usuários carregam pequenos arquivos no Amazon S3. Depois que um usuário carrega um arquivo, o arquivo requer um único simples processamento para transformar os dados e salvá-los no formato JSON para análise posterior. Cada arquivo deve ser processado o mais rápido possível após ser carregado. A demanda pode variar. Em alguns dias, os usuários carregarão um alto número de arquivos. Em outros dias, os usuários farão upload de alguns arquivos ou nenhum arquivo. Qual solução atende a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "C. Configure o Amazon S3 para enviar uma notificação de evento para uma fila do Amazon Simple Queue Service (Amazon SQS). Use um AWS Lambda função para ler da fila e processar os dados. Armazene o arquivo JSON resultante no Amazon DynamoDB.",
+        "question": "Uma empresa está projetando um aplicativo onde os usuários fazem upload de arquivos pequenos no Amazon S3. Depois que um usuário envia um arquivo, o arquivo requer um único processamento simples para transformar os dados e salvá-los no formato JSON para análise posterior. Cada arquivo deve ser processado o mais rápido possível após o upload. A demanda pode variar. Em alguns dias, os usuários vão enviar um alto volume de arquivos. Em outros dias, os usuários farão upload de alguns ou nenhum arquivo. Qual solução atende a esses requisitos com a MENOR sobrecarga operacional?",
+        "answer": "C. Configure o Amazon S3 para enviar uma notificação de evento para uma fila do Amazon Simple Queue Service (Amazon SQS). Use uma função AWS Lambda para ler da fila e processar os dados. Armazene o arquivo JSON resultante no Amazon DynamoDB.",
         "options": [
-            "A. Configure o Amazon EMR para ler arquivos de texto do Amazon S3. Execute scripts de processamento para transformar os dados. Armazene o arquivo JSON resultante em um Cluster de banco de dados do Amazon Aurora.",
+            "A. Configure o Amazon EMR para ler arquivos de texto do Amazon S3. Execute scripts de processamento para transformar os dados. Armazene o arquivo JSON resultante em um cluster de banco de dados do Amazon Aurora.",
             "B. Configure o Amazon S3 para enviar uma notificação de evento para uma fila do Amazon Simple Queue Service (Amazon SQS). Use instâncias do Amazon EC2 para ler da fila e processar os dados. Armazene o arquivo JSON resultante no Amazon DynamoDB.",
-            "C. Configure o Amazon S3 para enviar uma notificação de evento para uma fila do Amazon Simple Queue Service (Amazon SQS). Use um AWS Lambda função para ler da fila e processar os dados. Armazene o arquivo JSON resultante no Amazon DynamoDB.",
-            "D. Configure o Amazon EventBridge (Amazon CloudWatch Events) para enviar um evento ao Amazon Kinesis Data Streams quando um novo arquivo for carregado. Use uma função AWS Lambda para consumir o evento do fluxo e processar os dados. Armazene o arquivo JSON resultante em um Cluster de banco de dados do Amazon Aurora."
+            "C. Configure o Amazon S3 para enviar uma notificação de evento para uma fila do Amazon Simple Queue Service (Amazon SQS). Use uma função AWS Lambda para ler da fila e processar os dados. Armazene o arquivo JSON resultante no Amazon DynamoDB.",
+            "D. Configure o Amazon EventBridge (Amazon CloudWatch Events) para enviar um evento ao Amazon Kinesis Data Streams quando um novo arquivo for enviado. Use uma função AWS Lambda para consumir o evento da stream e processar os dados. Armazene o arquivo JSON resultante em um cluster de banco de dados do Amazon Aurora."
         ]
     },
     {
         "numb": 88,
-        "question": "Um aplicativo permite que usuários na sede de uma empresa acessem dados do produto. Os dados do produto são armazenados em um Amazon RDS MySQL DB instância. A equipe de operações isolou uma desaceleração no desempenho do aplicativo e deseja separar o tráfego de leitura do tráfego de gravação. Uma solução O arquiteto precisa otimizar o desempenho do aplicativo rapidamente. O que o arquiteto de soluções deve recomendar?",
+        "question": "Um aplicativo permite que usuários na sede de uma empresa acessem dados do produto. Os dados de produto são armazenados em uma instância de banco de dados do Amazon RDS MySQL. A equipe de operações isolou uma queda no desempenho do aplicativo e deseja separar o tráfego de leitura do tráfego de gravação. O arquiteto de soluções precisa otimizar o desempenho do aplicativo rapidamente. O que o arquiteto de soluções deve recomendar?",
         "answer": "D. Crie réplicas de leitura para o banco de dados. Configure as réplicas de leitura com os mesmos recursos de computação e armazenamento do banco de dados de origem.",
         "options": [
             "A. Altere o banco de dados existente para uma implantação Multi-AZ. Atenda às solicitações de leitura da Zona de Disponibilidade primária.",
@@ -969,46 +969,46 @@ let questions = [
     },    
     {
         "numb": 90,
-        "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no local que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Crie um sistema de arquivos Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação.",
+        "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no on-premises, que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
+        "answer": "D. Crie um sistema de arquivos com o Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação.",
         "options": [
             "A. Configure o armazenamento do Amazon EFS e defina o domínio do Active Directory para autenticação.",
             "B. Crie um compartilhamento de arquivos SMB em um gateway de arquivos do AWS Storage Gateway em duas Zonas de Disponibilidade.",
             "C. Crie um bucket do Amazon S3 e configure o Microsoft Windows Server para montá-lo como um volume.",
-            "D. Crie um sistema de arquivos Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação."
+            "D. Crie um sistema de arquivos com o Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação."
         ]
     },
     {
         "numb": 91,
-        "question": "Uma empresa de processamento de imagens tem um aplicativo web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um bucket do Amazon S3. A empresa configurou notificações de eventos do S3 para publicar os eventos de criação de objetos em uma fila padrão do Amazon Simple Queue Service (Amazon SQS). A fila SQS serve como fonte de eventos para uma função AWS Lambda que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS são invocar a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
-        "answer": "C. Aumente o tempo limite de visibilidade na fila SQS para um valor maior que o total do tempo limite da função e da janela do lote tempo esgotado.",
+        "question": "Uma empresa de processamento de imagens possui um aplicativo web que os usuários usam para carregar imagens. O aplicativo carrega as imagens em um bucket do Amazon S3. A empresa configurou notificações de eventos do S3 para publicar os eventos de criação de objetos em uma fila padrão do Amazon Simple Queue Service (Amazon SQS). A fila SQS serve como fonte de eventos para uma função AWS Lambda, que processa as imagens e envia os resultados para usuários por e-mail. Os usuários relatam que estão recebendo várias mensagens de e-mail para cada imagem carregada. Um arquiteto de soluções determina que as mensagens SQS estão invocando a função Lambda mais de uma vez, resultando em várias mensagens de e-mail. O que o arquiteto de soluções deve fazer para resolver esse problema com a MENOR sobrecarga operacional?",
+        "answer": "C. Aumente o tempo de visibilidade na fila do SQS para um valor maior que o total do tempo limite da função e o tempo limite da janela de lote.",
         "options": [
-            "A. Configure uma pesquisa longa na fila do SQS aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
-            "B. Altere a fila padrão SQS para uma fila FIFO SQS. Use o ID de deduplicação de mensagem para descartar mensagens duplicadas.",
-            "C. Aumente o tempo limite de visibilidade na fila SQS para um valor maior que o total do tempo limite da função e da janela do lote tempo esgotado.",
+            "A. Configure uma sondagem longa na fila do SQS, aumentando o tempo de espera do ReceiveMessage para 30 segundos.",
+            "B. Altere a fila padrão do SQS para uma fila FIFO do SQS. Use o ID de deduplicação de mensagem para descartar mensagens duplicadas.",
+            "C. Aumente o tempo de visibilidade na fila do SQS para um valor maior que o total do tempo limite da função e o tempo limite da janela de lote.",
             "D. Modifique a função Lambda para excluir cada mensagem da fila SQS imediatamente após a mensagem ser lida antes do processamento."
         ]
     },
     {
         "numb": 92,
-        "question": "Uma empresa está implementando uma solução de armazenamento compartilhado para um aplicativo de jogo que é hospedado em um data center local. A empresa precisa a capacidade de usar clientes Lustre para acessar dados. A solução deve ser totalmente gerenciada. Qual solução atende a esses requisitos?",
+        "question": "Uma empresa está implementando uma solução de armazenamento compartilhado para um aplicativo de jogo que é hospedado em um data center local. A empresa da capacidade de usar clientes Lustre para acessar dados. A solução deve ser totalmente gerenciada. Qual solução atende a esses requisitos?",
         "answer": "D. Crie um sistema de arquivos Amazon FSx para Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos.",
         "options": [
             "A. Crie um gateway de arquivo do AWS Storage Gateway. Crie um compartilhamento de arquivo que use o protocolo de cliente necessário. Conecte o servidor de aplicativos a o compartilhamento de arquivos.",
-            "B. Crie uma instância do Amazon EC2 Windows. Instale e configure uma função de compartilhamento de arquivos do Windows na instância. Conecte o servidor de aplicativos a o compartilhamento de arquivos.",
+            "B. Crie uma instância Windows do Amazon EC2. Instale e configure uma função de compartilhamento de arquivos do Windows na instância. Conecte o servidor de aplicativos ao compartilhamento de arquivos.",
             "C. Crie um sistema de arquivos Amazon Elastic File System (Amazon EFS) e configure-o para suportar Lustre. Anexe o sistema de arquivos à origem servidor. Conecte o servidor de aplicativos ao sistema de arquivos.",
             "D. Crie um sistema de arquivos Amazon FSx para Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos."
         ]
     },
     {
         "numb": 93,
-        "question": "O aplicativo em contêiner de uma empresa é executado em uma instância do Amazon EC2. O aplicativo precisa baixar certificados de segurança antes de poder comunicar com outros aplicativos de negócios. A empresa quer uma solução altamente segura para criptografar e descriptografar os certificados em quase real tempo. A solução também precisa armazenar dados em armazenamento altamente disponível após os dados serem criptografados. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "C. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para criptografia operações. Armazene os dados criptografados no Amazon S3.",
+        "question": "O aplicativo em contêiner de uma empresa é executado em uma instância do Amazon EC2. O aplicativo precisa baixar certificados de segurança antes de poder se comunicar com outros aplicativos de negócios. A empresa quer uma solução altamente segura para criptografar e descriptografar os certificados em quase real tempo. A solução também precisa armazenar dados em armazenamento altamente disponível após os dados serem criptografados. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "answer": "C. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função da EC2 use a chave KMS para operações de criptografia. Armazene os dados criptografados no Amazon S3.",
         "options": [
-            "A. Crie segredos do AWS Secrets Manager para certificados criptografados. Atualize manualmente os certificados conforme necessário. Controle o acesso aos dados por usando acesso IAM de baixa granularidade.",
+            "A. Crie segredos do AWS Secrets Manager para os certificados criptografados. Atualize os certificados manualmente conforme necessário. Controle o acesso aos dados usando permissões detalhadas do IAM",
             "B. Crie uma função AWS Lambda que use a biblioteca de criptografia Python para receber e executar operações de criptografia. Armazene a função em um bucket do Amazon S3.",
-            "C. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para criptografia operações. Armazene os dados criptografados no Amazon S3.",
-            "D. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para criptografia operações. Armazene os dados criptografados em volumes do Amazon Elastic Block Store (Amazon EBS)."
+            "C. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função da EC2 use a chave KMS para operações de criptografia. Armazene os dados criptografados no Amazon S3.",
+            "D. Crie uma chave gerenciada pelo cliente do AWS Key Management Service (AWS KMS). Permita que a função EC2 use a chave KMS para operações de criptografia. Armazene os dados criptografados em volumes do Amazon Elastic Block Store (Amazon EBS)."
         ]
     },
     {
