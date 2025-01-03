@@ -837,7 +837,7 @@ let questions = [
     },
     {
         "numb": 77,
-        "question": "O site dinâmico de uma empresa é hospedado em servidores locais nos Estados Unidos. A empresa está lançando seu produto na Europa e quer otimizar o tempo de carregamento do site para novos usuários europeus. O backend do site deve permanecer nos Estados Unidos. O produto está sendo lançado em poucos dias, e uma solução imediata é necessária. O que o arquiteto de soluções deve recomendar?",
+        "question": "O site dinâmico de uma empresa é hospedado em servidores locais nos Estados Unidos. A empresa está lançando seu produto na Europa e quer otimizar o tempo de carregamento do site para novos usuários europeus. O backend do site deve permanecer nos Estados Unidos. O produto será lançado em poucos dias, e uma solução imediata é necessária. O que o arquiteto de soluções deve recomendar?",
         "answer": "C. Use o Amazon CloudFront com uma origem personalizada, apontando para os servidores locais.",
         "options": [
             "A. Inicie uma instância do Amazon EC2 em us-east-1 e migre o site para ela.",
