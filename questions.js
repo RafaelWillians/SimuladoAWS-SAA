@@ -94,7 +94,7 @@ let questions = [
         "options": [
             "A. Use o AWS DataSync para copiar dados com mais de 7 dias do servidor de arquivos SMB para a AWS.",
             "B. Crie um Amazon S3 File Gateway para estender o espaço de armazenamento da empresa. Crie uma política do S3 Lifecycle para fazer a transição dos dados para o S3 Glacier Deep Archive após 7 dias.",
-            "C. Crie um sistema de arquivos do Amazon FSx for Windows File Server para ampliar o espaço de armazenamento da empresa.",
+            "C. Crie um sistema de arquivos do Amazon FSx para Windows File Server para ampliar o espaço de armazenamento da empresa.",
             "D. Instale um utilitário no computador de cada usuário para acessar o Amazon S3. Crie uma política do S3 Lifecycle para fazer a transição dos dados para o S3 Glacier Flexible Retrieval após 7 dias."
         ]
     },
@@ -456,7 +456,7 @@ let questions = [
         "answer": "B. Estabeleça uma nova conexão do AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
         "options": [
             "A. Estabeleça conexões VPN da AWS e faça proxy de todo o tráfego por meio de um endpoint do gateway VPC.",
-            "B. Estabeleça uma nova conexão AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
+            "B. Estabeleça uma nova conexão do AWS Direct Connect e direcione o tráfego de backup por meio dessa nova conexão.",
             "C. Solicite dispositivos AWS Snowball diariamente. Carregue os dados nos dispositivos Snowball e retorne os dispositivos para a AWS todos os dias.",
             "D. Envie um ticket de suporte por meio do console de gerenciamento da AWS. Solicite a remoção dos limites de serviço do S3 da conta."
         ]
@@ -474,7 +474,7 @@ let questions = [
     },
     {
         "numb": 44,
-        "question": "Uma empresa precisa de capacidade garantida do Amazon EC2 em três Zonas de Disponibilidade específicas em uma região AWS específica para um evento futuro que irá última 1 semana. O que a empresa deve fazer para garantir a capacidade do EC2?",
+        "question": "Uma empresa precisa de capacidade garantida de Amazon EC2 em três Zonas de Disponibilidade específicas em uma região AWS específica, para um evento futuro que irá durar 1 semana. O que a empresa deve fazer para garantir a capacidade das EC2?",
         "answer": "D. Crie uma Reserva de Capacidade Sob Demanda que especifique a região e três Zonas de Disponibilidade necessárias.",
         "options": [
             "A. Compre Instâncias Reservadas que especifiquem a região necessária.",
@@ -485,7 +485,7 @@ let questions = [
     },
     {
         "numb": 45,
-        "question": "O site de uma empresa usa um armazenamento de instância do Amazon EC2 para seu catálogo de itens. A empresa quer ter certeza de que o catálogo é altamente disponível e que o catálogo esteja armazenado em um local durável. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "O site de uma empresa usa um armazenamento de instância do Amazon EC2 para seu catálogo de itens. A empresa quer ter certeza de que o catálogo seja altamente disponível e que o catálogo esteja armazenado em um local durável. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "D. Mova o catálogo para um sistema de arquivos Amazon Elastic File System (Amazon EFS).",
         "options": [
             "A. Mova o catálogo para o Amazon ElastiCache para Redis.",
@@ -497,17 +497,17 @@ let questions = [
     {
         "numb": 46,
         "question": "Uma empresa armazena arquivos de transcrição de chamadas mensalmente. Os usuários acessam os arquivos aleatoriamente dentro de 1 ano da chamada, mas os usuários acessam os arquivos raramente após 1 ano. A empresa quer otimizar sua solução dando aos usuários a capacidade de consultar e recuperar arquivos com menos de 1 ano o mais rápido possível. Um atraso na recuperação de arquivos mais antigos é aceitável. Qual solução atenderá a esses requisitos com MAIS eficiência de custos?",
-        "answer": "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Seleção de geleiras.",
+        "answer": "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Glacier Select.",
         "options": [
             "A. Armazene arquivos individuais com tags no Amazon S3 Glacier Instant Retrieval. Consulte as tags para recuperar os arquivos do S3 Glacier Instant Retrieval.",
-            "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Seleção de geleiras.",
-            "C. Armazene arquivos individuais com tags no armazenamento Amazon S3 Standard. Armazene metadados de pesquisa para cada arquivo no armazenamento Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Instant Retrieval após 1 ano. Consulte e recupere os arquivos pesquisando metadados do Amazon S3.",
-            "D. Armazene arquivos individuais no armazenamento Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Deep Archive após 1 ano. Armazene metadados de pesquisa no Amazon RDS. Consulte os arquivos do Amazon RDS. Recupere os arquivos do S3 Glacier Deep Archive."
+            "B. Armazene arquivos individuais no Amazon S3 Intelligent-Tiering. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Flexible Retrieval após 1 ano. Consulte e recupere os arquivos que estão no Amazon S3 usando o Amazon Athena. Consulte e recupere os arquivos que estão no S3 Glacier usando o S3 Glacier Select.",
+            "C. Armazene arquivos individuais com tags no Amazon S3 Standard. Armazene metadados de pesquisa para cada arquivo no armazenamento Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Instant Retrieval após 1 ano. Consulte e recupere os arquivos pesquisando pelos metadados do Amazon S3.",
+            "D. Armazene arquivos individuais no Amazon S3 Standard. Use as políticas do S3 Lifecycle para mover os arquivos para o S3 Glacier Deep Archive após 1 ano. Armazene metadados de pesquisa no Amazon RDS. Consulte os arquivos no Amazon RDS. Recupere os arquivos do S3 Glacier Deep Archive."
         ]
     },
     {
         "numb": 47,
-        "question": "Uma empresa tem uma carga de trabalho de produção que roda em 1.000 instâncias do Amazon EC2 Linux. A carga de trabalho é alimentada por software de terceiros. a empresa precisa corrigir o software de terceiros em todas as instâncias do EC2 o mais rápido possível para corrigir uma vulnerabilidade crítica de segurança. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa tem uma carga de trabalho de produção que roda em 1.000 instâncias do Amazon EC2 Linux. A carga de trabalho é alimentada por um software de terceiros. A empresa precisa corrigir o software de terceiros em todas as instâncias do EC2 o mais rápido possível para corrigir uma vulnerabilidade crítica de segurança. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "D. Use o AWS Systems Manager Run Command para executar um comando personalizado que aplica o patch a todas as instâncias do EC2.",
         "options": [
             "A. Crie uma função do AWS Lambda para aplicar o patch a todas as instâncias do EC2.",
@@ -518,7 +518,7 @@ let questions = [
     },
     {
         "numb": 48,
-        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura de sistema de arquivos padrão. A empresa quer uma solução que seja escalável automaticamente. é altamente disponível e requer sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
+        "question": "Uma empresa quer migrar seu aplicativo local para a AWS. O aplicativo produz arquivos de saída que variam em tamanho de dezenas de gigabytes a centenas de terabytes. Os dados do aplicativo devem ser armazenados em uma estrutura padrão de sistema de arquivos. A empresa quer uma solução que seja escalável automaticamente, seja altamente disponível e necessite de sobrecarga operacional mínima. Qual solução atenderá a esses requisitos?",
         "answer": "C. Migre o aplicativo para instâncias do Amazon EC2 em um grupo de Auto Scaling Multi-AZ. Use o Amazon Elastic File System (Amazon EFS) para armazenar.",
         "options": [
             "A. Migre o aplicativo para ser executado como contêineres no Amazon Elastic Container Service (Amazon ECS). Use o Amazon S3 para armazenamento.",
@@ -540,51 +540,51 @@ let questions = [
     },
     {
         "numb": 50,
-        "question": "Uma empresa executa várias cargas de trabalho do Windows na AWS. Os funcionários da empresa usam compartilhamentos de arquivos do Windows hospedados em dois Amazon EC2 instâncias. Os compartilhamentos de arquivos sincronizam dados entre si e mantêm cópias duplicadas. A empresa quer um ambiente altamente disponível e solução de armazenamento durável que preserva a maneira como os usuários acessam os arquivos atualmente. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Servidor de arquivos do Windows.",
+        "question": "Uma empresa executa várias cargas de trabalho do Windows na AWS. Os funcionários da empresa usam compartilhamentos de arquivos do Windows hospedados em duas instâncias do Amazon EC2. Os compartilhamentos de arquivos sincronizam dados entre si e mantêm cópias duplicadas. A empresa quer uma solução de armazenamento altamente disponível e durável que preserve a maneira como os usuários acessam os arquivos atualmente. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Windows File Server.",
         "options": [
             "A. Migre todos os dados para o Amazon S3. Configure a autenticação do IAM para que os usuários acessem os arquivos.",
             "B. Configure um Amazon S3 File Gateway. Monte o S3 File Gateway nas instâncias EC2 existentes.",
-            "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Servidor de arquivos do Windows.",
+            "C. Estenda o ambiente de compartilhamento de arquivos para o Amazon FSx para Windows File Server com uma configuração Multi-AZ. Migre todos os dados para o FSx para Windows File Server.",
             "D. Estenda o ambiente de compartilhamento de arquivos para o Amazon Elastic File System (Amazon EFS) com uma configuração Multi-AZ. Migre todos os dados para Amazon EFS."
         ]
     },
     {
         "numb": 51,
-        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usam Amazon EC2 instâncias e instâncias do Amazon RDS DB. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias EC2 que são executadas nas sub-redes privadas podem ter acesso ao Bancos de dados RDS. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança para as instâncias do banco de dados.",
+        "question": "Um arquiteto de soluções está desenvolvendo uma arquitetura de VPC que inclui várias sub-redes. A arquitetura hospedará aplicativos que usam instâncias do Amazon EC2 e instâncias de BD do Amazon RDS. A arquitetura consiste em seis sub-redes em duas Zonas de Disponibilidade. Cada Zona de Disponibilidade inclui uma sub-rede pública, uma sub-rede privada e uma sub-rede dedicada para bancos de dados. Somente instâncias de EC2 que são executadas nas sub-redes privadas podem ter acesso aos bancos de dados RDS. Qual solução atenderá a esses requisitos?",
+        "answer": "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança às instâncias de BD.",
         "options": [
             "A. Crie uma nova tabela de rotas que exclua a rota para os blocos CIDR das sub-redes públicas. Associe a tabela de rotas às sub-redes do banco de dados.",
-            "B. Crie um grupo de segurança que negue tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes públicas. Anexe o grupo de segurança para as instâncias do banco de dados.",
-            "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança para as instâncias do banco de dados.",
+            "B. Crie um grupo de segurança que negue tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes públicas. Anexe o grupo de segurança às instâncias do banco de dados.",
+            "C. Crie um grupo de segurança que permita tráfego de entrada do grupo de segurança que é atribuído a instâncias nas sub-redes privadas. Anexe o grupo de segurança às instâncias de BD.",
             "D. Crie uma nova conexão de peering entre as sub-redes públicas e as sub-redes privadas. Crie uma conexão de peering diferente entre as sub-redes privadas e sub-redes de banco de dados."
         ]
     },
     {
         "numb": 52,
-        "question": "Uma empresa registrou seu nome de domínio no Amazon Route 53. A empresa usa o Amazon API Gateway na região ca-central-1 como um domínio público interface para suas APIs de microsserviços de backend. Serviços de terceiros consomem as APIs com segurança. A empresa quer projetar sua URL de API Gateway com o nome de domínio da empresa e o certificado correspondente para que os serviços de terceiros possam usar HTTPS. Qual solução atenderá a esses requisitos?",
-        "answer": "C. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
+        "question": "Uma empresa registrou seu nome de domínio no Amazon Route 53. A empresa usa o Amazon API Gateway na região ca-central-1 como uma interface pública para suas APIs de microsserviços de backend. Serviços de terceiros consomem as APIs com segurança. A empresa quer projetar sua URL de API Gateway com o nome de domínio da empresa e o certificado correspondente para que os serviços de terceiros possam usar HTTPS. Qual solução atenderá a esses requisitos?",
+        "answer": "C. Crie um endpoint regional do API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
         "options": [
-            "A. Crie variáveis ​​de estágio no API Gateway com Name=\"Endpoint-URL\" e Value=\"Company Domain Name\" para substituir o URL padrão. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM).",
-            "B. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte o registro de alias para o endpoint do estágio Regional API Gateway. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1.",
-            "C. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
-            "D. Crie um endpoint do Regional API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o público certificado associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1. Anexe o certificado a APIs do API Gateway. Crie registros DNS do Route 53 com o nome de domínio da empresa. Aponte um registro A para o nome de domínio da empresa."
+            "A. Crie variáveis ​​de estágio no API Gateway com Name=\"Endpoint-URL\" e Value=\"Company Domain Name\" para substituir a URL padrão. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM).",
+            "B. Crie registros de DNS do Route 53 com o nome de domínio da empresa. Aponte o registro de alias para o endpoint do estágio Regional API Gateway. Importar o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1.",
+            "C. Crie um endpoint regional do API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na mesma região. Anexe o certificado ao endpoint do API Gateway. Configure o Route 53 para rotear o tráfego para o endpoint do API Gateway.",
+            "D. Crie um endpoint regional do API Gateway. Associe o endpoint do API Gateway ao nome de domínio da empresa. Importe o certificado público associado ao nome de domínio da empresa no AWS Certificate Manager (ACM) na região us-east-1. Anexe o certificado às APIs do API Gateway. Crie registros de DNS do Route 53 com o nome de domínio da empresa. Aponte um registro A para o nome de domínio da empresa."
         ]
     },
     {
         "numb": 53,
-        "question": "Uma empresa está executando um site popular de mídia social. O site dá aos usuários a capacidade de carregar imagens para compartilhar com outros usuários. a empresa quer ter certeza de que as imagens não contenham conteúdo inapropriado. A empresa precisa de uma solução que minimize o desenvolvimento esforço. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa está executando um site popular de mídia social. O site dá aos usuários a capacidade de efetuar uploads de imagens para compartilhar com outros usuários. A empresa quer garantir que as imagens não contenham conteúdo inapropriado. A empresa precisa de uma solução que minimize esforço de desenvolvimento. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "B. Use o Amazon Rekognition para detectar conteúdo inapropriado. Use revisão humana para previsões de baixa confiança.",
         "options": [
             "A. Use o Amazon Comprehend para detectar conteúdo inapropriado. Use revisão humana para previsões de baixa confiança.",
             "B. Use o Amazon Rekognition para detectar conteúdo inapropriado. Use revisão humana para previsões de baixa confiança.",
-            "C. Use o Amazon SageMaker para detectar conteúdo inapropriado. Use a verdade básica para rotular previsões de baixa confiança.",
-            "D. Use o AWS Fargate para implantar um modelo de machine learning personalizado para detectar conteúdo inapropriado. Use a verdade básica para rotular baixa confiança previsões."
+            "C. Use o Amazon SageMaker para detectar conteúdo inapropriado. Use Ground Truth para rotular previsões de baixa confiança.",
+            "D. Use o AWS Fargate para implantar um modelo de machine learning personalizado para detectar conteúdo inapropriado. Use Ground Truth para rotular baixa confiança previsões."
         ]
     },
     {
         "numb": 54,
-        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "question": "Uma empresa quer executar seus aplicativos críticos em contêineres para atender aos requisitos de escalabilidade e disponibilidade. A empresa prefere se concentrar na manutenção dos aplicativos críticos. A empresa não quer ser responsável pelo provisionamento e gerenciamento dos aplicativos subjacentes a infraestrutura que executa a carga de trabalho em contêiner. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
         "answer": "C. Use o Amazon Elastic Container Service (Amazon ECS) no AWS Fargate.",
         "options": [
             "A. Use instâncias do Amazon EC2 e instale o Docker nas instâncias.",
@@ -595,34 +595,34 @@ let questions = [
     },
     {
         "numb": 55,
-        "question": "Uma empresa hospeda mais de 300 sites e aplicativos globais. A empresa requer uma plataforma para analisar mais de 30 TB de fluxo de cliques dados todos os dias. O que um arquiteto de soluções deve fazer para transmitir e processar os dados do fluxo de cliques?",
+        "question": "Uma empresa hospeda mais de 300 sites e aplicativos globais. A empresa requer uma plataforma para analisar mais de 30 TB de dados de clickstream todos os dias. O que um arquiteto de soluções deve fazer para transmitir e processar os dados de clickstream?",
         "answer": "D. Colete os dados do Amazon Kinesis Data Streams. Use o Amazon Kinesis Data Firehose para transmitir os dados para um data lake do Amazon S3. Carregue os dados no Amazon Redshift para análise.",
         "options": [
-            "A. Projete um AWS Data Pipeline para arquivar os dados em um bucket do Amazon S3 e executar um cluster do Amazon EMR com os dados para gerar analítica.",
+            "A. Projete um AWS Data Pipeline para arquivar os dados em um bucket do Amazon S3 e executar um cluster do Amazon EMR com os dados para gerar análises de dados.",
             "B. Crie um grupo de Auto Scaling de instâncias do Amazon EC2 para processar os dados e enviá-los para um data lake do Amazon S3 para o Amazon Redshift usar para análise.",
-            "C. Armazene os dados em cache no Amazon CloudFront. Armazene os dados em um bucket do Amazon S3. Quando um objeto é adicionado ao bucket do S3, execute um AWS Função lambda para processar os dados para análise.",
+            "C. Armazene os dados em cache no Amazon CloudFront. Armazene os dados em um bucket do Amazon S3. Quando um objeto é adicionado ao bucket do S3, execute uma função AWS Lambda para processar os dados para análise.",
             "D. Colete os dados do Amazon Kinesis Data Streams. Use o Amazon Kinesis Data Firehose para transmitir os dados para um data lake do Amazon S3. Carregue os dados no Amazon Redshift para análise."
         ]
     },
     {
         "numb": 56,
-        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações para o site para que as solicitações usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
+        "question": "Uma empresa tem um site hospedado na AWS. O site está por trás de um Application Load Balancer (ALB) que está configurado para lidar com HTTP e HTTPS separadamente. A empresa quer encaminhar todas as solicitações ao site, para que as solicitações usem HTTPS. O que um arquiteto de soluções deve fazer para atender a esse requisito?",
         "answer": "C. Crie uma regra de ouvinte no ALB para redirecionar o tráfego HTTP para HTTPS.",
         "options": [
             "A. Atualize a ACL de rede do ALB para aceitar somente tráfego HTTPS.",
             "B. Crie uma regra que substitua o HTTP na URL por HTTPS.",
             "C. Crie uma regra de ouvinte no ALB para redirecionar o tráfego HTTP para HTTPS.",
-            "D. Substitua o ALB por um Network Load Balancer configurado para usar a indicação de nome do servidor (SNI)."
+            "D. Substitua o ALB por um Network Load Balancer configurado para usar o Server Name Indication (SNI)."
         ]
     },
     {
         "numb": 57,
-        "question": "Uma empresa está desenvolvendo um aplicativo web de duas camadas na AWS. Os desenvolvedores da empresa implantaram o aplicativo em um Amazon EC2 instância que se conecta diretamente a um banco de dados Amazon RDS de backend. A empresa não deve codificar credenciais de banco de dados no aplicativo. O a empresa também deve implementar uma solução para rotacionar automaticamente as credenciais do banco de dados regularmente. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe o necessário permissão para a função EC2 conceder acesso ao segredo.",
+        "question": "Uma empresa está desenvolvendo um aplicativo web de duas camadas na AWS. Os desenvolvedores da empresa implantaram o aplicativo em uma instância do Amazon EC2 que se conecta diretamente a um banco de dados Amazon RDS de backend. A empresa não deve codificar credenciais de banco de dados diretamente no aplicativo. A empresa também deve implementar uma solução para rotacionar automaticamente as credenciais do banco de dados regularmente. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "answer": "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe a permissão necessária ao perfil da EC2, para conceder acesso ao segredo.",
         "options": [
-            "A. Armazene as credenciais do banco de dados nos metadados da instância. Use as regras do Amazon EventBridge (Amazon CloudWatch Events) para executar uma Função do AWS Lambda que atualiza as credenciais do RDS e os metadados da instância ao mesmo tempo.",
-            "B. Armazene as credenciais do banco de dados em um arquivo de configuração em um bucket criptografado do Amazon S3. Use o Amazon EventBridge (Amazon CloudWatch Regras de eventos) para executar uma função AWS Lambda agendada que atualiza as credenciais do RDS e as credenciais no arquivo de configuração no mesmo tempo. Use o S3 Versioning para garantir a capacidade de retornar aos valores anteriores.",
-            "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe o necessário permissão para a função EC2 conceder acesso ao segredo.",
+            "A. Armazene as credenciais do banco de dados nos metadados da instância. Use as regras do Amazon EventBridge (Amazon CloudWatch Events) para executar uma função do AWS Lambda que atualiza as credenciais do RDS e os metadados da instância ao mesmo tempo.",
+            "B. Armazene as credenciais do banco de dados em um arquivo de configuração num bucket criptografado do Amazon S3. Use regras do Amazon EventBridge (Amazon CloudWatch Events) para executar uma função AWS Lambda agendada, que atualiza as credenciais do RDS e as credenciais no arquivo de configuração ao mesmo tempo. Use o Versionamento do S3 para garantir a capacidade de retornar aos valores anteriores.",
+            "C. Armazene as credenciais do banco de dados como um segredo no AWS Secrets Manager. Ative a rotação automática para o segredo. Anexe a permissão necessária ao perfil da EC2, para conceder acesso ao segredo.",
             "D. Armazene as credenciais do banco de dados como parâmetros criptografados no AWS Systems Manager Parameter Store. Ative a rotação automática para o parâmetros criptografados. Anexe a permissão necessária à função EC2 para conceder acesso aos parâmetros criptografados."
         ]
     },
@@ -632,36 +632,36 @@ let questions = [
         "answer": "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Rotacione o certificado manualmente.",
         "options": [
             "A. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para rotacionar automaticamente o certificado.",
-            "B. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Importe o material da chave do certificado. Aplique o certificado a o ALUse o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
-            "C. Use a Autoridade de Certificação Privada do AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS da CA raiz. Aplique o certificado a o ALB. Use o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
+            "B. Use o AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS. Importe o material da chave do certificado. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
+            "C. Use a Autoridade de Certificação Privada do AWS Certificate Manager (ACM) para emitir um certificado SSL/TLS da CA raiz. Aplique o certificado ao ALB. Use o recurso de renovação gerenciada para rotacionar o certificado automaticamente.",
             "D. Use o AWS Certificate Manager (ACM) para importar um certificado SSL/TLS. Aplique o certificado ao ALB. Use o Amazon EventBridge (Amazon CloudWatch Events) para enviar uma notificação quando o certificado estiver próximo da expiração. Rotacione o certificado manualmente."
         ]
     },
     {
         "numb": 59,
-        "question": "Uma empresa executa sua infraestrutura na AWS e tem uma base registrada de 700.000 usuários para seu aplicativo de gerenciamento de documentos. A empresa pretende criar um produto que converta grandes arquivos .pdf em arquivos de imagem .jpg. Os arquivos .pdf têm em média 5 MB de tamanho. A empresa precisa armazenar os arquivos originais e os arquivos convertidos. Um arquiteto de soluções deve projetar uma solução escalável para acomodar a demanda que crescerá rapidamente ao longo tempo. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
-        "answer": "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda para converter os arquivos para o formato .jpg e armazená-los eles de volta no Amazon S3.",
+        "question": "Uma empresa executa sua infraestrutura na AWS e tem uma base registrada de 700 mil usuários para seu aplicativo de gerenciamento de documentos. A empresa pretende criar um produto que converta grandes arquivos .pdf em arquivos de imagem .jpg. Os arquivos .pdf têm em média 5 MB de tamanho. A empresa precisa armazenar os arquivos originais e os arquivos convertidos. Um arquiteto de soluções deve projetar uma solução escalável para acomodar a demanda que crescerá rapidamente ao longo prazo. Qual solução atende a esses requisitos com MAIS eficiência de custo?",
+        "answer": "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda, para converter os arquivos para o formato .jpg e armazená-los de volta no Amazon S3.",
         "options": [
-            "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda para converter os arquivos para o formato .jpg e armazená-los eles de volta no Amazon S3.",
-            "B. Salve os arquivos .pdf no Amazon DynamoD Use o recurso DynamoDB Streams para invocar uma função AWS Lambda para converter os arquivos em .jpg formatá-los e armazená-los novamente no DynamoDB.",
-            "C. Carregue os arquivos .pdf em um aplicativo AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic Block Store (Amazon EBS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter os arquivos para o formato .jpg. Salve os arquivos .pdf e .jpg arquivos no armazenamento EBS.",
-            "D. Carregue os arquivos .pdf em um aplicativo AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic File System (Amazon EFS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter o arquivo para o formato .jpg. Salve os arquivos .pdf e .jpg arquivos no armazenamento EBS."
+            "A. Salve os arquivos .pdf no Amazon S3. Configure um evento S3 PUT para invocar uma função AWS Lambda, para converter os arquivos para o formato .jpg e armazená-los de volta no Amazon S3.",
+            "B. Salve os arquivos .pdf no Amazon DynamoDB. Use o recurso DynamoDB Streams para invocar uma função AWS Lambda, para converter os arquivos em formato .jpg e armazená-los novamente no DynamoDB.",
+            "C. Carregue os arquivos .pdf em um aplicativo no AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic Block Store (Amazon EBS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter os arquivos para o formato .jpg. Salve os arquivos .pdf e .jpg no armazenamento do EBS.",
+            "D. Carregue os arquivos .pdf em um aplicativo do AWS Elastic Beanstalk que inclua instâncias do Amazon EC2, Amazon Elastic File System (Amazon EFS) e um grupo de Auto Scaling. Use um programa nas instâncias EC2 para converter o arquivo para o formato .jpg. Salve os arquivos .pdf e .jpg arquivos no armazenamento do EBS."
         ]
     },
     {
         "numb": 60,
-        "question": "Uma empresa tem mais de 5 TB de dados de arquivo em servidores de arquivo Windows que rodam no local. Usuários e aplicativos interagem com os dados todos os dias. A empresa está movendo suas cargas de trabalho do Windows para a AWS. À medida que a empresa continua esse processo, ela requer acesso à AWS e ao armazenamento de arquivos no local com latência mínima. A empresa precisa de uma solução que minimize a sobrecarga operacional e não exija nenhuma alterações nos padrões de acesso de arquivo existentes. A empresa usa uma conexão AWS Site-to-Site VPN para conectividade com a AWS. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados do arquivo local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway.",
+        "question": "Uma empresa tem mais de 5 TB de dados de arquivo em servidores de arquivo Windows que rodam no local. Usuários e aplicativos interagem com os dados todos os dias. A empresa está movendo suas cargas de trabalho do Windows para a AWS. À medida que a empresa continua esse processo, ela requer acesso à AWS e ao armazenamento de arquivos no local com latência mínima. A empresa precisa de uma solução que minimize a sobrecarga operacional e não exija nenhuma alteração nos padrões de acesso de arquivo existentes. A empresa usa uma conexão AWS Site-to-Site VPN para conectividade com a AWS. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados dos arquivos no local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway.",
         "options": [
-            "A. Implante e configure o Amazon FSx for Windows File Server na AWS. Mova os dados do arquivo local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
-            "B. Implante e configure um Amazon S3 File Gateway no local. Mova os dados de arquivo no local para o S3 File Gateway. Reconfigure as cargas de trabalho no local e as cargas de trabalho na nuvem para usar o S3 File Gateway.",
-            "C. Implante e configure um Amazon S3 File Gateway no local. Mova os dados do arquivo no local para o Amazon S3. Reconfigure as cargas de trabalho para use o Amazon S3 diretamente ou o S3 File Gateway, dependendo da localização de cada carga de trabalho.",
-            "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados do arquivo local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway."
+            "A. Implante e configure o Amazon FSx para Windows File Server na AWS. Mova os dados dos arquivos no local para o FSx for Windows File Server. Reconfigure as cargas de trabalho para usar o FSx for Windows File Server na AWS.",
+            "B. Implante e configure um Amazon S3 File Gateway no local. Mova os dados dos arquivos no local para o S3 File Gateway. Reconfigure as cargas de trabalho no local e as cargas de trabalho na nuvem para usar o S3 File Gateway.",
+            "C. Implante e configure um Amazon S3 File Gateway no local. Mova os dados dos arquivos no local para o Amazon S3. Reconfigure as cargas de trabalho para usar o Amazon S3 diretamente ou o S3 File Gateway, dependendo da localização de cada carga de trabalho.",
+            "D. Implante e configure o Amazon FSx para Windows File Server na AWS. Implante e configure um Amazon FSx File Gateway no local. Mova os dados dos arquivos no local para o FSx File Gateway. Configure as cargas de trabalho da nuvem para usar o FSx para Windows File Server na AWS. Configure as cargas de trabalho locais para usar o FSx File Gateway."
         ]
     },
     {
         "numb": 61,
-        "question": "Um hospital implantou recentemente uma API RESTful com Amazon API Gateway e AWS Lambda. O hospital usa API Gateway e Lambda para fazer upload relatórios que estão em formato PDF e JPEG. O hospital precisa modificar o código Lambda para identificar informações de saúde protegidas (PHI) em os relatórios. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
+        "question": "Um hospital implantou recentemente uma API RESTful com Amazon API Gateway e AWS Lambda. O hospital usa API Gateway e Lambda para efetuar uploads de relatórios que estão em formato PDF e JPEG. O hospital precisa modificar o código da Lambda para identificar informações de saúde protegidas (PHI) em os relatórios. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
         "answer": "C. Use o Amazon Textract para extrair o texto dos relatórios. Use o Amazon Comprehend Medical para identificar o PHI do texto extraído.",
         "options": [
             "A. Use bibliotecas Python existentes para extrair o texto dos relatórios e identificar o PHI do texto extraído.",
@@ -683,100 +683,100 @@ let questions = [
     },
     {
         "numb": 63,
-        "question": "Uma empresa hospeda um aplicativo em várias instâncias do Amazon EC2. O aplicativo processa mensagens de uma fila do Amazon SQS, grava em uma tabela Amazon RDS e exclui a mensagem da fila. Registros duplicados ocasionais são encontrados na tabela RDS. A fila SQS não conter quaisquer mensagens duplicadas. O que um arquiteto de soluções deve fazer para garantir que as mensagens sejam processadas apenas uma vez?",
+        "question": "Uma empresa hospeda um aplicativo em várias instâncias do Amazon EC2. O aplicativo processa mensagens de uma fila do Amazon SQS, grava em uma tabela do Amazon RDS e exclui a mensagem da fila. Registros duplicados ocasionais são encontrados na tabela do RDS. A fila SQS não contém quaisquer mensagens duplicadas. O que um arquiteto de soluções deve fazer para garantir que as mensagens sejam processadas apenas uma vez?",
         "answer": "D. Use a chamada de API ChangeMessageVisibility para aumentar o tempo limite de visibilidade.",
         "options": [
             "A. Use a chamada da API CreateQueue para criar uma nova fila.",
-            "B. Use a chamada de API AddPermission para adicionar permissões apropriadas.",
+            "B. Use a chamada de API AddPermission para adicionar as permissões apropriadas.",
             "C. Use a chamada da API ReceiveMessage para definir um tempo de espera apropriado.",
             "D. Use a chamada de API ChangeMessageVisibility para aumentar o tempo limite de visibilidade."
         ]
     },
     {
         "numb": 64,
-        "question": "Um arquiteto de soluções está projetando uma nova arquitetura híbrida para estender a infraestrutura local de uma empresa para a AWS. A empresa requer uma conexão altamente disponível com latência baixa consistente para uma região da AWS. A empresa precisa minimizar custos e está disposta a aceitar velocidades mais lentas tráfego se a conexão primária falhar. O que o arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "A. Provisione uma conexão AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão Direct Connect primária falha.",
+        "question": "Um arquiteto de soluções está projetando uma nova arquitetura híbrida para estender a infraestrutura local de uma empresa para a AWS. A empresa requer uma conexão altamente disponível com latência baixa consistente, para uma região da AWS. A empresa precisa minimizar custos e está disposta a aceitar velocidades mais lentas de tráfego, se a conexão primária falhar. O que o arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "A. Provisione uma conexão do AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão do Direct Connect primária falhar.",
         "options": [
-            "A. Provisione uma conexão AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão Direct Connect primária falha.",
-            "B. Provisione uma conexão de túnel VPN para uma região para conectividade privada. Provisione um segundo túnel VPN para conectividade privada e como um backup se a conexão VPN primária falhar.",
-            "C. Provisione uma conexão AWS Direct Connect para uma região. Provisione uma segunda conexão Direct Connect para a mesma região como um backup se a conexão primária do Direct Connect falha.",
-            "D. Provisione uma conexão AWS Direct Connect para uma região. Use o atributo de failover Direct Connect da AWS CLI para criar automaticamente uma conexão de backup se a conexão Direct Connect primária falhar."
+            "A. Provisione uma conexão do AWS Direct Connect para uma região. Provisione uma conexão VPN como um backup se a conexão do Direct Connect primária falhar.",
+            "B. Provisione uma conexão de túnel VPN para uma região, para conectividade privada. Provisione um segundo túnel VPN para conectividade privada e como um backup se a conexão VPN primária falhar.",
+            "C. Provisione uma conexão do AWS Direct Connect para uma região. Provisione uma segunda conexão do Direct Connect para a mesma região como um backup, se a conexão primária do Direct Connect falhar.",
+            "D. Provisione uma conexão AWS Direct Connect para uma região. Use o atributo de failover do Direct Connect pelo AWS CLI, para criar automaticamente uma conexão de backup se a conexão Direct Connect primária falhar."
         ]
     },
     {
         "numb": 65,
-        "question": "Uma empresa está executando um aplicativo web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 são em um grupo de Auto Scaling. O aplicativo usa um banco de dados Amazon Aurora PostgreSQL que é implantado em uma única Zona de Disponibilidade. O a empresa quer que o aplicativo tenha alta disponibilidade com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
-        "answer": "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
+        "question": "Uma empresa está executando um aplicativo web crítico para os negócios em instâncias do Amazon EC2 por trás de um Application Load Balancer. As instâncias do EC2 estão em um grupo de Auto Scaling. O aplicativo usa um banco de dados PostgreSQL do Amazon Aurora, que é implantado em uma única Zona de Disponibilidade. A empresa deseja que o aplicativo tenha alta disponibilidade, com o mínimo de tempo de inatividade e perda mínima de dados. Qual solução atenderá a esses requisitos com MENOR esforço operacional?",
+        "answer": "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure uma instância de Amazon RDS Proxy para o banco de dados.",
         "options": [
-            "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL CrossRegion Replication.",
-            "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure um Amazon RDS Proxy instância para o banco de dados.",
-            "C. Configure o grupo de Auto Scaling para usar uma zona de disponibilidade. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados do snapshots em caso de falha.",
-            "D. Configure o grupo de Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use o S3 Event Notificações para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
+            "A. Coloque as instâncias do EC2 em diferentes regiões da AWS. Use as verificações de integridade do Amazon Route 53 para redirecionar o tráfego. Use Aurora PostgreSQL Cross-Region Replication.",
+            "B. Configure o grupo de Auto Scaling para usar várias zonas de disponibilidade. Configure o banco de dados como Multi-AZ. Configure uma instância de Amazon RDS Proxy para o banco de dados.",
+            "C. Configure o grupo de Auto Scaling para usar uma zona de disponibilidade. Gere snapshots de hora em hora do banco de dados. Recupere o banco de dados pelos snapshots, em caso de falha.",
+            "D. Configure o grupo de Auto Scaling para usar várias regiões da AWS. Grave os dados do aplicativo no Amazon S3. Use notificações de eventos do S3, para iniciar uma função do AWS Lambda para gravar os dados no banco de dados."
         ]
     },
     {
         "numb": 66,
-        "question": "O aplicativo HTTP de uma empresa está por trás de um Network Load Balancer (NLB). O grupo-alvo do NLB está configurado para usar um Amazon EC2 Auto Grupo de dimensionamento com várias instâncias do EC2 que executam o serviço web. A empresa percebe que o NLB não está detectando erros HTTP para o aplicativo. Esses erros exigem uma reinicialização manual das instâncias EC2 que executam o serviço web. A empresa precisa melhorar a disponibilidade do aplicativo sem escrever scripts ou códigos personalizados. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
-        "answer": "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade HTTP fornecendo a URL do aplicativo da empresa. Configure uma ação de dimensionamento automático para substituir instâncias não íntegras.",
+        "question": "O aplicativo HTTP de uma empresa está por trás de um Network Load Balancer (NLB). O grupo-alvo do NLB está configurado para usar um grupo de Auto Scaling do Amazon EC2, com várias instâncias do EC2 que executam o serviço web. A empresa percebe que o NLB não está detectando erros de HTTP para o aplicativo. Esses erros exigem uma reinicialização manual das instâncias EC2 que executam o serviço web. A empresa precisa melhorar a disponibilidade do aplicativo sem escrever scripts ou códigos personalizados. O que um arquiteto de soluções deve fazer para atender a esses requisitos?",
+        "answer": "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade de HTTP, fornecendo a URL do aplicativo da empresa. Configure uma ação de Auto Scaling para substituir instâncias não-íntegras.",
         "options": [
-            "A. Habilite verificações de integridade HTTP no NLB, fornecendo a URL do aplicativo da empresa.",
-            "B. Adicione um cron job às instâncias EC2 para verificar os logs do aplicativo local uma vez a cada minuto. Se erros HTTP forem detectados, o aplicativo irá reiniciar.",
-            "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade HTTP fornecendo a URL do aplicativo da empresa. Configure uma ação de dimensionamento automático para substituir instâncias não íntegras.",
-            "D. Crie um alarme do Amazon Cloud Watch que monitore a métrica UnhealthyHostCount para o NLB. Configure uma ação de Auto Scaling para substituir instâncias não íntegras quando o alarme estiver no estado ALARME."
+            "A. Habilite verificações de integridade de HTTP no NLB, fornecendo a URL do aplicativo da empresa.",
+            "B. Adicione uma tarefa cron às instâncias EC2 para verificar os logs do aplicativo local uma vez a cada minuto. Se erros de HTTP forem detectados, o aplicativo irá reiniciar.",
+            "C. Substitua o NLB por um Application Load Balancer. Habilite verificações de integridade de HTTP, fornecendo a URL do aplicativo da empresa. Configure uma ação de Auto Scaling para substituir instâncias não-íntegras.",
+            "D. Crie um alarme do Amazon CloudWatch que monitore a métrica UnhealthyHostCount para o NLB. Configure uma ação de Auto Scaling para substituir instâncias não-íntegras, quando o alarme estiver no estado ALARM."
         ]
     },
     {
         "numb": 67,
-        "question": "Uma empresa executa um aplicativo de compras que usa o Amazon DynamoDB para armazenar informações do cliente. Em caso de corrupção de dados, uma solução O arquiteto precisa projetar uma solução que atenda a um objetivo de ponto de recuperação (RPO) de 15 minutos e um objetivo de tempo de recuperação (RTO) de 1 hora. O que o arquiteto de soluções deve recomendar para atender a esses requisitos?",
+        "question": "Uma empresa executa um aplicativo de compras que usa o Amazon DynamoDB para armazenar informações do cliente. Em caso de corrupção de dados, um arquiteto de soluções precisa projetar uma solução que atenda a um objetivo de ponto de recuperação (RPO) de 15 minutos e um objetivo de tempo de recuperação (RTO) de 1 hora. O que o arquiteto de soluções deve recomendar para atender a esses requisitos?",
         "answer": "B. Configure a recuperação de ponto no tempo do DynamoDB. Para recuperação de RPO, restaure para o ponto no tempo desejado.",
         "options": [
             "A. Configure as tabelas globais do DynamoDB. Para recuperação de RPO, aponte o aplicativo para uma região diferente da AWS.",
             "B. Configure a recuperação de ponto no tempo do DynamoDB. Para recuperação de RPO, restaure para o ponto no tempo desejado.",
             "C. Exporte os dados do DynamoDB para o Amazon S3 Glacier diariamente. Para recuperação de RPO, importe os dados do S3 Glacier para o DynamoDB.",
-            "D. Agende snapshots do Amazon Elastic Block Store (Amazon EBS) para a tabela DynamoDB a cada 15 minutos. Para recuperação de RPO, restaure o Tabela do DynamoDB usando o snapshot do EBS."
+            "D. Agende snapshots do Amazon Elastic Block Store (Amazon EBS) para a tabela do DynamoDB a cada 15 minutos. Para recuperação de RPO, restaure a tabela do DynamoDB usando o snapshot do EBS."
         ]
     },
     {
         "numb": 68,
-        "question": "Uma empresa executa um aplicativo de processamento de fotos que precisa fazer uploads e downloads de fotos com frequência de buckets do Amazon S3 localizados na mesma região da AWS. Um arquiteto de soluções notou um aumento no custo das taxas de transferência de dados e precisa implementar uma solução para reduzir esses custos. Como o arquiteto de soluções pode atender a esse requisito?",
-        "answer": "D. Implante um endpoint do gateway S3 VPC na VPC e anexe uma política de endpoint que permita acesso aos buckets S3.",
+        "question": "Uma empresa executa um aplicativo de processamento de fotos que precisa efetuar uploads e downloads de fotos com frequência, de buckets do Amazon S3 localizados na mesma região da AWS. Um arquiteto de soluções notou um aumento no custo das taxas de transferência de dados e precisa implementar uma solução para reduzir esses custos. Como o arquiteto de soluções pode atender a esse requisito?",
+        "answer": "D. Implante um endpoint de gateway S3 na VPC e anexe uma política de endpoint que permita acesso aos buckets do S3.",
         "options": [
-            "A. Implante o Amazon API Gateway em uma sub-rede pública e ajuste a tabela de rotas para rotear chamadas S3 por meio dela.",
+            "A. Implante o Amazon API Gateway em uma sub-rede pública e ajuste a tabela de rotas para rotear chamadas do S3 por meio dela.",
             "B. Implante um gateway NAT em uma sub-rede pública e anexe uma política de endpoint que permita acesso aos buckets S3.",
             "C. Implante o aplicativo em uma sub-rede pública e permita que ele seja roteado por meio de um gateway de internet para acessar os buckets do S3.",
-            "D. Implante um endpoint do gateway S3 VPC na VPC e anexe uma política de endpoint que permita acesso aos buckets S3."
+            "D. Implante um endpoint de gateway S3 na VPC e anexe uma política de endpoint que permita acesso aos buckets do S3."
         ]
     },
     {
         "numb": 69,
-        "question": "Uma empresa quer mover um aplicativo multicamadas de on-premises para a nuvem AWS para melhorar o desempenho do aplicativo. O aplicativo consiste em camadas de aplicativos que se comunicam entre si por meio de serviços RESTful. As transações são descartadas quando uma camada se torna sobrecarregado. Um arquiteto de soluções deve projetar uma solução que resolva esses problemas e modernize o aplicativo. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
+        "question": "Uma empresa quer mover um aplicativo multicamadas do on-premises para a nuvem AWS, para melhorar o desempenho do aplicativo. O aplicativo consiste em camadas de aplicativos que se comunicam entre si por meio de serviços RESTful. As transações são descartadas quando uma camada se torna sobrecarregada. Um arquiteto de soluções deve projetar uma solução que resolva esses problemas e modernize o aplicativo. Qual solução atende a esses requisitos e é a MAIS eficiente operacionalmente?",
         "answer": "A. Use o Amazon API Gateway e direcione as transações para as funções do AWS Lambda como a camada de aplicação. Use o Amazon Simple Queue Service (Amazon SQS) como camada de comunicação entre serviços de aplicativos.",
         "options": [
             "A. Use o Amazon API Gateway e direcione as transações para as funções do AWS Lambda como a camada de aplicação. Use o Amazon Simple Queue Service (Amazon SQS) como camada de comunicação entre serviços de aplicativos.",
-            "B. Use as métricas do Amazon CloudWatch para analisar o histórico de desempenho do aplicativo para determinar a utilização máxima dos servidores durante o falhas de desempenho. Aumente o tamanho das instâncias do Amazon EC2 do servidor de aplicativos para atender aos requisitos de pico.",
-            "C. Use o Amazon Simple Notification Service (Amazon SNS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um Grupo de Auto Scaling. Use o Amazon CloudWatch para monitorar o comprimento da fila do SNS e aumentar e diminuir conforme necessário.",
-            "D. Use o Amazon Simple Queue Service (Amazon SQS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um Auto Grupo de dimensionamento. Use o Amazon CloudWatch para monitorar o comprimento da fila do SQS e dimensionar verticalmente quando falhas de comunicação forem detectadas."
+            "B. Use as métricas do Amazon CloudWatch para analisar o histórico de desempenho do aplicativo, para determinar a utilização máxima dos servidores durante as falhas de desempenho. Aumente o tamanho das instâncias do Amazon EC2 do servidor de aplicativos, para atender aos requisitos de pico.",
+            "C. Use o Amazon Simple Notification Service (Amazon SNS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um grupo de Auto Scaling. Use o Amazon CloudWatch para monitorar o comprimento da fila do SNS e aumentar e diminuir o dimensionamento conforme necessário.",
+            "D. Use o Amazon Simple Queue Service (Amazon SQS) para manipular as mensagens entre servidores de aplicativos em execução no Amazon EC2 em um grupo de Auto Scaling. Use o Amazon CloudWatch para monitorar o comprimento da fila do SQS e dimensionar verticalmente quando falhas de comunicação forem detectadas."
         ]
     },
     {
         "numb": 70,
-        "question": "Uma empresa recebe 10 TB de dados de instrumentação todos os dias de várias máquinas localizadas em uma única fábrica. Os dados consistem em arquivos JSON armazenados em uma rede de área de armazenamento (SAN) em um data center local localizado dentro da fábrica. A empresa quer enviar esses dados para a Amazon S3 onde pode ser acessado por vários sistemas adicionais que fornecem análises críticas quase em tempo real. Uma transferência segura é importante porque os dados são considerados sensíveis. Qual solução oferece a transferência de dados MAIS confiável?",
-        "answer": "B. AWS DataSync sobre AWS Direct Connect",
+        "question": "Uma empresa recebe 10 TB de dados de instrumentação todos os dias de várias máquinas localizadas em uma única fábrica. Os dados consistem em arquivos JSON armazenados em uma rede de área de armazenamento (SAN) em um data center local, localizado dentro da fábrica. A empresa quer enviar esses dados para o Amazon S3 onde podem ser acessados por vários sistemas adicionais, que fornecem análises críticas quase em tempo real. Uma transferência segura é importante porque os dados são considerados sensíveis. Qual solução oferece a transferência de dados MAIS confiável?",
+        "answer": "B. AWS DataSync pelo AWS Direct Connect",
         "options": [
             "A. AWS DataSync pela internet pública",
-            "B. AWS DataSync sobre AWS Direct Connect",
+            "B. AWS DataSync pelo AWS Direct Connect",
             "C. AWS Database Migration Service (AWS DMS) pela internet pública",
-            "D. Serviço de migração de banco de dados AWS (AWS DMS) sobre AWS Direct Connect"
+            "D. Serviço de migração de banco de dados AWS (AWS DMS) pelo AWS Direct Connect"
         ]
     },
     {
         "numb": 71,
         "question": "Uma empresa precisa configurar uma arquitetura de ingestão de dados em tempo real para seu aplicativo. A empresa precisa de uma API, um processo que transforma dados à medida que são transmitidos e uma solução de armazenamento para os dados. Qual solução atenderá a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "C. Configure uma API do Amazon API Gateway para enviar dados para um fluxo de dados do Amazon Kinesis. Crie uma entrega do Amazon Kinesis Data Firehose fluxo que usa o fluxo de dados do Kinesis como uma fonte de dados. Use as funções do AWS Lambda para transformar os dados. Use o Kinesis Data Firehose fluxo de entrega para enviar os dados ao Amazon S3.",
+        "answer": "C. Configure uma API do Amazon API Gateway para enviar dados para uma stream de dados do Amazon Kinesis. Crie uma stream de entrega do Amazon Kinesis Data Firehose que usa a stream de dados do Kinesis como uma fonte de dados. Use as funções do AWS Lambda para transformar os dados. Use a stream de entrega do Kinesis Data Firehose, para enviar os dados ao Amazon S3.",
         "options": [
-            "A. Implante uma instância do Amazon EC2 para hospedar uma API que envia dados para um fluxo de dados do Amazon Kinesis. Crie um fluxo de dados do Amazon Kinesis Fluxo de entrega do Firehose que usa o fluxo de dados do Kinesis como fonte de dados. Use as funções do AWS Lambda para transformar os dados. Use o Fluxo de entrega do Kinesis Data Firehose para enviar os dados ao Amazon S3.",
-            "B. Implante uma instância do Amazon EC2 para hospedar uma API que envia dados para o AWS Glue. Pare a verificação de origem/destino na instância do EC2. Use AWS Glue para transformar os dados e enviá-los ao Amazon S3.",
-            "C. Configure uma API do Amazon API Gateway para enviar dados para um fluxo de dados do Amazon Kinesis. Crie uma entrega do Amazon Kinesis Data Firehose fluxo que usa o fluxo de dados do Kinesis como uma fonte de dados. Use as funções do AWS Lambda para transformar os dados. Use o Kinesis Data Firehose fluxo de entrega para enviar os dados ao Amazon S3.",
+            "A. Implante uma instância do Amazon EC2 para hospedar uma API, que envia dados para uma stream de dados do Amazon Kinesis. Crie uma stream de entrega do Amazon Kinesis Data Firehose, que usa a stream de dados do Kinesis como fonte de dados. Use as funções do AWS Lambda para transformar os dados. Use a stream de entrega do Kinesis Data Firehose para enviar os dados ao Amazon S3.",
+            "B. Implante uma instância do Amazon EC2 para hospedar uma API, que envia dados para o AWS Glue. Pare a verificação de origem/destino na instância do EC2. Use o AWS Glue para transformar os dados e enviá-los ao Amazon S3.",
+            "C. Configure uma API do Amazon API Gateway para enviar dados para uma stream de dados do Amazon Kinesis. Crie uma stream de entrega do Amazon Kinesis Data Firehose que usa a stream de dados do Kinesis como uma fonte de dados. Use as funções do AWS Lambda para transformar os dados. Use a stream de entrega do Kinesis Data Firehose, para enviar os dados ao Amazon S3.",
             "D. Configure uma API do Amazon API Gateway para enviar dados para o AWS Glue. Use as funções do AWS Lambda para transformar os dados. Use o AWS Glue para enviar os dados para o Amazon S3."
         ]
     },
@@ -970,12 +970,12 @@ let questions = [
     {
         "numb": 90,
         "question": "Uma empresa tem uma grande implantação do Microsoft SharePoint em execução no local que requer armazenamento de arquivos compartilhados do Microsoft Windows. A empresa quer migrar essa carga de trabalho para a nuvem AWS e está considerando várias opções de armazenamento. A solução de armazenamento deve ser altamente disponível e integrado ao Active Directory para controle de acesso. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Crie um sistema de arquivos Amazon FSx for Windows File Server na AWS e defina o domínio do Active Directory para autenticação.",
+        "answer": "D. Crie um sistema de arquivos Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação.",
         "options": [
             "A. Configure o armazenamento do Amazon EFS e defina o domínio do Active Directory para autenticação.",
             "B. Crie um compartilhamento de arquivos SMB em um gateway de arquivos do AWS Storage Gateway em duas Zonas de Disponibilidade.",
             "C. Crie um bucket do Amazon S3 e configure o Microsoft Windows Server para montá-lo como um volume.",
-            "D. Crie um sistema de arquivos Amazon FSx for Windows File Server na AWS e defina o domínio do Active Directory para autenticação."
+            "D. Crie um sistema de arquivos Amazon FSx para Windows File Server na AWS e defina o domínio do Active Directory para autenticação."
         ]
     },
     {
@@ -992,12 +992,12 @@ let questions = [
     {
         "numb": 92,
         "question": "Uma empresa está implementando uma solução de armazenamento compartilhado para um aplicativo de jogo que é hospedado em um data center local. A empresa precisa a capacidade de usar clientes Lustre para acessar dados. A solução deve ser totalmente gerenciada. Qual solução atende a esses requisitos?",
-        "answer": "D. Crie um sistema de arquivos Amazon FSx for Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos.",
+        "answer": "D. Crie um sistema de arquivos Amazon FSx para Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos.",
         "options": [
             "A. Crie um gateway de arquivo do AWS Storage Gateway. Crie um compartilhamento de arquivo que use o protocolo de cliente necessário. Conecte o servidor de aplicativos a o compartilhamento de arquivos.",
             "B. Crie uma instância do Amazon EC2 Windows. Instale e configure uma função de compartilhamento de arquivos do Windows na instância. Conecte o servidor de aplicativos a o compartilhamento de arquivos.",
             "C. Crie um sistema de arquivos Amazon Elastic File System (Amazon EFS) e configure-o para suportar Lustre. Anexe o sistema de arquivos à origem servidor. Conecte o servidor de aplicativos ao sistema de arquivos.",
-            "D. Crie um sistema de arquivos Amazon FSx for Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos."
+            "D. Crie um sistema de arquivos Amazon FSx para Lustre. Anexe o sistema de arquivos ao servidor de origem. Conecte o servidor de aplicativos ao sistema de arquivos."
         ]
     },
     {
