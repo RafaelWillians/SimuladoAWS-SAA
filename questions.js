@@ -167,7 +167,7 @@ let questions = [
     {
         "numb": 16,
         "question": "Uma empresa hospeda um data lake na AWS. O data lake consiste em dados no Amazon S3 e Amazon RDS para PostgreSQL. A empresa precisa de um solução de relatórios que forneça visualização de dados e inclua todas as fontes de dados dentro do data lake. Somente a equipe de gestão da empresa deverá ter acesso total a todas as visualizações. O restante da empresa deve ter apenas acesso limitado. Qual solução atenderá a esses requisitos?",
-        "answer": "D. Crie uma tabela e um crawler do AWS Glue para os dados no Amazon S3. Use o Amazon Athena Federated Query para acessar dados no Amazon RDS para PostgreSQL. Gere relatórios usando o Amazon Athena. Publique os relatórios no Amazon S3. Use as políticas de bucket do S3 para limitar o acesso aos relatórios.",
+        "answer": "B. Crie uma análise no Amazon QuickSight. Conecte todas as fontes de dados e crie novos conjuntos de dados. Publique painéis para visualizar os dados. Compartilhe os painéis com os usuários e grupos apropriados.",
         "options": [
             "A. Crie uma análise no Amazon QuickSight. Conecte todas as fontes de dados e crie novos conjuntos de dados. Publique painéis para visualizar os dados. Compartilhe os painéis com as funções de IAM apropriadas.",
             "B. Crie uma análise no Amazon QuickSight. Conecte todas as fontes de dados e crie novos conjuntos de dados. Publique painéis para visualizar os dados. Compartilhe os painéis com os usuários e grupos apropriados.",
