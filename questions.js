@@ -24,7 +24,7 @@ let questions = [
     {
         "numb": 3,
         "question": "Uma empresa usa o AWS Organizations para gerenciar várias contas AWS para diferentes departamentos. A conta de gerenciamento tem um bucket do Amazon S3 que contém relatórios de projeto. A empresa quer limitar o acesso a este bucket do S3 somente para usuários de contas dentro da organização no AWS Organizations. Qual solução atende a esses requisitos com a MENOR sobrecarga operacional?",
-        "answer": "A. Adicione a chave de condição global aws PrincipalOrgID com uma referência ao ID da organização à política de bucket do S3.",
+        "answer": "A. Adicione a chave de condição global aws:PrincipalOrgID com uma referência ao ID da organização à política de bucket do S3.",
         "options": [
             "A. Adicione a chave de condição global aws:PrincipalOrgID com uma referência ao ID da organização à política de bucket do S3.",
             "B. Crie uma unidade organizacional (UO) para cada departamento. Adicione a chave de condição global aws:PrincipalOrgPaths à política de bucket do S3.",
